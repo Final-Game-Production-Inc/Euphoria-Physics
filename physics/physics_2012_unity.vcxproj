@@ -1,0 +1,3028 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Beta|x64">
+      <Configuration>Beta</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Bankrelease|x64">
+      <Configuration>Bankrelease</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profile|x64">
+      <Configuration>Profile</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Final|x64">
+      <Configuration>Final</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug DX11|x64">
+      <Configuration>Debug DX11</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Beta DX11|x64">
+      <Configuration>Beta DX11</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Bankrelease DX11|x64">
+      <Configuration>Bankrelease DX11</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release DX11|x64">
+      <Configuration>Release DX11</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profile DX11|x64">
+      <Configuration>Profile DX11</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Final DX11|x64">
+      <Configuration>Final DX11</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ToolDebug|x64">
+      <Configuration>ToolDebug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ToolBeta|x64">
+      <Configuration>ToolBeta</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ToolRelease|x64">
+      <Configuration>ToolRelease</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RscDebug|x64">
+      <Configuration>RscDebug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RscBeta|x64">
+      <Configuration>RscBeta</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RscRelease|x64">
+      <Configuration>RscRelease</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Durango">
+      <Configuration>Debug</Configuration>
+      <Platform>Durango</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Beta|Durango">
+      <Configuration>Beta</Configuration>
+      <Platform>Durango</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Bankrelease|Durango">
+      <Configuration>Bankrelease</Configuration>
+      <Platform>Durango</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profile|Durango">
+      <Configuration>Profile</Configuration>
+      <Platform>Durango</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Durango">
+      <Configuration>Release</Configuration>
+      <Platform>Durango</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Final|Durango">
+      <Configuration>Final</Configuration>
+      <Platform>Durango</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug DX11|Durango">
+      <Configuration>Debug DX11</Configuration>
+      <Platform>Durango</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Beta DX11|Durango">
+      <Configuration>Beta DX11</Configuration>
+      <Platform>Durango</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Bankrelease DX11|Durango">
+      <Configuration>Bankrelease DX11</Configuration>
+      <Platform>Durango</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release DX11|Durango">
+      <Configuration>Release DX11</Configuration>
+      <Platform>Durango</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profile DX11|Durango">
+      <Configuration>Profile DX11</Configuration>
+      <Platform>Durango</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Final DX11|Durango">
+      <Configuration>Final DX11</Configuration>
+      <Platform>Durango</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ToolDebug|Durango">
+      <Configuration>ToolDebug</Configuration>
+      <Platform>Durango</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ToolBeta|Durango">
+      <Configuration>ToolBeta</Configuration>
+      <Platform>Durango</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ToolRelease|Durango">
+      <Configuration>ToolRelease</Configuration>
+      <Platform>Durango</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RscDebug|Durango">
+      <Configuration>RscDebug</Configuration>
+      <Platform>Durango</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RscBeta|Durango">
+      <Configuration>RscBeta</Configuration>
+      <Platform>Durango</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RscRelease|Durango">
+      <Configuration>RscRelease</Configuration>
+      <Platform>Durango</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>physics</ProjectName>
+    <ProjectGuid>{12948B19-D806-4800-9CEB-3EFC397D966A}</ProjectGuid>
+    <VCTargetsPath Condition="'$(VCTargetsPath11)' != '' and '$(VSVersion)' == '' and $(VisualStudioVersion) == ''">$(VCTargetsPath11)</VCTargetsPath>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Beta|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Bankrelease|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug DX11|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Beta DX11|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Bankrelease DX11|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release DX11|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile DX11|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final DX11|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ToolDebug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ToolBeta|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ToolRelease|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RscDebug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RscBeta|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RscRelease|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Durango'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Beta|Durango'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Bankrelease|Durango'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Durango'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Durango'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final|Durango'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug DX11|Durango'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Beta DX11|Durango'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Bankrelease DX11|Durango'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release DX11|Durango'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile DX11|Durango'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final DX11|Durango'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ToolDebug|Durango'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ToolBeta|Durango'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ToolRelease|Durango'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RscDebug|Durango'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RscBeta|Durango'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RscRelease|Durango'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Beta|x64'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Bankrelease|x64'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Profile|x64'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Final|x64'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug DX11|x64'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Beta DX11|x64'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Bankrelease DX11|x64'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release DX11|x64'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Profile DX11|x64'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Final DX11|x64'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ToolDebug|x64'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ToolBeta|x64'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ToolRelease|x64'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='RscDebug|x64'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='RscBeta|x64'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='RscRelease|x64'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Durango'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Beta|Durango'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Bankrelease|Durango'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Durango'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Durango'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Final|Durango'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug DX11|Durango'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Beta DX11|Durango'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Bankrelease DX11|Durango'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release DX11|Durango'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Profile DX11|Durango'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Final DX11|Durango'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ToolDebug|Durango'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ToolBeta|Durango'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ToolRelease|Durango'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='RscDebug|Durango'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='RscBeta|Durango'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='RscRelease|Durango'" Label="PropertySheets">
+    <Import Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="physics_2012_unity.props" Condition="exists('physics_2012_unity.props')" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>win64_debug_2012/</OutDir>
+    <IntDir>$(OutDir)</IntDir>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <TargetName>$(ProjectName)</TargetName>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Beta|x64'">
+    <OutDir>win64_beta_2012/</OutDir>
+    <IntDir>$(OutDir)</IntDir>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <TargetName>$(ProjectName)</TargetName>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Bankrelease|x64'">
+    <OutDir>win64_bankrelease_2012/</OutDir>
+    <IntDir>$(OutDir)</IntDir>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <TargetName>$(ProjectName)</TargetName>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">
+    <OutDir>win64_profile_2012/</OutDir>
+    <IntDir>$(OutDir)</IntDir>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <TargetName>$(ProjectName)</TargetName>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>win64_release_2012/</OutDir>
+    <IntDir>$(OutDir)</IntDir>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <TargetName>$(ProjectName)</TargetName>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final|x64'">
+    <OutDir>win64_final_2012/</OutDir>
+    <IntDir>$(OutDir)</IntDir>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <TargetName>$(ProjectName)</TargetName>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug DX11|x64'">
+    <OutDir>win64_debug_dx11_2012/</OutDir>
+    <IntDir>$(OutDir)</IntDir>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <TargetName>$(ProjectName)</TargetName>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Beta DX11|x64'">
+    <OutDir>win64_beta_dx11_2012/</OutDir>
+    <IntDir>$(OutDir)</IntDir>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <TargetName>$(ProjectName)</TargetName>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Bankrelease DX11|x64'">
+    <OutDir>win64_bankrelease_dx11_2012/</OutDir>
+    <IntDir>$(OutDir)</IntDir>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <TargetName>$(ProjectName)</TargetName>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release DX11|x64'">
+    <OutDir>win64_release_dx11_2012/</OutDir>
+    <IntDir>$(OutDir)</IntDir>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <TargetName>$(ProjectName)</TargetName>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile DX11|x64'">
+    <OutDir>win64_profile_dx11_2012/</OutDir>
+    <IntDir>$(OutDir)</IntDir>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <TargetName>$(ProjectName)</TargetName>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final DX11|x64'">
+    <OutDir>win64_final_dx11_2012/</OutDir>
+    <IntDir>$(OutDir)</IntDir>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <TargetName>$(ProjectName)</TargetName>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ToolDebug|x64'">
+    <OutDir>win64_tooldebug_2012/</OutDir>
+    <IntDir>$(OutDir)</IntDir>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <TargetName>$(ProjectName)</TargetName>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ToolBeta|x64'">
+    <OutDir>win64_toolbeta_2012/</OutDir>
+    <IntDir>$(OutDir)</IntDir>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <TargetName>$(ProjectName)</TargetName>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ToolRelease|x64'">
+    <OutDir>win64_toolrelease_2012/</OutDir>
+    <IntDir>$(OutDir)</IntDir>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <TargetName>$(ProjectName)</TargetName>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RscDebug|x64'">
+    <OutDir>win64_rscdebug_2012/</OutDir>
+    <IntDir>$(OutDir)</IntDir>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <TargetName>$(ProjectName)</TargetName>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RscBeta|x64'">
+    <OutDir>win64_rscbeta_2012/</OutDir>
+    <IntDir>$(OutDir)</IntDir>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <TargetName>$(ProjectName)</TargetName>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RscRelease|x64'">
+    <OutDir>win64_rscrelease_2012/</OutDir>
+    <IntDir>$(OutDir)</IntDir>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <TargetName>$(ProjectName)</TargetName>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Durango'">
+    <IncludePath>$(DurangoXDK)/include/winrt;$(DurangoXDK)/include/um;$(DurangoXDK)/include/shared;$(IncludePath)</IncludePath>
+    <LibraryPath>$(RAGE_DIR)/lib;$(DurangoXDK)/lib;$(LibraryPath)</LibraryPath>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Beta|Durango'">
+    <IncludePath>$(DurangoXDK)/include/winrt;$(DurangoXDK)/include/um;$(DurangoXDK)/include/shared;$(IncludePath)</IncludePath>
+    <LibraryPath>$(RAGE_DIR)/lib;$(DurangoXDK)/lib;$(LibraryPath)</LibraryPath>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Bankrelease|Durango'">
+    <IncludePath>$(DurangoXDK)/include/winrt;$(DurangoXDK)/include/um;$(DurangoXDK)/include/shared;$(IncludePath)</IncludePath>
+    <LibraryPath>$(RAGE_DIR)/lib;$(DurangoXDK)/lib;$(LibraryPath)</LibraryPath>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Durango'">
+    <IncludePath>$(DurangoXDK)/include/winrt;$(DurangoXDK)/include/um;$(DurangoXDK)/include/shared;$(IncludePath)</IncludePath>
+    <LibraryPath>$(RAGE_DIR)/lib;$(DurangoXDK)/lib;$(LibraryPath)</LibraryPath>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Durango'">
+    <IncludePath>$(DurangoXDK)/include/winrt;$(DurangoXDK)/include/um;$(DurangoXDK)/include/shared;$(IncludePath)</IncludePath>
+    <LibraryPath>$(RAGE_DIR)/lib;$(DurangoXDK)/lib;$(LibraryPath)</LibraryPath>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final|Durango'">
+    <IncludePath>$(DurangoXDK)/include/winrt;$(DurangoXDK)/include/um;$(DurangoXDK)/include/shared;$(IncludePath)</IncludePath>
+    <LibraryPath>$(RAGE_DIR)/lib;$(DurangoXDK)/lib;$(LibraryPath)</LibraryPath>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug DX11|Durango'">
+    <IncludePath>$(DurangoXDK)/include/winrt;$(DurangoXDK)/include/um;$(DurangoXDK)/include/shared;$(IncludePath)</IncludePath>
+    <LibraryPath>$(RAGE_DIR)/lib;$(DurangoXDK)/lib;$(LibraryPath)</LibraryPath>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Beta DX11|Durango'">
+    <IncludePath>$(DurangoXDK)/include/winrt;$(DurangoXDK)/include/um;$(DurangoXDK)/include/shared;$(IncludePath)</IncludePath>
+    <LibraryPath>$(RAGE_DIR)/lib;$(DurangoXDK)/lib;$(LibraryPath)</LibraryPath>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Bankrelease DX11|Durango'">
+    <IncludePath>$(DurangoXDK)/include/winrt;$(DurangoXDK)/include/um;$(DurangoXDK)/include/shared;$(IncludePath)</IncludePath>
+    <LibraryPath>$(RAGE_DIR)/lib;$(DurangoXDK)/lib;$(LibraryPath)</LibraryPath>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release DX11|Durango'">
+    <IncludePath>$(DurangoXDK)/include/winrt;$(DurangoXDK)/include/um;$(DurangoXDK)/include/shared;$(IncludePath)</IncludePath>
+    <LibraryPath>$(RAGE_DIR)/lib;$(DurangoXDK)/lib;$(LibraryPath)</LibraryPath>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile DX11|Durango'">
+    <IncludePath>$(DurangoXDK)/include/winrt;$(DurangoXDK)/include/um;$(DurangoXDK)/include/shared;$(IncludePath)</IncludePath>
+    <LibraryPath>$(RAGE_DIR)/lib;$(DurangoXDK)/lib;$(LibraryPath)</LibraryPath>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final DX11|Durango'">
+    <IncludePath>$(DurangoXDK)/include/winrt;$(DurangoXDK)/include/um;$(DurangoXDK)/include/shared;$(IncludePath)</IncludePath>
+    <LibraryPath>$(RAGE_DIR)/lib;$(DurangoXDK)/lib;$(LibraryPath)</LibraryPath>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ToolDebug|Durango'">
+    <IncludePath>$(DurangoXDK)/include/winrt;$(DurangoXDK)/include/um;$(DurangoXDK)/include/shared;$(IncludePath)</IncludePath>
+    <LibraryPath>$(RAGE_DIR)/lib;$(DurangoXDK)/lib;$(LibraryPath)</LibraryPath>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ToolBeta|Durango'">
+    <IncludePath>$(DurangoXDK)/include/winrt;$(DurangoXDK)/include/um;$(DurangoXDK)/include/shared;$(IncludePath)</IncludePath>
+    <LibraryPath>$(RAGE_DIR)/lib;$(DurangoXDK)/lib;$(LibraryPath)</LibraryPath>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ToolRelease|Durango'">
+    <IncludePath>$(DurangoXDK)/include/winrt;$(DurangoXDK)/include/um;$(DurangoXDK)/include/shared;$(IncludePath)</IncludePath>
+    <LibraryPath>$(RAGE_DIR)/lib;$(DurangoXDK)/lib;$(LibraryPath)</LibraryPath>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RscDebug|Durango'">
+    <IncludePath>$(DurangoXDK)/include/winrt;$(DurangoXDK)/include/um;$(DurangoXDK)/include/shared;$(IncludePath)</IncludePath>
+    <LibraryPath>$(RAGE_DIR)/lib;$(DurangoXDK)/lib;$(LibraryPath)</LibraryPath>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RscBeta|Durango'">
+    <IncludePath>$(DurangoXDK)/include/winrt;$(DurangoXDK)/include/um;$(DurangoXDK)/include/shared;$(IncludePath)</IncludePath>
+    <LibraryPath>$(RAGE_DIR)/lib;$(DurangoXDK)/lib;$(LibraryPath)</LibraryPath>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RscRelease|Durango'">
+    <IncludePath>$(DurangoXDK)/include/winrt;$(DurangoXDK)/include/um;$(DurangoXDK)/include/shared;$(IncludePath)</IncludePath>
+    <LibraryPath>$(RAGE_DIR)/lib;$(DurangoXDK)/lib;$(LibraryPath)</LibraryPath>
+    <CustomBuildBeforeTargets>InitializeBuildStatus</CustomBuildBeforeTargets>
+    <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\win64_debug.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;_DEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <Optimization>Disabled</Optimization>
+      <RunTimeLibrary>MultiThreadedDebug</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>True</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Beta|x64'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\win64_beta.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;NDEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <Optimization>MaxSpeed</Optimization>
+      <RunTimeLibrary>MultiThreaded</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>True</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Bankrelease|x64'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\win64_bankrelease.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;NDEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <Optimization>MaxSpeed</Optimization>
+      <RunTimeLibrary>MultiThreaded</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>True</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\win64_profile.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;NDEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <Optimization>MaxSpeed</Optimization>
+      <RunTimeLibrary>MultiThreaded</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>True</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\win64_release.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;NDEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <Optimization>MaxSpeed</Optimization>
+      <RunTimeLibrary>MultiThreaded</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>True</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Final|x64'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\win64_final.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;NDEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <Optimization>Full</Optimization>
+      <RunTimeLibrary>MultiThreaded</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>True</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug DX11|x64'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\win64_dx11_debug.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;_DEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <Optimization>Disabled</Optimization>
+      <RunTimeLibrary>MultiThreadedDebug</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>True</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Beta DX11|x64'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\win64_dx11_beta.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;_DEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <Optimization>MaxSpeed</Optimization>
+      <RunTimeLibrary>MultiThreaded</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>True</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Bankrelease DX11|x64'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\win64_dx11_bankrelease.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;NDEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <Optimization>MaxSpeed</Optimization>
+      <RunTimeLibrary>MultiThreaded</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>True</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release DX11|x64'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\win64_dx11_release.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;NDEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <Optimization>MaxSpeed</Optimization>
+      <RunTimeLibrary>MultiThreaded</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>True</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile DX11|x64'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\win64_dx11_profile.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;NDEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <Optimization>MaxSpeed</Optimization>
+      <RunTimeLibrary>MultiThreaded</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>True</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Final DX11|x64'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\win64_dx11_final.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;NDEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <Optimization>MaxSpeed</Optimization>
+      <RunTimeLibrary>MultiThreaded</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>True</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ToolDebug|x64'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\win64_tooldebug.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;_DEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <Optimization>Disabled</Optimization>
+      <RunTimeLibrary>MultiThreadedDebugDLL</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>True</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ToolBeta|x64'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\win64_toolbeta.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;_DEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <Optimization>MaxSpeed</Optimization>
+      <RunTimeLibrary>MultiThreadedDLL</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>True</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ToolRelease|x64'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\win64_toolrelease.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;NDEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <Optimization>MaxSpeed</Optimization>
+      <RunTimeLibrary>MultiThreadedDLL</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>True</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RscDebug|x64'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\win64_rscdebug.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;_DEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <Optimization>Disabled</Optimization>
+      <RunTimeLibrary>MultiThreadedDebug</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>True</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RscBeta|x64'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\win64_rscbeta.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;_DEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <Optimization>MaxSpeed</Optimization>
+      <RunTimeLibrary>MultiThreaded</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>True</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RscRelease|x64'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\win64_rscrelease.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;NDEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <Optimization>MaxSpeed</Optimization>
+      <RunTimeLibrary>MultiThreaded</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>True</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Durango'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\durango_debug.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;_DEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <AdditionalLibraryDirectories>$(RAGE_DIR)\lib</AdditionalLibraryDirectories>
+      <Optimization>Disabled</Optimization>
+      <RunTimeLibrary>MultiThreadedDebug</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
+      <TreatWarningAsError>False</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Beta|Durango'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\durango_beta.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;NDEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <AdditionalLibraryDirectories>$(RAGE_DIR)\lib</AdditionalLibraryDirectories>
+      <Optimization>MaxSpeed</Optimization>
+      <RunTimeLibrary>MultiThreaded</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
+      <TreatWarningAsError>False</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Bankrelease|Durango'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\durango_bankrelease.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;NDEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <AdditionalLibraryDirectories>$(RAGE_DIR)\lib</AdditionalLibraryDirectories>
+      <Optimization>MaxSpeed</Optimization>
+      <RunTimeLibrary>MultiThreaded</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
+      <TreatWarningAsError>False</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Durango'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\durango_profile.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;NDEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <AdditionalLibraryDirectories>$(RAGE_DIR)\lib</AdditionalLibraryDirectories>
+      <Optimization>MaxSpeed</Optimization>
+      <RunTimeLibrary>MultiThreaded</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
+      <TreatWarningAsError>False</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Durango'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\durango_release.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;NDEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <AdditionalLibraryDirectories>$(RAGE_DIR)\lib</AdditionalLibraryDirectories>
+      <Optimization>MaxSpeed</Optimization>
+      <RunTimeLibrary>MultiThreaded</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
+      <TreatWarningAsError>False</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Final|Durango'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\durango_final.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;NDEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <AdditionalLibraryDirectories>$(RAGE_DIR)\lib</AdditionalLibraryDirectories>
+      <Optimization>Full</Optimization>
+      <RunTimeLibrary>MultiThreaded</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
+      <TreatWarningAsError>False</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug DX11|Durango'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\durango_dx11_debug.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;_DEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <AdditionalLibraryDirectories>$(RAGE_DIR)\lib</AdditionalLibraryDirectories>
+      <Optimization>Disabled</Optimization>
+      <RunTimeLibrary>MultiThreadedDebug</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
+      <TreatWarningAsError>False</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Beta DX11|Durango'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\durango_dx11_beta.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;_DEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <AdditionalLibraryDirectories>$(RAGE_DIR)\lib</AdditionalLibraryDirectories>
+      <Optimization>MaxSpeed</Optimization>
+      <RunTimeLibrary>MultiThreaded</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
+      <TreatWarningAsError>False</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Bankrelease DX11|Durango'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\durango_dx11_bankrelease.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;NDEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <AdditionalLibraryDirectories>$(RAGE_DIR)\lib</AdditionalLibraryDirectories>
+      <Optimization>MaxSpeed</Optimization>
+      <RunTimeLibrary>MultiThreaded</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
+      <TreatWarningAsError>False</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release DX11|Durango'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\durango_dx11_release.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;NDEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <AdditionalLibraryDirectories>$(RAGE_DIR)\lib</AdditionalLibraryDirectories>
+      <Optimization>MaxSpeed</Optimization>
+      <RunTimeLibrary>MultiThreaded</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
+      <TreatWarningAsError>False</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile DX11|Durango'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\durango_dx11_profile.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;NDEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <AdditionalLibraryDirectories>$(RAGE_DIR)\lib</AdditionalLibraryDirectories>
+      <Optimization>MaxSpeed</Optimization>
+      <RunTimeLibrary>MultiThreaded</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
+      <TreatWarningAsError>False</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Final DX11|Durango'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\durango_dx11_final.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;NDEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <AdditionalLibraryDirectories>$(RAGE_DIR)\lib</AdditionalLibraryDirectories>
+      <Optimization>MaxSpeed</Optimization>
+      <RunTimeLibrary>MultiThreaded</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
+      <TreatWarningAsError>False</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ToolDebug|Durango'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\durango_tooldebug.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;_DEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <AdditionalLibraryDirectories>$(RAGE_DIR)\lib</AdditionalLibraryDirectories>
+      <Optimization>Disabled</Optimization>
+      <RunTimeLibrary>MultiThreadedDebugDLL</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
+      <TreatWarningAsError>False</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ToolBeta|Durango'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\durango_toolbeta.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;_DEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <AdditionalLibraryDirectories>$(RAGE_DIR)\lib</AdditionalLibraryDirectories>
+      <Optimization>MaxSpeed</Optimization>
+      <RunTimeLibrary>MultiThreadedDLL</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
+      <TreatWarningAsError>False</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ToolRelease|Durango'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\durango_toolrelease.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;NDEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <AdditionalLibraryDirectories>$(RAGE_DIR)\lib</AdditionalLibraryDirectories>
+      <Optimization>MaxSpeed</Optimization>
+      <RunTimeLibrary>MultiThreadedDLL</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
+      <TreatWarningAsError>False</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RscDebug|Durango'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\durango_rscdebug.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;_DEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <AdditionalLibraryDirectories>$(RAGE_DIR)\lib</AdditionalLibraryDirectories>
+      <Optimization>Disabled</Optimization>
+      <RunTimeLibrary>MultiThreadedDebug</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
+      <TreatWarningAsError>False</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RscBeta|Durango'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\durango_rscbeta.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;_DEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <AdditionalLibraryDirectories>$(RAGE_DIR)\lib</AdditionalLibraryDirectories>
+      <Optimization>MaxSpeed</Optimization>
+      <RunTimeLibrary>MultiThreaded</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
+      <TreatWarningAsError>False</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RscRelease|Durango'">
+    <PreLinkEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreLinkEvent>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(RAGE_DIR)\stlport\STLport-5.0RC5\stlport;$(RAGE_DIR)\base\src;$(RAGE_DIR)\suite\src;$(ProjectDir)\..;$(RAGE_DIR)\naturalmotion\include;$(RAGE_DIR)\naturalmotion\src;$(RAGE_DIR)\script\src;$(RAGE_DIR)\framework\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <ExceptionHandling>False</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ForcedIncludeFiles>$(RAGE_DIR)\base\src\forceinclude\durango_rscrelease.h;%(ForcedIncludefiles)</ForcedIncludeFiles>
+      <FunctionLevelLinking>True</FunctionLevelLinking>
+      <IntrinsicFunctions>True</IntrinsicFunctions>
+      <PreprocessorDefinitions>_LIB;WIN64;NDEBUG;__VS2012;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>True</RuntimeTypeInfo>
+      <StringPooling>True</StringPooling>
+      <AdditionalLibraryDirectories>$(RAGE_DIR)\lib</AdditionalLibraryDirectories>
+      <Optimization>MaxSpeed</Optimization>
+      <RunTimeLibrary>MultiThreaded</RunTimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
+      <TreatWarningAsError>False</TreatWarningAsError>
+    </ClCompile>
+    <ImageXex>
+      <OutputFileName>
+      </OutputFileName>
+      <AdditionalSections>
+      </AdditionalSections>
+      <TitleID>
+      </TitleID>
+    </ImageXex>
+    <Deploy>
+      <RemoteRoot>
+      </RemoteRoot>
+      <DeploymentFiles>
+      </DeploymentFiles>
+      <DeploymentType>
+      </DeploymentType>
+    </Deploy>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="broadphase.h" />
+    <ClInclude Include="btAxisSweep1.h" />
+    <ClInclude Include="btAxisSweep3.h" />
+    <ClInclude Include="btSpatialHash.h" />
+    <ClInclude Include="btImmediateModeBroadphase.h" />
+    <ClInclude Include="btNxN.h" />
+    <ClInclude Include="HashBroadPhase16.h" />
+    <ClInclude Include="btBroadphaseProxy.h" />
+    <ClInclude Include="btOverlappingPairCache.h" />
+    <ClInclude Include="levelbroadphase.h" />
+    <ClInclude Include="overlappingpairarray.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="btAxisSweep1.cpp" />
+    <ClCompile Include="btAxisSweep3.cpp" />
+    <ClCompile Include="btSpatialHash.cpp" />
+    <ClCompile Include="btImmediateModeBroadphase.cpp" />
+    <ClCompile Include="btNxN.cpp" />
+    <ClCompile Include="HashBroadPhase16.cpp" />
+    <ClCompile Include="btOverlappingPairCache.cpp" />
+    <ClCompile Include="levelbroadphase.cpp" />
+    <ClCompile Include="overlappingpairarray.cpp" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ItemGroup />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

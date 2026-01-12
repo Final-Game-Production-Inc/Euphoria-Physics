@@ -1,0 +1,14 @@
+Description:
+
+phBound module description
+
+Relationships:
+
+* Depends on \phCore\
+
+Testers:
+
+* \testsegment.cpp\ tests bound to segment intersection routines, including PROBEs, PROBE_HITs, EDGEs, EDGE_HITs against phBoundSphere, phBoundHotdog, and phBoundGeometry.
+* \testbound.cpp\ ...
+* \testoctree.cpp\ ...
+* \testotgrid.cpp\ ...

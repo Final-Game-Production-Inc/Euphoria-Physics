@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="tools_ng\etc\projgen">
+      <UniqueIdentifier>{C3FD447F-C90D-6CF0-75B0-C1EC4BCE7A67}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bound.h" />
+    <ClInclude Include="boundbox.h" />
+    <ClInclude Include="boundbvh.h" />
+    <ClInclude Include="boundcapsule.h" />
+    <ClInclude Include="boundcomposite.h" />
+    <ClInclude Include="boundculler.h" />
+    <ClInclude Include="boundcurvedgeom.h" />
+    <ClInclude Include="boundcylinder.h" />
+    <ClInclude Include="bounddisc.h" />
+    <ClInclude Include="boundgeom.h" />
+    <ClInclude Include="boundGeomSecondSurface.h" />
+    <ClInclude Include="boundgrid.h" />
+    <ClInclude Include="boundplane.h" />
+    <ClInclude Include="boundpolyhedron.h" />
+    <ClInclude Include="boundribbon.h" />
+    <ClInclude Include="boundsize.h" />
+    <ClInclude Include="boundsphere.h" />
+    <ClInclude Include="boundsurface.h" />
+    <ClInclude Include="boundtaperedcapsule.h" />
+    <ClInclude Include="BvhConstruction.h" />
+    <ClInclude Include="cullerhelpers.h" />
+    <ClInclude Include="liquidimpactdata.h" />
+    <ClInclude Include="liquidimpactset.h" />
+    <ClInclude Include="OptimizedBvh.h" />
+    <ClInclude Include="primitives.h" />
+    <ClInclude Include="surfacegrid.h" />
+    <ClInclude Include="support.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="bound.cpp" />
+    <ClCompile Include="boundbox.cpp" />
+    <ClCompile Include="boundbvh.cpp" />
+    <ClCompile Include="boundcapsule.cpp" />
+    <ClCompile Include="boundcomposite.cpp" />
+    <ClCompile Include="boundcurvedgeom.cpp" />
+    <ClCompile Include="boundcylinder.cpp" />
+    <ClCompile Include="bounddisc.cpp" />
+    <ClCompile Include="boundgeom.cpp" />
+    <ClCompile Include="boundGeomSecondSurface.cpp" />
+    <ClCompile Include="boundgrid.cpp" />
+    <ClCompile Include="boundloader.cpp" />
+    <ClCompile Include="boundplane.cpp" />
+    <ClCompile Include="boundpolyhedron.cpp" />
+    <ClCompile Include="boundribbon.cpp" />
+    <ClCompile Include="boundsphere.cpp" />
+    <ClCompile Include="boundsurface.cpp" />
+    <ClCompile Include="boundtaperedcapsule.cpp" />
+    <ClCompile Include="BvhConstruction.cpp" />
+    <ClCompile Include="OptimizedBvh.cpp" />
+    <ClCompile Include="primitives.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="bound.psc" />
+    <CustomBuild Include="boundcapsule.psc" />
+    <CustomBuild Include="boundcomposite.psc" />
+    <CustomBuild Include="boundplane.psc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="phbound.dtx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="boundtypes.inc" />
+  </ItemGroup>
+</Project>

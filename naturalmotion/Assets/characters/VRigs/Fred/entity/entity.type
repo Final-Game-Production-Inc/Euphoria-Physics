@@ -1,0 +1,10 @@
+Version: 103
+skel {
+	skel skeleton.skel
+}
+skeletontype {
+	skeletontype skel
+}
+
+fragments {
+}

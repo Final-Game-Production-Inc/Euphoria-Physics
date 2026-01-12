@@ -1,0 +1,4 @@
+#define ENTRYPOINT NmRsCBU_DBMBalanceSolve
+#include "../../../../rage/base/src/system/task_spu.h"
+
+#include "NmRsCBU_DBMBalanceSolve.cpp" 

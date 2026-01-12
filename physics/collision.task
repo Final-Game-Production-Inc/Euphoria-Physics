@@ -1,0 +1,116 @@
+#include <cell/spurs/task.h>
+
+#define SYS_DMA_DELAYED 0
+#define SYS_DMA_DELAYED_SPEW 0
+
+// This is the one place we really expect atArray to reallocate memory etc.
+#define spu_undefined_atArray_operation()
+
+#if 0		// Enabling this code saves 8176 bytes, at the cost of listing the condition that failed; you still get the file and line.
+			// for USE_BOX_BOX_DISTANCE, with the assert removal code below disabled, it saves 8720 bytes.
+			// For USE_BOX_BOX_DISTANCE, full asserts:				245,752 bytes
+			//							 minimal asserts:			237,032 bytes
+			//							 minimal, func name only:   235,880 bytes
+			//							 minimal, line number only: 234,248 bytes (not particularly useful)
+			//							 no asserts:				222,776 bytes.
+#undef Assert
+#undef Assertf
+#undef FastAssert
+#undef AssertMsg
+#undef AssertVerify
+#undef Verifyf
+#undef DebugAssert
+
+// _spu_call_event_va_arg with ASSERT: in the string will return 0 if user selected Abort, else 1
+__attribute__((noinline)) void MinimalAssertFailed(const char *m)
+{
+	if (!_spu_call_event_va_arg(EVENT_PRINTF_COMMAND,"ASSERT: %s",m))
+		__debugbreak();
+}
+
+// Having the Likely present always improves code size for some reason, and it's better anyway.
+// Attempting to always call MinimalAssertFailed with the result of the condition is strictly worse as well.
+#define Assert(x)		(void)(Likely(x) || (MinimalAssertFailed(__FUNCTION__),0))
+#define Assertf(x,...)	Assert(x)
+#define FastAssert(x)	Assert(x)
+#define AssertMsg(x,m)	Assert(x)
+#define AssertVerify(x)	(x)
+#define Verifyf(x,...)	(x)
+#define DebugAssert(x)
+#endif
+
+#include "phbullet/convexintersector.h"
+// This hack of removing assert code is to make the spucollide.task elf fit into spu memory.
+#if USE_BOX_BOX_INTERSECT || USE_BOX_BOX_DISTANCE
+
+#ifdef __ASSERT
+#undef ASSERT_ONLY
+#define ASSERT_ONLY(x)
+
+#undef Assert
+#define Assert(x)
+
+#undef  Assertf
+#define Assertf(x,...)
+
+#undef  FastAssert
+#define FastAssert(x)
+
+#undef  AssertMsg
+#define AssertMsg(x,msg)
+
+#undef AssertVerify
+#define AssertVerify(x) (x)
+
+#undef  Verifyf
+#define Verifyf(x,fmt,...) (x)
+
+#undef  DebugAssert
+#define DebugAssert(x)
+#endif
+
+#include "phBullet/btBoxBoxDetector.cpp"
+
+#endif
+
+
+#include "phcore/constants.h"
+#include "system/dma.h"
+
+#include "data\resource.cpp"
+#include "diag/debuglog.cpp"
+#include "phbound\bound.cpp"
+#include "phbound\boundbox.cpp"
+#include "phbound\boundcapsule.cpp"
+#include "phbound\boundcurvedgeom.cpp"
+#include "phbound\boundpolyhedron.cpp"
+#include "phbound\boundsphere.cpp"
+#include "phbound\boundtaperedcapsule.cpp"
+#include "phbound\primitives.cpp"
+#include "phbullet\boxBoxDistance.cpp"
+#include "phbullet\btGjkEpa2.cpp"
+#include "phbullet\btGjkEpaPenetrationDepthSolver.cpp"
+#include "phbullet\ContinuousConvexCollision.cpp"
+#include "phbullet\ConvexCast.cpp"
+#include "phbullet\ConvexIntersector.cpp"
+#include "phbullet\GjkSimplexCache.cpp"
+#include "phbullet\GjkPairDetector.cpp"
+#include "phbullet\MinkowskiPenetrationDepthSolver.cpp"
+#include "phbullet\TrianglePenetrationDepthSolver.cpp"
+#include "phbullet\VoronoiSimplexSolver.cpp"
+#include "physics/collider.cpp"
+#include "physics/collision.cpp"
+#include "physics/PrimitiveCache.cpp"
+#include "physics\contact.cpp"
+#include "physics\manifold.cpp"
+#include "physics/manifoldresult.cpp"
+#include "system\tinyheap.cpp"
+#include "system\spinlock.cpp"
+#include "vector/geometry.cpp"
+#include "vector\quaternion.cpp"
+#include "vector\matrix34.cpp"
+#include "vector\allbitsf.cpp"
+
+#include "collisiontask.cpp"
+
+#include "phcore/workerthreadmain.cpp"

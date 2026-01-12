@@ -1,0 +1,410 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="tools_ng\etc\projgen">
+      <UniqueIdentifier>{C3FD447F-C90D-6CF0-75B0-C1EC4BCE7A67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Broadphase">
+      <UniqueIdentifier>{47C312E3-129B-D30F-196A-B8279EC5926C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Constraints">
+      <UniqueIdentifier>{165EF32F-FC33-EF5C-54EF-7CC7BD06F33A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ContactPoints">
+      <UniqueIdentifier>{16E6E611-366E-51C5-3E7C-02DCAF709642}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MovingState">
+      <UniqueIdentifier>{E696D6FC-A452-854B-0321-0C817384C0B3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StaticState">
+      <UniqueIdentifier>{DB0C8E75-6E70-E69D-5D06-D2C2A29ED98E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Diagnostics">
+      <UniqueIdentifier>{22ABEE17-0DEA-3828-E4F0-51F7FB5480E9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="broadphase.h">
+      <Filter>Broadphase</Filter>
+    </ClInclude>
+    <ClInclude Include="btAxisSweep1.h">
+      <Filter>Broadphase</Filter>
+    </ClInclude>
+    <ClInclude Include="btAxisSweep3.h">
+      <Filter>Broadphase</Filter>
+    </ClInclude>
+    <ClInclude Include="btSpatialHash.h">
+      <Filter>Broadphase</Filter>
+    </ClInclude>
+    <ClInclude Include="btImmediateModeBroadphase.h">
+      <Filter>Broadphase</Filter>
+    </ClInclude>
+    <ClInclude Include="btNxN.h">
+      <Filter>Broadphase</Filter>
+    </ClInclude>
+    <ClInclude Include="HashBroadPhase16.h">
+      <Filter>Broadphase</Filter>
+    </ClInclude>
+    <ClInclude Include="btBroadphaseProxy.h">
+      <Filter>Broadphase</Filter>
+    </ClInclude>
+    <ClInclude Include="btOverlappingPairCache.h">
+      <Filter>Broadphase</Filter>
+    </ClInclude>
+    <ClInclude Include="levelbroadphase.h">
+      <Filter>Broadphase</Filter>
+    </ClInclude>
+    <ClInclude Include="overlappingpairarray.h">
+      <Filter>Broadphase</Filter>
+    </ClInclude>
+    <ClInclude Include="constraintbase.h">
+      <Filter>Constraints</Filter>
+    </ClInclude>
+    <ClInclude Include="constraintcylindrical.h">
+      <Filter>Constraints</Filter>
+    </ClInclude>
+    <ClInclude Include="constraintdistance.h">
+      <Filter>Constraints</Filter>
+    </ClInclude>
+    <ClInclude Include="constraintfixed.h">
+      <Filter>Constraints</Filter>
+    </ClInclude>
+    <ClInclude Include="constrainthandle.h">
+      <Filter>Constraints</Filter>
+    </ClInclude>
+    <ClInclude Include="constrainthalfspace.h">
+      <Filter>Constraints</Filter>
+    </ClInclude>
+    <ClInclude Include="constrainthinge.h">
+      <Filter>Constraints</Filter>
+    </ClInclude>
+    <ClInclude Include="constraintmgr.h">
+      <Filter>Constraints</Filter>
+    </ClInclude>
+    <ClInclude Include="constraintrotation.h">
+      <Filter>Constraints</Filter>
+    </ClInclude>
+    <ClInclude Include="constraints.h">
+      <Filter>Constraints</Filter>
+    </ClInclude>
+    <ClInclude Include="constraintspherical.h">
+      <Filter>Constraints</Filter>
+    </ClInclude>
+    <ClInclude Include="constraintattachment.h">
+      <Filter>Constraints</Filter>
+    </ClInclude>
+    <ClInclude Include="constraintprismatic.h">
+      <Filter>Constraints</Filter>
+    </ClInclude>
+    <ClInclude Include="constraintfixedrotation.h">
+      <Filter>Constraints</Filter>
+    </ClInclude>
+    <ClInclude Include="collision.h">
+      <Filter>ContactPoints</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionMemory.h">
+      <Filter>ContactPoints</Filter>
+    </ClInclude>
+    <ClInclude Include="collisionoverlaptest.h">
+      <Filter>ContactPoints</Filter>
+    </ClInclude>
+    <ClInclude Include="collisiontask.h">
+      <Filter>ContactPoints</Filter>
+    </ClInclude>
+    <ClInclude Include="compositepointers.h">
+      <Filter>ContactPoints</Filter>
+    </ClInclude>
+    <ClInclude Include="contact.h">
+      <Filter>ContactPoints</Filter>
+    </ClInclude>
+    <ClInclude Include="contactiterator.h">
+      <Filter>ContactPoints</Filter>
+    </ClInclude>
+    <ClInclude Include="contacttask.h">
+      <Filter>ContactPoints</Filter>
+    </ClInclude>
+    <ClInclude Include="manifold.h">
+      <Filter>ContactPoints</Filter>
+    </ClInclude>
+    <ClInclude Include="manifoldresult.h">
+      <Filter>ContactPoints</Filter>
+    </ClInclude>
+    <ClInclude Include="PrimitiveCache.h">
+      <Filter>ContactPoints</Filter>
+    </ClInclude>
+    <ClInclude Include="spuevents.h">
+      <Filter>ContactPoints</Filter>
+    </ClInclude>
+    <ClInclude Include="collider.h">
+      <Filter>MovingState</Filter>
+    </ClInclude>
+    <ClInclude Include="colliderdispatch.h">
+      <Filter>MovingState</Filter>
+    </ClInclude>
+    <ClInclude Include="collidertask.h">
+      <Filter>MovingState</Filter>
+    </ClInclude>
+    <ClInclude Include="instbehavior.h">
+      <Filter>MovingState</Filter>
+    </ClInclude>
+    <ClInclude Include="ringbuffer.h">
+      <Filter>MovingState</Filter>
+    </ClInclude>
+    <ClInclude Include="simulator.h">
+      <Filter>MovingState</Filter>
+    </ClInclude>
+    <ClInclude Include="sleep.h">
+      <Filter>MovingState</Filter>
+    </ClInclude>
+    <ClInclude Include="sleepisland.h">
+      <Filter>MovingState</Filter>
+    </ClInclude>
+    <ClInclude Include="sleepmgr.h">
+      <Filter>MovingState</Filter>
+    </ClInclude>
+    <ClInclude Include="archetype.h">
+      <Filter>StaticState</Filter>
+    </ClInclude>
+    <ClInclude Include="asyncshapetestmgr.h">
+      <Filter>StaticState</Filter>
+    </ClInclude>
+    <ClInclude Include="commitdeferredoctreeupdatestask.h">
+      <Filter>StaticState</Filter>
+    </ClInclude>
+    <ClInclude Include="cullshape.h">
+      <Filter>StaticState</Filter>
+    </ClInclude>
+    <ClInclude Include="handle.h">
+      <Filter>StaticState</Filter>
+    </ClInclude>
+    <ClInclude Include="inst.h">
+      <Filter>StaticState</Filter>
+    </ClInclude>
+    <ClInclude Include="instbreakable.h">
+      <Filter>StaticState</Filter>
+    </ClInclude>
+    <ClInclude Include="intersection.h">
+      <Filter>StaticState</Filter>
+    </ClInclude>
+    <ClInclude Include="iterator.h">
+      <Filter>StaticState</Filter>
+    </ClInclude>
+    <ClInclude Include="levelbase.h">
+      <Filter>StaticState</Filter>
+    </ClInclude>
+    <ClInclude Include="leveldefs.h">
+      <Filter>StaticState</Filter>
+    </ClInclude>
+    <ClInclude Include="levelnew.h">
+      <Filter>StaticState</Filter>
+    </ClInclude>
+    <ClInclude Include="lockconfig.h">
+      <Filter>StaticState</Filter>
+    </ClInclude>
+    <ClInclude Include="shapetest.h">
+      <Filter>StaticState</Filter>
+    </ClInclude>
+    <ClInclude Include="shapetestspu.h">
+      <Filter>StaticState</Filter>
+    </ClInclude>
+    <ClInclude Include="debugcontext.h">
+      <Filter>Diagnostics</Filter>
+    </ClInclude>
+    <ClInclude Include="debugphysics.h">
+      <Filter>Diagnostics</Filter>
+    </ClInclude>
+    <ClInclude Include="debugplayback.h">
+      <Filter>Diagnostics</Filter>
+    </ClInclude>
+    <ClInclude Include="debugevents.h">
+      <Filter>Diagnostics</Filter>
+    </ClInclude>
+    <ClInclude Include="debugcontacts.h">
+      <Filter>Diagnostics</Filter>
+    </ClInclude>
+    <ClInclude Include="physicsprofilecapture.h">
+      <Filter>Diagnostics</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="btAxisSweep1.cpp">
+      <Filter>Broadphase</Filter>
+    </ClCompile>
+    <ClCompile Include="btAxisSweep3.cpp">
+      <Filter>Broadphase</Filter>
+    </ClCompile>
+    <ClCompile Include="btSpatialHash.cpp">
+      <Filter>Broadphase</Filter>
+    </ClCompile>
+    <ClCompile Include="btImmediateModeBroadphase.cpp">
+      <Filter>Broadphase</Filter>
+    </ClCompile>
+    <ClCompile Include="btNxN.cpp">
+      <Filter>Broadphase</Filter>
+    </ClCompile>
+    <ClCompile Include="HashBroadPhase16.cpp">
+      <Filter>Broadphase</Filter>
+    </ClCompile>
+    <ClCompile Include="btOverlappingPairCache.cpp">
+      <Filter>Broadphase</Filter>
+    </ClCompile>
+    <ClCompile Include="levelbroadphase.cpp">
+      <Filter>Broadphase</Filter>
+    </ClCompile>
+    <ClCompile Include="overlappingpairarray.cpp">
+      <Filter>Broadphase</Filter>
+    </ClCompile>
+    <ClCompile Include="constraintbase.cpp">
+      <Filter>Constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="constraintcylindrical.cpp">
+      <Filter>Constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="constraintdistance.cpp">
+      <Filter>Constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="constraintfixed.cpp">
+      <Filter>Constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="constrainthalfspace.cpp">
+      <Filter>Constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="constrainthinge.cpp">
+      <Filter>Constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="constraintmgr.cpp">
+      <Filter>Constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="constraintrotation.cpp">
+      <Filter>Constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="constraintspherical.cpp">
+      <Filter>Constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="constraintattachment.cpp">
+      <Filter>Constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="constraintprismatic.cpp">
+      <Filter>Constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="constraintfixedrotation.cpp">
+      <Filter>Constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="collision.cpp">
+      <Filter>ContactPoints</Filter>
+    </ClCompile>
+    <ClCompile Include="collisiontask.cpp">
+      <Filter>ContactPoints</Filter>
+    </ClCompile>
+    <ClCompile Include="contact.cpp">
+      <Filter>ContactPoints</Filter>
+    </ClCompile>
+    <ClCompile Include="contacttask.cpp">
+      <Filter>ContactPoints</Filter>
+    </ClCompile>
+    <ClCompile Include="manifold.cpp">
+      <Filter>ContactPoints</Filter>
+    </ClCompile>
+    <ClCompile Include="manifoldresult.cpp">
+      <Filter>ContactPoints</Filter>
+    </ClCompile>
+    <ClCompile Include="PrimitiveCache.cpp">
+      <Filter>ContactPoints</Filter>
+    </ClCompile>
+    <ClCompile Include="collider.cpp">
+      <Filter>MovingState</Filter>
+    </ClCompile>
+    <ClCompile Include="collidertask.cpp">
+      <Filter>MovingState</Filter>
+    </ClCompile>
+    <ClCompile Include="simulator.cpp">
+      <Filter>MovingState</Filter>
+    </ClCompile>
+    <ClCompile Include="sleep.cpp">
+      <Filter>MovingState</Filter>
+    </ClCompile>
+    <ClCompile Include="sleepisland.cpp">
+      <Filter>MovingState</Filter>
+    </ClCompile>
+    <ClCompile Include="sleepmgr.cpp">
+      <Filter>MovingState</Filter>
+    </ClCompile>
+    <ClCompile Include="archetype.cpp">
+      <Filter>StaticState</Filter>
+    </ClCompile>
+    <ClCompile Include="asyncshapetestmgr.cpp">
+      <Filter>StaticState</Filter>
+    </ClCompile>
+    <ClCompile Include="commitdeferredoctreeupdatestask.cpp">
+      <Filter>StaticState</Filter>
+    </ClCompile>
+    <ClCompile Include="cullshape.cpp">
+      <Filter>StaticState</Filter>
+    </ClCompile>
+    <ClCompile Include="inst.cpp">
+      <Filter>StaticState</Filter>
+    </ClCompile>
+    <ClCompile Include="instbreakable.cpp">
+      <Filter>StaticState</Filter>
+    </ClCompile>
+    <ClCompile Include="iterator.cpp">
+      <Filter>StaticState</Filter>
+    </ClCompile>
+    <ClCompile Include="levelbase.cpp">
+      <Filter>StaticState</Filter>
+    </ClCompile>
+    <ClCompile Include="levelnew.cpp">
+      <Filter>StaticState</Filter>
+    </ClCompile>
+    <ClCompile Include="shapetest.cpp">
+      <Filter>StaticState</Filter>
+    </ClCompile>
+    <ClCompile Include="shapetestspu.cpp">
+      <Filter>StaticState</Filter>
+    </ClCompile>
+    <ClCompile Include="debugcontext.cpp">
+      <Filter>Diagnostics</Filter>
+    </ClCompile>
+    <ClCompile Include="debugplayback.cpp">
+      <Filter>Diagnostics</Filter>
+    </ClCompile>
+    <ClCompile Include="debugevents.cpp">
+      <Filter>Diagnostics</Filter>
+    </ClCompile>
+    <ClCompile Include="debugcontacts.cpp">
+      <Filter>Diagnostics</Filter>
+    </ClCompile>
+    <ClCompile Include="physicsprofilecapture.cpp">
+      <Filter>Diagnostics</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="shapetestcapsulespu.job" />
+    <CustomBuild Include="shapetestspherespu.job" />
+    <CustomBuild Include="shapetestspu.job" />
+    <CustomBuild Include="shapetestsweptspherespu.job" />
+    <CustomBuild Include="shapetesttaperedsweptspherespu.job" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="collision.task" />
+    <CustomBuild Include="commitdeferredoctreeupdates.task" />
+    <CustomBuild Include="updatecolliders.task" />
+    <CustomBuild Include="updatecontacts.task" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="debugplayback.psc" />
+    <CustomBuild Include="debugevents.psc" />
+    <CustomBuild Include="debugcontacts.psc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="physics.dtx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PrimitiveTypes.inc">
+      <Filter>ContactPoints</Filter>
+    </None>
+    <None Include="physicsprofilecapture.inc">
+      <Filter>Diagnostics</Filter>
+    </None>
+  </ItemGroup>
+</Project>

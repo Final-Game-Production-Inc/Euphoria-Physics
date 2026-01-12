@@ -1,0 +1,5 @@
+Project nmutils
+Files {
+	MemoryStream.cpp
+	NMCustomMemory.cpp
+}

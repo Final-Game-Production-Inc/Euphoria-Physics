@@ -1,0 +1,39 @@
+desiredMass = 30
+
+scene = nmx.Application.instance().activeScene()
+objects = nmx.ObjectArray()
+scene.objects("PhysicsBody",nmx.IsObjectType,objects)
+
+totalMass = 0 
+for i in range(objects.size()):
+  if i > 0:
+    mass = objects.at(i).attribute("Mass").float()
+    print i, mass, objects.at(i).attribute("Name")
+    totalMass = totalMass + mass
+  
+print "actualMass =", totalMass
+  
+scaleFactor = desiredMass/totalMass
+
+print "desiredMass =", desiredMass
+print "scaleFactor =", scaleFactor
+
+for i in range(objects.size()):
+  if i > 0:
+    newDensity = scaleFactor * objects.at(i).attribute("Density").float()
+    objects.at(i).attribute("Density").setFloat(newDensity)
+    
+totalMass = 0    
+for i in range(objects.size()):
+  if i > 0:
+    mass = objects.at(i).attribute("Mass").float()
+    totalMass = totalMass + mass
+  
+scaleFactor = desiredMass/totalMass
+
+print "desiredMass =", desiredMass
+print "actualMass =", totalMass
+print "scaleFactor =", scaleFactor    
+
+
+

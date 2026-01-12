@@ -1,0 +1,10 @@
+set TESTERS=viewnm
+set LIBS=%RAGE_CORE_LIBS% %RAGE_GFX_LIBS% %RAGE_PH_LIBS% %RAGE_SAMPLE_GRCORE_LIBS% %RAGE_AUD_LIBS% %RAGE_NM_LIBS%
+set LIBS=%LIBS% rmptfx
+set LIBS=%LIBS% fragment cloth spatialdata grrope
+set LIBS=%LIBS% event eventtypes 
+set LIBS=%LIBS% phglass breakableglass
+set LIBS=%LIBS% sample_physics sample_fragment sample_rmcore
+set XPROJ=%RAGE_DIR%\base\src %RAGE_DIR%\base\samples %RAGE_DIR%\suite\src %RAGE_DIR%\suite\samples %RAGE_DIR%\naturalmotion\src
+set XPROJ=%XPROJ% %RAGE_DIR%\naturalmotion\include %RAGE_DIR%\naturalmotion\src
+set XDEFINE=USING_RAGE

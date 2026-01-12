@@ -1,0 +1,4 @@
+#define ENTRYPOINT NmRsCBU_DBMPelvisControl
+#include "../../../../rage/base/src/system/task_spu.h"
+
+#include "NmRsCBU_DBMPelvisControl.cpp" 

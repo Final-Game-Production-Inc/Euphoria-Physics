@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="tools_ng\etc\projgen">
+      <UniqueIdentifier>{C3FD447F-C90D-6CF0-75B0-C1EC4BCE7A67}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="articulatedbody.h" />
+    <ClInclude Include="articulatedcollider.h" />
+    <ClInclude Include="joint3dof.h" />
+    <ClInclude Include="joint1dof.h" />
+    <ClInclude Include="jointdispatch.h" />
+    <ClInclude Include="prismaticjoint.h" />
+    <ClInclude Include="joint.h" />
+    <ClInclude Include="bodypart.h" />
+    <ClInclude Include="bodyinertia.h" />
+    <ClInclude Include="phasespacevector.h" />
+    <ClInclude Include="savedstate.h" />
+    <ClInclude Include="spudma.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="articulatedbody.cpp" />
+    <ClCompile Include="articulatedcollider.cpp" />
+    <ClCompile Include="joint3dof.cpp" />
+    <ClCompile Include="joint1dof.cpp" />
+    <ClCompile Include="prismaticjoint.cpp" />
+    <ClCompile Include="joint.cpp" />
+    <ClCompile Include="bodypart.cpp" />
+    <ClCompile Include="bodyinertia.cpp" />
+    <ClCompile Include="savedstate.cpp" />
+    <ClCompile Include="spudma.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pharticulated.dtx" />
+  </ItemGroup>
+</Project>

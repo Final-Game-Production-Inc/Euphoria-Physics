@@ -1,0 +1,7 @@
+Directory {
+	art
+	bspy
+	common
+	nmmath
+	nmutils
+}

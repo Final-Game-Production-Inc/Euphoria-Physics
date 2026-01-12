@@ -1,0 +1,8 @@
+#define ENTRYPOINT shapetestspu
+#include "../system/task_spu.h"
+
+#define SHAPETESTSPU_SUPPORT_SWEPTSPHERES 1
+
+#include "shapetestspu.cpp"
+#include "system/cellsyncmutex.cpp"
+#include "diag/debuglog.cpp"

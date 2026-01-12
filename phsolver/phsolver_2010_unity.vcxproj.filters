@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ConstraintFuncs\UpdateContacts">
+      <UniqueIdentifier>{F2A7EB33-88CF-BABF-9EB3-A2D6A4F16057}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConstraintFuncs\PreResponse">
+      <UniqueIdentifier>{C2CF5C9C-D455-93C7-47CE-96DDA0F4E033}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConstraintFuncs\ApplyImpulse">
+      <UniqueIdentifier>{547C2BCC-DECC-0A07-8655-21E3770AAB7B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConstraintFuncs\ApplyImpulseAndPush">
+      <UniqueIdentifier>{5B458F4D-E026-D119-8C16-0D511783190D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConstraintFuncs\Headers">
+      <UniqueIdentifier>{CB288ACC-05BD-AEE4-1B3B-B28B28BB38D6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="forcesolverartconstraints.h">
+      <Filter>ConstraintFuncs\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="forcesolverartcontacts.h">
+      <Filter>ConstraintFuncs\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="forcesolverartjoints.h">
+      <Filter>ConstraintFuncs\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="forcesolverconstraints.h">
+      <Filter>ConstraintFuncs\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="forcesolvercontacts.h">
+      <Filter>ConstraintFuncs\Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="nullfunc.cpp" />
+    <ClCompile Include="assertfunc.cpp" />
+    <ClCompile Include="updatecontactsartandart.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsartandfix.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsartandmov.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsartjoint.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsfixandart.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsfixandmov.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsmovandart.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsmovandfix.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsmovandmov.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsfixedpointartandart.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsfixedpointartandfix.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsfixedpointartandmov.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsfixedpointfixandart.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsfixedpointfixandmov.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsfixedpointmovandart.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsfixedpointmovandfix.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsfixedpointmovandmov.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsrotationartandart.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsrotationartandfix.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsrotationartandmov.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsrotationfixandart.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsrotationfixandmov.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsrotationmovandart.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsrotationmovandfix.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsrotationmovandmov.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponseartandart.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponseartandfix.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponseartandmov.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponsefixandart.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponsefixandmov.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponsemovandart.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponsemovandfix.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponsemovandmov.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponsefixedpointartandart.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponsefixedpointartandfix.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponsefixedpointartandmov.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponsefixedpointfixandart.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponsefixedpointfixandmov.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponsefixedpointmovandart.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponsefixedpointmovandfix.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponsefixedpointmovandmov.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponserotationartandart.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponserotationartandfix.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponserotationartandmov.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponserotationfixandart.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponserotationfixandmov.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponserotationmovandart.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponserotationmovandfix.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponserotationmovandmov.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponseartjoint.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseartandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseartandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseartandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsemovandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsemovandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsemovandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedpointartandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedpointartandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedpointartandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedpointfixandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedpointfixandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedpointmovandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedpointmovandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedpointmovandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedrotationartandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedrotationartandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedrotationartandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedrotationfixandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedrotationfixandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedrotationmovandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedrotationmovandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedrotationmovandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsepivotrotationartandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsepivotrotationartandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsepivotrotationartandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsepivotrotationfixandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsepivotrotationfixandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsepivotrotationmovandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsepivotrotationmovandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsepivotrotationmovandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsesliderotationartandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsesliderotationartandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsesliderotationartandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsesliderotationfixandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsesliderotationfixandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsesliderotationmovandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsesliderotationmovandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsesliderotationmovandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseartjoint.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushartandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushartandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushartandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushmovandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushmovandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushmovandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedpointartandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedpointartandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedpointartandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedpointfixandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedpointfixandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedpointmovandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedpointmovandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedpointmovandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedrotationartandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedrotationartandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedrotationartandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedrotationfixandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedrotationfixandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedrotationmovandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedrotationmovandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedrotationmovandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushpivotrotationartandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushpivotrotationartandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushpivotrotationartandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushpivotrotationfixandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushpivotrotationfixandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushpivotrotationmovandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushpivotrotationmovandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushpivotrotationmovandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushsliderotationartandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushsliderotationartandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushsliderotationartandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushsliderotationfixandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushsliderotationfixandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushsliderotationmovandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushsliderotationmovandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushsliderotationmovandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushartjoint.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

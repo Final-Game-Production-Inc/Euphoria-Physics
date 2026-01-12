@@ -1,0 +1,31 @@
+// 
+// physics/forcesolver.task 
+// 
+// Copyright (C) 1999-2008 Rockstar Games.  All Rights Reserved. 
+// 
+
+#include "vector/vector3_consts_spu.cpp"
+#include "system/dma.h"
+
+// Contains cellSpursMain
+#include "contacttask.cpp"
+
+#include "collider.cpp"
+#include "contact.cpp"
+#include "manifold.cpp"
+
+#include "pharticulated/articulatedbody.cpp"
+#include "pharticulated/bodypart.cpp"
+#include "pharticulated/joint.cpp"
+#include "pharticulated/joint1dof.cpp"
+#include "pharticulated/joint3dof.cpp"
+#include "pharticulated/prismaticjoint.cpp"
+#include "phsolver/updatecontactsartjoint.cpp"
+
+#include "pharticulated/articulatedcollider.cpp"
+#include "pharticulated/spudma.cpp"
+#include "phcore/phmath.cpp"
+#include "phcore/workerthreadmain.cpp"
+#include "phsolver/forcesolvertables.cpp"
+
+#include "system/dmaplan.cpp"

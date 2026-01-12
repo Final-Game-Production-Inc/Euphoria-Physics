@@ -1,0 +1,7 @@
+Files {
+	bSpyCommonPackets.h
+	bSpyPacket.h
+	bSpyPacket.inl
+	NmRsSpyPackets.h
+	NmRsSpyPackets.inl
+}

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup />
+  <ItemGroup>
+    <ClInclude Include="explosionmgr.h" />
+    <ClInclude Include="liquidmgr.h" />
+    <ClInclude Include="cloth_verlet.h" />
+    <ClInclude Include="clothdata.h" />
+    <ClInclude Include="clothverletinst.h" />
+    <ClInclude Include="clothconnectivitydata.h" />
+    <ClInclude Include="tune.h" />
+    <ClInclude Include="morphgeometry.h" />
+    <ClInclude Include="mouseinput.h" />
+    <ClInclude Include="spring.h" />
+    <ClInclude Include="spuwindeval.h" />
+    <ClInclude Include="wind.h" />
+    <ClInclude Include="wind_optimisations.h" />
+    <ClInclude Include="windfield.h" />
+    <ClInclude Include="winddisturbancebase.h" />
+    <ClInclude Include="winddisturbancebox.h" />
+    <ClInclude Include="winddisturbancecyclone.h" />
+    <ClInclude Include="winddisturbancedownwash.h" />
+    <ClInclude Include="winddisturbanceexplosion.h" />
+    <ClInclude Include="winddisturbancehemisphere.h" />
+    <ClInclude Include="winddisturbancesphere.h" />
+    <ClInclude Include="winddisturbancethermal.h" />
+    <ClInclude Include="springanimatedattachment.h" />
+    <ClInclude Include="velocity_field.h" />
+    <ClInclude Include="cloth_verlet_spu.h" />
+    <ClInclude Include="instbehaviorexplosion.h" />
+    <ClInclude Include="explosiontype.h" />
+    <ClInclude Include="instbehaviorliquid.h" />
+    <ClInclude Include="cloth_verlet_config.h" />
+    <ClInclude Include="rigidbodytet.h" />
+    <ClInclude Include="resourceversions.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="explosionmgr.cpp" />
+    <ClCompile Include="liquidmgr.cpp" />
+    <ClCompile Include="cloth_verlet.cpp" />
+    <ClCompile Include="clothdata.cpp" />
+    <ClCompile Include="clothverletinst.cpp" />
+    <ClCompile Include="clothconnectivitydata.cpp" />
+    <ClCompile Include="tune.cpp" />
+    <ClCompile Include="morphgeometry.cpp" />
+    <ClCompile Include="mouseinput.cpp" />
+    <ClCompile Include="spring.cpp" />
+    <ClCompile Include="spuwindeval.cpp" />
+    <ClCompile Include="wind.cpp" />
+    <ClCompile Include="winddisturbancebox.cpp" />
+    <ClCompile Include="winddisturbancecyclone.cpp" />
+    <ClCompile Include="winddisturbancedownwash.cpp" />
+    <ClCompile Include="winddisturbanceexplosion.cpp" />
+    <ClCompile Include="winddisturbancehemisphere.cpp" />
+    <ClCompile Include="winddisturbancesphere.cpp" />
+    <ClCompile Include="winddisturbancethermal.cpp" />
+    <ClCompile Include="springanimatedattachment.cpp" />
+    <ClCompile Include="velocity_field.cpp" />
+    <ClCompile Include="cloth_verlet_col.cpp" />
+    <ClCompile Include="cloth_verlet_col_cloth.cpp" />
+    <ClCompile Include="cloth_verlet_spu_common.cpp" />
+    <ClCompile Include="cloth_verlet_spu_rope.cpp" />
+    <ClCompile Include="cloth_verlet_spu_ropebatch.cpp" />
+    <ClCompile Include="cloth_verlet_spu_character.cpp" />
+    <ClCompile Include="cloth_verlet_spu.cpp" />
+    <ClCompile Include="cloth_verlet_research.cpp" />
+    <ClCompile Include="cloth_verlet_update.cpp" />
+    <ClCompile Include="instbehaviorliquid.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="UpdateCharacterCloth.job" />
+    <CustomBuild Include="UpdateEnvironmentCloth.job" />
+    <CustomBuild Include="UpdateEnvironmentRope.job" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="tune.psc" />
+    <CustomBuild Include="cloth_verlet.psc" />
+    <CustomBuild Include="clothdata.psc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pheffects.dtx" />
+  </ItemGroup>
+</Project>

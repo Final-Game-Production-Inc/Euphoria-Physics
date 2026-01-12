@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="tools_ng\etc\projgen">
+      <UniqueIdentifier>{C3FD447F-C90D-6CF0-75B0-C1EC4BCE7A67}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="avl_tree.h" />
+    <ClInclude Include="bitvector.h" />
+    <ClInclude Include="coherent_sort.h" />
+    <ClInclude Include="config.h" />
+    <ClInclude Include="constants.h" />
+    <ClInclude Include="conversion.h" />
+    <ClInclude Include="convexpoly.h" />
+    <ClInclude Include="frameallocator.h" />
+    <ClInclude Include="LinearMemoryAllocator.h" />
+    <ClInclude Include="materialmgr.h" />
+    <ClInclude Include="materialmgrflag.h" />
+    <ClInclude Include="materialmgrimpl.h" />
+    <ClInclude Include="material.h" />
+    <ClInclude Include="pool.h" />
+    <ClInclude Include="phmath.h" />
+    <ClInclude Include="resourceversions.h" />
+    <ClInclude Include="segment.h" />
+    <ClInclude Include="sputaskset.h" />
+    <ClInclude Include="surface.h" />
+    <ClInclude Include="workerthread.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="config.cpp" />
+    <ClCompile Include="convexpoly.cpp" />
+    <ClCompile Include="materialmgr.cpp" />
+    <ClCompile Include="materialmgrflag.cpp" />
+    <ClCompile Include="material.cpp" />
+    <ClCompile Include="pfdraw.cpp" />
+    <ClCompile Include="phmath.cpp" />
+    <ClCompile Include="sputaskset.cpp" />
+    <ClCompile Include="surface.cpp" />
+    <ClCompile Include="workerthread.cpp" />
+    <ClCompile Include="workerthreadmain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="phcore.dtx" />
+  </ItemGroup>
+</Project>

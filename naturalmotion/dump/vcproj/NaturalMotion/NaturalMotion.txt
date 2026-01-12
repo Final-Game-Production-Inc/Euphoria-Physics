@@ -1,0 +1,14 @@
+Project NaturalMotion
+
+RootDirectory ..\..\..\..\
+
+IncludePath ..\..\include
+IncludePath ..\..\src
+IncludePath ..\..\..\..\rage\base\src
+IncludePath ..\..\..\..\rage\suite\src
+
+
+Directory {
+	..\..\include
+	..\..\src
+}

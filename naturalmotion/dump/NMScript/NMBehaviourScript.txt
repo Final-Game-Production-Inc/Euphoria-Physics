@@ -1,0 +1,303 @@
+behaviour stumble
+  start true
+  torsoStiffness 9.0
+  legsStiffness 6.0
+  armsStiffness 13.0
+  armReduceSpeed 2.5
+  backwardsMinArmOffset -0.25
+  forwardsMaxArmOffset 0.15
+  mask ua
+  wristMS 8.0
+  feetMS 8.0
+  armTwist -0.2
+  staggerTime 22.0
+  injuryRate 0.000
+  dropVal 0.08
+  twistSpine 1%
+  different true
+  leanRate 0.01
+  maxLeanBack 0.4
+  maxLeanForward 0.8
+  grabRadius2 16.0
+behaviourEnd
+behaviour grab
+    start true
+	useRight true
+	useLeft true
+	dropWeaponIfNecessary false
+	dropWeaponDistance 0.0
+	grabStrength 15.0
+	pullUpTime 1.0
+	pullUpStrengthLeft 0.0
+	pullUpStrengthRight 0.0
+	grabHoldMaxTimer 3.0
+	handsCollide true
+	justBrace false
+	useLineGrab false
+	surfaceGrab false
+	pointsX4grab true
+	dontLetGo false
+	pos1 107.467, 154.962, 6.92218
+	pos2 107.775, 155.118, 6.93668
+	pos3 107.100, 159.948, 7.007
+	pos4 106.691, 159.948, 7.007
+	normalL 0.0, 0.0, 1.0
+	normalR 0.0, 0.0, 1.0
+	normalL2 0.0, 0.0, 1.0
+	normalR2 0.0, 0.0, 1.0
+	instancePartIndex 0%
+	instanceIndex -1%
+	armStiffness 11.0
+	grabDistance 0.7
+	reachAngle 2.0
+	oneSideReachAngle 1.4
+	bodyStiffness 11.0
+	reachDistance 0.62
+	orientationConstraintScale 1.0
+	maxWristAngle 1.5
+	useHeadLookToTarget false
+	targetForHeadLook 0.0, 0.0, 0.0
+behaviourEnd
+behaviour stayUpright
+  start true
+  useForces true
+  forceStrength 0.5
+  forceLeanReduction 0.3
+  forceInAirShare 0.3
+  supportPosition 0.5
+  noSupportForceMult 0.3
+behaviourEnd
+behaviour configureBalance
+  start true
+  legStiffness 12.0
+  predictionTime 0.3
+  predictionTimeVariance -0.00
+  leanAgainstVelocity 0.0
+  giveUpHeight 0.3
+  balanceAbortThreshold 0.7
+  stepHeight 0.15
+  legsApartRestep 0.7
+  flatterSwingFeet true
+  flatterStaticFeet false
+  stepIfInSupport false
+  alwaysStepWithFarthest true
+  maxBalanceTime 99.5
+  leftLegSwingDamping 1.2
+  rightLegSwingDamping 1.2
+  stableLinSpeedThresh 0.05
+  stableRotSpeedThresh 0.05
+  ankleEquilibrium -0.3
+  opposeGravityLegs 0.9
+  opposeGravityAnkles 0.7
+behaviourEnd
+behaviour leanRandom
+  start true
+  leanAmountMin 0.0
+  leanAmountMax 0.1
+  changeTimeMin 0.5
+  changeTimeMax 1.0
+behaviourEnd
+behaviour setCharacterHealth
+  start true
+  characterHealth 1.0
+behaviourEnd
+behaviour bodyBalance
+  start true
+  useBodyTurn true
+  turn2TargetProb 0.0
+  turnAwayProb 0.0
+  spineStiffness 8.0
+  spineDamping 1.3
+behaviourEnd
+MessagesEnd
+
+behaviour buoyancy
+  start true
+  surfacePoint 0.0, 0.0, 0.3
+  buoyancy 2.0
+  chestBuoyancy 5.0
+  damping 10.0
+  righting true
+  rightingStrength 0.5
+  rightingTime 2.0
+behaviourEnd
+behaviour armsWindmill
+  start true
+  leftRadius1 0.4
+  leftRadius2 0.5
+  leftSpeed 1.0
+  rightRadius1 0.4
+  rightRadius2 0.5
+  rightSpeed 1.0
+  shoulderStiffness 14.0
+  elbowStiffness 14.0
+  phaseOffset 0.1
+  disableOnImpact false
+  useLeft true
+  useRight true
+  forceSync true
+  leftNormal 0.0, 0.0, -1.5
+  leftCentre -0.1, 0.4, -0.4
+  rightNormal 0.000000, 0.200000, 1.570000
+  rightCentre 0.000000, 0.200000, -0.400000
+  leftPartID 10%
+  rightPartID 10%
+  dragReduction 0.2
+  IKtwist 0.0
+  angVelThreshold 0.1
+  angVelGain 1.0
+  mirrorMode 1%
+  adaptiveMode 0%
+behaviourEnd
+behaviour bodyWrithe
+  start true
+  armStiffness 10.0
+  backStiffness 10.0
+  legStiffness 10.0
+  armPeriod 2.0
+  backPeriod 4.0
+  legPeriod 1.0
+  armAmplitude 2.0
+  backAmplitude 0.5
+  legAmplitude 2.5
+  elbowAmplitude 3.0 
+  kneeAmplitude 2.0 
+  blendArms 0.01 
+behaviourEnd
+MessagesEnd
+
+
+behaviour bodyBalance
+  start true
+  useBodyTurn false
+behaviourEnd
+behaviour configureBalance
+  start true
+  legStiffness 12.0
+  stepHeight 0.15
+  legsApartRestep 0.7
+  flatterSwingFeet true
+  flatterStaticFeet true
+  stepIfInSupport true
+  alwaysStepWithFarthest false
+  predictionTime 0.2
+  leanAgainstVelocity -0.001
+  balanceIndefinitely true
+  ankleEquilibrium 0.0
+  opposeGravityLegs 1.0
+  opposeGravityAnkles 1.0
+behaviourEnd
+MessagesEnd
+
+
+
+
+
+
+behaviour stumble
+  start true
+  torsoStiffness 9.0
+  legsStiffness 6.0
+  armsStiffness 13.0
+  armReduceSpeed 2.5
+  backwardsMinArmOffset -0.25
+  forwardsMaxArmOffset 0.15
+  mask ua
+  wristMS 8.0
+  feetMS 8.0
+  armTwist -0.2
+  staggerTime 2.0
+  injuryRate 0.000
+  dropVal 0.15
+  twistSpine 1%
+  different true
+  leanRate 0.01
+  maxLeanBack 0.4
+  maxLeanForward 0.8
+behaviourEnd
+behaviour grab
+    start true
+	useRight true
+	useLeft true
+	dropWeaponIfNecessary false
+	dropWeaponDistance 0.0
+	grabStrength 15.0
+	pullUpTime 1.0
+	pullUpStrengthLeft 0.0
+	pullUpStrengthRight 0.0
+	grabHoldMaxTimer 3.0
+	handsCollide true
+	justBrace false
+	useLineGrab false
+	surfaceGrab false
+	pointsX4grab true
+	dontLetGo false
+	pos1 107.467, 154.962, 6.92218
+	pos2 107.775, 155.118, 6.93668
+	pos3 107.100, 159.948, 7.007
+	pos4 106.691, 159.948, 7.007
+	normalL 0.0, 0.0, 1.0
+	normalR 0.0, 0.0, 1.0
+	normalL2 0.0, 0.0, 1.0
+	normalR2 0.0, 0.0, 1.0
+	instancePartIndex 0%
+	instanceIndex -1%
+	armStiffness 11.0
+	grabDistance 0.7
+	reachAngle 2.0
+	oneSideReachAngle 1.4
+	bodyStiffness 11.0
+	reachDistance 0.62
+	orientationConstraintScale 1.0
+	maxWristAngle 1.5
+	useHeadLookToTarget false
+	targetForHeadLook 0.0, 0.0, 0.0
+behaviourEnd
+behaviour stayUpright
+  start true
+  useForces false
+  forceStrength 0.5
+  forceLeanReduction 0.3
+  forceInAirShare 0.3
+  supportPosition 0.5
+  noSupportForceMult 0.3
+behaviourEnd
+behaviour configureBalance
+  start true
+  legStiffness 12.0
+  predictionTime 0.3
+  predictionTimeVariance -0.00
+  leanAgainstVelocity 0.0
+  giveUpHeight 0.3
+  balanceAbortThreshold 0.7
+  stepHeight 0.2
+  legsApartRestep 0.7
+  flatterSwingFeet true
+  flatterStaticFeet false
+  stepIfInSupport false
+  alwaysStepWithFarthest true
+  maxBalanceTime 99.5
+  leftLegSwingDamping 1.2
+  rightLegSwingDamping 1.2
+  stableLinSpeedThresh 0.05
+  stableRotSpeedThresh 0.05
+  ankleEquilibrium 0.05
+  opposeGravityLegs 1.0
+  opposeGravityAnkles 1.1
+behaviourEnd
+behaviour leanRandom
+  start true
+  leanAmountMin 0.07
+  leanAmountMax 0.15
+  changeTimeMin 0.5
+  changeTimeMax 1.0
+behaviourEnd
+behaviour setCharacterHealth
+  start true
+  characterHealth 1.0
+behaviourEnd
+MessagesEnd
+
+
+
+

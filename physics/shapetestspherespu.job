@@ -1,0 +1,14 @@
+#define ENTRYPOINT shapetestspu
+#include "../system/task_spu.h"
+
+#if 1
+void shapetestspu (::rage::sysTaskParameters&)
+{
+}
+#else
+
+#define SHAPETESTSPU_SUPPORT_SPHERES 1
+
+#include "shapetestspu.cpp" 
+#include "diag/debuglog.cpp"
+#endif

@@ -1,0 +1,13 @@
+set ARCHIVE=nmviewer
+set FILES=nmviewer nmscript nminst
+set CUSTOM=
+set TESTERS=viewfragnm
+set SAMPLE_LIBS=%RAGE_SAMPLE_LIBS% sample_physics sample_fragment sample_simpleworld
+set LIBS=%SAMPLE_LIBS% %RAGE_GFX_LIBS% %RAGE_CORE_LIBS%
+set LIBS=%LIBS% %RAGE_CR_LIBS% %RAGE_AUD_LIBS%
+set LIBS=%LIBS% %RAGE_PH_LIBS% %RAGE_SCRIPT_LIBS% %RAGE_DIR%\suite\src\vcproj\RageSuiteMisc\RageSuiteMisc.vcproj
+set LIBS=%LIBS% %RAGE_NM_LIBS% vieweraudio cliptools
+set IGNORE_GUIDS=757D18DA-B1EA-414D-A19D-BC584734BB48
+set XPROJ=%RAGE_DIR%\suite\src %RAGE_DIR%\suite\samples %RAGE_DIR%\base\src %RAGE_DIR%\base\samples %RAGE_DIR%\script\src %RAGE_DIR%\suite\tools %RAGE_DIR%\suite\tools\cli
+set XPROJ=%XPROJ% %RAGE_DIR%\naturalmotion\include %RAGE_DIR%\naturalmotion\src
+set XDEFINE=USING_RAGE

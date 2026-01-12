@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="tools_ng\etc\projgen">
+      <UniqueIdentifier>{C3FD447F-C90D-6CF0-75B0-C1EC4BCE7A67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CollisionShapes">
+      <UniqueIdentifier>{A89DBF4E-2EA1-C1D1-F131-95F209EA2ABE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CollisionDispatch">
+      <UniqueIdentifier>{CF43356F-8779-8DDF-6B25-49111B7193D1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NarrowPhaseCollision">
+      <UniqueIdentifier>{541E611C-F66C-0D29-8015-2EE7B41E7358}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LinearMath">
+      <UniqueIdentifier>{3E0E6C73-43B1-4954-2720-73F314D2C177}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SpuSupport">
+      <UniqueIdentifier>{8B0BF985-3EBC-8416-B376-E3717C257847}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MinkowskiSumShape.h">
+      <Filter>CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="TriangleShape.h">
+      <Filter>CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="btCollisionCreateFunc.h">
+      <Filter>CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="btCollisionAlgorithm.h">
+      <Filter>CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="btCollisionDispatcher.h">
+      <Filter>CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="btCompoundCollisionAlgorithm.h">
+      <Filter>CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="btConvexConcaveCollisionAlgorithm.h">
+      <Filter>CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="btConvexConvexAlgorithm.h">
+      <Filter>CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="btdispatcher.h">
+      <Filter>CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="btEmptyCollisionAlgorithm.h">
+      <Filter>CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="btSphereBoxCollisionAlgorithm.h">
+      <Filter>CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="btSphereSphereCollisionAlgorithm.h">
+      <Filter>CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionObject.h">
+      <Filter>CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="ContinuousConvexCollision.h">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvexIntersector.h">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="boxBoxDistance.h">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="btBoxBoxDetector.h">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="btGjkEpa.h">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="btGjkEpa2.h">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="btGjkEpaPenetrationDepthSolver.h">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="GjkPairDetector.h">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="GjkSimplexCache.h">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="IterativeCast.h">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="MinkowskiPenetrationDepthSolver.h">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvexCast.h">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="TrianglePenetrationDepthSolver.h">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="VoronoiDegenerateSimplexSolver.h">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="VoronoiSimplexSolver.h">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="VoronoiSingleSimplexSolver.h">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="DiscreteCollisionDetectorInterface.h">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvexPenetrationDepthSolver.h">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionMargin.h">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="SimplexSolverInterface.h">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="PointCollector.h">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="btStackAlloc.h">
+      <Filter>LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="SimdTransformUtil.h">
+      <Filter>LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionWorkUnit.h">
+      <Filter>SpuSupport</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="MinkowskiSumShape.cpp">
+      <Filter>CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="btCollisionAlgorithm.cpp">
+      <Filter>CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="btCollisionDispatcher.cpp">
+      <Filter>CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="btCompoundCollisionAlgorithm.cpp">
+      <Filter>CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="btConvexConcaveCollisionAlgorithm.cpp">
+      <Filter>CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="btConvexConvexAlgorithm.cpp">
+      <Filter>CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="btdispatcher.cpp">
+      <Filter>CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="btEmptyCollisionAlgorithm.cpp">
+      <Filter>CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="btSphereBoxCollisionAlgorithm.cpp">
+      <Filter>CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="btSphereSphereCollisionAlgorithm.cpp">
+      <Filter>CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionObject.cpp">
+      <Filter>CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="ContinuousConvexCollision.cpp">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="ConvexIntersector.cpp">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="boxBoxDistance.cpp">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="btBoxBoxDetector.cpp">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="btGjkEpa.cpp">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="btGjkEpa2.cpp">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="btGjkEpaPenetrationDepthSolver.cpp">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="GjkPairDetector.cpp">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="GjkSimplexCache.cpp">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="IterativeCast.cpp">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="MinkowskiPenetrationDepthSolver.cpp">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="ConvexCast.cpp">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="TrianglePenetrationDepthSolver.cpp">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="VoronoiDegenerateSimplexSolver.cpp">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="VoronoiSimplexSolver.cpp">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="VoronoiSingleSimplexSolver.cpp">
+      <Filter>NarrowPhaseCollision</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

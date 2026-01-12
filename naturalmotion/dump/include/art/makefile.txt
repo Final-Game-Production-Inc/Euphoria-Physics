@@ -1,0 +1,11 @@
+Files {
+	ART.h
+	ARTBaseDefs.h
+	ARTFeedback.h
+	ARTInternal.h
+	ARTMemory.h
+	ARTMemoryManager.h
+	ARTRockstar.h
+	bSpyServer.h
+	MessageParams.h
+}

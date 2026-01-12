@@ -1,0 +1,1675 @@
+@@Overview
+
+* Origin Of Module Name *
+Physics stands for "PHYSICS".
+
+* Overview *
+The physics library contains the main classes for physically placing and simulating objects.
+Every physical object has an instance (class name phInst), which keeps its position and
+orientation; every active physical object also has a collider, which manages physical motion
+and the classes needed for interactions with other objects. The collection of objects in
+the world are sorted and accessed by the physics level, and physically simulated by the
+simulator.
+
+* Contact Forces *
+The main tester for contact forces is sample_physics/sample_contacts. Every collision is considered to
+be a contact. When the contact manager updates, it sorts the contacts into separate interacting groups.
+Each group is then solved simultaneously as a matrix equation, which can be large if there is a large
+number of interacting objects.
+
+* Ragdolls and Creature Physics *
+A new system for articulated objects has been developed in RAGE. It is an adaptation of the Featherstone
+method for fully simulating articulated objects, and it has been integrated with contact forces. It
+simulates fully physical objects (ragdolls) with tunable rigidity. It will allow the combination of
+animations and physical responses, with some limbs physical while others are animated on the same body, and
+also with limbs animated with physical responses at the same time. The new system will also allow animated
+creatures to drag articulated objects, and it will support fixed articulated objects, such as
+flexible bridges.
+
+* Physics Overview *
+This is an overview of all the physics libraries (it should be moved when there
+is a place for multi-project overview documentation). The physics libraries are, from bottom to top,
+phCore, phBound, physics, phEffects, phArticulated and sample_physics. The main library for physics objects
+is "physics", which holds both low-level classes (physics instances) and high-level classes (the physics
+simulator and the physics level). The highest-level physics library is phTest, which is not used in games,
+and is designed to be a replacement for game-specific code for physics testers. It also contains most of
+the physics and vehicle testers. Most run-time game-specific code uses only the physics library.
+Underneath the physics library is phBound, which contains all the different types of physical bounds.
+In addition to polyhedron bounds, from which several bound types are derived, there are primitive shapes,
+such as spheres, capsules, and boxes, and special bound types, such as spline roads and composite bounds.
+The lowest-level physics library is phCore, which is a collection of the most basic classes and functions
+used by all the other physics libraries.
+
+Two classes tie together all the information for physical objects. The basic physics instance class,
+phInst, is used for objects that are not physically moving. It has position and orientation information,
+and a pointer to a phArchetype, which holds the bound and physical information to be used if and when
+the object becomes active. The main class for physically active objects is phCollider, which has a
+pointer to an instance (for use when it becomes inactive), and a phBound for detecting collisions.
+The physics level manages all the instances in the world, and the simulator controls all the physically
+active objects in the world.
+
+
+@@Components
+These are the classes in the physics library:
+	*	phArchetype stores a bound (see phBound documentation), and basic physical information
+		like mass, angular inertia and flags to determine what it can collide with.
+	*	phArchetypeMgr loads and controls access to the physics archetypes, avoiding duplication
+		when there are multiple objects with the same archetype.
+	*	phCollider simulates a single physically active object, with a bound to defines its physical
+		boundary and an instance (phInst) to restore the object to an inactive state.
+	*	phContact is a single collision point between two objects. Contacts are optional, depending on
+		whether a contact manager is created and given to the physics simulator.
+	*	phContactMgr calculates impulses for all collisions. When there is no contact manager, the
+		simulator calculates impulses for collisions.
+	*	phImpact, derived from phImpactBase in phBound, provides higher level access to interactions
+		between pairs of objects, and calculates properties of the interactions, like friction,
+		elasticity and some impulses.
+	*	phInst is the basic instance class for all physical objects, storing a matrix for position and
+		orientation, a pointer to the physics archetype (which is normally shared between instances),
+		flags and the index used by the physics level. Objects whose motion is physically simulated
+		also have colliders. Objects without colliders can be stationary or moving non-physically.
+	*	phInstBreakable, derived from phInst, provides methods for breaking objects into multiple
+		pieces during collisions.
+	*	phInstSwapable, derived from phInstBreakable, provides methods for swapping between two
+		physical bounds to change the object's shape and size during collisions.
+	*	phLevel is the base class for the physics level, providing sorted lists of objects.
+	*	phLevelSimple is the main physics level, but is in the process of being replaced.
+	*	phLevelBase is the new base class for the physics level, to replace phLevel.
+	*	phLevelNew is the new physics level, to replace phLevelSimple.
+	*	phSimulator moves and collides physical objects.
+	*	phSleep, normally attached to a collider, stops physically active objects from updating
+		when their motion becomes small enough.
+
+@@Relationships
+Physics is the top-level RAGE library for simulating and managing all physical objects. The only
+higher-level physics library in RAGE is phtest, which is not used in any game projects.
+A rough linear order of dependence for the classes in the physics library is, from bottom to top:
+phArchetype
+phArchetypeMgr
+phInst
+phInstBreakable
+phInstSwapable
+phSleep
+phCollider
+phImpact
+phContact
+phContactMgr
+phLevel/phLevelBase
+phLevelSimple/phLevelNew
+phSimulator
+
+@@Matrices
+There are quite a few matrices in and about RAGE physics. This section is meant to help clarify
+what their relationships are.
+
+* Rigid bodies *
+
+The basic system is that there are two matrices, an instance matrix and a collider matrix. The
+collider matrix is oriented the same as the instance matrix, but it positioned at the center of
+gravity of the object. For example, the crates in the physics demos are built like this (side
+view):
+
+<CODE>
+    +-------+
+    |       |
+    |   x   |
+    |       |
+    +---x---+
+</CODE>
+
+The instance matrix is at the center of the bottom face, with the collider matrix at the center
+of the cube. This is the location of the object as chosen by the user. In fact, the user rarely
+interacts directly with the collider matrix, ideally it would be hidden entirely behind our API. 
+
+Formally, the translation of the collider is located at the world position of the bound's CG
+offset, when that CG offset is transformed by the instance matrix.
+
+The last instance matrix is positioned like the instance matrix, but is one frame behind. We use
+this for collision, by sweeping the bound from the last instance matrix to the current one.
+
+There's no space for the last instance matrix in the instance itself, so it's kept in the
+collider. In order to allow instances without colliders to move and collide correctly, such as
+under control of an animation, we allow the user to override GetLastMatrix on the instance.
+
+* Composite bounds *
+
+The composite bound is nothing more than a collection of bounds that share the same instance. It
+has an array of matrices that controls its current configuration, each of these matrices is in
+instance space. So, to get the real world position of a bound involved in a composite, you
+concatenate its instance matrix with its current composite matrix.
+
+The last matrices of a composite serve the same purpose as the last matrix of an instance, for
+performing collisions.
+
+The "local" matrices of the bound have to do with a "feature" in the ownership of the matrix
+array. If you pass in your own array, it will be used for the current matrix array. If you don't,
+one will be allocated in the local matrices, and destroyed when the bound is destroyed.
+
+* Articulated Bodies *
+
+Articulated bodies have an additional matrix per body part, which is located at the center of
+gravity for that part. This is usually set only during initialization, using SetInitialMatrix,
+followed by a Reset. You could also pose the body however you want at run time (for instance to
+transition to ragdol from animation) using phArticulatedBodyPart::SetPosition and SetOrientation.
+
+There can be a single body part per composite part, but a single body part can also share
+composite parts. For example, the articulated door of a car we made was composed of three
+composite parts (the door, the window, and the door handle) but only one body part. Body parts
+also don't need to be attached to a bound, but then they can't collide with anything, they could
+only react to internal constraints and limits. That might be useful for a ponytail or a vehicle's
+aerial antenna or something.
+
+By themselves, articulated bodies don't animate their associated composite bound matrices. That
+is left to higher-level code, such as the fragment module or the NaturalMotion ART library.
+
+The articulated body part matrices are in world-space orientation, but have a translation
+relative to the translation of the collider matrix. So, the rotation of the collider is ignored
+for the purpose of locating the body parts.
+
+The articulated collider is translated every frame to the position of the root link, and all the
+links are translated back to compensate. So, the translation component of the root link should
+always be zero. The orientation of the root link is also copied into the collider, but the
+reverse transformation is not applied to the collider's orientation, since the body parts are not
+oriented with the collider matrix.
+
+The CG offset of the composite bound is not changed as the object animates, so it is always
+slightly, or possibly a lot, incorrect. It still tells you the same thing as it does for rigid
+bodies, how to get from the instance to the collider, in instance space. So, the net result is
+that during the simulation the instance matrix stays the same distance away from the CG of the
+root link, and rotates around it according to the bound's CG offset.
+
+Finally, it is important to note that the matrices in the articulated body module are transposed,
+so their actual true orientation is obtained by calling Matrix34::Transpose or an equivalent.
+Some transposition function needs to be called whenever setting or getting matrices from body
+parts.
+
+##BEGIN COMMAND-LINE-SECTION is automatically generated - do not edit this section!
+@@Command Line Options
+<TABLE>
+Parameter Name           In File         Description                                                 
+-----------------------  --------------  ----------------------------------------------------------  
+disablebreakingimpulses  contactmgr.cpp  disable the application of pre- and post-breaking impulses  
+nospucollide             simulator.cpp   Don't use SPURS for physics collisions.                     
+numcontactgroups         contactmgr.cpp  the maximum number of contact groups (aka islands)          
+numcontacts              contactmgr.cpp  the maximum number of contacts in all groups                
+numcontactspergroup      contactmgr.cpp  the maximum number of contact in each group                 
+spucollide               simulator.cpp   Use SPURS for physics collisions.                           
+threads                  contactmgr.cpp  Number of threads to create (default is 4)                  
+</TABLE>
+##END COMMAND-LINE-SECTION
+
+@@Working Examples
+##BEGIN SAMPLES-SECTION is automatically generated - do not edit this section!
+@@Articulated Sample
+<GROUP Working Examples>
+
+This sample arrangements of articulated objects of various types for testing their behavior moving and colliding.
+
+
+@@Basic Physics Sample
+<GROUP Working Examples>
+
+This sample shows how to create a physics level, populate it with some interacting objects,
+update it, render it and shut it down in ten easy steps.
+The sample is broken into several steps:
+1. Initialize profile drawing.
+2. Create and initialize the physics level.
+3. Create and initialize the simulator.
+4. Initialize the material manager.
+5. Create the terrain and put it in the physics level.
+6. Load two objects and put them in the physics level.
+7. Update the physics simulator.
+8. Update user input.
+9. Draw the world
+10. Shut down the physics level and simulator.
+
+* Initialize profile drawing. *
+Profile drawing is used to draw physics bounds. It is useful in games to diagnose any problems
+involving interactions with physical objects. __PFDRAW is defined in rage/base/src/profile/drawcore.h,
+and is normally on in debug and beta builds.
+<CODE>
+
+
+// Set the number of bytes available for storing profile draw shapes (objects for drawing are collected during the
+// physics updates and drawn together), and initialize the buffer and widgets for profile drawing.
+const int pfDrawBufferSize = 2000000;
+GetRageProfileDraw().Init(pfDrawBufferSize);
+
+// Enable profile drawing.
+const bool pfDrawEnabled = true;
+GetRageProfileDraw().SetEnabled(pfDrawEnabled);
+
+// Turn on some drawing groups. Profile drawing is turned off by default, and in release builds it is compiled out.
+// It should only be turned on when needed to solve problems. For this example, it is necessary because some of the
+// objects do not have graphics models.
+PFD_GROUP_ENABLE(Physics, true);
+PFD_GROUP_ENABLE(Bounds, true);
+PFD_ITEM_ENABLE(Solid, true);
+#endif
+
+
+</CODE>
+
+
+* Create and initialize the physics level. *
+The physics level (phLevel) keeps track of all the physical objects in the game. It uses a spatial partitioning scheme
+to speed up queries about object location. It can be used to quickly find objects that are hit by a line segment, or
+touch a sphere or capsule.
+<CODE>
+
+phLevelNew::SetActiveInstance(new phLevelNew);
+
+// Set the size of the physics level.
+// When any object goes outside the physics level, it is no longer updated, and virtual phInst::NotifyOutOfWorld() is called.
+// Any object that is added to the physics level outside the extents will cause an assert failure.
+const Vector3 worldExtentsMin(-999.0f,-999.0f,-999.0f);
+const Vector3 worldExtentsMax(999.0f,999.0f,999.0f);
+PHLEVEL->SetExtents(worldExtentsMin,worldExtentsMax);
+
+// Set the maximum allowed number of physical objects in the physics level. This normally varies from hundreds for a small
+// sample level to hundreds of thousands for a large game level.
+// Exceeding the maximum number of objects causes an assert failure.
+int maxNumObjects = 500;
+PHLEVEL->SetMaxObjects(maxNumObjects);
+
+// Set the maximum allowed number of physically active objects in the physics level. Physically active means the objects have
+// colliders and are reacting to collisions. This number is normally in the low hundreds.
+// Manually exceeding the maximum number of active objects (by calling AddActiveObject) causes an assert failure. If the maximum number
+// of active objects would be exceeded by the physics simulator activating objects, such as from a collision, then the object will not
+// become active.
+const int maxNumActiveObjects = 100;
+PHLEVEL->SetMaxActive(maxNumActiveObjects);
+
+// Set the maximum number of occupied nodes in the physics level's octree.
+// An assert failure results if the physics level tries to make more than the maximum number of octree nodes. This will be changed
+// soon to print a warning and not create the needed node instead (17 March 06).
+const int maxOctreeNodes = 1000;
+PHLEVEL->SetNumOctreeNodes(maxOctreeNodes);
+
+// Create and initialize the physics level's octree and object information, using the parameters set above.
+PHLEVEL->Init();
+
+
+</CODE>
+
+
+* Create and initialize the simulator. *
+The physics simulator computes the locations, orientations, and speeds of objects in the physics level,
+and handles collision detection and responses.
+<CODE>
+
+
+// Call the static initialization of the simulator.
+phSimulator::InitClass();
+
+// Create the simulator and set it as the current active simulator, accessible by calling PHSIM->.
+phSimulator::SetActiveInstance(new phSimulator);
+
+// Initialize the simulator with the currently active physics level, and the maximum number of managed active objects. This can be different
+// from the physics level's maximum number of active objects because the simulator's number only includes active objects that are managed
+// by the simulator. Users have the freedom to add physically active objects to the physics level with colliders that are not managed by
+// the simulator. This is normally used for derived colliders, such as vehicles and ragdolls.
+PHSIM->Init(PHLEVEL,maxNumActiveObjects);
+
+
+</CODE>
+
+
+* Initialize the material manager. *
+Physics bounds contain physics materials to define their properties for collisions (friction and elasticity) and other effects (such as sounds
+and driving properties). Materials are shared among bounds and stored in the material manager.
+<CODE>
+
+ASSET.PushFolder("materials");
+phMaterialMgrImpl<phMaterial>::Create();
+MATERIALMGR.Load();
+ASSET.PopFolder();
+
+
+</CODE>
+
+
+* Create the terrain and put it in the physics level. *
+Load a file called "bound.bnd" from the "assets/physics/big_plane" folder. It has information about the physical shape of an instance
+that will be used as the terrain. It is a large horizontal square made of two triangles.
+<CODE>
+
+phBound* terrainBound = phBound::Load("physics/big_plane/bound");
+Assert(terrainBound);
+
+// Set the terrain bound in the terrain archetype. Physics archetypes can hold physical information such as include and type flags, mass
+// and damping, and a pointer to the bound. There is usually a 1-1 correspondence between archetypes and bounds, but it is possible for
+// more than one archetype to share a bound.
+m_TerrainArchetype = new phArchetype;
+m_TerrainArchetype->SetBound(terrainBound);
+
+// Set the archetype in the physics instance. The physics level keeps track of objects by physics instances.
+m_TerrainInstance = new phInst;
+m_TerrainInstance->SetArchetype(m_TerrainArchetype);
+
+// Release our ref on the terrain, so that deleting the archetype later also deletes the bound.
+terrainBound->Release();
+
+// Set the instance's matrix. This contains a 3x3 part for orientation and a position.
+Matrix34 instanceMatrix;
+instanceMatrix.Identity();
+m_TerrainInstance->SetMatrix(instanceMatrix);
+
+// Insert the terrain instance in the level, so that it will participate in the physics simulation. Since this instance is terrain,
+// AddFixedObject us used, which means that this object is fixed in space.
+PHSIM->AddFixedObject(m_TerrainInstance);
+
+
+</CODE>
+
+
+* Load two objects and put them in the physics level. *
+Load the physical bound, and set it in the artchetype, following the same procedure as with the terrain.
+<CODE>
+
+phBound* icosahedronBound = phBound::Load("physics/icosahedron/bound");
+m_ActiveArchetype = new phArchetypePhys;
+m_ActiveArchetype->SetBound(icosahedronBound);
+
+// Initialize both instances of this moving object with the same archetype and bound.
+m_ActiveInstance1 = new phInst;
+m_ActiveInstance1->SetArchetype(m_ActiveArchetype);
+m_ActiveInstance2 = new phInst;
+m_ActiveInstance2->SetArchetype(m_ActiveArchetype);
+
+// Release our ref on the bound, so that deleting the archetype later also deletes the bound.
+icosahedronBound->Release();
+
+// Set the matrices of the two instances.
+instanceMatrix.MakeTranslate(0.0f, 3.0, 0.0f);
+instanceMatrix.RotateZ(0.1f);
+m_ActiveInstance1->SetMatrix(instanceMatrix);
+m_ResetMatrix1.Set(instanceMatrix);
+instanceMatrix.MakeTranslate(0.05f, 5.0, 0.05f);
+m_ActiveInstance2->SetMatrix(instanceMatrix);
+m_ResetMatrix2.Set(instanceMatrix);
+
+// Place the two objects in the physics level. AddActiveObject is used this time, to tell the simulator to give the instances
+// colliders so that they will be simulated as physically active objects.
+// An optional second parameter in AddActiveObject can be used to make the object always active, which means it will never be
+// put in the inactive state.
+PHSIM->AddActiveObject(m_ActiveInstance1);
+PHSIM->AddActiveObject(m_ActiveInstance2);
+
+
+// Map a function keys for resetting the physics world and for grabbing objects with the mouse.
+m_Mapper.Map(IOMS_KEYBOARD,KEY_F4,m_Reset);
+m_Mapper.Map(IOMS_MOUSE_BUTTON,ioMouse::MOUSE_LEFT,m_Push);
+m_Mapper.Map(IOMS_MOUSE_BUTTON,ioMouse::MOUSE_RIGHT,m_Pull);
+</CODE>
+
+* Update the physics simulator. *
+The simulator computes motion for the two moving objects, moves and rotates them though space, detects collisions between
+themselves and between them and the terrain, and causes them to react to collisions.
+<CODE>
+
+float frameTime = TIME.GetSeconds();
+PHSIM->Update(frameTime);
+
+</CODE>
+
+
+* Update user input. *
+
+* Draw the world *
+Tell the profile draw manager to draw all the objects in the physics level.
+In a game this is normally used only for debugging.
+<CODE>
+
+PHSIM->ProfileDraw();
+GetRageProfileDraw().Render();
+
+#endif	// __PFDRAW
+
+</CODE>
+
+* Shut down the physics level and simulator. *
+The user has requested the termination of the sample, so remove the objects from the physics level.
+<CODE>
+
+PHLEVEL->DeleteObject(m_ActiveInstance2);
+PHLEVEL->DeleteObject(m_ActiveInstance1);
+PHLEVEL->DeleteObject(m_TerrainInstance);
+
+delete m_ActiveInstance2;
+delete m_ActiveInstance1;
+delete m_TerrainInstance;
+
+// Delete the physics simulator.
+delete PHSIM;
+
+// Shut down and delete the physics level.
+phLevelNew* level = PHLEVEL;
+level->Shutdown();
+delete level;
+
+// Call the static shutdown of the simulator.
+phSimulator::ShutdownClass();
+
+// Delete the material manager.
+MATERIALMGR.Destroy();
+
+#if __PFDRAW
+// Shut down profile drawing.
+GetRageProfileDraw().Shutdown();
+#endif
+</CODE>
+
+
+@@Callbacks Sample
+<GROUP Working Examples>
+
+This sample uses the callback systems in RAGE to disable collisions in various ways.
+
+
+@@Character Physics Sample
+<GROUP Working Examples>
+
+This sample shows how to create and use a simple mover class to move an animated character.
+
+
+@@Constraint Sample
+<GROUP Working Examples>
+
+This sample creates sets of objects with different types of physical constraints for testing the computation of constraint forces.
+Physical constraints can be point constraints or rotational constraints. Point constraints can hold together points on different objects,
+or hold a point on an object to a point in the world. Rotational contraints can fix the orientation of two objects relative to each other,
+or fix the orientation of an object in world space. Both types of constraints can also exert a restoring force or torque to enforce
+the constraint over time while allowing some separation.
+Another type of constrained motion, which is also included in this sample, is done with constrained colliders. These are colliders with
+restricted degrees of freedom, such as motion or rotation only along certain axes. In some cases the same physical result can be obtained
+with physical constraints or with constrained colliders.
+The sample is broken into several steps:
+1. Initialize the base physics sample class.
+2. Create all the sets of interacting objects, with a sample page for each set.
+3. Set and activate the initial page, from the command line parameter "startingDemo" with the first page as default.
+4. See if the current active demo world is the train track world, and update the constrained train cars along the track if it is.
+
+* Initialize the base physics sample class. *
+
+* Create all the sets of interacting objects, with a sample page for each set. *
+"+" and "-" keys control paging through the following set of sample pages.
+<CODE>
+
+phContactMgr* contactMgr;
+phDemoObject* object;
+phConstraint* constraint;
+phConstrainedCollider* constrainedCollider;
+phInst* human;
+Vector3 position,rotation,worldAttachPoint;
+const int numBridgeParts = 3;
+bool alignBottom;
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Page 0: a row of physically active crates connected by fixed point constraints with length,
+// which allow points on neighboring crates to separate up to a certain distance
+phDemoWorld& lengthWorld = MakeNewDemoWorld("long constraints");
+contactMgr = lengthWorld.GetSimulator()->GetContactMgr();
+position.Set(0.0f,0.0f,0.0f);
+rotation.Zero();
+alignBottom = false;
+phDemoObject* crate1 = lengthWorld.CreateObject("crate",position,alignBottom,rotation);
+position.Set(1.0f,0.0f,0.0f);
+phDemoObject* crate2 = lengthWorld.CreateObject("crate",position,alignBottom,rotation);
+worldAttachPoint.Set(0.5f, 0.5f, 0.0f);
+int component = 0;
+float constraintLength = 1.0f;
+// This attaches crate1 and crate2 together with a point constraint.
+contactMgr->AttachObjects(worldAttachPoint,crate1->GetPhysInst(),crate2->GetPhysInst(),component,component,constraintLength);
+position.Set(-1.0f,0.0f,0.0f);
+phDemoObject* crate3 = lengthWorld.CreateObject("crate",position,alignBottom,rotation);
+worldAttachPoint.Set(-0.5f, 0.5f, 0.0f);
+// This attaches crate1 and crate3 together with a point constraint.
+contactMgr->AttachObjects(worldAttachPoint,crate1->GetPhysInst(),crate3->GetPhysInst(),component,component,constraintLength);
+position.Set(-3.0f,0.0f,0.0f);
+phDemoObject* crate4 = lengthWorld.CreateObject("crate",position,alignBottom,rotation);
+Vector3 worldAttachPointA(-2.5f, 0.5f, 0.0f);
+Vector3 worldAttachPointB(-1.5f, 0.5f, 0.0f);
+// This attaches crate4 and crate3 together with a point constraint.
+contactMgr->AttachObjects(worldAttachPointA,worldAttachPointB,crate4->GetPhysInst(),crate3->GetPhysInst());
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Page 1: a set of constrained colliders with restricted degrees of freedom, without using physical constraints
+phDemoWorld& collectionWorld = MakeNewDemoWorld("collection");
+//	collectionWorld.SetUpAxis(2);
+position.Set(-2.0f,2.0f,0.0f);
+rotation.Set(0.25f*PI,0.0f,0.25f*PI);
+alignBottom = false;
+object = collectionWorld.CreateConstrainedObject("capsule_fat",position,alignBottom,rotation);
+constrainedCollider = static_cast<phConstrainedCollider*>(collectionWorld.GetCollider(object));
+// This constrains the capsule to rotate only about the y axis.
+constrainedCollider->ConstrainRotationWorld(1,YAXIS);
+//	Vector3 rotMin(-1.3f,-2.0f,-1.3f);
+//	Vector3 rotMax(1.3f,2.0f,1.3f);
+//	constrainedCollider->LimitRotation(rotMin,rotMax);
+position.Set(2.0f,3.0f,0.0f);
+rotation.Zero();
+object = collectionWorld.CreateConstrainedObject("crate",position,alignBottom,rotation);
+constrainedCollider = static_cast<phConstrainedCollider*>(collectionWorld.GetCollider(object));
+// This constrains the crate to rotate only about the x and z axis.
+constrainedCollider->ConstrainRotationWorld(2,YAXIS);
+position.Set(0.0f,1.0f,-2.0f);
+rotation.Zero();
+object = collectionWorld.CreateConstrainedObject("crate",position,alignBottom,rotation);
+constrainedCollider = static_cast<phConstrainedCollider*>(collectionWorld.GetCollider(object));
+// This constrains the crate to translate only in the x-z plane.
+constrainedCollider->ConstrainTranslationWorld(2,YAXIS);
+constrainedCollider->LimitRotation(Vector3(0.25f*PI,-1.0f,0.25f*PI));
+// This limits the crate's translation to stay inside the specified box.
+constrainedCollider->LimitTranslation(Vector3(-5.0f,-5.0f,-5.0f),Vector3(5.0f,5.0f,5.0f));
+position.Set(0.0f,5.0f,2.0f);
+rotation.Set(0.0f,0.0f,1.0f);
+object = collectionWorld.CreateConstrainedObject("capsule",position,alignBottom,rotation);
+constrainedCollider = static_cast<phConstrainedCollider*>(collectionWorld.GetCollider(object));
+// This constrains the capsule to translate only along the y axis.
+constrainedCollider->ConstrainTranslationWorld(1,YAXIS);
+// This constraints the capsule to rotate only about the z axis.
+constrainedCollider->ConstrainRotationWorld(1,ZAXIS);
+position.Set(-2.0f,1.0f,-2.0f);
+rotation.Set(0.5f*PI,0.0f,0.0f);
+object = collectionWorld.CreateConstrainedObject("box_flat",position,alignBottom,rotation);
+constrainedCollider = static_cast<phConstrainedCollider*>(collectionWorld.GetCollider(object));
+constrainedCollider->ConstrainRotationWorld(1,YAXIS);
+constrainedCollider->ConstrainTranslationWorld(0);
+constrainedCollider->LimitRotation(0.45f*PI,&constrainedCollider->GetMatrix());
+position.Set(-2.0f,1.0f,2.0f);
+rotation.Set(0.5f*PI,0.0f,0.0f);
+object = collectionWorld.CreateConstrainedObject("box_flat",position,alignBottom,rotation);
+constrainedCollider = static_cast<phConstrainedCollider*>(collectionWorld.GetCollider(object));
+constrainedCollider->ConstrainRotationWorld(0);
+constrainedCollider->ConstrainTranslationWorld(1,XAXIS);
+constrainedCollider->LimitTranslation(position-5.0f*VEC3_IDENTITY,position+5.0f*VEC3_IDENTITY);
+
+/////////////////////////////////////////////////////////
+// Page 2: hanging signs using physical point constraints
+phDemoWorld& signWorld = MakeNewDemoWorld("signs");
+position.Set(-2.0f,2.0f,0.0f);
+rotation.Set(ORIGIN);
+alignBottom = false;
+phInst* sign1 = signWorld.CreateObject("box_flat",position,alignBottom,rotation)->GetPhysInst();
+contactMgr = signWorld.GetSimulator()->GetContactMgr();
+worldAttachPoint.Set(position);
+worldAttachPoint.x -= 0.4f;
+// This attaches sign1 to the world at one point.
+contactMgr->AttachObjectToWorld(worldAttachPoint,sign1);
+worldAttachPoint.z -= 0.4f;
+// This attaches sign1 to the world at another point, so that it can rotate only about one axis.
+contactMgr->AttachObjectToWorld(worldAttachPoint,sign1);
+position.x += 4.0f;
+phDemoObject* sign2 = signWorld.CreateConstrainedObject("table_top",position,alignBottom,rotation);
+Assert(sign2);
+phBound* sign2Bound = sign2->GetPhysInst()->GetArchetype()->GetBound();
+sign2Bound->SetCentroidOffset(Vector3(0.75f, 0.0f, 0.0f));
+constrainedCollider = static_cast<phConstrainedCollider*>(signWorld.GetCollider(sign2));
+Assert(constrainedCollider);
+// This prevents sign2 from translating.
+constrainedCollider->ConstrainTranslationWorld();
+// This constrains sign2 to rotate only about the z axis.
+constrainedCollider->ConstrainRotationWorld(1, ZAXIS);
+constrainedCollider->SetGravityCGOffset(Vector3(0.75f, 0.0f, 0.0f));
+position.Set(0.0f,1.4f,2.0f);
+object = signWorld.CreateConstrainedObject("capsule_fat",position);
+constrainedCollider = static_cast<phConstrainedCollider*>(signWorld.GetCollider(object));
+constrainedCollider->ConstrainTranslationWorld();
+constrainedCollider->LimitRotation(Vector3(0.5f*PI,0.5f*PI,0.5f*PI));
+Vector3 softLimits(0.3f,0.1f,0.5f);
+constrainedCollider->SetSoftRotationLimits(-softLimits,softLimits);
+Vector3 restoringStrength(100.0f,10.0f,100.0f);
+constrainedCollider->SetRestoringTorqueStrength(restoringStrength);
+
+//////////////////////////////////////////////////////
+// Page 3: Newton's cradle (colliding hanging spheres)
+phDemoWorld& newtonWorld = MakeNewDemoWorld("newton");
+contactMgr = newtonWorld.GetSimulator()->GetContactMgr();
+worldAttachPoint.Set(0.0f,2.0f,0.0f);
+position.Set(-0.7071f,2.0f-0.7071f,0.0f);
+phInst* sphere = newtonWorld.CreateObject("sphere_007",position)->GetPhysInst();
+contactMgr->AttachObjectToWorld(worldAttachPoint,sphere);
+worldAttachPoint.Set(0.12f,2.0f,0.0f);
+position.Set(0.12f,1.0f,0.0f);
+sphere = newtonWorld.CreateObject("sphere_007",position)->GetPhysInst();
+contactMgr->AttachObjectToWorld(worldAttachPoint,sphere);
+worldAttachPoint.Set(0.24f,2.0f,0.0f);
+position.Set(0.24f,1.0f,0.0f);
+sphere = newtonWorld.CreateObject("sphere_007",position)->GetPhysInst();
+contactMgr->AttachObjectToWorld(worldAttachPoint,sphere);
+worldAttachPoint.Set(0.36f,2.0f,0.0f);
+position.Set(0.36f,1.0f,0.0f);
+sphere = newtonWorld.CreateObject("sphere_007",position)->GetPhysInst();
+contactMgr->AttachObjectToWorld(worldAttachPoint,sphere);
+worldAttachPoint.Set(0.48f,2.0f,0.0f);
+position.Set(0.48f,1.0f,0.0f);
+sphere = newtonWorld.CreateObject("sphere_007",position)->GetPhysInst();
+contactMgr->AttachObjectToWorld(worldAttachPoint,sphere);
+
+//////////////////////////////////////////////////////////////
+// Page 4: train cars constrained to move along a spline curve
+m_NumTrainCars = 0;
+m_TrainWorld = &MakeNewDemoWorld("train");
+//m_TrainTracks.Init();
+//float trainTrackT = m_TrainTracks.GetCurveMinT()+0.01f;
+phInst& logCar = CreateTrainCar("train_log_car",trainTrackT);
+Matrix34 logMatrix(logCar.GetMatrix());
+logMatrix.RotateLocalX(0.5f*PI);
+logMatrix.d.SubtractScaled(logMatrix.c,1.0f);
+m_TrainWorld->CreateObject("capsule_log",logMatrix);
+logMatrix.d.AddScaled(logMatrix.a,0.4f);
+logMatrix.d.SubtractScaled(logMatrix.c,0.4f);
+m_TrainWorld->CreateObject("capsule_log",logMatrix);
+logMatrix.d.SubtractScaled(logMatrix.a,0.8f);
+m_TrainWorld->CreateObject("capsule_log",logMatrix);
+logMatrix.d.AddScaled(logMatrix.a,0.4f);
+//logMatrix.RotateLocalZ(0.04f);
+logMatrix.d.SubtractScaled(logMatrix.c,0.5f);
+m_TrainWorld->CreateObject("capsule_log",logMatrix);
+logMatrix.d.AddScaled(logMatrix.a,0.4f);
+logMatrix.d.SubtractScaled(logMatrix.c,0.4f);
+m_TrainWorld->CreateObject("capsule_log",logMatrix);
+logMatrix.d.SubtractScaled(logMatrix.a,0.8f);
+m_TrainWorld->CreateObject("capsule_log",logMatrix);
+logMatrix.d.AddScaled(logMatrix.a,0.4f);
+//logMatrix.RotateLocalZ(0.04f);
+logMatrix.d.SubtractScaled(logMatrix.c,0.5f);
+m_TrainWorld->CreateObject("capsule_log",logMatrix);
+logMatrix.d.AddScaled(logMatrix.a,0.4f);
+logMatrix.d.SubtractScaled(logMatrix.c,0.4f);
+m_TrainWorld->CreateObject("capsule_log",logMatrix);
+logMatrix.d.SubtractScaled(logMatrix.a,0.8f);
+m_TrainWorld->CreateObject("capsule_log",logMatrix);
+trainTrackT += 0.03f;
+//	CreateTrainCar("train_rock_car",trainTrackT);
+//	float density = 0.2f;
+//	m_TrainWorld->CreateBox(Vector3(2.0f,2.0f,2.0f),density,Vector3(30.0f,0.0f,0.0f));
+
+//////////////////////////////////////////////////////////////////////////////////
+// Page 5: a ragdoll on a swing that releases its constraint above the pivot point
+m_SwingWorld = &MakeNewDemoWorld("swing");
+position.Set(-2.0f,12.0f,-4.0f);
+m_SwingingHuman = phArticulatedObject::CreateHuman(*m_SwingWorld,position);
+m_SwingConstraint = NULL;
+
+//////////////////////////////////////////////////////////////
+// Page 6: a ragdoll and a crate dragged by moving constraints
+phDemoWorld& dragWorld = MakeNewDemoWorld("dragging ragdoll");
+position.Set(-6.0f,2.0f,0.0f);
+Vector3 constraintPosition(position);
+phSwingingObject* swingingHuman = phArticulatedObject::CreateHuman(dragWorld,position);
+contactMgr = dragWorld.GetSimulator()->GetContactMgr();
+constraintPosition.x += 0.5f;
+constraintPosition.y -= 0.5f;
+component = 6;
+Vector3 frequency(1.0f,0.0f,0.0f);
+Vector3 amplitude(12.0f,0.0f,0.0f);
+swingingHuman->SetMovingConstraint(constraintPosition,contactMgr,component,frequency,amplitude);
+position.Set(0.0f,3.0f,0.0f);
+rotation.Zero();
+worldAttachPoint.Set(0.5f,3.5f,0.5f);
+dragWorld.CreateSwingingObject("crate",position,rotation,worldAttachPoint);
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Page 7: a pair of chandeliers with constrained colliders (the same could be done with point constraints)
+phDemoWorld& chandelierWorld = MakeNewDemoWorld("chandelier");
+position.Set(1.0f,3.5f,0.0f);
+rotation.Set(0.0f,0.25f*PI,0.0f);
+object = chandelierWorld.CreateConstrainedObject("chandelier",position,alignBottom,rotation);
+Assert(object);
+constrainedCollider = static_cast<phConstrainedCollider*>(chandelierWorld.GetCollider(object));
+constrainedCollider->ConstrainTranslationWorld();
+Vector3 cgOffset(0.0f,-2.0f,0.0f);
+constrainedCollider->SetGravityCGOffset(cgOffset);
+position.Set(-1.0f,3.5f,0.0f);
+object = chandelierWorld.CreateConstrainedObject("chandelier",position,alignBottom,rotation);
+Assert(object);
+constrainedCollider = static_cast<phConstrainedCollider*>(chandelierWorld.GetCollider(object));
+constrainedCollider->ConstrainTranslationWorld();
+constrainedCollider->SetGravityCGOffset(cgOffset);
+Assert(object->GetPhysInst() && object->GetPhysInst()->GetArchetype());
+phArchetypeDamp& archetype = *static_cast<phArchetypeDamp*>(object->GetPhysInst()->GetArchetype());
+const float angVelDamping = 0.2f;
+archetype.ActivateDamping(phArchetypeDamp::ANGULAR_V,Vector3(angVelDamping,angVelDamping,angVelDamping));
+
+/////////////////////////////////////////////////////////////////////////
+// Page 8: a single-line rope bridge held together with point constraints
+phDemoWorld& capsuleBridgeWorld = MakeNewDemoWorld("capsule_bridge");
+position.Set(-2.0f,2.0f,0.0f);
+rotation.Set(0.0f,0.0f,0.5f*PI);
+alignBottom = false;
+phInst* capsuleBridgeParts[numBridgeParts];
+capsuleBridgeParts[0] = capsuleBridgeWorld.CreateObject("capsule_fat",position,alignBottom,rotation)->GetPhysInst();
+contactMgr = capsuleBridgeWorld.GetSimulator()->GetContactMgr();
+worldAttachPoint.Set(position);
+worldAttachPoint.x -= 1.3f;
+int componentLeft = 0;
+int componentRight = 1;
+contactMgr->AttachObjectToWorld(worldAttachPoint,capsuleBridgeParts[0],componentLeft);
+for (int partIndex=1; partIndex<numBridgeParts; partIndex++)
+{
+position.x += 2.6f;
+capsuleBridgeParts[partIndex] = capsuleBridgeWorld.CreateObject("capsule_fat",position,alignBottom,rotation)->GetPhysInst();
+worldAttachPoint.x += 2.6f;
+contactMgr->AttachObjects(worldAttachPoint,capsuleBridgeParts[partIndex-1],capsuleBridgeParts[partIndex],componentRight,componentLeft);
+}
+worldAttachPoint.x += 2.6f;
+contactMgr->AttachObjectToWorld(worldAttachPoint,capsuleBridgeParts[numBridgeParts-1],componentRight);
+capsuleBridgeParts[0]->GetArchetype()->SetTypeFlags(0x0002);
+capsuleBridgeParts[0]->GetArchetype()->SetIncludeFlags(0xFFFD);
+position.Set(-2.0f,3.0f,0.0f);
+capsuleBridgeWorld.CreateObject("crate",position);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Page 9: boxes with loose force and torque constraints that keep the boxes near each other and with similar orientations
+phDemoWorld& forceBoxWorld = MakeNewDemoWorld("box_forces");
+position.Set(0.0f,0.0f,0.0f);
+rotation.Set(0.0f,0.0f,0.0f);
+int numStairs = 3;
+float stairHeight = 1.0f;
+float stairDepth = 0.0f;
+forceBoxWorld.ConstructBoxStairs("longer_crate",numStairs,position,rotation,stairHeight,stairDepth);
+position.Set(0.0f,3.5f,0.8f);
+crate1 = forceBoxWorld.CreateObject("crate",position);
+position.Set(0.0f,3.5f,-0.4f);
+crate2 = forceBoxWorld.CreateObject("crate",position);
+contactMgr = forceBoxWorld.GetSimulator()->GetContactMgr();
+position.Set(0.0f,4.5f,0.2f);
+constraint = contactMgr->AttachObjects(position,crate1->GetPhysInst(),crate2->GetPhysInst());
+float forceScale = 1800.0f;
+float forceDamping = 400.0f;
+constraint->SetForceMode(forceScale,forceDamping);
+constraint = contactMgr->AttachObjects(position,crate1->GetPhysInst(),crate2->GetPhysInst());
+float torqueScale = 100.0f;
+float torqueDamping = 40.0f;
+constraint->SetTorqueMode(torqueScale,torqueDamping);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// Page 10: a set of constraints that make large pushes and turns on the first frame, designed to test
+//			how well physical constraints can handle attachment to non-physical objects like animating
+//			characters (when the constrained push or turn exceeds a limit, the rest is applied with no
+//			physical response)
+phDemoWorld& pushWorld = MakeNewDemoWorld("push");
+pushWorld.Pause();
+contactMgr = pushWorld.GetSimulator()->GetContactMgr();
+position.Set(-2.0f,1.0f,-10.0f);
+phInst* box = pushWorld.CreateObject("crate",position)->GetPhysInst();
+worldAttachPoint.Set(-2.0f,4.0f,0.0f);
+contactMgr->AttachObjectToWorld(worldAttachPoint,position,box,0,0.0f,false);
+position.Set(0.0f,1.0f,-10.0f);
+human = phArticulatedObject::CreateHuman(pushWorld,position)->GetPhysInst();
+worldAttachPoint.Set(0.0f,4.0f,0.0f);
+contactMgr->AttachObjectToWorld(worldAttachPoint,position,human,0,0.0f,false);
+position.Set(-2.0f,2.0f,0.0f);
+rotation.Set(0.0f,0.0f,0.5f*PI);
+box = pushWorld.CreateObject("crate",position,false,rotation)->GetPhysInst();
+contactMgr->AttachObjectToWorld(position,box);
+constraint = contactMgr->AttachObjectToWorld(position,box);
+constraint->SetFixedRotation();
+constraint->SetRelativeOrientation(ORIGIN);
+position.Set(0.0f,2.0f,0.0f);
+human = phArticulatedObject::CreateHuman(pushWorld,position,rotation)->GetPhysInst();
+contactMgr->AttachObjectToWorld(position,human);
+constraint = contactMgr->AttachObjectToWorld(position,human);
+constraint->SetFixedRotation();
+constraint->SetRelativeOrientation(ORIGIN);
+constraint->SetMaxCollisionDepth(0.6f);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// Page 11: A set of boxes and constraints with varying breaking strengths to test breaking constraints.
+phDemoWorld& breakingWorld1 = MakeNewDemoWorld("BreakingConstraints1");
+contactMgr = breakingWorld1.GetSimulator()->GetContactMgr();
+Vector3 boxPosition, worldPosition;
+for(int boxIndex = 0; boxIndex < 5; ++boxIndex)
+{
+boxPosition.Set(-5.0f + (float)(boxIndex) * 3.0f,4.0f,-5.0f);
+worldPosition.Set(boxPosition);
+worldPosition.x += 0.1f;
+phInst* box = breakingWorld1.CreateObject("crate",boxPosition, false)->GetPhysInst();
+phConstraint* constraint = contactMgr->AttachObjectToWorld(worldPosition, boxPosition, box, 0, 2.0f, false);
+constraint->SetBreakingStrength(-1.0f + (float)(boxIndex) * 700.0f);
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Page 12: A ragdoll starting with a large velocity and a constraint on a hand, to test articulated body stability.
+phDemoWorld& violentConstraintWorld = MakeNewDemoWorld("Test Violent Constraint");
+position.Set(0.0f,3.0f,0.0f);
+human = phArticulatedObject::CreateHuman(violentConstraintWorld,position)->GetPhysInst();
+contactMgr = violentConstraintWorld.GetSimulator()->GetContactMgr();
+position.x -= 0.8f;
+position.y += 0.1f;
+contactMgr->AttachObjectToWorld(position,human,4);
+phCollider* humanCollider = violentConstraintWorld.GetSimulator()->GetCollider(human);
+Assert(humanCollider && humanCollider->IsArticulated());
+Vector3 velocity(0.0f,-50.0f,0.0f);
+static_cast<phArticulatedCollider*>(humanCollider)->GetBody()->SetInitialVelocity(velocity);
+humanCollider->Reset();
+
+</CODE>
+
+
+* Set and activate the initial page, from the command line parameter "startingDemo" with the first page as default. *
+
+* See if the current active demo world is the train track world, and update the constrained train cars along the track if it is. *
+
+
+@@Contacts Sample
+<GROUP Working Examples>
+
+This sample creates stacks of objects of various types for testing the computation of contact forces.
+The sample is broken into several steps:
+1. Initialize the base physics sample class.
+2. Define an offset for all objects in the world.
+3. Set the physics level parameters.
+4. Create all the sets of interacting objects, with a sample page for each set.
+5. Set and activate the initial page, from the command line parameter "startingDemo" with the first page as default.
+
+* Initialize the base physics sample class. *
+
+* Define an offset for all objects in the world. *
+Change this vector to test physics behavior with roundoff errors far from the origin.
+<CODE>
+
+Vector3 worldOffset(0.0f,0.0f,0.0f);
+phDemoObject::SetWorldOffset(worldOffset);
+
+
+</CODE>
+
+
+* Set the physics level parameters. *
+See sample_physics/sample_basic for a demonstration of how to set up a simple physics level and simulator.
+<CODE>
+
+int maxOctreeNodes = 1000;
+int maxActiveObjects = 500;
+int maxObjects = 500;
+Vector3 worldMin(-999.0f,-999.0f,-999.0f);
+Vector3 worldMax(999.0f,999.0f,999.0f);
+worldMin.Add(phDemoObject::GetWorldOffset());
+worldMax.Add(phDemoObject::GetWorldOffset());
+Vector3 position,rotation,boxExtents;
+int maxInstBehaviors = 0;
+int numHigh = 2;
+int numAround;
+bool rotate = true;
+bool alignBottom = true;
+mthRandom random;
+
+</CODE>
+
+
+* Create all the sets of interacting objects, with a sample page for each set. *
+"+" and "-" keys control paging through the following set of sample pages.
+<CODE>
+
+
+///////////////////////////
+// 0: the Bullet House
+// http://www.continuousphysics.com/ftp/pub/test/physics/movies/bullet_house_demolition_realtime.mov
+phDemoWorld& bulletWorld = MakeNewDemoWorld("Bullet House");
+position.Set(0.0f,0.0f,0.0f);
+bulletWorld.ConstructRectangularTower(0.5f,0.3f,5,4,9,position);
+bulletWorld.CreateObject("roofend", Vector3( 2.5f,2.7f,0.0f));
+bulletWorld.CreateObject("roofend", Vector3(-2.5f,2.7f,0.0f));
+bulletWorld.CreateBox(Vector3(5.5f,0.1f,0.1f), 12.0f, Vector3(0.0f,3.8f,0.0f));
+bulletWorld.CreateBox(Vector3(5.5f,0.1f,0.1f), 12.0f, Vector3(0.0f,2.7f, 2.15f));
+bulletWorld.CreateBox(Vector3(5.5f,0.1f,0.1f), 12.0f, Vector3(0.0f,2.7f,-2.15f));
+for (int plank = 0; plank < 11; ++plank)
+{
+bulletWorld.CreateBox(Vector3(0.5f,0.1f,2.4f), 0.3f, Vector3(-2.5f + 0.5f * plank,3.3f,1.05f), false, Vector3(PI *  0.16f, 0.0f, 0.0f));
+bulletWorld.CreateBox(Vector3(0.5f,0.1f,2.4f), 0.3f, Vector3(-2.5f + 0.5f * plank,3.3f,-1.05f), false, Vector3(PI * -0.16f, 0.0f, 0.0f));
+}
+
+bulletWorld.CreateObject("sphere_056",Vector3( 2.5f,0.0f, 4.0f));
+bulletWorld.CreateObject("sphere_122",Vector3(-2.5f,0.0f, 4.0f));
+bulletWorld.CreateObject("sphere_227",Vector3( 0.0f,0.0f,-6.0f));
+
+//////////////////////////////////////
+// 1: manifold priority demo
+//
+// Notice that the capsules can fall through when manifolds run out, while the spheres do not. That is
+// because the spheres are marked as "high priority".
+Matrix34 lowMatrix(M34_IDENTITY);
+lowMatrix.d.y = -10.0f;
+phDemoWorld& priorityWorld = *(new phDemoWorld("Priority world"));
+priorityWorld.Init(maxOctreeNodes, maxActiveObjects, maxObjects, worldMin, worldMax, maxInstBehaviors, 6*1024*1024, 1536);
+priorityWorld.InitUpdateObjects(128);
+priorityWorld.GetSimulator()->GetManifoldMgr()->SetNumHighPriorityManifolds(256);
+
+#if __BANK
+char worldWidgetName[64];
+formatf(worldWidgetName,sizeof(worldWidgetName),"Demo World: Priority world");
+priorityWorld.AddWidgets(BANKMGR.CreateBank(worldWidgetName));
+#endif
+
+m_Demos.AddDemo(&priorityWorld);
+priorityWorld.Activate();
+
+priorityWorld.CreateFixedBox(Vector3(9.0f, 1.0f, 9.0f), Vector3( 0.0f, -1.5f,  0.0f));
+priorityWorld.CreateFixedBox(Vector3(1.0f, 4.0f, 9.0f), Vector3( 4.0f,  0.0f,  0.0f));
+priorityWorld.CreateFixedBox(Vector3(1.0f, 4.0f, 9.0f), Vector3(-4.0f,  0.0f,  0.0f));
+priorityWorld.CreateFixedBox(Vector3(9.0f, 4.0f, 1.0f), Vector3( 0.0f,  0.0f,  4.0f));
+priorityWorld.CreateFixedBox(Vector3(9.0f, 4.0f, 1.0f), Vector3( 0.0f,  0.0f, -4.0f));
+for (int icos = 0; icos < 200; ++icos)
+{
+position.x = random.GetRanged(-2.0f, 2.0f);
+position.y = 2.0f + icos * 0.2f;
+position.z = random.GetRanged(-2.0f, 2.0f);
+rotation.x = random.GetRanged(-PI, PI);
+rotation.y = random.GetRanged(-PI, PI);
+rotation.z = random.GetRanged(-PI, PI);
+if (icos % 8)
+{
+priorityWorld.CreateObject("capsule_fat",position,alignBottom,rotation);
+}
+else
+{
+phDemoObject* sphere = priorityWorld.CreateObject("sphere_056",position,alignBottom,rotation);
+sphere->GetPhysInst()->SetInstFlag(phInst::FLAG_HIGH_PRIORITY, true);
+}
+}
+
+///////////////////////////
+// 2: a few objects on a plane
+phDemoWorld& parkWorld = MakeNewDemoWorld("Park");
+position.Set(0.0f,0.0f,-2.0f);
+numHigh = 8;
+numAround = 8;
+boxExtents.Set(1.0f,0.5f,0.5f);
+parkWorld.ConstructRoundTower(position,numHigh,numAround,boxExtents);
+position.Set(1.0f,0.0f,2.0f);
+rotation.Set(0.0f,0.0f,PI*0.5f);
+parkWorld.CreateObject("icosahedron",position,alignBottom,rotation);
+position.Set(4.0f,3.1f,4.7f);
+rotation.Zero();
+parkWorld.CreateObject("car_body",position,alignBottom,rotation);
+position.Set(5.1f,3.4f,-1.9f);
+parkWorld.CreateObject("longer_crate",position,alignBottom,rotation);
+position.Set(2.0f,0.0f,1.0f);
+parkWorld.CreateObject("hotdog",position,alignBottom,rotation);
+position.Set(-6.0f,0.2f,-2.0f);
+rotation.Set(0.0f,0.0f,-0.125f*PI);
+parkWorld.CreateFixedObject("small_plane",position,alignBottom,rotation);
+position.Set(-8.0f,4.0f,-2.0f);
+parkWorld.CreateObject("sphere_122",position);
+position.Set(-3.0f,2.0f,2.0f);
+parkWorld.CreateCurvedGeometryMailbox(position);
+position.x += 4.0f;
+parkWorld.CreateCurvedGeometryCylinder(position);
+
+//////////////////////////
+// 3: Linear stack
+position.Set(0.0f,-4.0f,0.0f);
+phDemoWorld& linearWorld = MakeNewDemoWorld("Linear Stack",NULL,position);
+Vector3 boxSize(1.0f,1.0f,1.0f);
+numHigh = (int)(8.0f*nobjscale);
+{
+int iBox;
+for( iBox = 0; iBox < numHigh; iBox++ )
+{
+linearWorld.CreateBox( boxSize, 1.0f, Vector3( 0, iBox+position.y, 0), true );
+}
+}
+
+/////////////////////////
+// 4: Jenga stack on a plane
+phDemoWorld& jengaWorld = MakeNewDemoWorld("Jenga (tm)");
+numHigh = (int)(2.0f*nobjscale);
+int jengaLevelSize = 3;
+position.Set(0.0f,0.0f,0.0f);
+jengaWorld.ConstructJenga(position,numHigh,jengaLevelSize,"longer_crate");
+
+///////////////////////////////////////////
+// 5: pyramid of boxes and a sphere on a plane
+phDemoWorld& bowlingWorld = MakeNewDemoWorld("Bowling");
+position.Set(-2.0f,0.0f,0.0f);
+numHigh = (int)(5.0f*nobjscale);
+rotate = false;
+bowlingWorld.ConstructPyramid(position,numHigh,rotate);
+position.Set(3.0f,0.0f,0.0f);
+bowlingWorld.CreateObject("sphere_122",position,alignBottom);
+
+//////////////////////////////////////////////////////////
+// 6: cinder block and many small spheres on a quadtree plane
+phDemoWorld& cinderBlockWorld = MakeNewDemoWorld("Cinderblock","quadtree");
+position.Set(0.0f,0.0f,0.0f);
+rotation.Set(0.0f,0.0f,0.5f*PI);
+cinderBlockWorld.CreateObject("cinderblock",position,alignBottom,rotation);
+for (int ball=0; ball<50; ++ball)
+{
+position.Set(random.GetRanged(-0.1f,0.1f),1.0f+ball*0.15f,random.GetRanged(-0.1f,0.1f));
+cinderBlockWorld.CreateObject("sphere_007",position,alignBottom);
+}
+
+/////////////////////////////////////////////////
+// 7: many icosahedrons on the splash-shaped terrain
+phDemoWorld& splashWorld = MakeNewDemoWorld("Splash Octree", "splashbvh");
+position.Set(0.0f,-5.0f,0.0f);
+for (int icos = 0; icos < 50; ++icos)
+{
+position.x = random.GetRanged(-7.0f, 7.0f);
+position.y = 3.0f + icos * 1.0f;
+position.z = random.GetRanged(-7.0f, 7.0f);
+rotation.x = random.GetRanged(-PI, PI);
+rotation.y = random.GetRanged(-PI, PI);
+rotation.x = random.GetRanged(-PI, PI);
+#if BULLET_COLLISION
+phDemoObject* object = splashWorld.CreateObject("escalade",position,alignBottom,rotation,false,true,NULL,true);
+Assert(object->GetPhysInst()->GetArchetype()->GetBound()->GetType() == phBound::GEOMETRY);
+phBoundGeometry* bound = static_cast<phBoundGeometry*>(object->GetPhysInst()->GetArchetype()->GetBound());
+float oldRadius = bound->GetRadiusAroundCentroid();
+float margin = random.GetRanged(0.02f, 3.0f);
+float polyOrVert = random.GetRanged(0.0f, 1.0f);
+bound->SetMarginAndShrink(margin, polyOrVert);
+bound->PostLoadCompute();
+float newRadius = bound->GetRadiusAroundCentroid();
+if (newRadius != oldRadius)
+{
+splashWorld.GetPhLevel()->UpdateObjectLocationAndRadius(object->GetPhysInst()->GetLevelIndex(), oldRadius);
+}
+#else
+splashWorld.CreateObject("icosahedron",position);
+#endif // BULLET_COLLISION
+}
+
+///////////////////////////////////////////////////
+// 8: heavy objects on top of light objects in a plane
+phDemoWorld& heavyLightWorld = MakeNewDemoWorld("Heavy on light");
+heavyLightWorld.CreateBox(Vector3(1.0f, 1.0f, 1.0f),0.1f,Vector3(0.0f, 0.5f, 0.0f));
+heavyLightWorld.CreateBox(Vector3(1.0f, 1.0f, 1.0f),1.0f,Vector3(0.0f, 1.5f, 0.0f));
+heavyLightWorld.CreateBox(Vector3(1.0f, 1.0f, 1.0f),0.1f,Vector3(2.0f, 0.5f, 0.0f));
+heavyLightWorld.CreateBox(Vector3(1.0f, 1.0f, 1.0f),1.0f,Vector3(2.0f, 1.5f, 0.0f));
+
+//////////////////////////////////////////////////////////////////////////
+// 9: a low wall
+m_Demos.AddDemo( new phDemoWorld("Shao Chen") );
+m_Demos.GetCurrentWorld()->Init(maxOctreeNodes,maxActiveObjects,maxObjects,worldMin,worldMax,maxInstBehaviors);
+m_Demos.GetCurrentWorld()->ConstructTerrainPlane();
+const float ratio = 1.618034f;
+const float basesize = 0.5f;
+m_Demos.GetCurrentWorld()->CreateObject("sphere_056",Vector3(0.0f,0.0f,-3.0f),true);
+int nLength = int(nobjscale*5.0f);
+int nWall = 1 + (int)(3/nobjscale);
+int iWall;
+for( iWall = 0; iWall < nWall; iWall++ )
+{
+for (int i = -nLength/2; i < nLength/2; i++ )
+{
+float x = i * (basesize*ratio + 0.1f);
+for( int j = 0; j < 7; j++ )
+{
+float h = basesize*0.5f + basesize*j;
+x += (( j % 2 ) == 0 ) ? -basesize*ratio*0.33f : basesize*ratio*0.33f;
+m_Demos.GetCurrentWorld()->CreateBox(Vector3(basesize*ratio, basesize, basesize+(j*0.01f)),1.0f,Vector3(x, h, float(iWall)*2.0f));
+}
+}
+}
+
+///////////////////////////////////////////////////////////////////////
+// 10: a bunch of objects blown around by invisible forces
+position.Set(117.f, -2.f, -773.f);
+rotation.Set(-0.5f * PI, 0.0f, 0.0f);
+Matrix34 terrainMtx(CreateRotatedMatrix(position, rotation));
+phDemoWorld& hurricaneWorld = MakeNewDemoWorld("Hurricane","manhatbvh",terrainMtx);
+position.Set(87.f, -2.f, -773.f);
+hurricaneWorld.CreateFixedObject("manhatbvh", position, false, rotation);
+for (int icos = 0; icos < 128; ++icos)
+{
+position.x = random.GetRanged(-18.0f, 18.0f);
+position.y = random.GetRanged(4.0f, 9.0f);
+position.z = random.GetRanged(-18.0f, 18.0f);
+float period = random.GetRanged(1.0f, 3.0f);
+float phase = random.GetRanged(1.0f, 5.0f);
+float mag;
+const char* object;
+if (random.GetRanged(0, 4) == 0)
+{
+object = "mill";
+mag = random.GetRanged(20000.0f, 60000.0f);
+}
+else
+{
+object = "icosahedron";
+mag = random.GetRanged(800.0f, 1600.0f);
+}
+
+hurricaneWorld.CreateWhirlingObject(object,position,Vector3(0.0f, 0.0f, 0.0f), period, mag, phase );
+}
+
+</CODE>
+
+
+* Set and activate the initial page, from the command line parameter "startingDemo" with the first page as default. *
+
+
+@@Explosion Sample
+<GROUP Working Examples>
+This sample demonstrates how to use explosions and how to use the explosion manager, along with showcasing the behavior of
+explosions on objects of various shapes, sizes and orientations.
+The usual camera controls apply.  Additionally, the space bar detonates an explosion at a random location and 'O' detonates
+an explosion at the origin.
+The sample is broken into several steps:
+1. Initialize the base physics sample class.
+2. Create extra keyboard controls (space detonates an explosion at a random position and O detonates an explosion at the origin).
+3. Create a basic world with a flat terrain plane and some objects to react to explosions.
+4. Activate the demo world.
+5. Update the extra input controls.
+6. Update the base physics sample manager.
+
+* Initialize the base physics sample class. *
+
+* Create extra keyboard controls (space detonates an explosion at a random position and O detonates an explosion at the origin). *
+
+* Create a basic world with a flat terrain plane and some objects to react to explosions. *
+
+* Activate the demo world. *
+
+* Update the extra input controls. *
+
+* Update the base physics sample manager. *
+
+
+@@Multi-Threading Physics Sample
+<GROUP Working Examples>
+
+This sample tests physics running on multiple threads simultaneously. For now it just simulates multithreading by running multiple physics tests broken up into
+pieces on a single thread. Later it will demonstrate multi-threading physics on Xenon and PS3.
+The sample is broken into several steps:
+1. Initialize profile drawing.
+2. Create and initialize the physics level.
+3. Create and initialize the simulator.
+4. Initialize the material manager.
+5. Create the terrain and put it in the physics level.
+6. Load two objects and put them in the physics level.
+7. Draw the world
+8. Shut down the physics level and simulator.
+
+* Initialize profile drawing. *
+Profile drawing is used to draw physics bounds. It is useful in games to diagnose any problems
+involving interactions with physical objects. __PFDRAW is defined in rage/base/src/profile/drawcore.h,
+and is normally on in debug and beta builds.
+<CODE>
+
+
+// Set the number of bytes available for storing profile draw shapes (objects for drawing are collected during the
+// physics updates and drawn together), and initialize the buffer and widgets for profile drawing.
+const int pfDrawBufferSize = 2000000;
+GetRageProfileDraw().Init(pfDrawBufferSize);
+
+// Enable profile drawing.
+const bool pfDrawEnabled = true;
+GetRageProfileDraw().SetEnabled(pfDrawEnabled);
+
+// Turn on some drawing groups. Profile drawing is turned off by default, and in release builds it is compiled out.
+// It should only be turned on when needed to solve problems. For this example, it is necessary because some of the
+// objects do not have graphics models.
+PFD_GROUP_ENABLE(Physics, true);
+PFD_GROUP_ENABLE(Bounds, true);
+PFD_ITEM_ENABLE(Solid, true);
+#endif
+
+
+</CODE>
+
+
+* Create and initialize the physics level. *
+The physics level (phLevel) keeps track of all the physical objects in the game. It uses a spatial partitioning scheme
+to speed up queries about object location. It can be used to quickly find objects that are hit by a line segment, or
+touch a sphere or capsule.
+<CODE>
+
+phLevelNew::SetActiveInstance(new phLevelNew);
+
+// Set the size of the physics level.
+// When any object goes outside the physics level, it is no longer updated, and virtual phInst::NotifyOutOfWorld() is called.
+// Any object that is added to the physics level outside the extents will cause an assert failure.
+const Vector3 worldExtentsMin(-999.0f,-999.0f,-999.0f);
+const Vector3 worldExtentsMax(999.0f,999.0f,999.0f);
+PHLEVEL->SetExtents(worldExtentsMin,worldExtentsMax);
+
+// Set the maximum allowed number of physical objects in the physics level. This normally varies from hundreds for a small
+// sample level to hundreds of thousands for a large game level.
+// Exceeding the maximum number of objects causes an assert failure.
+int maxNumObjects = 500;
+PHLEVEL->SetMaxObjects(maxNumObjects);
+
+// Set the maximum allowed number of physically active objects in the physics level. Physically active means the objects have
+// colliders and are reacting to collisions. This number is normally in the low hundreds.
+// Manually exceeding the maximum number of active objects (by calling AddActiveObject) causes an assert failure. If the maximum number
+// of active objects would be exceeded by the physics simulator activating objects, such as from a collision, then the object will not
+// become active.
+const int maxNumActiveObjects = 100;
+PHLEVEL->SetMaxActive(maxNumActiveObjects);
+
+// Set the maximum number of occupied nodes in the physics level's octree.
+// An assert failure results if the physics level tries to make more than the maximum number of octree nodes. This will be changed
+// soon to print a warning and not create the needed node instead (17 March 06).
+const int maxOctreeNodes = 1000;
+PHLEVEL->SetNumOctreeNodes(maxOctreeNodes);
+
+// Create and initialize the physics level's octree and object information, using the parameters set above.
+PHLEVEL->Init();
+
+
+</CODE>
+
+
+* Create and initialize the simulator. *
+The physics simulator computes the locations, orientations, and speeds of objects in the physics level,
+and handles collision detection and responses.
+<CODE>
+
+
+// Call the static initialization of the simulator.
+phSimulator::InitClass();
+
+// Create the simulator and set it as the current active simulator, accessible by calling PHSIM->.
+phSimulator::SetActiveInstance(new phSimulator);
+
+// Initialize the simulator with the currently active physics level, and the maximum number of managed active objects. This can be different
+// from the physics level's maximum number of active objects because the simulator's number only includes active objects that are managed
+// by the simulator. Users have the freedom to add physically active objects to the physics level with colliders that are not managed by
+// the simulator. This is normally used for derived colliders, such as vehicles and ragdolls.
+PHSIM->Init(PHLEVEL,maxNumActiveObjects);
+
+
+</CODE>
+
+
+* Initialize the material manager. *
+Physics bounds contain physics materials to define their properties for collisions (friction and elasticity) and other effects (such as sounds
+and driving properties). Materials are shared among bounds and stored in the material manager.
+<CODE>
+
+ASSET.PushFolder("materials");
+phMaterialMgrImpl<phMaterial>::Create();
+MATERIALMGR.Load();
+phMaterialMgrImpl<phSurface, phMaterialMgrFlag>::Create();
+MATERIALMGRFLAG.Load(64);
+ASSET.PopFolder();
+
+
+</CODE>
+
+
+* Create the terrain and put it in the physics level. *
+Load a file called "bound.bnd" from the "assets/physics/big_plane" folder. It has information about the physical shape of an instance
+that will be used as the terrain. It is a large horizontal square made of two triangles.
+<CODE>
+
+phBound::SetOctreeAsBVH(true);
+phBound* terrainBound = phBound::Load("physics/quadtree/bound");
+//	phBound* terrainBound = phBound::Load("physics/octree_grid/bound");
+Assert(terrainBound);
+
+// Set the terrain bound in the terrain archetype. Physics archetypes can hold physical information such as include and type flags, mass
+// and damping, and a pointer to the bound. There is usually a 1-1 correspondence between archetypes and bounds, but it is possible for
+// more than one archetype to share a bound.
+m_TerrainArchetype.SetBound(terrainBound);
+
+// Set the archetype in the physics instance. The physics level keeps track of objects by physics instances.
+m_TerrainInstance.SetArchetype(&m_TerrainArchetype);
+
+// Set the instance's matrix. This contains a 3x3 part for orientation and a position.
+Matrix34 instanceMatrix;
+instanceMatrix.Identity();
+//	instanceMatrix.d.Set(2130.0f,-22.0f,-2670.0f); // for the octree grid
+m_TerrainInstance.SetMatrix(instanceMatrix);
+
+// Insert the terrain instance in the level, so that it will participate in the physics simulation. Since this instance is terrain,
+// AddFixedObject us used, which means that this object is fixed in space.
+PHSIM->AddFixedObject(&m_TerrainInstance);
+
+
+</CODE>
+
+
+* Load two objects and put them in the physics level. *
+Load the physical bound, and set it in the archetype, following the same procedure as with the terrain.
+<CODE>
+
+phBound* icosahedronBound = phBound::Load("physics/icosahedron/bound");
+//		phBound* icosahedronBound = phBound::Load("physics/dresser/bound");
+m_ActiveArchetype.SetBound(icosahedronBound);
+
+m_NumObjects = MULTITHREAD_DEFAULT_NUM_OBJECTS;
+if (PARAM_numobjects.Get(m_NumObjects))
+{
+m_NumObjects = Min(m_NumObjects,MULTITHREAD_MAX_ACTIVE_OBJECTS);
+}
+
+// Initialize both instances of this moving object with the same archetype and bound.
+for (int objectIndex=0; objectIndex<m_NumObjects; objectIndex++)
+{
+m_ActiveInstanceList[objectIndex].SetArchetype(&m_ActiveArchetype);
+}
+
+// Set the matrices of the two instances.
+instanceMatrix.MakeTranslate(0.0f,3.0,0.0f);
+instanceMatrix.RotateZ(0.1f);
+Vector3 offset(0.05f,1.0,0.05f);
+for (int objectIndex=0; objectIndex<m_NumObjects; objectIndex++)
+{
+m_ActiveInstanceList[objectIndex].SetMatrix(instanceMatrix);
+m_ResetMatrixList[objectIndex].Set(instanceMatrix);
+instanceMatrix.d.Add(offset);
+}
+
+// Place the two objects in the physics level. AddActiveObject is used this time, to tell the simulator to give the instances
+// colliders so that they will be simulated as physically active objects.
+// An optional second parameter in AddActiveObject can be used to make the object always active, which means it will never be
+// put in the inactive state.
+for (int objectIndex=0; objectIndex<m_NumObjects; objectIndex++)
+{
+PHSIM->AddActiveObject(&m_ActiveInstanceList[objectIndex]);
+}
+
+
+// Map a function keys for resetting the physics world and for grabbing objects with the mouse.
+m_Mapper.Map(IOMS_KEYBOARD,KEY_F4,m_Reset);
+m_Mapper.Map(IOMS_MOUSE_BUTTON,ioMouse::MOUSE_LEFT,m_Push);
+m_Mapper.Map(IOMS_MOUSE_BUTTON,ioMouse::MOUSE_RIGHT,m_Pull);
+
+// Initialize a set of random shape tests.
+mthRandom random;
+Vector3 boxMax(20.0f,10.0f,20.0f);
+Vector3 boxMin(-20.0f,0.0f,-20.0f);
+float radiusMin = 0.001f;
+float radiusMax = 10.0f;
+for (int shapeIndex=0; shapeIndex<NumShapesPerType; shapeIndex++)
+{
+// Initialize a random probe.
+phShapeProbe& probe = m_ProbeTestList[shapeIndex].GetShape();
+InitializeRandomProbe(random,boxMin,boxMax,probe,&m_ProbeIsectList[shapeIndex]);
+
+// Initialize a random sphere.
+phShapeSphere& sphere = m_SphereTestList[shapeIndex].GetShape();
+InitializeRandomSphere(random,boxMin,boxMax,radiusMin,radiusMax,sphere,&m_SphereIsectList[shapeIndex]);
+
+// Initialize a random capsule.
+phShapeCapsule& capsule = m_CapsuleTestList[shapeIndex].GetShape();
+InitializeRandomCapsule(random,boxMin,boxMax,radiusMin,radiusMax,capsule,&m_CapsuleIsectList[shapeIndex]);
+
+// Initialize a random batch.
+Vector3 batchBoxMin(random.GetRanged(boxMin.x,boxMax.x),random.GetRanged(boxMin.y,boxMax.y),random.GetRanged(boxMin.z,boxMax.z));
+Vector3 batchBoxMax(random.GetRanged(boxMin.x,boxMax.x),random.GetRanged(boxMin.y,boxMax.y),random.GetRanged(boxMin.z,boxMax.z));
+if (batchBoxMin.x>batchBoxMax.x) SwapEm(batchBoxMin.x,batchBoxMax.x);
+if (batchBoxMin.y>batchBoxMax.y) SwapEm(batchBoxMin.y,batchBoxMax.y);
+if (batchBoxMin.z>batchBoxMax.z) SwapEm(batchBoxMin.z,batchBoxMax.z);
+InitializeRandomBatch(random,batchBoxMin,batchBoxMax,radiusMin,radiusMax,m_BatchTestList[shapeIndex],&m_BatchedProbeIsectList[shapeIndex][0],
+&m_BatchedSphereIsectList[shapeIndex][0],&m_BatchedCapsuleIsectList[shapeIndex][0]);
+}
+}
+
+void threadedPhysicsSampleManager::AddWidgetsClient ()
+{
+#if __BANK
+bkBank& bank = BANKMGR.CreateBank("rage - Physics");
+bank.PushGroup("Level",false);
+phLevelNew::AddWidgets(bank);
+bank.PopGroup();
+bank.PushGroup("Simulator",false);
+phSimulator::AddWidgets(bank);
+bank.PopGroup();
+bank.PushGroup("Materials",false);
+MATERIALMGR.AddWidgets(bank);
+bank.PopGroup();
+#endif
+}
+
+void threadedPhysicsSampleManager::UpdateMouse()
+{
+if (m_Push.IsPressed() || m_Pull.IsPressed())
+{
+// mouseScreen and mouseFar as where are the world space points on the near plane and far plane respectively which project to the current mouse cursor location.
+Vector3 mouseScreen, mouseFar;
+grcWorldIdentity();
+grcViewport::GetCurrent()->ReverseTransform(static_cast<float>(ioMouse::GetX()),static_cast<float>(ioMouse::GetY()),mouseScreen,mouseFar);
+grcWorldIdentity();
+grcBegin(drawLines,2);
+grcVertex3fv(&mouseScreen[0]);
+grcVertex3fv(&mouseFar[0]);
+grcEnd();
+
+// Establish a world space direction for the mouse click.
+Vector3 direction;
+direction.Subtract(mouseFar, mouseScreen);
+direction.Normalize();
+
+Vector3 segA, segB;
+segA = mouseScreen;
+segB.AddScaled(mouseScreen, direction, 100.0f);
+phSegment segment;
+segment.Set(segA, segB);
+phIntersection isect;
+if (PHLEVEL->TestProbe(segment, &isect))
+{
+// Do a probe test to apply an impulse.
+phIntersection isect;
+if (PHLEVEL->TestProbe(segment,&isect))
+{
+// A direct line of sight probe at the mouse icon location hit something.
+Assert(isect.GetInstance() && isect.GetInstance()->GetLevelIndex()!=phInst::INVALID_INDEX);
+
+// Find the impulse magnitude.
+float impulseMag = 40.0f;
+impulseMag = isect.GetInstance()->GetArchetype()->GetMass();
+if (m_Pull.IsPressed())
+{
+impulseMag *= -1.0f;
+}
+
+// Set the impulse.
+Vector3 impulse(direction);
+impulse.Scale(impulseMag);
+
+// Apply the impulse.
+PHSIM->ApplyImpulse(isect.GetInstance()->GetLevelIndex(), impulse, isect.GetPosition(), isect.GetComponent());
+}
+}
+}
+}
+
+void MatchIntersections (phIntersection& isectA, phIntersection& isectB)
+{
+Assert(isectA.IsAHit()==isectB.IsAHit());
+if (isectA.IsAHit() && isectB.IsAHit())
+{
+Assert(isectA.GetInstance() == isectB.GetInstance());
+ASSERT_ONLY(float allowedError = 1.0e-2f);	// 1.0e-6f fails in PC debug mode
+Assert(isectA.GetPosition().IsClose(isectB.GetPosition(),allowedError));
+Assert(isectA.GetNormal().IsClose(isectB.GetNormal(),allowedError));
+Assert(AreNearlyEqual(isectA.GetT(),isectB.GetT(),allowedError));
+Assert(AreNearlyEqual(isectA.GetDepth(),isectB.GetDepth(),allowedError));
+Assert(isectA.GetMaterialId()==isectB.GetMaterialId());
+Assert(isectA.GetPartIndex()==isectB.GetPartIndex());
+Assert(isectA.GetPartType()==isectB.GetPartType());
+Assert(isectA.Aoutside()==isectB.Aoutside());
+Assert(isectA.GetComponent()==isectB.GetComponent());
+}
+}
+
+void MatchIntersectionLists (phIntersection* isectListA, phIntersection* isectListB, int numIsects)
+{
+for (int isectIndex=0; isectIndex<numIsects; isectIndex++)
+{
+MatchIntersections(isectListA[isectIndex],isectListB[isectIndex]);
+}
+}
+
+void threadedPhysicsSampleManager::UpdateClient()
+{
+// Create a set of tasks in the system task manager.
+shapeTestTaskManager.Init();
+for (int taskIndex=0; taskIndex<phShapeTestTaskManager::s_NumShapeTestTasks; taskIndex++)
+{
+// Set the task parameter shapes.
+int firstShapeIndex = taskIndex*NumShapesPerTypePerTask;
+shapeTestTaskManager.SetProbes(taskIndex,&m_ProbeTestList[firstShapeIndex],NumShapesPerTypePerTask);
+shapeTestTaskManager.SetSpheres(taskIndex,&m_SphereTestList[firstShapeIndex],NumShapesPerTypePerTask);
+shapeTestTaskManager.SetCapsules(taskIndex,&m_CapsuleTestList[firstShapeIndex],NumShapesPerTypePerTask);
+shapeTestTaskManager.SetBatches(taskIndex,&m_BatchTestList[firstShapeIndex],NumShapesPerTypePerTask);
+}
+
+// Complete the tasks.
+shapeTestTaskManager.CompleteTasks();
+
+// Repeat the same shape tests without multithreading, and verify that the results are the same.
+phIntersection multithreadedIsect;
+#if !__PSN
+phIntersection batchMultiProbeIsectList[NumBatchedProbes];
+phIntersection batchMultiSphereIsectList[NumBatchedSpheres];
+phIntersection batchMultiCapsuleIsectList[NumBatchedCapsules];
+#endif
+int listIndex = 0;
+for (int taskIndex=0; taskIndex<phShapeTestTaskManager::s_NumShapeTestTasks; taskIndex++)
+{
+for (int shapeIndex=0; shapeIndex<NumShapesPerTypePerTask; shapeIndex++)
+{
+// Test the probe again and verify the resulting intersection is the same.
+multithreadedIsect.Copy(m_ProbeIsectList[listIndex]);
+m_ProbeTestList[listIndex].TestInLevel();
+MatchIntersections(multithreadedIsect,m_ProbeIsectList[listIndex]);
+
+// Test the sphere again and verify the resulting intersection is the same.
+multithreadedIsect.Copy(m_SphereIsectList[listIndex]);
+m_SphereTestList[listIndex].TestInLevel();
+MatchIntersections(multithreadedIsect,m_SphereIsectList[listIndex]);
+
+// Shape test tasks are not implemented on the SPU except for probes and spheres.
+#if !__PSN
+// Test the capsule again and verify the resulting intersection is the same.
+multithreadedIsect.Copy(m_CapsuleIsectList[listIndex]);
+m_CapsuleTestList[listIndex].TestInLevel();
+MatchIntersections(multithreadedIsect,m_CapsuleIsectList[listIndex]);
+
+// Test the batch again and verify the resulting intersections are the same.
+phShapeBatch<phShapeTestTaskData::s_NumBatchedThreaded,phShapeTestTaskData::s_NumBatchedThreaded,phShapeTestTaskData::s_NumBatchedThreaded,phShapeTestTaskData::s_NumBatchedThreaded>& batchShape = m_BatchTestList[listIndex].GetShape();
+memcpy(batchMultiProbeIsectList,m_BatchedProbeIsectList[listIndex],sizeof(phIntersection)*batchShape.GetNumProbes());
+memcpy(batchMultiSphereIsectList,m_BatchedSphereIsectList[listIndex],sizeof(phIntersection)*batchShape.GetNumSpheres());
+memcpy(batchMultiCapsuleIsectList,m_BatchedCapsuleIsectList[listIndex],sizeof(phIntersection)*batchShape.GetNumCapsules());
+m_BatchTestList[listIndex].TestInLevel();
+MatchIntersectionLists(batchMultiProbeIsectList,m_BatchedProbeIsectList[listIndex],batchShape.GetNumProbes());
+MatchIntersectionLists(batchMultiSphereIsectList,m_BatchedSphereIsectList[listIndex],batchShape.GetNumSpheres());
+MatchIntersectionLists(batchMultiCapsuleIsectList,m_BatchedCapsuleIsectList[listIndex],batchShape.GetNumCapsules());
+#endif
+// Increment the list index counter.
+listIndex++;
+}
+}
+
+// Update the physics simulator.
+float frameTime = TIME.GetSeconds();
+PHSIM->Update(frameTime);
+
+// Update user input.
+UpdateMouse();
+m_Mapper.Update();
+if (m_Reset.IsPressed())
+{
+Reset();
+}
+}
+
+void threadedPhysicsSampleManager::DrawClient()
+{
+
+#if __PFDRAW
+
+</CODE>
+
+
+* Draw the world *
+Tell the profile draw manager to draw all the objects in the physics level.
+In a game this is normally used only for debugging.
+<CODE>
+
+PHSIM->ProfileDraw();
+GetRageProfileDraw().Render();
+
+#endif	// __PFDRAW
+
+</CODE>
+
+* Shut down the physics level and simulator. *
+The user has requested the termination of the sample, so remove the objects from the physics level.
+<CODE>
+
+PHLEVEL->DeleteObject(&m_TerrainInstance);
+for (int objectIndex=0; objectIndex<m_NumObjects; objectIndex++)
+{
+PHLEVEL->DeleteObject(&m_ActiveInstanceList[objectIndex]);
+}
+
+// Delete the physics simulator.
+delete PHSIM;
+
+// Shut down and delete the physics level.
+PHLEVEL->Shutdown();
+delete PHLEVEL;
+
+// Call the static shutdown of the simulator.
+phSimulator::ShutdownClass();
+
+// Delete the material manager.
+MATERIALMGR.Destroy();
+
+#if __PFDRAW
+// Shut down profile drawing.
+GetRageProfileDraw().Shutdown();
+#endif
+</CODE>
+
+
+@@Bounds resourcing Sample
+<GROUP Working Examples>
+
+This sample shows how create and load a resource
+containing a physics bound.
+
+
+@@Shape Tests Sample
+<GROUP Working Examples>
+
+This sample demonstrates shape tests, such as probes and spheres, on objects in the physics level.
+
+
+@@sample_water Sample
+<GROUP Working Examples>
+Demonstrate the behavior of liquids with phInstBehaviorLiquid and phBoundSurface.
+Of particular note to look at is the behavior of the surface of the water (ripples, etc) and the behavior of objects
+due to the buoyant forces exerted by the water. The usual sample controls apply.
+The sample is broken into several steps:
+1. Initialize the base physics sample class.
+2. Turn on NaN signals, and activate extra key controls (space drops a single new object, A activates objects).
+3. Create a demo world with a flat floor, and set its frame rate to 30 (default is 60).
+4. Initialize the liquid manager and tell it that we're going to be using up to 25 water bounds.
+5. Create a 5x5 grid of water bounds.
+6. Create some objects to drop into the water.
+7. Set the camera position and target for a good view of the water.
+8. Update the input controls.
+9. Update the water manager. The water class is derived from phInstBehavior, and it is updated when the physics
+
+* Initialize the base physics sample class. *
+
+* Turn on NaN signals, and activate extra key controls (space drops a single new object, A activates objects). *
+
+* Create a demo world with a flat floor, and set its frame rate to 30 (default is 60). *
+
+* Initialize the liquid manager and tell it that we're going to be using up to 25 water bounds. *
+
+* Create a 5x5 grid of water bounds. *
+
+* Create some objects to drop into the water. *
+
+* Set the camera position and target for a good view of the water. *
+
+* Update the input controls. *
+
+* Update the water manager. The water class is derived from phInstBehavior, and it is updated when the physics *
+
+
+##END SAMPLES-SECTION is automatically generated - do not edit this section!
+

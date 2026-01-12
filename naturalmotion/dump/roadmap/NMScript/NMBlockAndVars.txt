@@ -1,0 +1,100 @@
+BlockBehaviour
+stopAllBehaviours
+#activePose
+applyImpulse
+#applyBulletImpulse
+bodyRelax
+configureBalance
+configureBalanceReset
+configureBullets
+configureShotInjuredArm
+defineAttachedObject
+forceToBodyPart
+leanInDirection
+leanRandom
+leanToPosition
+leanTowardsObject
+hipsLeanInDirection
+hipsLeanRandom
+hipsLeanToPosition
+hipsLeanTowardsObject
+forceLeanInDirection
+forceLeanRandom
+forceLeanToPosition
+forceLeanTowardsObject
+overrideStartingVelocity
+setStiffness
+setMuscleStiffness
+setWeaponMode
+registerWeapon
+shotRelax
+fireWeapon
+configureSupportHandConstraint
+stayUpright
+stopAllBehaviours
+setCharacterStrength
+setCharacterHealth
+animPose
+armHang
+armsWindmill
+armsWindmillAdaptive
+balancerCollisionsReaction
+bodyBalance
+bodyFoetal
+bodyRollUp
+bodyWrithe
+braceForImpact
+catchFall
+crushReaction
+dragged
+electrocute
+fallOverWall
+grab
+hardConstraint
+headLook
+highFall
+incomingTransforms
+learnedCrawl
+pedalLegs
+pointArm
+relaxUnwind
+rollDownStairs
+shootDodge
+shot
+shotNewBullet
+shotShockSpin
+shotFallToKnees
+shotFromBehind
+shotInGuts
+shotHeadLook
+shotConfigureArms
+softKeyframe
+staggerFall
+teeter
+upperBodyFlinch
+yanked
+pointGun
+splitBody
+configureLimits
+lastManStanding
+bouyancy
+quadDeath
+BlockBehaviourEnd
+DelayedBehaviour
+applyBulletImpulse 1
+shotNewBullet 0
+DelayedBehaviourEnd
+Variables
+bulletImpulseMag 60.001
+newHitEachApplyBulletImpulseMessage true
+newHitAheadOfImpulseMessage false
+controlStiffnessInRollup true
+allowMeasureCharacter false
+bobAbout false
+weaponMode 5.0
+localPointGun false
+overideAnimPose true
+VariablesEnd
+
+
+

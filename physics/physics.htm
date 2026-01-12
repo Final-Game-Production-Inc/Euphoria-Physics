@@ -1,0 +1,1472 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./physics_files/filelist.xml">
+<link rel=Edit-Time-Data href="./physics_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>AGE Physics Library</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Angel Studios</o:Author>
+  <o:LastAuthor>Mark Rotenberg</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>2108</o:TotalTime>
+  <o:Created>2000-03-28T02:24:00Z</o:Created>
+  <o:LastSaved>2000-03-28T02:24:00Z</o:LastSaved>
+  <o:Pages>5</o:Pages>
+  <o:Words>3002</o:Words>
+  <o:Characters>17112</o:Characters>
+  <o:Company>Angel Studios</o:Company>
+  <o:Lines>142</o:Lines>
+  <o:Paragraphs>34</o:Paragraphs>
+  <o:CharactersWithSpaces>21014</o:CharactersWithSpaces>
+  <o:Version>9.2720</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;
+	mso-bidi-font-weight:normal;
+	text-decoration:underline;
+	text-underline:single;}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoBodyTextIndent2, li.MsoBodyTextIndent2, div.MsoBodyTextIndent2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.Code, li.Code, div.Code
+	{mso-style-name:Code;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:263922934;
+	mso-list-type:simple;
+	mso-list-template-ids:67698689;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l1
+	{mso-list-id:265771244;
+	mso-list-type:simple;
+	mso-list-template-ids:67698689;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l2
+	{mso-list-id:639461696;
+	mso-list-type:simple;
+	mso-list-template-ids:67698689;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l3
+	{mso-list-id:886137083;
+	mso-list-type:simple;
+	mso-list-template-ids:67698703;}
+@list l3:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l4
+	{mso-list-id:1042898385;
+	mso-list-type:simple;
+	mso-list-template-ids:67698689;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:1209416802;
+	mso-list-type:simple;
+	mso-list-template-ids:67698689;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:1268275704;
+	mso-list-type:simple;
+	mso-list-template-ids:-1297578544;}
+@list l6:level1
+	{mso-level-start-at:2;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;}
+@list l7
+	{mso-list-id:1546211549;
+	mso-list-type:simple;
+	mso-list-template-ids:67698689;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l8
+	{mso-list-id:1932350759;
+	mso-list-type:simple;
+	mso-list-template-ids:67698689;}
+@list l8:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l9
+	{mso-list-id:1936672267;
+	mso-list-type:simple;
+	mso-list-template-ids:67698689;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l10
+	{mso-list-id:2119711205;
+	mso-list-type:simple;
+	mso-list-template-ids:67698689;}
+@list l10:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+  <o:regrouptable v:ext="edit">
+   <o:entry new="1" old="0"/>
+   <o:entry new="2" old="0"/>
+  </o:regrouptable>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=MsoTitle>AGE Physics Library</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;mso-list:l3 level1 lfo1;
+tab-stops:list .25in'><![if !supportLists]><b style='mso-bidi-font-weight:normal'><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt'>Conventions<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'>In this document, the following
+conventions are used:</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo5;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'>Bold face</b> is
+used for the names of code libraries (i.e., .dsp files). Note that library
+names always start with the prefix “ph”.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo5;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><i style='mso-bidi-font-style:normal'>Italics</i> are
+used for code modules.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo5;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>The AGE Physics Library as a whole, including all six
+libraries detailed below, is referred to as the “AGE Physics Library”, or just
+as “the physics library”. This should not be confused with the <b
+style='mso-bidi-font-weight:normal'>physics</b> library, which is a code
+library, and will be referenced in <b style='mso-bidi-font-weight:normal'>bold </b>face.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;mso-list:l3 level1 lfo1;
+tab-stops:list .25in'><![if !supportLists]><b style='mso-bidi-font-weight:normal'><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt'>Main Concepts<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'>The following are the main
+concepts with which you must be familiar in order to understand and effectively
+use the physics library:</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l8 level1 lfo4;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Bound</p>
+
+<p class=MsoNormal style='margin-left:.5in'>A “bound” is a geometric
+representation of an object, whether defined mathematically (e.g., a sphere,
+which requires only a radius to define its topology) with a collection of
+polygons, or by some other method. With few exceptions, a bound is an archetype
+which does not possess a location or rotation. Therefore, many objects can
+reference the same bound, allowing you to create a large number of instances
+with minimal local data (such as matrices, damage states, etc.).</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l8 level1 lfo4;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>ICS</p>
+
+<p class=MsoBodyTextIndent>The “phInertialCS”, or “ICS”, is a structure which
+contains information on the location, velocity, angular velocity, mass, density,
+moments of inertia, torque, etc., of an object. In short, everything with which
+to determine where an object is, and where it will be. In many ways the ICS is
+a complement to the bound – it knows nothing of the archetypal collideable
+geometry of an object type, but it knows where an object instance is and where
+it’s going. After a collision it determines the resulting forces, and every
+frame it updates position and rotation.</p>
+
+<p class=MsoBodyTextIndent style='text-indent:-.25in;mso-list:l2 level1 lfo6;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Collider</p>
+
+<p class=MsoBodyTextIndent>A “collider” is an object which serves as a
+container for a bound and an ICS. It is, in essence, a physically active object
+with a collideable geometry, position, rotation, velocities, etc. – everything
+necessary for full simulation of physical motion.</p>
+
+<p class=MsoBodyTextIndent style='text-indent:-.25in;mso-list:l2 level1 lfo6;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Instance</p>
+
+<p class=MsoBodyTextIndent>An “instance” is a collideable object which doesn’t
+have a collider, but does have a bound, a position, and a rotation (possibly
+only in Y, depending on your application). It’s waiting for something to hit it
+so that it can be assigned a collider, waken, and become fully physically
+active. The goal is to have thousands of instances (each of which is very
+cheap) and very few colliders (which are comparatively expensive), giving the
+world complexity without making it computationally prohibitive.</p>
+
+<p class=MsoBodyTextIndent style='margin-left:0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;mso-list:l3 level1 lfo1;
+tab-stops:list .25in'><![if !supportLists]><b style='mso-bidi-font-weight:normal'><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt'>Libraries</span></b><!--[if gte vml 1]><o:wrapblock><v:group
+  id="_x0000_s1048" style='position:absolute;left:0;text-align:left;
+  margin-left:97.2pt;margin-top:0;width:201.6pt;height:194.4pt;z-index:1;
+  mso-position-horizontal-relative:text;mso-position-vertical-relative:text'
+  coordorigin="3744,4752" coordsize="4032,3888" o:allowincell="f">
+  <v:shapetype id="_x0000_t202" coordsize="21600,21600" o:spt="202" path="m0,0l0,21600,21600,21600,21600,0xe">
+   <v:stroke joinstyle="miter"/>
+   <v:path gradientshapeok="t" o:connecttype="rect"/>
+  </v:shapetype><v:shape id="_x0000_s1026" type="#_x0000_t202" style='position:absolute;
+   left:5040;top:4752;width:1440;height:432' o:regroupid="2" strokeweight="1.5pt">
+   <v:textbox style='mso-next-textbox:#_x0000_s1026'>
+    <![if !mso]>
+    <table cellpadding=0 cellspacing=0 width="100%">
+     <tr>
+      <td><![endif]>
+      <div>
+      <p class=MsoNormal align=center style='text-align:center'><b
+      style='mso-bidi-font-weight:normal'>phcore<o:p></o:p></b></p>
+      </div>
+      <![if !mso]></td>
+     </tr>
+    </table>
+    <![endif]></v:textbox>
+  </v:shape><v:shape id="_x0000_s1032" type="#_x0000_t202" style='position:absolute;
+   left:3744;top:5616;width:1440;height:432' o:regroupid="2" strokeweight="1.5pt">
+   <v:textbox style='mso-next-textbox:#_x0000_s1032'>
+    <![if !mso]>
+    <table cellpadding=0 cellspacing=0 width="100%">
+     <tr>
+      <td><![endif]>
+      <div>
+      <p class=MsoNormal align=center style='text-align:center'><b
+      style='mso-bidi-font-weight:normal'>phinertia<o:p></o:p></b></p>
+      </div>
+      <![if !mso]></td>
+     </tr>
+    </table>
+    <![endif]></v:textbox>
+  </v:shape><v:shape id="_x0000_s1033" type="#_x0000_t202" style='position:absolute;
+   left:6336;top:5616;width:1440;height:432' o:regroupid="2" strokeweight="1.5pt">
+   <v:textbox style='mso-next-textbox:#_x0000_s1033'>
+    <![if !mso]>
+    <table cellpadding=0 cellspacing=0 width="100%">
+     <tr>
+      <td><![endif]>
+      <div>
+      <p class=MsoNormal align=center style='text-align:center'><b
+      style='mso-bidi-font-weight:normal'>phbound<o:p></o:p></b></p>
+      </div>
+      <![if !mso]></td>
+     </tr>
+    </table>
+    <![endif]></v:textbox>
+  </v:shape><v:shape id="_x0000_s1036" type="#_x0000_t202" style='position:absolute;
+   left:5040;top:6480;width:1440;height:432' o:regroupid="2" strokeweight="1.5pt">
+   <v:textbox style='mso-next-textbox:#_x0000_s1036'>
+    <![if !mso]>
+    <table cellpadding=0 cellspacing=0 width="100%">
+     <tr>
+      <td><![endif]>
+      <div>
+      <p class=MsoNormal align=center style='text-align:center'><b
+      style='mso-bidi-font-weight:normal'>phcollide<o:p></o:p></b></p>
+      </div>
+      <![if !mso]></td>
+     </tr>
+    </table>
+    <![endif]></v:textbox>
+  </v:shape><v:shape id="_x0000_s1037" type="#_x0000_t202" style='position:absolute;
+   left:5040;top:7344;width:1440;height:432' o:regroupid="2">
+   <v:textbox style='mso-next-textbox:#_x0000_s1037'>
+    <![if !mso]>
+    <table cellpadding=0 cellspacing=0 width="100%">
+     <tr>
+      <td><![endif]>
+      <div>
+      <p class=MsoNormal align=center style='text-align:center'><b
+      style='mso-bidi-font-weight:normal'>physics<o:p></o:p></b></p>
+      </div>
+      <![if !mso]></td>
+     </tr>
+    </table>
+    <![endif]></v:textbox>
+  </v:shape><v:line id="_x0000_s1038" style='position:absolute;flip:x' from="4608,5184"
+   to="5760,5616" o:regroupid="2">
+   <v:stroke endarrow="block"/>
+  </v:line><v:line id="_x0000_s1039" style='position:absolute;flip:x' from="5760,6048"
+   to="6912,6480" o:regroupid="2">
+   <v:stroke endarrow="block"/>
+  </v:line><v:line id="_x0000_s1040" style='position:absolute' from="5760,5184"
+   to="6912,5616" o:regroupid="2">
+   <v:stroke endarrow="block"/>
+  </v:line><v:line id="_x0000_s1041" style='position:absolute' from="4608,6048"
+   to="5760,6480" o:regroupid="2">
+   <v:stroke endarrow="block"/>
+  </v:line><v:line id="_x0000_s1042" style='position:absolute' from="5760,6912"
+   to="5760,7344" o:regroupid="2">
+   <v:stroke endarrow="block"/>
+  </v:line><v:line id="_x0000_s1045" style='position:absolute' from="5760,7776"
+   to="5760,8208" o:regroupid="2">
+   <v:stroke endarrow="block"/>
+  </v:line><v:shape id="_x0000_s1046" type="#_x0000_t202" style='position:absolute;
+   left:5040;top:8208;width:1440;height:432' o:regroupid="2">
+   <v:stroke dashstyle="1 1" endcap="round"/>
+   <v:textbox style='mso-next-textbox:#_x0000_s1046'>
+    <![if !mso]>
+    <table cellpadding=0 cellspacing=0 width="100%">
+     <tr>
+      <td><![endif]>
+      <div>
+      <p class=MsoNormal align=center style='text-align:center'><b
+      style='mso-bidi-font-weight:normal'>phtest<o:p></o:p></b></p>
+      </div>
+      <![if !mso]></td>
+     </tr>
+    </table>
+    <![endif]></v:textbox>
+  </v:shape><w:wrap type="topAndBottom"/>
+ </v:group><![endif]--><![if !vml]><span style='mso-ignore:vglayout'>
+ <table cellpadding=0 cellspacing=0>
+  <tr>
+   <td width=129 height=0></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><img width=272 height=263 src="./physics_files/image001.gif"
+   v:shapes="_x0000_s1048 _x0000_s1026 _x0000_s1032 _x0000_s1033 _x0000_s1036 _x0000_s1037 _x0000_s1038 _x0000_s1039 _x0000_s1040 _x0000_s1041 _x0000_s1042 _x0000_s1045 _x0000_s1046"></td>
+  </tr>
+ </table>
+ </span><![endif]><!--[if gte vml 1]></o:wrapblock><![endif]--><br
+style='mso-ignore:vglayout' clear=ALL>
+<b style='mso-bidi-font-weight:normal'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<br style='mso-ignore:vglayout' clear=ALL>
+
+<p class=MsoNormal style='margin-left:.25in'>There are four core physics
+libraries in AGE, <b style='mso-bidi-font-weight:normal'>phcore</b>, <b
+style='mso-bidi-font-weight:normal'>phinertia</b>, <b style='mso-bidi-font-weight:
+normal'>phbound</b>, and <b style='mso-bidi-font-weight:normal'>phcollide</b>.
+Additionally, there is one library, <b style='mso-bidi-font-weight:normal'>physics</b>,
+which provides several modules which can be useful as sample code and when
+creating basic applications, but are designed from the standpoint of
+simplicity. Finally, there is a library named <b style='mso-bidi-font-weight:
+normal'>phtest</b> which contains testing modules. The above graph shows the
+dependencies of the various libraries – note that <b style='mso-bidi-font-weight:
+normal'>phinertia</b> and <b style='mso-bidi-font-weight:normal'>phbound</b>
+don’t rely on each other. Note that except in extreme situations, you should
+consider the four core libraries as read-only, whereas you should make a copy
+of <b style='mso-bidi-font-weight:normal'>physics</b>, use its code as a
+starting point, and alter as necessary.</p>
+
+<p class=MsoNormal style='margin-left:.25in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l5 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'>phcore<o:p></o:p></b></p>
+
+<p class=MsoBodyTextIndent>This library contains the most essential elements
+for the whole of AGE Physics, and is required by all other physics libraries. <b
+style='mso-bidi-font-weight:normal'>phcore</b> contains the following modules:</p>
+
+<p class=MsoBodyTextIndent style='margin-left:.75in;text-indent:-.25in;
+mso-list:l6 level1 lfo3;tab-stops:list .75in'><![if !supportLists]>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>constants<o:p></o:p></i></p>
+
+<p class=MsoBodyTextIndent style='margin-left:.75in'>Contains important
+constants for physics. At present, these consist only of the gravity constant,
+several penetration constants, and some debug defines.</p>
+
+<p class=MsoBodyTextIndent style='margin-left:.75in;text-indent:-.25in;
+mso-list:l6 level1 lfo3;tab-stops:list .75in'><![if !supportLists]>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>convexpoly<o:p></o:p></i></p>
+
+<p class=MsoBodyTextIndent style='margin-left:.75in'>A type of polygon which
+knows which only has one side.</p>
+
+<p class=MsoBodyTextIndent style='margin-left:.75in;text-indent:-.25in;
+mso-list:l6 level1 lfo3;tab-stops:list .75in'><![if !supportLists]>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>edge<o:p></o:p></i></p>
+
+<p class=MsoBodyTextIndent style='margin-left:.75in'>A polygon edge.</p>
+
+<p class=MsoBodyTextIndent style='margin-left:.75in;text-indent:-.25in;
+mso-list:l6 level1 lfo3;tab-stops:list .75in'><![if !supportLists]>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>isect<o:p></o:p></i></p>
+
+<p class=MsoBodyTextIndent style='margin-left:.75in'>An intersection. This type
+is heavily used during collision detection, and is derived from a class found
+in <i style='mso-bidi-font-style:normal'>isectpoint</i>.</p>
+
+<p class=MsoBodyTextIndent style='margin-left:.75in;text-indent:-.25in;
+mso-list:l6 level1 lfo3;tab-stops:list .75in'><![if !supportLists]>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>isectpoint<o:p></o:p></i></p>
+
+<p class=MsoBodyTextIndent style='margin-left:.75in'>The most basic information
+used in storing an intersection.<i style='mso-bidi-font-style:normal'><o:p></o:p></i></p>
+
+<p class=MsoBodyTextIndent style='margin-left:.75in;text-indent:-.25in;
+mso-list:l6 level1 lfo3'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>line<o:p></o:p></i></p>
+
+<p class=MsoBodyTextIndent style='margin-left:.75in'>A set of courtesy functions
+that allow the buffered display of lines on screen for debugging.</p>
+
+<p class=MsoBodyTextIndent style='margin-left:.75in;text-indent:-.25in;
+mso-list:l6 level1 lfo3;tab-stops:list .75in'><![if !supportLists]>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>material<o:p></o:p></i></p>
+
+<p class=MsoBodyTextIndent style='margin-left:.75in'>Physics materials.</p>
+
+<p class=MsoBodyTextIndent style='margin-left:.75in;text-indent:-.25in;
+mso-list:l6 level1 lfo3;tab-stops:list .75in'><![if !supportLists]>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>node<o:p></o:p></i></p>
+
+<p class=MsoBodyTextIndent style='margin-left:.75in'>Basic linked-list
+functionality (it was lacking elsewhere in AGE).</p>
+
+<p class=MsoBodyTextIndent style='margin-left:.75in;text-indent:-.25in;
+mso-list:l6 level1 lfo3;tab-stops:list .75in'><![if !supportLists]>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>phmath<o:p></o:p></i></p>
+
+<p class=MsoBodyTextIndent style='margin-left:.75in'>Contains more complex math
+routines only used (currently) in AGE (e.g., solutions to a quartic).</p>
+
+<p class=MsoBodyTextIndent style='margin-left:.75in;text-indent:-.25in;
+mso-list:l6 level1 lfo3;tab-stops:list .75in'><![if !supportLists]>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>poly<o:p></o:p></i></p>
+
+<p class=MsoBodyTextIndent style='margin-left:.75in'>A polygon. Note that in
+VTune, the segment/polygon collision routines in this module are almost always
+the prime villain in framerate suckitude™. And, although there will no doubt be
+a lot of effort in hand-tuning these in assembly, avoiding these routines is by
+far the best way of improving physics performance. Note that it takes almost
+the same amount of time to test a quad as it does to test a triangle, so the
+more you can optimize your bounds to use quads instead of tri’s, the better off
+you will be. Please refer to the <i style='mso-bidi-font-style:normal'>optbound</i>
+tool in <b style='mso-bidi-font-weight:normal'>phtest</b>.</p>
+
+<p class=MsoBodyTextIndent style='margin-left:.75in;text-indent:-.25in;
+mso-list:l6 level1 lfo3;tab-stops:list .75in'><![if !supportLists]>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>segment</i></p>
+
+<p class=MsoBodyTextIndent style='margin-left:.75in'>A line segment.</p>
+
+<p class=MsoBodyTextIndent style='margin-left:.75in;text-indent:-.25in;
+mso-list:l6 level1 lfo3;tab-stops:list .75in'><![if !supportLists]>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>treenode<o:p></o:p></i></p>
+
+<p class=MsoBodyTextIndent style='margin-left:.75in'>Basic tree functionality
+(currently incomplete, but planned for use with hierarchically connected
+bounds).</p>
+
+<p class=MsoBodyTextIndent style='margin-left:.75in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l5 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'>phinertia<o:p></o:p></b></p>
+
+<p class=MsoBodyTextIndent>This library contains all functionality related to
+ICS’s, and the location and movement of objects. It requires the <b
+style='mso-bidi-font-weight:normal'>phcore</b> library, and contains the
+following modules:</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>constraint<o:p></o:p></i></p>
+
+<p class=MsoNormal style='margin-left:.75in'>Adds constraints to the relative
+motions of two ICS’s.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>inertia<o:p></o:p></i></p>
+
+<p class=MsoNormal style='margin-left:.75in'>The ICS (actually, ICS, or
+“inertial coordinate system”, is a horrible misnomer. Due to historical
+pressures, however, we continue to use this terminology – deal).</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>joint<o:p></o:p></i></p>
+
+<p class=MsoNormal style='margin-left:.75in'>General code for handling 1, 2,
+and 3 degree of freedom (DOF) joints.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>spring<o:p></o:p></i></p>
+
+<p class=MsoNormal style='margin-left:.75in'>Code for simulating springs.</p>
+
+<p class=MsoNormal style='margin-left:.75in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l5 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'>phbound<o:p></o:p></b></p>
+
+<p class=MsoNormal style='margin-left:.5in'>This library contains all
+functionality related to bounds and most of the collision code. It requires the
+<b style='mso-bidi-font-weight:normal'>phcore</b> library, and contains the
+following modules:</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>bound</i></p>
+
+<p class=MsoBodyTextIndent2>The base class from which all other bounds are
+derived. In the event you wish to create your own custom bound, you should
+derive it from this class.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>boundbox</i></p>
+
+<p class=MsoNormal style='margin-left:.75in'>A bound type that represents a
+box, defined as a rectilinear, axis-aligned six-sided polyhedron. This type is
+extremely useful, as it is both common as well as much faster than the
+identical shape represented by a polygonal geometry in <i style='mso-bidi-font-style:
+normal'>boundgeom</i> (see below).</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>boundcomposite</i></p>
+
+<p class=MsoNormal style='margin-left:.75in'>A bound made up of multiple
+sub-bounds. This type is still a work in progress.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>boundcontainer</i></p>
+
+<p class=MsoBodyTextIndent2>A container for a boundcomposite. In many cases a
+boundcomposite will have internal moving parts (e.g., a biped), in which case
+you will want to set the internal matrices appropriately before doing collision
+detection – this module provides a method through which you can perform
+whatever initialization is necessary before the actual collision testing.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>boundcylinder</i></p>
+
+<p class=MsoNormal style='margin-left:.75in'>A perfect cylinder. Note that this
+module is currently only about 80% done, and may very well not be completed due
+to its inherent slow performance (due to the flat ends of the cylinder, it’s
+necessary to solve a quartic, and possibly an 8<sup>th</sup>-degree polynomial
+in certain cases). At the present time, it’s suggested that you use either <i
+style='mso-bidi-font-style:normal'>boundhotdog</i>s or <i style='mso-bidi-font-style:
+normal'>boundgeom</i>s to represent your cylinders (see below).</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>boundforce</i></p>
+
+<p class=MsoBodyTextIndent2>The base class for bounds which impart forces.
+Examples would be explosions, fluid, etc. Note that these are only kind of
+bounds, but have the same basic set of functionality, so are derived from the
+same base class. They also break the rules by having positions and rotations.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>boundgeom</i></p>
+
+<p class=MsoNormal style='margin-left:.75in'>A geometric bound formed of
+polygons. This class contains loading routines as well as several optimizing
+preprocessing routines to get rid of degenerate polygons, transform triangles
+into quads, etc.<i style='mso-bidi-font-style:normal'><o:p></o:p></i></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>boundhotdog</i></p>
+
+<p class=MsoBodyTextIndent2>A cylinder with hemispheres on the ends. This type
+is second only to the sphere in speed, and is recommended for use whenever
+possible.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>boundpolygonal</i></p>
+
+<p class=MsoNormal style='margin-left:.75in'>A pure class from which all
+polygonally-based bounds are derived. The two main examples are <i
+style='mso-bidi-font-style:normal'>boundbox </i>and <i style='mso-bidi-font-style:
+normal'>boundgeom</i>.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>boundsphere</i></p>
+
+<p class=MsoBodyTextIndent2>A perfect sphere. This is the fastest type to
+collide against.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>boundterrain</i></p>
+
+<p class=MsoNormal style='margin-left:.75in'>A <i style='mso-bidi-font-style:
+normal'>boundgeom</i> that is divided into a uniform grid of polygon “buckets”.
+All polygons which intersect a cell in the grid will be stored in that bucket,
+and when a <i style='mso-bidi-font-style:normal'>bound</i> (or line segment) is
+tested against the <i style='mso-bidi-font-style:normal'>boundterrain</i>, it
+will only be tested against those buckets it intersects.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>collision</i></p>
+
+<p class=MsoNormal style='margin-left:.75in'>Contains shared collision
+routines.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>collisionprim</i></p>
+
+<p class=MsoNormal style='margin-left:.75in'>Contains basic collision
+primitives (e.g., line vs. sphere, sphere vs. poly, etc.).</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>forcesphere</i></p>
+
+<p class=MsoNormal style='margin-left:.75in'>A perfect sphere which imparts an
+outward force to any object it intersects. Useful for explosions. Derived from <i
+style='mso-bidi-font-style:normal'>boundforce</i>.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>generator</i></p>
+
+<p class=MsoNormal style='margin-left:.75in'>Code used in generating <i
+style='mso-bidi-font-style:normal'>boundterrain</i> buckets.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>impact</i></p>
+
+<p class=MsoNormal style='margin-left:.75in'>A class which contains basic
+information on two bounds which have collided.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>metaboundgeom</i></p>
+
+<p class=MsoNormal style='margin-left:.75in'>A class which references a <i
+style='mso-bidi-font-style:normal'>boundgeom</i> but is able to store its own
+copy of vertices. Currently used only in R&amp;D for real-time deformation of
+objects.</p>
+
+<p class=MsoNormal style='margin-left:.75in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l5 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'>phcollide<o:p></o:p></b></p>
+
+<p class=MsoNormal style='margin-left:.5in'>This library combines the bound and
+ICS functionality for full physical simulation. It relies on the <b
+style='mso-bidi-font-weight:normal'>phcore</b>, <b style='mso-bidi-font-weight:
+normal'>phinertia</b>, and <b style='mso-bidi-font-weight:normal'>phbound</b>
+libraries, and contains the following modules:</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>collider<o:p></o:p></i></p>
+
+<p class=MsoNormal style='margin-left:.75in'>This is the main module of the
+library. It defines the phCollider class, which serves as a container for a
+bound, an ICS, and a sleep (see below). One collider represents and controls a
+single physically active object.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>collision<o:p></o:p></i></p>
+
+<p class=MsoNormal style='margin-left:.75in'>Contains shared collision
+routines.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>contact</i></p>
+
+<p class=MsoNormal style='margin-left:.75in'>A class which maintains
+information on a single point of contact between two objects. Contacts are
+important for two reasons – first, they improve the speed of collision
+detection, as you already know where two objects are touching, and second, they
+allow objects to come to rest against each other, allowing stacking.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>contactmgr<o:p></o:p></i></p>
+
+<p class=MsoBodyTextIndent2>A class which manages the contacts.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>impact<o:p></o:p></i></p>
+
+<p class=MsoNormal style='margin-left:.75in'>Derived from the impact class
+defined in <b style='mso-bidi-font-weight:normal'>phbound</b>, this class
+provides extra functionality related to colliders. Note that this class doesn’t
+have any extra data members, so it is possible to use it interchangeably with
+its superclass.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>instance<o:p></o:p></i></p>
+
+<p class=MsoNormal style='margin-left:.75in'>Defines the most basic form of
+instance. It has a type ID, a matrix, and a bit vector for status information.
+Note that the type ID can be used by your program in any way you see fit – in
+the default managers defined in <b style='mso-bidi-font-weight:normal'>physics</b>,
+it is an index into an array of bound information, although this could just as
+easily be a pointer to a bound, or to a struct with game-specific information
+(presumably also including a pointer to a bound). It is important for this
+struct to be as small as possible so that a great number of them may be stored.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>sleep<o:p></o:p></i></p>
+
+<p class=MsoBodyTextIndent2>A class which controls how fast and when an object
+will fall asleep.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>sleepmgr<o:p></o:p></i></p>
+
+<p class=MsoBodyTextIndent2>Currently obsolete, but kept around just in case.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l5 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'>physics<o:p></o:p></b></p>
+
+<p class=MsoNormal style='margin-left:.5in'>This library contains a set of
+general-purpose routines which may or may not be of use to your project. They
+are provided as examples, but it is expected that you will change them as
+necessary to more accurately reflect the needs of your application. It depends
+on <b style='mso-bidi-font-weight:normal'>phcore</b>, <b style='mso-bidi-font-weight:
+normal'>phinertia</b>, <b style='mso-bidi-font-weight:normal'>phbound</b>, and <b
+style='mso-bidi-font-weight:normal'>phcollide</b>. </p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>boundmgr<o:p></o:p></i></p>
+
+<p class=MsoBodyTextIndent2>A singleton which manages bounds and their
+requisite information. It is likely that you will be able to use the boundmgr
+as is – it provides a simple interface to load and manage bounds, including
+optimizations for initialization of colliders at promotion time, and the
+ability to store metamodels for bounds. You may want to modify it to initialize
+special types used by your application.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>collidermgr<o:p></o:p></i></p>
+
+<p class=MsoBodyTextIndent2>Manages all instances, colliders, ICS’s, and
+sleeps. Performs collisions every frame, promotes and demotes objects
+appropriately, renders models based on object locations. It is likely that you
+will want to use this as a starting point for your application’s collision
+management, but it is probably only appropriate for use as is in demos or
+smaller projects. Its main disadvantage is that it doesn’t have any form of
+room management.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>forcecloth<o:p></o:p></i></p>
+
+<p class=MsoBodyTextIndent2>A type of bound being used in R&amp;D.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>forceliquid<o:p></o:p></i></p>
+
+<p class=MsoBodyTextIndent2>A type of bound being used in R&amp;D.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>instmgr<o:p></o:p></i></p>
+
+<p class=MsoBodyTextIndent2>A list manager for instances. Planned for use in
+the room manager.<i style='mso-bidi-font-style:normal'><o:p></o:p></i></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>object<o:p></o:p></i></p>
+
+<p class=MsoBodyTextIndent2>A very simple class which represents a single
+object in the collidermgr. It maintains information on its own instance index,
+and its initial matrix. When it’s reset, it re-initializes its initial matrix.
+Currently only used in some demos.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>room<o:p></o:p></i></p>
+
+<p class=MsoBodyTextIndent2>Still in the initial stages of development. A class
+which represents a physics room, i.e., a localized region within which objects
+can interact. </p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>roommgr<o:p></o:p></i></p>
+
+<p class=MsoBodyTextIndent2>Still in the initial stages of development. This
+class will eventually go a long way to replacing the collidermgr – it will
+maintain a list of rooms, and will only test an object against objects in the
+rooms it intersects. This will allow the creation and maintenance of a much
+larger database of objects, as active objects will only be tested against local
+objects, not those in distant rooms.</p>
+
+<p class=MsoNormal style='margin-left:.5in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l5 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'>phtest</b></p>
+
+<p class=MsoNormal style='margin-left:.5in'>The modules of <b style='mso-bidi-font-weight:
+normal'>phtest</b> are used for testing purposes or as tools.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>block<o:p></o:p></i></p>
+
+<p class=MsoBodyTextIndent2>An old piece of code with much the same
+functionality of <i style='mso-bidi-font-style:normal'>object</i> in <b
+style='mso-bidi-font-weight:normal'>physics</b>. Its only current use (to my
+knowledge) is in <i style='mso-bidi-font-style:normal'>launchingball</i>.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>launchingball<o:p></o:p></i></p>
+
+<p class=MsoNormal style='margin-left:.75in'>An object which can be launched
+(useful in stacking demos).</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>maketerrain<o:p></o:p></i></p>
+
+<p class=MsoBodyTextIndent2>A tool which processes a boundterrain and saves out
+its data. Boundterrains generally take a long time to load because there’s a
+lot of preprocessing to be done, so use of this tool in the asset pipeline
+speeds load time tremendously (when you have large boundterrains, that is).<i
+style='mso-bidi-font-style:normal'><o:p></o:p></i></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>optbound<o:p></o:p></i></p>
+
+<p class=MsoBodyTextIndent2>A tool which optimizes bound (bnd) files by
+removing duplicate vertices, edges, and polygons, and by converting coplanar,
+attached triangles into quads (with appropriate checks for convexity). This has
+a huge impact on performance.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>phage<o:p></o:p></i></p>
+
+<p class=MsoBodyTextIndent2>Generic tester I use for testing various parts of
+the physics library.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>phroom<o:p></o:p></i></p>
+
+<p class=MsoNormal style='margin-left:.75in'>Tester for rooms.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>phtable<o:p></o:p></i></p>
+
+<p class=MsoBodyTextIndent2>Tester originally created for testing
+boundcomposites, but now just a general tester.<i style='mso-bidi-font-style:
+normal'><o:p></o:p></i></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>roomtest<o:p></o:p></i></p>
+
+<p class=MsoBodyTextIndent2>Tester for rooms.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><i style='mso-bidi-font-style:normal'>roomtool<o:p></o:p></i></p>
+
+<p class=MsoBodyTextIndent2>Tool for creating simple room files. Currently
+incomplete.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;mso-list:l3 level1 lfo1;
+tab-stops:list .25in'><![if !supportLists]><b style='mso-bidi-font-weight:normal'><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt'>Customization<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'>Although there’s a lot of base
+functionality built into the physics library, it’s likely that you’ll have to
+customize the following areas:</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l9 level1 lfo11;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><i style='mso-bidi-font-style:normal'>collidermgr</i></p>
+
+<p class=MsoBodyTextIndent>The collider manager, as it stands, is really only
+useful for a world which contains several hundred objects or fewer. The reason
+for this is that it has no way of sectioning the world into multiple areas
+(i.e., “rooms”), which means that every frame it has to do sphere tests between
+every active collider and every instance. Ideally, you would want the time to
+be a function of the number of active colliders, with very little relation to
+the number of sleeping instances in the world. And, the needs of each project
+will necessitate different approaches, which makes this the biggest and most
+important area of customization for a project.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l9 level1 lfo11;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>New Bounds</p>
+
+<p class=MsoNormal style='margin-left:.5in'>It’s also likely that your project
+will have a bound type unique to it. An example of this is the SDL in Midnight
+Club, or the offroad level bound type in Smuggler’s Run. The most important
+piece of functionality required by a new bound is the various <span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>TestSegment()</span>
+functions, each of which tests a line segment against the bound. These are:</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>TestEdge()<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.75in'>Returns the closest and farthest
+intersections between the segment and the bound. This is used in collision
+detection with polygonal objects.<b style='mso-bidi-font-weight:normal'><o:p></o:p></b></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>TestProbe()<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.75in'>Returns the closest intersection
+between the segment and the bound. Also used in collision detection with
+polygonal objects, although it has many other uses (e.g., wheel probes,
+gunshots, etc.).</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l6 level1 lfo3;
+tab-stops:list .75in'><![if !supportLists]><span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>TestAI()<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.75in'>Returns the first intersection
+discovered between the segment and the bound. This is not used internally by
+the physics code, and is only important if your application has a need for it
+(it was originally conceived as being useful for pathfinding, although that
+usefulness is questionable).</p>
+
+<p class=MsoNormal style='margin-left:.5in'>Depending on your application, you
+will also probably have to override the <span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>TestSphere()</span> function, which
+determines whether a sphere has collided with your bound, and if so, returns
+the position, normal, and depth of impact. Finally, you will have to write
+custom routines for collision detection between your object and any
+non-polygonal object with which it’s important for your bound to collide.
+Remember, although you may think that the hotdog is a pretty exotic shape, it’s
+fast, and may be just the thing for lamps, trees, parking meters, biped limbs,
+etc., which means that you’re probably going to need a <span style='font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>TestMyBoundVsHotdog()</span>
+routine somewhere along the way. One word of caution – a common mistake is to
+forget to fill in certain pieces of information in the intersection record, but
+this will cause bad behavior. There’s lots of sample code lying around in the
+other bounds, and there are people to ask – when in doubt, fill in more info.</p>
+
+<p class=MsoNormal style='margin-left:.5in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;mso-list:l3 level1 lfo1;
+tab-stops:list .25in'><![if !supportLists]><b style='mso-bidi-font-weight:normal'><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt'>Getting Started<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'>Ok, now that you’ve had an
+overview of the pieces, I’ll go over a simple piece of code that initializes
+AGE, sets up the physics manager, creates an box and a flat plane, and drops
+the box when you hit the space bar.</p>
+
+<p class=MsoNormal style='margin-left:.25in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Code>int Main()</p>
+
+<p class=Code>{</p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>ageInit(&quot;//zen/projects/age/assets/physics&quot;);</p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>ageBeginGfx();</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>devPolarCam PC;</p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>PC.Init(10,2.0f,0.3f);</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>RSTATE.SetLighting(true);</p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>RSTATE.SetAmbient(mkrgb(30,30,30));</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>gfxLight light;</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>light.type =
+lightDirectional;</p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>light.diffuse.Set(1,1,1,1);</p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>light.ambient.Set(0,0,0,1);</p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>light.dir.Set(-1.0,-0.5f,0.5f);</p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>light.range = 100.0f;</p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>RSTATE.SetLight(0,
+&amp;light);</p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>RSTATE.LightEnable(0,
+true);</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:.25in'>The above code is pure AGE setup,
+with no relation to the physics library. Now comes the physics setup.</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>/////////////////////////////////////////////////</p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>// BEGIN PROGRAM-SPECIFIC
+SECTION OF CODE</p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>phColliderMgr
+*collidermgr = new phColliderMgr();</p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>phColliderMgr::SetActiveInstance(collidermgr);</p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>COLLIDERMGR-&gt;Init(200,1000,100);</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:.25in'>The above section instantiates a
+collidermgr and sets it as the active collidermgr. You can have multiple collidermgr’s,
+but when one is set as “active”, it acts as a singleton. The <span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Init()</span>
+function specifies how many colliders, instances, and broken pieces may exist
+(broken piece functionality is currently, er, broken).</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>/////////////////////</p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>// ground</p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>int index;</p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>char terrain[] =
+&quot;big_plane&quot;;</p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>BOUNDMGR.GetArchetype(phBound::GEOMETRY,terrain,Vector3(1,1,1),1,NULL,</p>
+
+<p class=Code style='margin-left:.5in;text-indent:.5in'>&amp;index);</p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>BOUNDMGR.SetModel(index,terrain);</p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>COLLIDERMGR-&gt;RequestCollider(index,NULL,phColliderMgr::FIXED);</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:.25in'>Get a bound from the bound
+manager. If the bound has not yet been loaded (as is the case here) the
+boundmgr will automatically load it. Normally, when you’re instantiating a
+bound you won’t request a collider for it, but in this case you want to because
+this bound is going to act as terrain. All “fixed” objects have to be set up
+specially, as they have neither ICS’s nor sleeps. Below is an example of a
+normal physical object being instantiated.</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>/////////////////////</p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>// object</p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>int instance;</p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>Matrix34 initial;</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>BOUNDMGR.GetArchetype(phBound::BOX,&quot;cube&quot;,Vector3(1,1,1),1,NULL,&amp;index);</p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>BOUNDMGR.SetModel(index,&quot;cube&quot;);</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>initial.MakeRotateX(1);</p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>initial.d.Set(0,3,0);</p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>instance =
+COLLIDERMGR-&gt;CreateInstance(index,initial);</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:.25in'>Here, we get the index for a bound
+(which also loads or creates the bound if it hasn’t already been loaded or
+created), set up its initial matrix, and create an instance of the bound with
+the specified matrix. We also set a model for the object so that it will be
+automatically rendered by the collidermgr. Your application will probably want
+to do its own rendering of objects, but in this simple case it’s easier to just
+let the collidermgr take care of it. Note that the instance does not currently
+have a collider – it is “demoted”, or asleep, and will stay that way until
+another object hits it, or until it is explicitly wakened.</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>// END PROGRAM-SPECIFIC
+SECTION OF CODE</p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>/////////////////////////////////////////////////</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>bool Pause = false;</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:.25in'>Pause is used below so that you
+can single-step through a physics routine for debugging purposes. Basically, if
+you don’t <span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>Update()</span>
+the collidermgr, no physics happens. See below for details.</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>do</p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>{</p>
+
+<p class=Code><span style='mso-tab-count:2'>          </span>ageBeginFrame();</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Code><span style='mso-tab-count:2'>          </span>PC.Update();</p>
+
+<p class=Code><span style='mso-tab-count:2'>          </span>PIPE.SetCamera(PC.GetWorldMtx());</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Code><span style='mso-tab-count:2'>          </span>/////////////////////////////////////////////////</p>
+
+<p class=Code><span style='mso-tab-count:2'>          </span>// BEGIN
+PROGRAM-SPECIFIC SECTION OF CODE</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Code><span style='mso-tab-count:2'>          </span>if
+(ioKeyboard::KeyPressed(KEY_SPACE))</p>
+
+<p class=Code><span style='mso-tab-count:2'>          </span>{</p>
+
+<p class=Code><span style='mso-tab-count:3'>                 </span>if
+(COLLIDERMGR-&gt;GetInstance(instance).IsDemoted())</p>
+
+<p class=Code><span style='mso-tab-count:4'>                        </span>COLLIDERMGR-&gt;PromoteInstance(instance);</p>
+
+<p class=Code><span style='mso-tab-count:2'>          </span>}</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:.25in'>If we hit the space bar, promote
+the instance (if necessary).</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Code><span style='mso-tab-count:2'>          </span>if
+(ioKeyboard::KeyPressed(KEY_F7))</p>
+
+<p class=Code><span style='mso-tab-count:2'>          </span>{</p>
+
+<p class=Code><span style='mso-tab-count:3'>                 </span>COLLIDERMGR-&gt;DemoteInstance(instance);</p>
+
+<p class=Code><span style='mso-tab-count:3'>                 </span>COLLIDERMGR-&gt;GetInstance(instance).Matrix
+= initial;</p>
+
+<p class=Code><span style='mso-tab-count:3'>                 </span>COLLIDERMGR-&gt;Reset();</p>
+
+<p class=Code><span style='mso-tab-count:2'>          </span>}</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:.25in'>If we hit the F7 key, reset the
+scene to its original state.</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Code><span style='mso-tab-count:2'>          </span>if (Pause == false
+|| KEYBOARD.KeyPressed(KEY_F8))</p>
+
+<p class=Code><span style='mso-tab-count:3'>                 </span>COLLIDERMGR-&gt;Update();</p>
+
+<p class=Code><span style='mso-tab-count:2'>          </span>Pause =
+!KEYBOARD.KeyPressed(KEY_SPACE) &amp;&amp;</p>
+
+<p class=Code style='margin-left:1.25in;text-indent:.25in'>(Pause ||
+KEYBOARD.KeyPressed(KEY_F8));</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:.25in'>If we hit the F8 key, pause the
+scene, or single step through the scene. If we hit the space bar, continue
+normally.</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Code><span style='mso-tab-count:2'>          </span>COLLIDERMGR-&gt;Draw();</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:.25in'>Render all objects managed by the
+collidermgr.</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Code><span style='mso-tab-count:2'>          </span>// END
+PROGRAM-SPECIFIC SECTION OF CODE</p>
+
+<p class=Code><span style='mso-tab-count:2'>          </span>/////////////////////////////////////////////////</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Code><span style='mso-tab-count:2'>          </span>ageEndFrame();</p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>} while
+(ioKeyboard::KeyPressed(KEY_ESCAPE) == false);</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>delete collidermgr;</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>ageEndGfx();</p>
+
+<p class=Code><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Code><span style='mso-tab-count:1'>   </span>return 0;</p>
+
+<p class=Code>}</p>
+
+<p class=MsoNormal style='margin-left:.25in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>

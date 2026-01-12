@@ -1,0 +1,2280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rockstardb master_version="1" representation_version="1" db_version="10" name="Character:RockstarDB:MPMedium">
+  <rockstardbroot name="Root" id="00000000-0000-0000-0000-000000000001">
+    <clump name="clump" id="00000000-0000-0000-0000-000000000002">
+      <typeid>0</typeid>
+      <articulatedpart name="Buttocks" id="00000000-0000-0000-0000-300000022408">
+        <hascollision>true</hascollision>
+        <centreofmass x="0" y="0" z="0"/>
+        <mass>11</mass>
+        <lineardamping>0.100000001</lineardamping>
+        <angulardamping>0.100000001</angulardamping>
+        <friction>0.75</friction>
+        <restitution>0.4</restitution>
+        <component>Buttocks</component>
+        <transform>
+          <r0 c0="2.27997468e-014" c1="-1" c2="6.66446201e-015" c3="0"/>
+          <r1 c0="6.66449165e-015" c1="-7.54639271e-015" c2="-1" c3="0"/>
+          <r2 c0="1" c1="-2.27997468e-014" c2="-6.66448403e-015" c3="0"/>
+          <r3 c0="9.99315652e-009" c1="-0.0188533887" c2="-0.123361118" c3="1"/>
+        </transform>
+        <volume>00000000-0000-0000-0000-100000022408</volume>
+        <gravityscale>1</gravityscale>
+        <inertiamultiplier>1</inertiamultiplier>
+        <threedof name="hip_left" id="00000000-0000-0000-0000-400000021839">
+          <axisposition x="-0.0948201716" y="-0.00156020513" z="-0.149884909"/>
+          <axisdirection x="-0.0618608668" y="-0.0644190162" z="-0.996003866"/>
+          <limitenabled>true</limitenabled>
+          <createeffector>true</createeffector>
+          <leandirection x="-0.0204562675" y="0.997787297" z="-0.063263841"/>
+          <minfirstleanangle>-0.364179706</minfirstleanangle>
+          <maxfirstleanangle>1.56842723</maxfirstleanangle>
+          <minsecondleanangle>-0.523594629</minsecondleanangle>
+          <maxsecondleanangle>0.349070419</maxsecondleanangle>
+          <mintwistangle>-0.523599029</mintwistangle>
+          <maxtwistangle>0.223599017</maxtwistangle>
+          <reversefirstleanmotor>false</reversefirstleanmotor>
+          <reversesecondleanmotor>false</reversesecondleanmotor>
+          <reversetwistmotor>false</reversetwistmotor>
+          <softlimitfirstleanmultiplier>1</softlimitfirstleanmultiplier>
+          <softlimitsecondleanmultiplier>1</softlimitsecondleanmultiplier>
+          <softlimittwistmultiplier>1</softlimittwistmultiplier>
+          <defaultleanforcecap>300</defaultleanforcecap>
+          <defaulttwistforcecap>300</defaulttwistforcecap>
+          <defaultmusclestiffness>0.5</defaultmusclestiffness>
+          <defaultmusclestrength>100</defaultmusclestrength>
+          <defaultmuscledamping>20</defaultmuscledamping>
+          <articulatedpart name="Thigh_Left" id="00000000-0000-0000-0000-300000020452">
+            <hascollision>true</hascollision>
+            <centreofmass x="0" y="0" z="0"/>
+            <mass>7.6</mass>
+            <lineardamping>0.100000001</lineardamping>
+            <angulardamping>0.100000001</angulardamping>
+            <friction>0.75</friction>
+            <restitution>0.4</restitution>
+            <component>Thigh_Left</component>
+            <transform>
+              <r0 c0="0.998076916" c1="0.061861109" c2="0.00399326952" c3="0"/>
+              <r1 c0="-6.20644656e-008" c1="0.0644191429" c2="-0.997923017" c3="0"/>
+              <r2 c0="-0.0619898587" c1="0.996003985" c2="0.0642952472" c3="0"/>
+              <r3 c0="-0.108421728" c1="-0.0157242008" c2="-0.368879229" c3="1"/>
+            </transform>
+            <volume>00000000-0000-0000-0000-100000020452</volume>
+            <gravityscale>1</gravityscale>
+            <inertiamultiplier>1</inertiamultiplier>
+            <onedof name="knee_left" id="00000000-0000-0000-0000-400000020180">
+              <axisposition x="-0.122023299" y="-0.0298881922" z="-0.587873578"/>
+              <axisdirection x="0.99810648" y="-0.00499159936" z="-0.0613097027"/>
+              <limitenabled>true</limitenabled>
+              <minangle>-2.44345999</minangle>
+              <maxangle>0</maxangle>
+              <createeffector>true</createeffector>
+              <defaultleanforcecap>300</defaultleanforcecap>
+              <defaultmusclestiffness>0.5</defaultmusclestiffness>
+              <defaultmusclestrength>100</defaultmusclestrength>
+              <defaultmuscledamping>20</defaultmuscledamping>
+              <articulatedpart name="Shin_Left" id="00000000-0000-0000-0000-300000020092">
+                <hascollision>true</hascollision>
+                <centreofmass x="0" y="0" z="0"/>
+                <mass>4</mass>
+                <lineardamping>0.100000001</lineardamping>
+                <angulardamping>0.100000001</angulardamping>
+                <friction>0.75</friction>
+                <restitution>0.4</restitution>
+                <component>Shin_Left</component>
+                <transform>
+                  <r0 c0="0.998093843" c1="0.0615124814" c2="0.00499860151" c3="0"/>
+                  <r1 c0="9.7206776e-009" c1="0.0809944943" c2="-0.996714473" c3="0"/>
+                  <r2 c0="-0.0617152527" c1="0.994814515" c2="0.0808400959" c3="0"/>
+                  <r3 c0="-0.134328648" c1="-0.0460907854" c2="-0.786882639" c3="1"/>
+                </transform>
+                <volume>00000000-0000-0000-0000-100000020092</volume>
+                <gravityscale>1</gravityscale>
+                <inertiamultiplier>1</inertiamultiplier>
+                <threedof name="ankle_left" id="00000000-0000-0000-0000-400000019776">
+                  <axisposition x="-0.146634012" y="-0.0622934029" z="-0.985891998"/>
+                  <axisdirection x="-0.0155803636" y="0.944532633" z="-0.328048617"/>
+                  <limitenabled>true</limitenabled>
+                  <createeffector>true</createeffector>
+                  <leandirection x="-0.00541087938" y="0.328004003" z="0.944661081"/>
+                  <minfirstleanangle>-0.698120493</minfirstleanangle>
+                  <maxfirstleanangle>0.610876422</maxfirstleanangle>
+                  <minsecondleanangle>-0.261799008</minsecondleanangle>
+                  <maxsecondleanangle>0.261799008</maxsecondleanangle>
+                  <mintwistangle>-0.523599029</mintwistangle>
+                  <maxtwistangle>0.523599029</maxtwistangle>
+                  <reversefirstleanmotor>false</reversefirstleanmotor>
+                  <reversesecondleanmotor>false</reversesecondleanmotor>
+                  <reversetwistmotor>false</reversetwistmotor>
+                  <softlimitfirstleanmultiplier>1</softlimitfirstleanmultiplier>
+                  <softlimitsecondleanmultiplier>1</softlimitsecondleanmultiplier>
+                  <softlimittwistmultiplier>1</softlimittwistmultiplier>
+                  <defaultleanforcecap>300</defaultleanforcecap>
+                  <defaulttwistforcecap>300</defaulttwistforcecap>
+                  <defaultmusclestiffness>5</defaultmusclestiffness>
+                  <defaultmusclestrength>100</defaultmusclestrength>
+                  <defaultmuscledamping>20</defaultmuscledamping>
+                  <articulatedpart name="Foot_Left" id="00000000-0000-0000-0000-300000019688">
+                    <hascollision>true</hascollision>
+                    <centreofmass x="0" y="0" z="0"/>
+                    <mass>1.62</mass>
+                    <lineardamping>0.100000001</lineardamping>
+                    <angulardamping>0.100000001</angulardamping>
+                    <friction>2.25</friction>
+                    <restitution>0.4</restitution>
+                    <component>Foot_Left</component>
+                    <transform>
+                      <r0 c0="0.99999994" c1="-8.62395311e-009" c2="-1.78643205e-007" c3="0"/>
+                      <r1 c0="-1.73801467e-007" c1="4.28274859e-007" c2="-0.99999994" c3="0"/>
+                      <r2 c0="-8.02409339e-009" c1="1" c2="4.22756955e-007" c3="0"/>
+                      <r3 c0="-0.147728398" c1="0.00405067764" c2="-1.0142988" c3="1"/>
+                    </transform>
+                    <volume>00000000-0000-0000-0000-100000019688</volume>
+                    <gravityscale>1</gravityscale>
+                    <inertiamultiplier>1</inertiamultiplier>
+                  </articulatedpart>
+                </threedof>
+              </articulatedpart>
+            </onedof>
+          </articulatedpart>
+        </threedof>
+        <threedof name="hip_right" id="00000000-0000-0000-0000-400000022092">
+          <axisposition x="0.0948202312" y="-0.00156018394" z="-0.14988482"/>
+          <axisdirection x="0.0618618764" y="-0.0644190386" z="-0.996003807"/>
+          <limitenabled>true</limitenabled>
+          <createeffector>true</createeffector>
+          <leandirection x="0.0204569343" y="0.997787297" z="-0.0632638112"/>
+          <minfirstleanangle>-0.364180021</minfirstleanangle>
+          <maxfirstleanangle>1.56842691</maxfirstleanangle>
+          <minsecondleanangle>-0.349069735</minsecondleanangle>
+          <maxsecondleanangle>0.523595312</maxsecondleanangle>
+          <mintwistangle>-0.223599017</mintwistangle>
+          <maxtwistangle>0.523599029</maxtwistangle>
+          <reversefirstleanmotor>false</reversefirstleanmotor>
+          <reversesecondleanmotor>true</reversesecondleanmotor>
+          <reversetwistmotor>true</reversetwistmotor>
+          <softlimitfirstleanmultiplier>1</softlimitfirstleanmultiplier>
+          <softlimitsecondleanmultiplier>1</softlimitsecondleanmultiplier>
+          <softlimittwistmultiplier>1</softlimittwistmultiplier>
+          <defaultleanforcecap>300</defaultleanforcecap>
+          <defaulttwistforcecap>300</defaulttwistforcecap>
+          <defaultmusclestiffness>0.5</defaultmusclestiffness>
+          <defaultmusclestrength>100</defaultmusclestrength>
+          <defaultmuscledamping>20</defaultmuscledamping>
+          <articulatedpart name="Thigh_Right" id="00000000-0000-0000-0000-300000021751">
+            <hascollision>true</hascollision>
+            <centreofmass x="0" y="0" z="0"/>
+            <mass>7.6</mass>
+            <lineardamping>0.100000001</lineardamping>
+            <angulardamping>0.100000001</angulardamping>
+            <friction>0.75</friction>
+            <restitution>0.4</restitution>
+            <component>Thigh_Right</component>
+            <transform>
+              <r0 c0="0.998076797" c1="-0.061861787" c2="-0.00399330584" c3="0"/>
+              <r1 c0="3.63609978e-008" c1="0.0644185543" c2="-0.997922957" c3="0"/>
+              <r2 c0="0.0619905405" c1="0.996003747" c2="0.0642946661" c3="0"/>
+              <r3 c0="0.108421989" c1="-0.0157241467" c2="-0.36887911" c3="1"/>
+            </transform>
+            <volume>00000000-0000-0000-0000-100000021751</volume>
+            <gravityscale>1</gravityscale>
+            <inertiamultiplier>1</inertiamultiplier>
+            <onedof name="knee_right" id="00000000-0000-0000-0000-400000021479">
+              <axisposition x="0.122023739" y="-0.0298881102" z="-0.587873459"/>
+              <axisdirection x="0.99810636" y="0.00499157375" z="0.0613104403"/>
+              <limitenabled>true</limitenabled>
+              <minangle>-2.44345999</minangle>
+              <maxangle>0</maxangle>
+              <createeffector>true</createeffector>
+              <defaultleanforcecap>300</defaultleanforcecap>
+              <defaultmusclestiffness>0.5</defaultmusclestiffness>
+              <defaultmusclestrength>100</defaultmusclestrength>
+              <defaultmuscledamping>20</defaultmuscledamping>
+              <articulatedpart name="Shin_Right" id="00000000-0000-0000-0000-300000021391">
+                <hascollision>true</hascollision>
+                <centreofmass x="0" y="0" z="0"/>
+                <mass>4</mass>
+                <lineardamping>0.100000001</lineardamping>
+                <angulardamping>0.100000001</angulardamping>
+                <friction>0.75</friction>
+                <restitution>0.4</restitution>
+                <component>Shin_Right</component>
+                <transform>
+                  <r0 c0="0.998093784" c1="-0.0615133606" c2="-0.0049986369" c3="0"/>
+                  <r1 c0="-2.47872212e-008" c1="0.080993697" c2="-0.996714592" c3="0"/>
+                  <r2 c0="0.0617161244" c1="0.994814634" c2="0.0808392912" c3="0"/>
+                  <r3 c0="0.134329244" c1="-0.0460906811" c2="-0.78688252" c3="1"/>
+                </transform>
+                <volume>00000000-0000-0000-0000-100000021391</volume>
+                <gravityscale>1</gravityscale>
+                <inertiamultiplier>1</inertiamultiplier>
+                <threedof name="ankle_right" id="00000000-0000-0000-0000-400000021075">
+                  <axisposition x="0.146634802" y="-0.0622932687" z="-0.985891879"/>
+                  <axisdirection x="0.0155815408" y="0.944532573" z="-0.328048706"/>
+                  <limitenabled>true</limitenabled>
+                  <createeffector>true</createeffector>
+                  <leandirection x="0.00541035691" y="0.328004092" z="0.944661081"/>
+                  <minfirstleanangle>-0.69811776</minfirstleanangle>
+                  <maxfirstleanangle>0.610879156</maxfirstleanangle>
+                  <minsecondleanangle>-0.261799008</minsecondleanangle>
+                  <maxsecondleanangle>0.261799008</maxsecondleanangle>
+                  <mintwistangle>-0.523599029</mintwistangle>
+                  <maxtwistangle>0.523599029</maxtwistangle>
+                  <reversefirstleanmotor>false</reversefirstleanmotor>
+                  <reversesecondleanmotor>true</reversesecondleanmotor>
+                  <reversetwistmotor>true</reversetwistmotor>
+                  <softlimitfirstleanmultiplier>1</softlimitfirstleanmultiplier>
+                  <softlimitsecondleanmultiplier>1</softlimitsecondleanmultiplier>
+                  <softlimittwistmultiplier>1</softlimittwistmultiplier>
+                  <defaultleanforcecap>300</defaultleanforcecap>
+                  <defaulttwistforcecap>300</defaulttwistforcecap>
+                  <defaultmusclestiffness>5</defaultmusclestiffness>
+                  <defaultmusclestrength>100</defaultmusclestrength>
+                  <defaultmuscledamping>20</defaultmuscledamping>
+                  <articulatedpart name="Foot_Right" id="00000000-0000-0000-0000-300000020987">
+                    <hascollision>true</hascollision>
+                    <centreofmass x="0" y="0" z="0"/>
+                    <mass>1.62</mass>
+                    <lineardamping>0.100000001</lineardamping>
+                    <angulardamping>0.100000001</angulardamping>
+                    <friction>2.25</friction>
+                    <restitution>0.4</restitution>
+                    <component>Foot_Right</component>
+                    <transform>
+                      <r0 c0="1" c1="2.36331754e-008" c2="-4.70607837e-008" c3="0"/>
+                      <r1 c0="-5.17150625e-008" c1="1.40370082e-006" c2="-1" c3="0"/>
+                      <r2 c0="-1.85862685e-008" c1="1" c2="1.39900408e-006" c3="0"/>
+                      <r3 c0="0.147729054" c1="0.00404024497" c2="-1.0143292" c3="1"/>
+                    </transform>
+                    <volume>00000000-0000-0000-0000-100000020987</volume>
+                    <gravityscale>1</gravityscale>
+                    <inertiamultiplier>1</inertiamultiplier>
+                  </articulatedpart>
+                </threedof>
+              </articulatedpart>
+            </onedof>
+          </articulatedpart>
+        </threedof>
+        <threedof name="spine_0" id="00000000-0000-0000-0000-400000029251">
+          <axisposition x="-1.62685065e-008" y="0.00578256045" z="-0.050621517"/>
+          <axisdirection x="-2.94322405e-007" y="-0.0781563893" z="0.996941388"/>
+          <limitenabled>true</limitenabled>
+          <createeffector>true</createeffector>
+          <leandirection x="-4.11460341e-008" y="0.996941388" z="0.0781563893"/>
+          <minfirstleanangle>-0.17454</minfirstleanangle>
+          <maxfirstleanangle>0.349058853</maxfirstleanangle>
+          <minsecondleanangle>-0.174532995</minsecondleanangle>
+          <maxsecondleanangle>0.174532995</maxsecondleanangle>
+          <mintwistangle>-0.104719996</mintwistangle>
+          <maxtwistangle>0.104719996</maxtwistangle>
+          <reversefirstleanmotor>false</reversefirstleanmotor>
+          <reversesecondleanmotor>false</reversesecondleanmotor>
+          <reversetwistmotor>false</reversetwistmotor>
+          <softlimitfirstleanmultiplier>1</softlimitfirstleanmultiplier>
+          <softlimitsecondleanmultiplier>1</softlimitsecondleanmultiplier>
+          <softlimittwistmultiplier>1</softlimittwistmultiplier>
+          <defaultleanforcecap>300</defaultleanforcecap>
+          <defaulttwistforcecap>300</defaulttwistforcecap>
+          <defaultmusclestiffness>1</defaultmusclestiffness>
+          <defaultmusclestrength>100</defaultmusclestrength>
+          <defaultmuscledamping>20</defaultmuscledamping>
+          <articulatedpart name="Spine0" id="00000000-0000-0000-0000-300000029163">
+            <hascollision>true</hascollision>
+            <centreofmass x="0" y="0" z="0"/>
+            <mass>7</mass>
+            <lineardamping>0.100000001</lineardamping>
+            <angulardamping>0.100000001</angulardamping>
+            <friction>0.75</friction>
+            <restitution>0.4</restitution>
+            <component>Spine0</component>
+            <transform>
+              <r0 c0="-3.44028467e-006" c1="-1" c2="1.92141783e-007" c3="0"/>
+              <r1 c0="-0.0781562179" c1="7.73255522e-008" c2="-0.99694109" c3="0"/>
+              <r2 c0="0.99694109" c1="-3.4447778e-006" c2="-0.0781562179" c3="0"/>
+              <r3 c0="-8.14493788e-008" c1="0.0043017799" c2="-0.0317331105" c3="1"/>
+            </transform>
+            <volume>00000000-0000-0000-0000-100000029163</volume>
+            <gravityscale>1</gravityscale>
+            <inertiamultiplier>1</inertiamultiplier>
+            <threedof name="spine_1" id="00000000-0000-0000-0000-400000028847">
+              <axisposition x="-1.466302e-007" y="0.00282101287" z="-0.0128447209"/>
+              <axisdirection x="-2.94982982e-007" y="-0.0610985272" z="0.99813211"/>
+              <limitenabled>true</limitenabled>
+              <createeffector>true</createeffector>
+              <leandirection x="8.31019875e-008" y="0.99813211" z="0.0610985272"/>
+              <minfirstleanangle>-0.174542167</minfirstleanangle>
+              <maxfirstleanangle>0.349056802</maxfirstleanangle>
+              <minsecondleanangle>-0.174532995</minsecondleanangle>
+              <maxsecondleanangle>0.174532995</maxsecondleanangle>
+              <mintwistangle>-0.104719996</mintwistangle>
+              <maxtwistangle>0.104719996</maxtwistangle>
+              <reversefirstleanmotor>false</reversefirstleanmotor>
+              <reversesecondleanmotor>false</reversesecondleanmotor>
+              <reversetwistmotor>false</reversetwistmotor>
+              <softlimitfirstleanmultiplier>1</softlimitfirstleanmultiplier>
+              <softlimitsecondleanmultiplier>1</softlimitsecondleanmultiplier>
+              <softlimittwistmultiplier>1</softlimittwistmultiplier>
+              <defaultleanforcecap>300</defaultleanforcecap>
+              <defaulttwistforcecap>300</defaulttwistforcecap>
+              <defaultmusclestiffness>1</defaultmusclestiffness>
+              <defaultmusclestrength>100</defaultmusclestrength>
+              <defaultmuscledamping>20</defaultmuscledamping>
+              <articulatedpart name="Spine1" id="00000000-0000-0000-0000-300000028759">
+                <hascollision>true</hascollision>
+                <centreofmass x="0" y="0" z="0"/>
+                <mass>6</mass>
+                <lineardamping>0.100000001</lineardamping>
+                <angulardamping>0.100000001</angulardamping>
+                <friction>0.75</friction>
+                <restitution>0.4</restitution>
+                <component>Spine1</component>
+                <transform>
+                  <r0 c0="2.54604674e-006" c1="-1" c2="-2.34097755e-007" c3="0"/>
+                  <r1 c0="-0.0610986575" c1="7.81003209e-008" c2="-0.998131752" c3="0"/>
+                  <r2 c0="0.998131752" c1="2.55559189e-006" c2="-0.0610986575" c3="0"/>
+                  <r3 c0="-9.32144246e-008" c1="0.00153917097" c2="0.0521804802" c3="1"/>
+                </transform>
+                <volume>00000000-0000-0000-0000-100000028759</volume>
+                <gravityscale>1</gravityscale>
+                <inertiamultiplier>1</inertiamultiplier>
+                <threedof name="spine_2" id="00000000-0000-0000-0000-400000028443">
+                  <axisposition x="-3.97985715e-008" y="0.000257326552" z="0.029036697"/>
+                  <axisdirection x="-2.10585284e-007" y="0.0355210081" z="0.999369323"/>
+                  <limitenabled>true</limitenabled>
+                  <createeffector>true</createeffector>
+                  <leandirection x="5.0305498e-006" y="0.999369323" z="-0.0355210081"/>
+                  <minfirstleanangle>-0.174541494</minfirstleanangle>
+                  <maxfirstleanangle>0.383963504</maxfirstleanangle>
+                  <minsecondleanangle>-0.174532995</minsecondleanangle>
+                  <maxsecondleanangle>0.174532995</maxsecondleanangle>
+                  <mintwistangle>-0.174532995</mintwistangle>
+                  <maxtwistangle>0.174532995</maxtwistangle>
+                  <reversefirstleanmotor>false</reversefirstleanmotor>
+                  <reversesecondleanmotor>false</reversesecondleanmotor>
+                  <reversetwistmotor>false</reversetwistmotor>
+                  <softlimitfirstleanmultiplier>1</softlimitfirstleanmultiplier>
+                  <softlimitsecondleanmultiplier>1</softlimitsecondleanmultiplier>
+                  <softlimittwistmultiplier>1</softlimittwistmultiplier>
+                  <defaultleanforcecap>300</defaultleanforcecap>
+                  <defaulttwistforcecap>300</defaulttwistforcecap>
+                  <defaultmusclestiffness>1</defaultmusclestiffness>
+                  <defaultmusclestrength>100</defaultmusclestrength>
+                  <defaultmuscledamping>20</defaultmuscledamping>
+                  <articulatedpart name="Spine2" id="00000000-0000-0000-0000-300000028355">
+                    <hascollision>true</hascollision>
+                    <centreofmass x="0" y="0" z="0"/>
+                    <mass>5</mass>
+                    <lineardamping>0.100000001</lineardamping>
+                    <angulardamping>0.100000001</angulardamping>
+                    <friction>0.75</friction>
+                    <restitution>0.4</restitution>
+                    <component>Spine2</component>
+                    <transform>
+                      <r0 c0="-2.10586009e-007" c1="-1" c2="-1.1117973e-007" c3="0"/>
+                      <r1 c0="0.0355208404" c1="1.03628963e-007" c2="-0.999368846" c3="0"/>
+                      <r2 c0="0.999368846" c1="-2.14402348e-007" c2="0.0355208404" c3="0"/>
+                      <r3 c0="-5.31223279e-008" c1="0.00250470359" c2="0.169192508" c3="1"/>
+                    </transform>
+                    <volume>00000000-0000-0000-0000-100000028355</volume>
+                    <gravityscale>1</gravityscale>
+                    <inertiamultiplier>1</inertiamultiplier>
+                    <threedof name="spine_3" id="00000000-0000-0000-0000-400000028039">
+                      <axisposition x="-6.6445935e-008" y="0.00475209719" z="0.155495882"/>
+                      <axisdirection x="-3.58356772e-007" y="0.00512206368" z="0.999987304"/>
+                      <limitenabled>true</limitenabled>
+                      <createeffector>true</createeffector>
+                      <leandirection x="7.8002806e-008" y="0.999987304" z="-0.00512206368"/>
+                      <minfirstleanangle>-0.174545166</minfirstleanangle>
+                      <maxfirstleanangle>0.314513806</maxfirstleanangle>
+                      <minsecondleanangle>-0.174532995</minsecondleanangle>
+                      <maxsecondleanangle>0.174532995</maxsecondleanangle>
+                      <mintwistangle>-0.174532995</mintwistangle>
+                      <maxtwistangle>0.174532995</maxtwistangle>
+                      <reversefirstleanmotor>false</reversefirstleanmotor>
+                      <reversesecondleanmotor>false</reversesecondleanmotor>
+                      <reversetwistmotor>false</reversetwistmotor>
+                      <softlimitfirstleanmultiplier>1</softlimitfirstleanmultiplier>
+                      <softlimitsecondleanmultiplier>1</softlimitsecondleanmultiplier>
+                      <softlimittwistmultiplier>1</softlimittwistmultiplier>
+                      <defaultleanforcecap>300</defaultleanforcecap>
+                      <defaulttwistforcecap>300</defaulttwistforcecap>
+                      <defaultmusclestiffness>1</defaultmusclestiffness>
+                      <defaultmusclestrength>100</defaultmusclestrength>
+                      <defaultmuscledamping>20</defaultmuscledamping>
+                      <articulatedpart name="Spine3" id="00000000-0000-0000-0000-300000027951">
+                        <hascollision>true</hascollision>
+                        <centreofmass x="0" y="0" z="0"/>
+                        <mass>4</mass>
+                        <lineardamping>0.100000001</lineardamping>
+                        <angulardamping>0.100000001</angulardamping>
+                        <friction>0.75</friction>
+                        <restitution>0.4</restitution>
+                        <component>Spine3</component>
+                        <transform>
+                          <r0 c0="4.79517379e-014" c1="-1" c2="7.48296074e-008" c3="0"/>
+                          <r1 c0="-1.32974316e-008" c1="-7.48300479e-008" c2="-1" c3="0"/>
+                          <r2 c0="1" c1="-4.69534622e-014" c2="-1.32973508e-008" c3="0"/>
+                          <r3 c0="-1.21974438e-007" c1="-0.0208900087" c2="0.302713662" c3="1"/>
+                        </transform>
+                        <volume>00000000-0000-0000-0000-100000027951</volume>
+                        <gravityscale>1</gravityscale>
+                        <inertiamultiplier>1</inertiamultiplier>
+                        <threedof name="clavicle_jnt_left" id="00000000-0000-0000-0000-400000027129">
+                          <axisposition x="-0.0319191515" y="0.0293056276" z="0.362482876"/>
+                          <axisdirection x="-0.854721367" y="-0.452751994" z="-0.25390625"/>
+                          <limitenabled>true</limitenabled>
+                          <createeffector>true</createeffector>
+                          <leandirection x="-0.434007049" y="0.891637027" z="-0.12892738"/>
+                          <minfirstleanangle>-0.523599029</minfirstleanangle>
+                          <maxfirstleanangle>0.523599029</maxfirstleanangle>
+                          <minsecondleanangle>-0.998129561</minsecondleanangle>
+                          <maxsecondleanangle>0.0872688749</maxsecondleanangle>
+                          <mintwistangle>-0.174532995</mintwistangle>
+                          <maxtwistangle>0.174532995</maxtwistangle>
+                          <reversefirstleanmotor>false</reversefirstleanmotor>
+                          <reversesecondleanmotor>false</reversesecondleanmotor>
+                          <reversetwistmotor>false</reversetwistmotor>
+                          <softlimitfirstleanmultiplier>1</softlimitfirstleanmultiplier>
+                          <softlimitsecondleanmultiplier>1</softlimitsecondleanmultiplier>
+                          <softlimittwistmultiplier>1</softlimittwistmultiplier>
+                          <defaultleanforcecap>300</defaultleanforcecap>
+                          <defaulttwistforcecap>300</defaulttwistforcecap>
+                          <defaultmusclestiffness>1</defaultmusclestiffness>
+                          <defaultmusclestrength>100</defaultmusclestrength>
+                          <defaultmuscledamping>20</defaultmuscledamping>
+                          <articulatedpart name="Clavicle_Left" id="00000000-0000-0000-0000-300000024495">
+                            <hascollision>true</hascollision>
+                            <centreofmass x="0" y="0" z="0"/>
+                            <mass>2.25</mass>
+                            <lineardamping>0.100000001</lineardamping>
+                            <angulardamping>0.100000001</angulardamping>
+                            <friction>0.75</friction>
+                            <restitution>0.4</restitution>
+                            <component>Clavicle_Left</component>
+                            <transform>
+                              <r0 c0="-0.284763128" c1="0.85472095" c2="-0.434006929" c3="0"/>
+                              <r1 c0="4.00259665e-007" c1="0.452751786" c2="0.891636491" c3="0"/>
+                              <r2 c0="0.958597898" c1="0.253904939" c2="-0.12892735" c3="0"/>
+                              <r3 c0="-0.0926271528" c1="-0.00575872045" c2="0.324345261" c3="1"/>
+                            </transform>
+                            <volume>00000000-0000-0000-0000-100000024495</volume>
+                            <gravityscale>1</gravityscale>
+                            <inertiamultiplier>1</inertiamultiplier>
+                            <threedof name="shoulder_left" id="00000000-0000-0000-0000-400000024179">
+                              <axisposition x="-0.18057479" y="-0.0494383425" z="0.318322599"/>
+                              <axisdirection x="-0.553995311" y="0.0643009171" z="-0.8300336"/>
+                              <limitenabled>true</limitenabled>
+                              <createeffector>true</createeffector>
+                              <leandirection x="0.0356961675" y="0.997931004" z="0.0534827076"/>
+                              <minfirstleanangle>-0.786227788</minfirstleanangle>
+                              <maxfirstleanangle>1.68853036</maxfirstleanangle>
+                              <minsecondleanangle>-0.92356669</minsecondleanangle>
+                              <maxsecondleanangle>0.803608307</maxsecondleanangle>
+                              <mintwistangle>-0.5</mintwistangle>
+                              <maxtwistangle>1.39999998</maxtwistangle>
+                              <reversefirstleanmotor>false</reversefirstleanmotor>
+                              <reversesecondleanmotor>false</reversesecondleanmotor>
+                              <reversetwistmotor>false</reversetwistmotor>
+                              <softlimitfirstleanmultiplier>1</softlimitfirstleanmultiplier>
+                              <softlimitsecondleanmultiplier>1</softlimitsecondleanmultiplier>
+                              <softlimittwistmultiplier>1</softlimittwistmultiplier>
+                              <defaultleanforcecap>300</defaultleanforcecap>
+                              <defaulttwistforcecap>300</defaulttwistforcecap>
+                              <defaultmusclestiffness>0.5</defaultmusclestiffness>
+                              <defaultmusclestrength>100</defaultmusclestrength>
+                              <defaultmuscledamping>20</defaultmuscledamping>
+                              <articulatedpart name="Upper_Arm_Left" id="00000000-0000-0000-0000-300000024091">
+                                <hascollision>true</hascollision>
+                                <centreofmass x="0" y="0" z="0"/>
+                                <mass>2.4</mass>
+                                <lineardamping>0.100000001</lineardamping>
+                                <angulardamping>0.100000001</angulardamping>
+                                <friction>0.75</friction>
+                                <restitution>0.4</restitution>
+                                <component>Upper_Arm_Left</component>
+                                <transform>
+                                  <r0 c0="0.831754684" c1="0.553994715" c2="-0.0356961116" c3="0"/>
+                                  <r1 c0="1.73604704e-007" c1="-0.0643008053" c2="-0.997930527" c3="0"/>
+                                  <r2 c0="-0.555143595" c1="0.830033243" c2="-0.0534826219" c3="0"/>
+                                  <r3 c0="-0.239482239" c1="-0.0415586233" c2="0.21061182" c3="1"/>
+                                </transform>
+                                <volume>00000000-0000-0000-0000-100000024091</volume>
+                                <gravityscale>1</gravityscale>
+                                <inertiamultiplier>1</inertiamultiplier>
+                                <onedof name="elbow_left" id="00000000-0000-0000-0000-400000023819">
+                                  <axisposition x="-0.316352934" y="-0.0336789154" z="0.114890531"/>
+                                  <axisdirection x="0.831910074" y="0.019350864" z="-0.55457294"/>
+                                  <limitenabled>true</limitenabled>
+                                  <minangle>0</minangle>
+                                  <maxangle>2.61799002</maxangle>
+                                  <createeffector>true</createeffector>
+                                  <defaultleanforcecap>300</defaultleanforcecap>
+                                  <defaultmusclestiffness>0.5</defaultmusclestiffness>
+                                  <defaultmusclestrength>100</defaultmusclestrength>
+                                  <defaultmuscledamping>20</defaultmuscledamping>
+                                  <articulatedpart name="Lower_Arm_Left" id="00000000-0000-0000-0000-300000023731">
+                                    <hascollision>true</hascollision>
+                                    <centreofmass x="0" y="0" z="0"/>
+                                    <mass>1.1</mass>
+                                    <lineardamping>0.100000001</lineardamping>
+                                    <angulardamping>0.100000001</angulardamping>
+                                    <friction>0.75</friction>
+                                    <restitution>0.4</restitution>
+                                    <component>Lower_Arm_Left</component>
+                                    <transform>
+                                      <r0 c0="0.831754625" c1="0.554910004" c2="-0.0161048155" c3="0"/>
+                                      <r1 c0="3.53548018e-007" c1="-0.0290105846" c2="-0.999579072" c3="0"/>
+                                      <r2 c0="-0.555143595" c1="0.831404507" c2="-0.0241299085" c3="0"/>
+                                      <r3 c0="-0.384872913" c1="-0.030096706" c2="0.0122293103" c3="1"/>
+                                    </transform>
+                                    <volume>00000000-0000-0000-0000-100000023731</volume>
+                                    <gravityscale>1</gravityscale>
+                                    <inertiamultiplier>1</inertiamultiplier>
+                                    <threedof name="wrist_left" id="00000000-0000-0000-0000-400000023415">
+                                      <axisposition x="-0.453393131" y="-0.0265144873" z="-0.0904322863"/>
+                                      <axisdirection x="-0.554910719" y="0.0290105827" z="-0.831404567"/>
+                                      <limitenabled>true</limitenabled>
+                                      <createeffector>true</createeffector>
+                                      <leandirection x="0.0161048435" y="0.999579549" z="0.0241298862"/>
+                                      <minfirstleanangle>-1.5</minfirstleanangle>
+                                      <maxfirstleanangle>1.5</maxfirstleanangle>
+                                      <minsecondleanangle>-1.20000005</minsecondleanangle>
+                                      <maxsecondleanangle>1.20000005</maxsecondleanangle>
+                                      <mintwistangle>-1.5</mintwistangle>
+                                      <maxtwistangle>1.5</maxtwistangle>
+                                      <reversefirstleanmotor>false</reversefirstleanmotor>
+                                      <reversesecondleanmotor>false</reversesecondleanmotor>
+                                      <reversetwistmotor>false</reversetwistmotor>
+                                      <softlimitfirstleanmultiplier>1</softlimitfirstleanmultiplier>
+                                      <softlimitsecondleanmultiplier>1</softlimitsecondleanmultiplier>
+                                      <softlimittwistmultiplier>1</softlimittwistmultiplier>
+                                      <defaultleanforcecap>300</defaultleanforcecap>
+                                      <defaulttwistforcecap>300</defaulttwistforcecap>
+                                      <defaultmusclestiffness>10</defaultmusclestiffness>
+                                      <defaultmusclestrength>100</defaultmusclestrength>
+                                      <defaultmuscledamping>20</defaultmuscledamping>
+                                      <articulatedpart name="Hand_Left" id="00000000-0000-0000-0000-300000023327">
+                                        <hascollision>true</hascollision>
+                                        <centreofmass x="0" y="0" z="0"/>
+                                        <mass>0.4</mass>
+                                        <lineardamping>0.100000001</lineardamping>
+                                        <angulardamping>0.100000001</angulardamping>
+                                        <friction>2.25</friction>
+                                        <restitution>0.4</restitution>
+                                        <component>Hand_Left</component>
+                                        <transform>
+                                          <r0 c0="0.804322362" c1="0.579218566" c2="-0.132558018" c3="0"/>
+                                          <r1 c0="-0.189060807" c1="0.0379751772" c2="-0.981230795" c3="0"/>
+                                          <r2 c0="-0.563313127" c1="0.814287305" c2="0.140051797" c3="0"/>
+                                          <r3 c0="-0.489544094" c1="-0.0254811831" c2="-0.147435606" c3="1"/>
+                                        </transform>
+                                        <volume>00000000-0000-0000-0000-100000023327</volume>
+                                        <gravityscale>1</gravityscale>
+                                        <inertiamultiplier>1</inertiamultiplier>
+                                      </articulatedpart>
+                                    </threedof>
+                                  </articulatedpart>
+                                </onedof>
+                              </articulatedpart>
+                            </threedof>
+                          </articulatedpart>
+                        </threedof>
+                        <threedof name="clavicle_jnt_right" id="00000000-0000-0000-0000-400000027382">
+                          <axisposition x="0.0319188759" y="0.0293056238" z="0.362482905"/>
+                          <axisdirection x="0.854721487" y="-0.452752113" z="-0.253905654"/>
+                          <limitenabled>true</limitenabled>
+                          <createeffector>true</createeffector>
+                          <leandirection x="0.434007287" y="0.891636968" z="-0.128927067"/>
+                          <minfirstleanangle>-0.523599029</minfirstleanangle>
+                          <maxfirstleanangle>0.523599029</maxfirstleanangle>
+                          <minsecondleanangle>-0.0872688749</minsecondleanangle>
+                          <maxsecondleanangle>0.998129561</maxsecondleanangle>
+                          <mintwistangle>-0.174532995</mintwistangle>
+                          <maxtwistangle>0.174532995</maxtwistangle>
+                          <reversefirstleanmotor>false</reversefirstleanmotor>
+                          <reversesecondleanmotor>true</reversesecondleanmotor>
+                          <reversetwistmotor>true</reversetwistmotor>
+                          <softlimitfirstleanmultiplier>1</softlimitfirstleanmultiplier>
+                          <softlimitsecondleanmultiplier>1</softlimitsecondleanmultiplier>
+                          <softlimittwistmultiplier>1</softlimittwistmultiplier>
+                          <defaultleanforcecap>300</defaultleanforcecap>
+                          <defaulttwistforcecap>300</defaulttwistforcecap>
+                          <defaultmusclestiffness>1</defaultmusclestiffness>
+                          <defaultmusclestrength>100</defaultmusclestrength>
+                          <defaultmuscledamping>20</defaultmuscledamping>
+                          <articulatedpart name="Clavicle_Right" id="00000000-0000-0000-0000-300000026198">
+                            <hascollision>true</hascollision>
+                            <centreofmass x="0" y="0" z="0"/>
+                            <mass>2.25</mass>
+                            <lineardamping>0.100000001</lineardamping>
+                            <angulardamping>0.100000001</angulardamping>
+                            <friction>0.75</friction>
+                            <restitution>0.4</restitution>
+                            <component>Clavicle_Right</component>
+                            <transform>
+                              <r0 c0="0.284762144" c1="-0.854721129" c2="-0.434007406" c3="0"/>
+                              <r1 c0="5.18798004e-007" c1="0.452752143" c2="-0.891636312" c3="0"/>
+                              <r2 c0="0.958598316" c1="0.253903985" c2="0.128927112" c3="0"/>
+                              <r3 c0="0.100628927" c1="-0.0088340817" c2="0.330013961" c3="1"/>
+                            </transform>
+                            <volume>00000000-0000-0000-0000-100000026198</volume>
+                            <gravityscale>1</gravityscale>
+                            <inertiamultiplier>1</inertiamultiplier>
+                            <threedof name="shoulder_right" id="00000000-0000-0000-0000-400000025882">
+                              <axisposition x="0.180574611" y="-0.049438443" z="0.318323106"/>
+                              <axisdirection x="0.553995967" y="0.0643009469" z="-0.830033183"/>
+                              <limitenabled>true</limitenabled>
+                              <createeffector>true</createeffector>
+                              <leandirection x="-0.0356957838" y="0.997931123" z="0.0534830168"/>
+                              <minfirstleanangle>-0.786227378</minfirstleanangle>
+                              <maxfirstleanangle>1.68853077</maxfirstleanangle>
+                              <minsecondleanangle>-0.803614239</minsecondleanangle>
+                              <maxsecondleanangle>0.923550745</maxsecondleanangle>
+                              <mintwistangle>-1.39999998</mintwistangle>
+                              <maxtwistangle>0.5</maxtwistangle>
+                              <reversefirstleanmotor>false</reversefirstleanmotor>
+                              <reversesecondleanmotor>true</reversesecondleanmotor>
+                              <reversetwistmotor>true</reversetwistmotor>
+                              <softlimitfirstleanmultiplier>1</softlimitfirstleanmultiplier>
+                              <softlimitsecondleanmultiplier>1</softlimitsecondleanmultiplier>
+                              <softlimittwistmultiplier>1</softlimittwistmultiplier>
+                              <defaultleanforcecap>300</defaultleanforcecap>
+                              <defaulttwistforcecap>300</defaulttwistforcecap>
+                              <defaultmusclestiffness>0.5</defaultmusclestiffness>
+                              <defaultmusclestrength>100</defaultmusclestrength>
+                              <defaultmuscledamping>20</defaultmuscledamping>
+                              <articulatedpart name="Upper_Arm_Right" id="00000000-0000-0000-0000-300000025794">
+                                <hascollision>true</hascollision>
+                                <centreofmass x="0" y="0" z="0"/>
+                                <mass>2.4</mass>
+                                <lineardamping>0.100000001</lineardamping>
+                                <angulardamping>0.100000001</angulardamping>
+                                <friction>0.75</friction>
+                                <restitution>0.4</restitution>
+                                <component>Upper_Arm_Right</component>
+                                <transform>
+                                  <r0 c0="0.831753135" c1="-0.553996921" c2="0.0356958173" c3="0"/>
+                                  <r1 c0="-8.35999856e-007" c1="-0.0643010139" c2="-0.997930467" c3="0"/>
+                                  <r2 c0="0.555145621" c1="0.830031812" c2="-0.0534830652" c3="0"/>
+                                  <r3 c0="0.241437167" c1="-0.0415586606" c2="0.211916625" c3="1"/>
+                                </transform>
+                                <volume>00000000-0000-0000-0000-100000025794</volume>
+                                <gravityscale>1</gravityscale>
+                                <inertiamultiplier>1</inertiamultiplier>
+                                <onedof name="elbow_right" id="00000000-0000-0000-0000-400000025522">
+                                  <axisposition x="0.316353172" y="-0.0336789005" z="0.114890106"/>
+                                  <axisdirection x="0.831910312" y="-0.0193510205" z="0.554572642"/>
+                                  <limitenabled>true</limitenabled>
+                                  <minangle>0</minangle>
+                                  <maxangle>2.61799002</maxangle>
+                                  <createeffector>true</createeffector>
+                                  <defaultleanforcecap>300</defaultleanforcecap>
+                                  <defaultmusclestiffness>0.5</defaultmusclestiffness>
+                                  <defaultmusclestrength>100</defaultmusclestrength>
+                                  <defaultmuscledamping>20</defaultmuscledamping>
+                                  <articulatedpart name="Lower_Arm_Right" id="00000000-0000-0000-0000-300000025434">
+                                    <hascollision>true</hascollision>
+                                    <centreofmass x="0" y="0" z="0"/>
+                                    <mass>1.1</mass>
+                                    <lineardamping>0.100000001</lineardamping>
+                                    <angulardamping>0.100000001</angulardamping>
+                                    <friction>0.75</friction>
+                                    <restitution>0.4</restitution>
+                                    <component>Lower_Arm_Right</component>
+                                    <transform>
+                                      <r0 c0="0.83175385" c1="-0.554911137" c2="0.016104836" c3="0"/>
+                                      <r1 c0="-4.91413743e-007" c1="-0.0290107429" c2="-0.999579012" c3="0"/>
+                                      <r2 c0="0.555144727" c1="0.831403613" c2="-0.0241301022" c3="0"/>
+                                      <r3 c0="0.384873122" c1="-0.0300966743" c2="0.012228746" c3="1"/>
+                                    </transform>
+                                    <volume>00000000-0000-0000-0000-100000025434</volume>
+                                    <gravityscale>1</gravityscale>
+                                    <inertiamultiplier>1</inertiamultiplier>
+                                    <threedof name="wrist_right" id="00000000-0000-0000-0000-400000025118">
+                                      <axisposition x="0.453393281" y="-0.0265144333" z="-0.0904327631"/>
+                                      <axisdirection x="0.554911077" y="0.0290111359" z="-0.831404388"/>
+                                      <limitenabled>true</limitenabled>
+                                      <createeffector>true</createeffector>
+                                      <leandirection x="-0.0161049496" y="0.999579668" z="0.0241305027"/>
+                                      <minfirstleanangle>-1.5</minfirstleanangle>
+                                      <maxfirstleanangle>1.5</maxfirstleanangle>
+                                      <minsecondleanangle>-1.20000005</minsecondleanangle>
+                                      <maxsecondleanangle>1.20000005</maxsecondleanangle>
+                                      <mintwistangle>-1.5</mintwistangle>
+                                      <maxtwistangle>1.5</maxtwistangle>
+                                      <reversefirstleanmotor>false</reversefirstleanmotor>
+                                      <reversesecondleanmotor>true</reversesecondleanmotor>
+                                      <reversetwistmotor>true</reversetwistmotor>
+                                      <softlimitfirstleanmultiplier>1</softlimitfirstleanmultiplier>
+                                      <softlimitsecondleanmultiplier>1</softlimitsecondleanmultiplier>
+                                      <softlimittwistmultiplier>1</softlimittwistmultiplier>
+                                      <defaultleanforcecap>300</defaultleanforcecap>
+                                      <defaulttwistforcecap>300</defaulttwistforcecap>
+                                      <defaultmusclestiffness>10</defaultmusclestiffness>
+                                      <defaultmusclestrength>100</defaultmusclestrength>
+                                      <defaultmuscledamping>20</defaultmuscledamping>
+                                      <articulatedpart name="Hand_Right" id="00000000-0000-0000-0000-300000025030">
+                                        <hascollision>true</hascollision>
+                                        <centreofmass x="0" y="0" z="0"/>
+                                        <mass>0.4</mass>
+                                        <lineardamping>0.100000001</lineardamping>
+                                        <angulardamping>0.100000001</angulardamping>
+                                        <friction>2.25</friction>
+                                        <restitution>0.4</restitution>
+                                        <component>Hand_Right</component>
+                                        <transform>
+                                          <r0 c0="0.830769837" c1="-0.536385477" c2="0.148701817" c3="0"/>
+                                          <r1 c0="0.141303763" c1="-0.055165574" c2="-0.988427997" c3="0"/>
+                                          <r2 c0="0.538381577" c1="0.842168272" c2="0.0299633797" c3="0"/>
+                                          <r3 c0="0.493487567" c1="-0.0195745602" c2="-0.157324821" c3="1"/>
+                                        </transform>
+                                        <volume>00000000-0000-0000-0000-100000025030</volume>
+                                        <gravityscale>1</gravityscale>
+                                        <inertiamultiplier>1</inertiamultiplier>
+                                      </articulatedpart>
+                                    </threedof>
+                                  </articulatedpart>
+                                </onedof>
+                              </articulatedpart>
+                            </threedof>
+                          </articulatedpart>
+                        </threedof>
+                        <threedof name="neck_lower" id="00000000-0000-0000-0000-400000027635">
+                          <axisposition x="-1.45073344e-007" y="0.00587589666" z="0.374904066"/>
+                          <axisdirection x="-3.81594305e-007" y="0.204290166" z="0.978910923"/>
+                          <limitenabled>true</limitenabled>
+                          <createeffector>true</createeffector>
+                          <leandirection x="-2.30063772e-008" y="0.978910923" z="-0.204290166"/>
+                          <minfirstleanangle>-0.610858525</minfirstleanangle>
+                          <maxfirstleanangle>0.26180545</maxfirstleanangle>
+                          <minsecondleanangle>-0.261799008</minsecondleanangle>
+                          <maxsecondleanangle>0.261799008</maxsecondleanangle>
+                          <mintwistangle>-0.349065989</mintwistangle>
+                          <maxtwistangle>0.349065989</maxtwistangle>
+                          <reversefirstleanmotor>false</reversefirstleanmotor>
+                          <reversesecondleanmotor>false</reversesecondleanmotor>
+                          <reversetwistmotor>false</reversetwistmotor>
+                          <softlimitfirstleanmultiplier>1</softlimitfirstleanmultiplier>
+                          <softlimitsecondleanmultiplier>1</softlimitsecondleanmultiplier>
+                          <softlimittwistmultiplier>1</softlimittwistmultiplier>
+                          <defaultleanforcecap>300</defaultleanforcecap>
+                          <defaulttwistforcecap>300</defaulttwistforcecap>
+                          <defaultmusclestiffness>0.5</defaultmusclestiffness>
+                          <defaultmusclestrength>100</defaultmusclestrength>
+                          <defaultmuscledamping>20</defaultmuscledamping>
+                          <articulatedpart name="Neck" id="00000000-0000-0000-0000-300000027041">
+                            <hascollision>true</hascollision>
+                            <centreofmass x="0" y="0" z="0"/>
+                            <mass>0.95</mass>
+                            <lineardamping>0.100000001</lineardamping>
+                            <angulardamping>0.100000001</angulardamping>
+                            <friction>0.75</friction>
+                            <restitution>0.4</restitution>
+                            <component>Neck</component>
+                            <transform>
+                              <r0 c0="1" c1="6.47578531e-007" c2="2.30062334e-008" c3="0"/>
+                              <r1 c0="-1.09772138e-007" c1="0.204289868" c2="-0.978910446" c3="0"/>
+                              <r2 c0="-6.38620747e-007" c1="0.978910506" c2="0.204289854" c3="0"/>
+                              <r3 c0="-1.08651022e-007" c1="0.0182867125" c2="0.434373915" c3="1"/>
+                            </transform>
+                            <volume>00000000-0000-0000-0000-100000027041</volume>
+                            <gravityscale>1</gravityscale>
+                            <inertiamultiplier>1</inertiamultiplier>
+                            <threedof name="neck_upper" id="00000000-0000-0000-0000-400000026725">
+                              <axisposition x="-7.22287226e-008" y="0.0306975283" z="0.493843704"/>
+                              <axisdirection x="-2.08218083e-007" y="-0.0166064948" z="0.999862611"/>
+                              <limitenabled>true</limitenabled>
+                              <createeffector>true</createeffector>
+                              <leandirection x="4.33399737e-006" y="0.999862611" z="0.0166064948"/>
+                              <minfirstleanangle>-0.300006509</minfirstleanangle>
+                              <maxfirstleanangle>0.6108585</maxfirstleanangle>
+                              <minsecondleanangle>-0.436331987</minsecondleanangle>
+                              <maxsecondleanangle>0.436331987</maxsecondleanangle>
+                              <mintwistangle>-0.785398006</mintwistangle>
+                              <maxtwistangle>0.785398006</maxtwistangle>
+                              <reversefirstleanmotor>false</reversefirstleanmotor>
+                              <reversesecondleanmotor>false</reversesecondleanmotor>
+                              <reversetwistmotor>false</reversetwistmotor>
+                              <softlimitfirstleanmultiplier>1</softlimitfirstleanmultiplier>
+                              <softlimitsecondleanmultiplier>1</softlimitsecondleanmultiplier>
+                              <softlimittwistmultiplier>1</softlimittwistmultiplier>
+                              <defaultleanforcecap>300</defaultleanforcecap>
+                              <defaulttwistforcecap>300</defaulttwistforcecap>
+                              <defaultmusclestiffness>0.5</defaultmusclestiffness>
+                              <defaultmusclestrength>100</defaultmusclestrength>
+                              <defaultmuscledamping>20</defaultmuscledamping>
+                              <articulatedpart name="Head" id="00000000-0000-0000-0000-300000026637">
+                                <hascollision>true</hascollision>
+                                <centreofmass x="0" y="0" z="0"/>
+                                <mass>5</mass>
+                                <lineardamping>0.100000001</lineardamping>
+                                <angulardamping>0.100000001</angulardamping>
+                                <friction>0.75</friction>
+                                <restitution>0.4</restitution>
+                                <component>Head</component>
+                                <transform>
+                                  <r0 c0="1" c1="-2.08217628e-007" c2="3.30386634e-008" c3="0"/>
+                                  <r1 c0="2.95764568e-008" c1="-0.0166063663" c2="-0.999862075" c3="0"/>
+                                  <r2 c0="2.08737674e-007" c1="0.999862015" c2="-0.0166063663" c3="0"/>
+                                  <r3 c0="-9.30503958e-008" c1="0.0290368795" c2="0.546895385" c3="1"/>
+                                </transform>
+                                <volume>00000000-0000-0000-0000-100000026637</volume>
+                                <gravityscale>1</gravityscale>
+                                <inertiamultiplier>1</inertiamultiplier>
+                              </articulatedpart>
+                            </threedof>
+                          </articulatedpart>
+                        </threedof>
+                      </articulatedpart>
+                    </threedof>
+                  </articulatedpart>
+                </threedof>
+              </articulatedpart>
+            </threedof>
+          </articulatedpart>
+        </threedof>
+      </articulatedpart>
+      <collisiongroup name="CollisionGroup" id="8fa0dd58-68ba-446e-940f-4ec195fe8954">
+        <collisionset name="headGrp" id="00000000-0000-0000-0000-500000030438">
+          <parts>
+            <part>00000000-0000-0000-0000-300000029163</part>
+            <part>00000000-0000-0000-0000-300000028759</part>
+            <part>00000000-0000-0000-0000-300000028355</part>
+            <part>00000000-0000-0000-0000-300000027951</part>
+            <part>00000000-0000-0000-0000-300000027041</part>
+            <part>00000000-0000-0000-0000-300000026637</part>
+            <part>00000000-0000-0000-0000-300000024495</part>
+            <part>00000000-0000-0000-0000-300000026198</part>
+            <part>00000000-0000-0000-0000-300000024091</part>
+            <part>00000000-0000-0000-0000-300000025794</part>
+            <part>00000000-0000-0000-0000-300000022408</part>
+          </parts>
+        </collisionset>
+        <collisionset name="leftHandGrp" id="00000000-0000-0000-0000-500000030406">
+          <parts>
+            <part>00000000-0000-0000-0000-300000024495</part>
+            <part>00000000-0000-0000-0000-300000024091</part>
+            <part>00000000-0000-0000-0000-300000023731</part>
+            <part>00000000-0000-0000-0000-300000023327</part>
+          </parts>
+        </collisionset>
+        <collisionset name="rightHandGrp" id="00000000-0000-0000-0000-500000030374">
+          <parts>
+            <part>00000000-0000-0000-0000-300000025030</part>
+            <part>00000000-0000-0000-0000-300000025434</part>
+            <part>00000000-0000-0000-0000-300000025794</part>
+            <part>00000000-0000-0000-0000-300000026198</part>
+          </parts>
+        </collisionset>
+        <collisionset name="leftFootGrp" id="00000000-0000-0000-0000-500000030340">
+          <parts>
+            <part>00000000-0000-0000-0000-300000019688</part>
+            <part>00000000-0000-0000-0000-300000020092</part>
+            <part>00000000-0000-0000-0000-300000020452</part>
+            <part>00000000-0000-0000-0000-300000022408</part>
+            <part>00000000-0000-0000-0000-300000029163</part>
+            <part>00000000-0000-0000-0000-300000028759</part>
+          </parts>
+        </collisionset>
+        <collisionset name="rightFootGrp" id="00000000-0000-0000-0000-500000030306">
+          <parts>
+            <part>00000000-0000-0000-0000-300000022408</part>
+            <part>00000000-0000-0000-0000-300000021751</part>
+            <part>00000000-0000-0000-0000-300000021391</part>
+            <part>00000000-0000-0000-0000-300000020987</part>
+            <part>00000000-0000-0000-0000-300000029163</part>
+            <part>00000000-0000-0000-0000-300000028759</part>
+          </parts>
+        </collisionset>
+      </collisiongroup>
+      <mayatransform name="RootDummy" id="00000000-0000-0000-0002-100000000000">
+        <jointorient x="1" y="0" z="0" w="0"/>
+        <rotateorient x="1" y="0" z="0" w="0"/>
+        <scale x="1" y="1" z="1"/>
+        <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+        <rotate x="0.707109988" y="0.707103014" z="0" w="0"/>
+        <world>
+          <r0 c0="5.55089013e-017" c1="-1" c2="1.78814003e-006" c3="0"/>
+          <r1 c0="2.22045002e-016" c1="-1.78814003e-006" c2="-1" c3="0"/>
+          <r2 c0="1" c1="-1.60928998e-021" c2="1.66533004e-016" c3="0"/>
+          <r3 c0="-7.9934598e-006" c1="-0.00365999993" c2="-0.0136099998" c3="1"/>
+        </world>
+        <local>
+          <r0 c0="1" c1="3.7615799e-037" c2="-2.46519003e-032" c3="0"/>
+          <r1 c0="-9.09644989e-033" c1="9.66345033e-006" c2="-1" c3="0"/>
+          <r2 c0="-6.16298023e-033" c1="1" c2="9.66345033e-006" c3="0"/>
+          <r3 c0="-0.0136099998" c1="-0.00365999993" c2="8.03537023e-006" c3="1"/>
+        </local>
+        <childshapes/>
+        <childjoints/>
+        <childvolumes/>
+        <dofx>true</dofx>
+        <dofy>true</dofy>
+        <dofz>true</dofz>
+        <mayatransform name="transform19688" id="00000000-0000-0000-0001-100000019688">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.707109988" y="0.707103014" z="0" w="0"/>
+          <world>
+            <r0 c0="0.99999994" c1="-8.62395311e-009" c2="-1.78643205e-007" c3="0"/>
+            <r1 c0="-1.73801467e-007" c1="4.28274859e-007" c2="-0.99999994" c3="0"/>
+            <r2 c0="-8.02409339e-009" c1="1" c2="4.22756955e-007" c3="0"/>
+            <r3 c0="-0.147728398" c1="0.00405067764" c2="-1.0142988" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="-0.0155805238" c1="-0.32804811" c2="-0.944532335" c3="0"/>
+            <r1 c0="-0.00541092595" c1="0.944660902" c2="-0.328003466" c3="0"/>
+            <r2 c0="0.999863625" c1="3.28969236e-007" c2="-0.0164933596" c3="0"/>
+            <r3 c0="0.0719999969" c1="-0.00506779691" c2="-1.44534038e-008" c3="1"/>
+          </local>
+          <childshapes>
+            <childshape>00000000-0000-0000-0000-200000019688</childshape>
+          </childshapes>
+          <childjoints/>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform20092" id="00000000-0000-0000-0001-100000020092">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.707109988" y="0.707103014" z="0" w="0"/>
+          <world>
+            <r0 c0="0.998093843" c1="0.0615124814" c2="0.00499860151" c3="0"/>
+            <r1 c0="9.7206776e-009" c1="0.0809944943" c2="-0.996714473" c3="0"/>
+            <r2 c0="-0.0617152527" c1="0.994814515" c2="0.0808400959" c3="0"/>
+            <r3 c0="-0.134328648" c1="-0.0460907854" c2="-0.786882639" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="8.73467911e-008" c1="-0.999999821" c2="-3.58349126e-007" c3="0"/>
+            <r1 c0="-0.0165150519" c1="3.56857726e-007" c2="-0.999863446" c3="0"/>
+            <r2 c0="0.999863386" c1="9.32530426e-008" c2="-0.0165150519" c3="0"/>
+            <r3 c0="0.200046331" c1="-8.31359515e-009" c2="-1.67798557e-008" c3="1"/>
+          </local>
+          <childshapes>
+            <childshape>00000000-0000-0000-0000-200000020092</childshape>
+          </childshapes>
+          <childjoints/>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform20452" id="00000000-0000-0000-0001-100000020452">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.707109988" y="0.707103014" z="0" w="0"/>
+          <world>
+            <r0 c0="0.998076916" c1="0.061861109" c2="0.00399326952" c3="0"/>
+            <r1 c0="-6.20644656e-008" c1="0.0644191429" c2="-0.997923017" c3="0"/>
+            <r2 c0="-0.0619898587" c1="0.996003985" c2="0.0642952472" c3="0"/>
+            <r3 c0="-0.108421728" c1="-0.0157242008" c2="-0.368879229" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="2.36687796e-007" c1="-1.00000024" c2="-1.21161548e-007" c3="0"/>
+            <r1 c0="-0.0164952725" c1="1.17240845e-007" c2="-0.999864042" c3="0"/>
+            <r2 c0="0.999864042" c1="2.38654223e-007" c2="-0.0164952725" c3="0"/>
+            <r3 c0="0.219872981" c1="4.27237978e-009" c2="-2.42915359e-008" c3="1"/>
+          </local>
+          <childshapes>
+            <childshape>00000000-0000-0000-0000-200000020452</childshape>
+          </childshapes>
+          <childjoints/>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform20987" id="00000000-0000-0000-0001-100000020987">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.707109988" y="0.707103014" z="0" w="0"/>
+          <world>
+            <r0 c0="1" c1="2.36331754e-008" c2="-4.70607837e-008" c3="0"/>
+            <r1 c0="-5.17150625e-008" c1="1.40370082e-006" c2="-1" c3="0"/>
+            <r2 c0="-1.85862685e-008" c1="1" c2="1.39900408e-006" c3="0"/>
+            <r3 c0="0.147729054" c1="0.00404024497" c2="-1.0143292" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="0.0155814951" c1="-0.328047276" c2="-0.944532692" c3="0"/>
+            <r1 c0="0.00541031593" c1="0.9446612" c2="-0.328002661" c3="0"/>
+            <r2 c0="0.999863744" c1="5.51279186e-007" c2="0.0164940767" c3="0"/>
+            <r3 c0="0.0719999969" c1="-0.00510000018" c2="-2.99746077e-008" c3="1"/>
+          </local>
+          <childshapes>
+            <childshape>00000000-0000-0000-0000-200000020987</childshape>
+          </childshapes>
+          <childjoints/>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform21391" id="00000000-0000-0000-0001-100000021391">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.707109988" y="0.707103014" z="0" w="0"/>
+          <world>
+            <r0 c0="0.998093784" c1="-0.0615133606" c2="-0.0049986369" c3="0"/>
+            <r1 c0="-2.47872212e-008" c1="0.080993697" c2="-0.996714592" c3="0"/>
+            <r2 c0="0.0617161244" c1="0.994814634" c2="0.0808392912" c3="0"/>
+            <r3 c0="0.134329244" c1="-0.0460906811" c2="-0.78688252" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="8.53811315e-008" c1="-0.999999881" c2="5.9675142e-007" c3="0"/>
+            <r1 c0="0.016515648" c1="-5.95259962e-007" c2="-0.999863446" c3="0"/>
+            <r2 c0="0.999863446" c1="9.5225225e-008" c2="0.016515648" c3="0"/>
+            <r3 c0="0.200046346" c1="4.34167475e-008" c2="-3.56326169e-008" c3="1"/>
+          </local>
+          <childshapes>
+            <childshape>00000000-0000-0000-0000-200000021391</childshape>
+          </childshapes>
+          <childjoints/>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform21751" id="00000000-0000-0000-0001-100000021751">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.707109988" y="0.707103014" z="0" w="0"/>
+          <world>
+            <r0 c0="0.998076797" c1="-0.061861787" c2="-0.00399330584" c3="0"/>
+            <r1 c0="3.63609978e-008" c1="0.0644185543" c2="-0.997922957" c3="0"/>
+            <r2 c0="0.0619905405" c1="0.996003747" c2="0.0642946661" c3="0"/>
+            <r3 c0="0.108421989" c1="-0.0157241467" c2="-0.36887911" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="8.52788631e-008" c1="-1" c2="4.77540596e-007" c3="0"/>
+            <r1 c0="0.0164958686" c1="-4.76068863e-007" c2="-0.999863923" c3="0"/>
+            <r2 c0="0.999864042" c1="9.31446991e-008" c2="0.0164958667" c3="0"/>
+            <r3 c0="0.219872981" c1="4.18518624e-008" c2="1.58437952e-009" c3="1"/>
+          </local>
+          <childshapes>
+            <childshape>00000000-0000-0000-0000-200000021751</childshape>
+          </childshapes>
+          <childjoints/>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform22408" id="00000000-0000-0000-0001-100000022408">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.707109988" y="0.707103014" z="0" w="0"/>
+          <world>
+            <r0 c0="2.27997468e-014" c1="-1" c2="6.66446201e-015" c3="0"/>
+            <r1 c0="6.66449165e-015" c1="-7.54639271e-015" c2="-1" c3="0"/>
+            <r2 c0="1" c1="-2.27997468e-014" c2="-6.66448403e-015" c3="0"/>
+            <r3 c0="9.99315652e-009" c1="-0.0188533887" c2="-0.123361118" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="-1" c1="-5.2054844e-007" c2="-1.50995874e-007" c3="0"/>
+            <r1 c0="1.50995959e-007" c1="-1.50995746e-007" c2="-1" c3="0"/>
+            <r2 c0="5.2054844e-007" c1="-1" c2="1.50995831e-007" c3="0"/>
+            <r3 c0="0.0391422473" c1="-0.0246328153" c2="-9.41830502e-010" c3="1"/>
+          </local>
+          <childshapes>
+            <childshape>00000000-0000-0000-0000-200000022408</childshape>
+          </childshapes>
+          <childjoints/>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform23327" id="00000000-0000-0000-0001-100000023327">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.707109988" y="0.707103014" z="0" w="0"/>
+          <world>
+            <r0 c0="0.804322362" c1="0.579218566" c2="-0.132558018" c3="0"/>
+            <r1 c0="-0.189060807" c1="0.0379751772" c2="-0.981230795" c3="0"/>
+            <r2 c0="-0.563313127" c1="0.814287305" c2="0.140051797" c3="0"/>
+            <r3 c0="-0.489544094" c1="-0.0254811831" c2="-0.147435606" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="0.0165292658" c1="-0.997314155" c2="-0.0713479221" c3="0"/>
+            <r1 c0="-0.189620405" c1="0.0669359788" c2="-0.979572892" c3="0"/>
+            <r2 c0="0.981717885" c1="0.0297206547" c2="-0.188004807" c3="0"/>
+            <r3 c0="0.0674832836" c1="-0.000924815191" c2="0.00157633773" c3="1"/>
+          </local>
+          <childshapes>
+            <childshape>00000000-0000-0000-0000-200000023327</childshape>
+          </childshapes>
+          <childjoints/>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform23731" id="00000000-0000-0000-0001-100000023731">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.707109988" y="0.707103014" z="0" w="0"/>
+          <world>
+            <r0 c0="0.831754625" c1="0.554910004" c2="-0.0161048155" c3="0"/>
+            <r1 c0="3.53548018e-007" c1="-0.0290105846" c2="-0.999579072" c3="0"/>
+            <r2 c0="-0.555143595" c1="0.831404507" c2="-0.0241299085" c3="0"/>
+            <r3 c0="-0.384872913" c1="-0.030096706" c2="0.0122293103" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="-4.33125564e-007" c1="-0.999999642" c2="1.38138159e-008" c3="0"/>
+            <r1 c0="0" c1="-1.38138159e-008" c2="-0.999999642" c3="0"/>
+            <r2 c0="0.999999523" c1="-4.33125621e-007" c2="5.98311971e-015" c3="0"/>
+            <r3 c0="0.123479284" c1="2.8842686e-009" c2="-3.65124038e-008" c3="1"/>
+          </local>
+          <childshapes>
+            <childshape>00000000-0000-0000-0000-200000023731</childshape>
+          </childshapes>
+          <childjoints/>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform24091" id="00000000-0000-0000-0001-100000024091">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.707109988" y="0.707103014" z="0" w="0"/>
+          <world>
+            <r0 c0="0.831754684" c1="0.553994715" c2="-0.0356961116" c3="0"/>
+            <r1 c0="1.73604704e-007" c1="-0.0643008053" c2="-0.997930527" c3="0"/>
+            <r2 c0="-0.555143595" c1="0.830033243" c2="-0.0534826219" c3="0"/>
+            <r3 c0="-0.239482239" c1="-0.0415586233" c2="0.21061182" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="-3.13916331e-007" c1="-0.999999523" c2="-7.227802e-008" c3="0"/>
+            <r1 c0="0" c1="7.22780129e-008" c2="-0.999999642" c3="0"/>
+            <r2 c0="0.999999583" c1="-3.13916331e-007" c2="-2.26892615e-014" c3="0"/>
+            <r3 c0="0.122544557" c1="-1.05709619e-008" c2="0.0107984431" c3="1"/>
+          </local>
+          <childshapes>
+            <childshape>00000000-0000-0000-0000-200000024091</childshape>
+          </childshapes>
+          <childjoints/>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform24495" id="00000000-0000-0000-0001-100000024495">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.707109988" y="0.707103014" z="0" w="0"/>
+          <world>
+            <r0 c0="-0.284763128" c1="0.85472095" c2="-0.434006929" c3="0"/>
+            <r1 c0="4.00259665e-007" c1="0.452751786" c2="0.891636491" c3="0"/>
+            <r2 c0="0.958597898" c1="0.253904939" c2="-0.12892735" c3="0"/>
+            <r3 c0="-0.0926271528" c1="-0.00575872045" c2="0.324345261" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="-1.14838099e-006" c1="-0.999999344" c2="1.50995746e-007" c3="0"/>
+            <r1 c0="-0" c1="1.50995703e-007" c2="0.999999583" c3="0"/>
+            <r2 c0="-0.999999523" c1="1.14838076e-006" c2="-1.73400722e-013" c3="0"/>
+            <r3 c0="0.0774471611" c1="1.83017912e-009" c2="0.019271154" c3="1"/>
+          </local>
+          <childshapes>
+            <childshape>00000000-0000-0000-0000-200000024495</childshape>
+          </childshapes>
+          <childjoints/>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform25030" id="00000000-0000-0000-0001-100000025030">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.707109988" y="0.707103014" z="0" w="0"/>
+          <world>
+            <r0 c0="0.830769837" c1="-0.536385477" c2="0.148701817" c3="0"/>
+            <r1 c0="0.141303763" c1="-0.055165574" c2="-0.988427997" c3="0"/>
+            <r2 c0="0.538381577" c1="0.842168272" c2="0.0299633797" c3="0"/>
+            <r3 c0="0.493487567" c1="-0.0195745602" c2="-0.157324821" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="0.0174898636" c1="-0.999427974" c2="0.0289290622" c3="0"/>
+            <r1 c0="0.140856177" c1="-0.0261820313" c2="-0.98968327" c3="0"/>
+            <r2 c0="0.98987484" c1="0.0213842802" c2="0.140317783" c3="0"/>
+            <r3 c0="0.0780643597" c1="0.00467710104" c2="-0.00378616876" c3="1"/>
+          </local>
+          <childshapes>
+            <childshape>00000000-0000-0000-0000-200000025030</childshape>
+          </childshapes>
+          <childjoints/>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform25434" id="00000000-0000-0000-0001-100000025434">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.707109988" y="0.707103014" z="0" w="0"/>
+          <world>
+            <r0 c0="0.83175385" c1="-0.554911137" c2="0.016104836" c3="0"/>
+            <r1 c0="-4.91413743e-007" c1="-0.0290107429" c2="-0.999579012" c3="0"/>
+            <r2 c0="0.555144727" c1="0.831403613" c2="-0.0241301022" c3="0"/>
+            <r3 c0="0.384873122" c1="-0.0300966743" c2="0.012228746" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="-6.71543887e-007" c1="-0.999999523" c2="-2.53508318e-007" c3="0"/>
+            <r1 c0="0" c1="2.53508347e-007" c2="-0.999999464" c3="0"/>
+            <r2 c0="0.999999344" c1="-6.71544001e-007" c2="-1.70242076e-013" c3="0"/>
+            <r3 c0="0.123479381" c1="-3.53320928e-008" c2="-1.07553149e-007" c3="1"/>
+          </local>
+          <childshapes>
+            <childshape>00000000-0000-0000-0000-200000025434</childshape>
+          </childshapes>
+          <childjoints/>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform25794" id="00000000-0000-0000-0001-100000025794">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.707109988" y="0.707103014" z="0" w="0"/>
+          <world>
+            <r0 c0="0.831753135" c1="-0.553996921" c2="0.0356958173" c3="0"/>
+            <r1 c0="-8.35999856e-007" c1="-0.0643010139" c2="-0.997930467" c3="0"/>
+            <r2 c0="0.555145621" c1="0.830031812" c2="-0.0534830652" c3="0"/>
+            <r3 c0="0.241437167" c1="-0.0415586606" c2="0.211916625" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="-1.5060084e-006" c1="-0.999999523" c2="1.02947013e-007" c3="0"/>
+            <r1 c0="0" c1="-1.0294702e-007" c2="-0.999999464" c3="0"/>
+            <r2 c0="0.999999285" c1="-1.50600874e-006" c2="1.55039176e-013" c3="0"/>
+            <r3 c0="0.122545063" c1="1.21039374e-008" c2="-0.00844828971" c3="1"/>
+          </local>
+          <childshapes>
+            <childshape>00000000-0000-0000-0000-200000025794</childshape>
+          </childshapes>
+          <childjoints/>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform26198" id="00000000-0000-0000-0001-100000026198">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.707109988" y="0.707103014" z="0" w="0"/>
+          <world>
+            <r0 c0="0.284762144" c1="-0.854721129" c2="-0.434007406" c3="0"/>
+            <r1 c0="5.18798004e-007" c1="0.452752143" c2="-0.891636312" c3="0"/>
+            <r2 c0="0.958598316" c1="0.253903985" c2="0.128927112" c3="0"/>
+            <r3 c0="0.100628927" c1="-0.0088340817" c2="0.330013961" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="-1.50600874e-006" c1="-0.999999404" c2="-4.18684692e-007" c3="0"/>
+            <r1 c0="0" c1="4.18684607e-007" c2="-0.999999583" c3="0"/>
+            <r2 c0="0.999999583" c1="-1.50600852e-006" c2="-6.3054309e-013" c3="0"/>
+            <r3 c0="0.0842397362" c1="6.5664012e-009" c2="-0.0115585392" c3="1"/>
+          </local>
+          <childshapes>
+            <childshape>00000000-0000-0000-0000-200000026198</childshape>
+          </childshapes>
+          <childjoints/>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform26637" id="00000000-0000-0000-0001-100000026637">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.707109988" y="0.707103014" z="0" w="0"/>
+          <world>
+            <r0 c0="1" c1="-2.08217628e-007" c2="3.30386634e-008" c3="0"/>
+            <r1 c0="2.95764568e-008" c1="-0.0166063663" c2="-0.999862075" c3="0"/>
+            <r2 c0="2.08737674e-007" c1="0.999862015" c2="-0.0166063663" c3="0"/>
+            <r3 c0="-9.30503958e-008" c1="0.0290368795" c2="0.546895385" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="-3.29701517e-013" c1="0.999999523" c2="1.1920924e-007" c3="0"/>
+            <r1 c0="4.36702931e-006" c1="1.19209233e-007" c2="-0.999999583" c3="0"/>
+            <r2 c0="-0.999999285" c1="1.90888985e-013" c2="-4.36703067e-006" c3="0"/>
+            <r3 c0="0.0530719161" c1="-0.000779416878" c2="6.39314912e-009" c3="1"/>
+          </local>
+          <childshapes>
+            <childshape>00000000-0000-0000-0000-200000026637</childshape>
+          </childshapes>
+          <childjoints/>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform27041" id="00000000-0000-0000-0001-100000027041">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.707109988" y="0.707103014" z="0" w="0"/>
+          <world>
+            <r0 c0="1" c1="6.47578531e-007" c2="2.30062334e-008" c3="0"/>
+            <r1 c0="-1.09772138e-007" c1="0.204289868" c2="-0.978910446" c3="0"/>
+            <r2 c0="-6.38620747e-007" c1="0.978910506" c2="0.204289854" c3="0"/>
+            <r3 c0="-1.08651022e-007" c1="0.0182867125" c2="0.434373915" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="-1.02917159e-006" c1="0.999999642" c2="-2.01931599e-007" c3="0"/>
+            <r1 c0="0" c1="-2.01931613e-007" c2="-0.999999583" c3="0"/>
+            <r2 c0="-0.999999285" c1="-1.02917193e-006" c2="2.07822407e-013" c3="0"/>
+            <r3 c0="0.0607510246" c1="-1.95074925e-008" c2="-5.96045169e-008" c3="1"/>
+          </local>
+          <childshapes>
+            <childshape>00000000-0000-0000-0000-200000027041</childshape>
+          </childshapes>
+          <childjoints/>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform27951" id="00000000-0000-0000-0001-100000027951">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.707109988" y="0.707103014" z="0" w="0"/>
+          <world>
+            <r0 c0="4.79517379e-014" c1="-1" c2="7.48296074e-008" c3="0"/>
+            <r1 c0="-1.32974316e-008" c1="-7.48300479e-008" c2="-1" c3="0"/>
+            <r2 c0="1" c1="-4.69534622e-014" c2="-1.32973508e-008" c3="0"/>
+            <r3 c0="-1.21974438e-007" c1="-0.0208900087" c2="0.302713662" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="0.999986589" c1="3.57973136e-007" c2="-0.00512207346" c3="0"/>
+            <r1 c0="-0.00512207346" c1="-1.52831305e-007" c2="-0.999986589" c3="0"/>
+            <r2 c0="-3.58751322e-007" c1="0.999999523" c2="-1.5099576e-007" c3="0"/>
+            <r3 c0="0.14708446" c1="-0.0263958201" c2="7.60849772e-010" c3="1"/>
+          </local>
+          <childshapes>
+            <childshape>00000000-0000-0000-0000-200000027951</childshape>
+          </childshapes>
+          <childjoints/>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform28355" id="00000000-0000-0000-0001-100000028355">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.707109988" y="0.707103014" z="0" w="0"/>
+          <world>
+            <r0 c0="-2.10586009e-007" c1="-1" c2="-1.1117973e-007" c3="0"/>
+            <r1 c0="0.0355208404" c1="1.03628963e-007" c2="-0.999368846" c3="0"/>
+            <r2 c0="0.999368846" c1="-2.14402348e-007" c2="0.0355208404" c3="0"/>
+            <r3 c0="-5.31223279e-008" c1="0.00250470359" c2="0.169192508" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="0.999999642" c1="-8.09982561e-013" c2="-1.50995746e-007" c3="0"/>
+            <r1 c0="-1.50995746e-007" c1="-4.91936498e-006" c2="-0.999999642" c3="0"/>
+            <r2 c0="6.71790911e-014" c1="0.999999523" c2="-4.91936544e-006" c3="0"/>
+            <r3 c0="0.14014715" c1="-0.00273251417" c2="-2.9935201e-008" c3="1"/>
+          </local>
+          <childshapes>
+            <childshape>00000000-0000-0000-0000-200000028355</childshape>
+          </childshapes>
+          <childjoints/>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform28759" id="00000000-0000-0000-0001-100000028759">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.707109988" y="0.707103014" z="0" w="0"/>
+          <world>
+            <r0 c0="2.54604674e-006" c1="-1" c2="-2.34097755e-007" c3="0"/>
+            <r1 c0="-0.0610986575" c1="7.81003209e-008" c2="-0.998131752" c3="0"/>
+            <r2 c0="0.998131752" c1="2.55559189e-006" c2="-0.0610986575" c3="0"/>
+            <r3 c0="-9.32144246e-008" c1="0.00153917097" c2="0.0521804802" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="0.999999762" c1="2.84102771e-006" c2="-1.50995334e-007" c3="0"/>
+            <r1 c0="-1.5099576e-007" c1="1.50995305e-007" c2="-0.999999762" c3="0"/>
+            <r2 c0="-2.84102839e-006" c1="0.999999523" c2="1.5099576e-007" c3="0"/>
+            <r3 c0="0.0649820194" c1="0.00269349478" c2="-7.23604927e-008" c3="1"/>
+          </local>
+          <childshapes>
+            <childshape>00000000-0000-0000-0000-200000028759</childshape>
+          </childshapes>
+          <childjoints/>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform29163" id="00000000-0000-0000-0001-100000029163">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.707109988" y="0.707103014" z="0" w="0"/>
+          <world>
+            <r0 c0="-3.44028467e-006" c1="-1" c2="1.92141783e-007" c3="0"/>
+            <r1 c0="-0.0781562179" c1="7.73255522e-008" c2="-0.99694109" c3="0"/>
+            <r2 c0="0.99694109" c1="-3.4447778e-006" c2="-0.0781562179" c3="0"/>
+            <r3 c0="-8.14493788e-008" c1="0.0043017799" c2="-0.0317331105" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="0.999999821" c1="-3.14596127e-006" c2="1.50996243e-007" c3="0"/>
+            <r1 c0="1.50995774e-007" c1="-1.50996229e-007" c2="-0.999999821" c3="0"/>
+            <r2 c0="3.1459615e-006" c1="0.999999762" c2="-1.50995774e-007" c3="0"/>
+            <r3 c0="0.0189463589" c1="-1.62521374e-009" c2="5.96045204e-008" c3="1"/>
+          </local>
+          <childshapes>
+            <childshape>00000000-0000-0000-0000-200000029163</childshape>
+          </childshapes>
+          <childjoints/>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform19776" id="00000000-0000-0000-0002-400000019776">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.997609973" y="-3.67143002e-006" z="-4.65411995e-006" w="0.0691023991"/>
+          <world>
+            <r0 c0="0.0186826009" c1="0.0248096008" c2="0.999517024" c3="0"/>
+            <r1 c0="0.00467426982" c1="0.999678016" c2="-0.0249010008" c3="0"/>
+            <r2 c0="-0.999814987" c1="0.00513726007" c2="0.0185605995" c3="0"/>
+            <r3 c0="-0.120729998" c1="0.00194331002" c2="-0.415724009" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="0.990450978" c1="-0.137874007" c2="-9.79370998e-006" c3="0"/>
+            <r1 c0="0.137874007" c1="0.990449011" c2="6.68444e-006" c3="0"/>
+            <r2 c0="8.7785802e-006" c1="-7.96852964e-006" c2="0.999998987" c3="0"/>
+            <r3 c0="5.55111976e-017" c1="8.67362048e-019" c2="0" c3="1"/>
+          </local>
+          <childshapes/>
+          <childjoints>
+            <childjoint>00000000-0000-0000-0000-400000019776</childjoint>
+          </childjoints>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform20180" id="00000000-0000-0000-0002-400000020180">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.997609973" y="-3.67143002e-006" z="-4.65411995e-006" w="0.0691023991"/>
+          <world>
+            <r0 c0="0.0186826009" c1="0.0248096008" c2="0.999517024" c3="0"/>
+            <r1 c0="0.00467426982" c1="0.999678016" c2="-0.0249010008" c3="0"/>
+            <r2 c0="-0.999814987" c1="0.00513726007" c2="0.0185605995" c3="0"/>
+            <r3 c0="-0.120729998" c1="0.00194331002" c2="-0.415724009" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="0.990450978" c1="-0.137874007" c2="-9.79370998e-006" c3="0"/>
+            <r1 c0="0.137874007" c1="0.990449011" c2="6.68444e-006" c3="0"/>
+            <r2 c0="8.7785802e-006" c1="-7.96852964e-006" c2="0.999998987" c3="0"/>
+            <r3 c0="5.55111976e-017" c1="8.67362048e-019" c2="0" c3="1"/>
+          </local>
+          <childshapes/>
+          <childjoints>
+            <childjoint>00000000-0000-0000-0000-400000020180</childjoint>
+          </childjoints>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform21075" id="00000000-0000-0000-0002-400000021075">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.997609973" y="-3.67143002e-006" z="-4.65411995e-006" w="0.0691023991"/>
+          <world>
+            <r0 c0="0.0186826009" c1="0.0248096008" c2="0.999517024" c3="0"/>
+            <r1 c0="0.00467426982" c1="0.999678016" c2="-0.0249010008" c3="0"/>
+            <r2 c0="-0.999814987" c1="0.00513726007" c2="0.0185605995" c3="0"/>
+            <r3 c0="-0.120729998" c1="0.00194331002" c2="-0.415724009" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="0.990450978" c1="-0.137874007" c2="-9.79370998e-006" c3="0"/>
+            <r1 c0="0.137874007" c1="0.990449011" c2="6.68444e-006" c3="0"/>
+            <r2 c0="8.7785802e-006" c1="-7.96852964e-006" c2="0.999998987" c3="0"/>
+            <r3 c0="5.55111976e-017" c1="8.67362048e-019" c2="0" c3="1"/>
+          </local>
+          <childshapes/>
+          <childjoints>
+            <childjoint>00000000-0000-0000-0000-400000021075</childjoint>
+          </childjoints>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform21479" id="00000000-0000-0000-0002-400000021479">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.997609973" y="-3.67143002e-006" z="-4.65411995e-006" w="0.0691023991"/>
+          <world>
+            <r0 c0="0.0186826009" c1="0.0248096008" c2="0.999517024" c3="0"/>
+            <r1 c0="0.00467426982" c1="0.999678016" c2="-0.0249010008" c3="0"/>
+            <r2 c0="-0.999814987" c1="0.00513726007" c2="0.0185605995" c3="0"/>
+            <r3 c0="-0.120729998" c1="0.00194331002" c2="-0.415724009" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="0.990450978" c1="-0.137874007" c2="-9.79370998e-006" c3="0"/>
+            <r1 c0="0.137874007" c1="0.990449011" c2="6.68444e-006" c3="0"/>
+            <r2 c0="8.7785802e-006" c1="-7.96852964e-006" c2="0.999998987" c3="0"/>
+            <r3 c0="5.55111976e-017" c1="8.67362048e-019" c2="0" c3="1"/>
+          </local>
+          <childshapes/>
+          <childjoints>
+            <childjoint>00000000-0000-0000-0000-400000021479</childjoint>
+          </childjoints>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform21839" id="00000000-0000-0000-0002-400000021839">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.997609973" y="-3.67143002e-006" z="-4.65411995e-006" w="0.0691023991"/>
+          <world>
+            <r0 c0="0.0186826009" c1="0.0248096008" c2="0.999517024" c3="0"/>
+            <r1 c0="0.00467426982" c1="0.999678016" c2="-0.0249010008" c3="0"/>
+            <r2 c0="-0.999814987" c1="0.00513726007" c2="0.0185605995" c3="0"/>
+            <r3 c0="-0.120729998" c1="0.00194331002" c2="-0.415724009" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="0.990450978" c1="-0.137874007" c2="-9.79370998e-006" c3="0"/>
+            <r1 c0="0.137874007" c1="0.990449011" c2="6.68444e-006" c3="0"/>
+            <r2 c0="8.7785802e-006" c1="-7.96852964e-006" c2="0.999998987" c3="0"/>
+            <r3 c0="5.55111976e-017" c1="8.67362048e-019" c2="0" c3="1"/>
+          </local>
+          <childshapes/>
+          <childjoints>
+            <childjoint>00000000-0000-0000-0000-400000021839</childjoint>
+          </childjoints>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform22092" id="00000000-0000-0000-0002-400000022092">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.997609973" y="-3.67143002e-006" z="-4.65411995e-006" w="0.0691023991"/>
+          <world>
+            <r0 c0="0.0186826009" c1="0.0248096008" c2="0.999517024" c3="0"/>
+            <r1 c0="0.00467426982" c1="0.999678016" c2="-0.0249010008" c3="0"/>
+            <r2 c0="-0.999814987" c1="0.00513726007" c2="0.0185605995" c3="0"/>
+            <r3 c0="-0.120729998" c1="0.00194331002" c2="-0.415724009" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="0.990450978" c1="-0.137874007" c2="-9.79370998e-006" c3="0"/>
+            <r1 c0="0.137874007" c1="0.990449011" c2="6.68444e-006" c3="0"/>
+            <r2 c0="8.7785802e-006" c1="-7.96852964e-006" c2="0.999998987" c3="0"/>
+            <r3 c0="5.55111976e-017" c1="8.67362048e-019" c2="0" c3="1"/>
+          </local>
+          <childshapes/>
+          <childjoints>
+            <childjoint>00000000-0000-0000-0000-400000022092</childjoint>
+          </childjoints>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform23415" id="00000000-0000-0000-0002-400000023415">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.997609973" y="-3.67143002e-006" z="-4.65411995e-006" w="0.0691023991"/>
+          <world>
+            <r0 c0="0.0186826009" c1="0.0248096008" c2="0.999517024" c3="0"/>
+            <r1 c0="0.00467426982" c1="0.999678016" c2="-0.0249010008" c3="0"/>
+            <r2 c0="-0.999814987" c1="0.00513726007" c2="0.0185605995" c3="0"/>
+            <r3 c0="-0.120729998" c1="0.00194331002" c2="-0.415724009" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="0.990450978" c1="-0.137874007" c2="-9.79370998e-006" c3="0"/>
+            <r1 c0="0.137874007" c1="0.990449011" c2="6.68444e-006" c3="0"/>
+            <r2 c0="8.7785802e-006" c1="-7.96852964e-006" c2="0.999998987" c3="0"/>
+            <r3 c0="5.55111976e-017" c1="8.67362048e-019" c2="0" c3="1"/>
+          </local>
+          <childshapes/>
+          <childjoints>
+            <childjoint>00000000-0000-0000-0000-400000023415</childjoint>
+          </childjoints>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform23819" id="00000000-0000-0000-0002-400000023819">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.997609973" y="-3.67143002e-006" z="-4.65411995e-006" w="0.0691023991"/>
+          <world>
+            <r0 c0="0.0186826009" c1="0.0248096008" c2="0.999517024" c3="0"/>
+            <r1 c0="0.00467426982" c1="0.999678016" c2="-0.0249010008" c3="0"/>
+            <r2 c0="-0.999814987" c1="0.00513726007" c2="0.0185605995" c3="0"/>
+            <r3 c0="-0.120729998" c1="0.00194331002" c2="-0.415724009" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="0.990450978" c1="-0.137874007" c2="-9.79370998e-006" c3="0"/>
+            <r1 c0="0.137874007" c1="0.990449011" c2="6.68444e-006" c3="0"/>
+            <r2 c0="8.7785802e-006" c1="-7.96852964e-006" c2="0.999998987" c3="0"/>
+            <r3 c0="5.55111976e-017" c1="8.67362048e-019" c2="0" c3="1"/>
+          </local>
+          <childshapes/>
+          <childjoints>
+            <childjoint>00000000-0000-0000-0000-400000023819</childjoint>
+          </childjoints>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform24179" id="00000000-0000-0000-0002-400000024179">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.997609973" y="-3.67143002e-006" z="-4.65411995e-006" w="0.0691023991"/>
+          <world>
+            <r0 c0="0.0186826009" c1="0.0248096008" c2="0.999517024" c3="0"/>
+            <r1 c0="0.00467426982" c1="0.999678016" c2="-0.0249010008" c3="0"/>
+            <r2 c0="-0.999814987" c1="0.00513726007" c2="0.0185605995" c3="0"/>
+            <r3 c0="-0.120729998" c1="0.00194331002" c2="-0.415724009" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="0.990450978" c1="-0.137874007" c2="-9.79370998e-006" c3="0"/>
+            <r1 c0="0.137874007" c1="0.990449011" c2="6.68444e-006" c3="0"/>
+            <r2 c0="8.7785802e-006" c1="-7.96852964e-006" c2="0.999998987" c3="0"/>
+            <r3 c0="5.55111976e-017" c1="8.67362048e-019" c2="0" c3="1"/>
+          </local>
+          <childshapes/>
+          <childjoints>
+            <childjoint>00000000-0000-0000-0000-400000024179</childjoint>
+          </childjoints>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform25118" id="00000000-0000-0000-0002-400000025118">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.997609973" y="-3.67143002e-006" z="-4.65411995e-006" w="0.0691023991"/>
+          <world>
+            <r0 c0="0.0186826009" c1="0.0248096008" c2="0.999517024" c3="0"/>
+            <r1 c0="0.00467426982" c1="0.999678016" c2="-0.0249010008" c3="0"/>
+            <r2 c0="-0.999814987" c1="0.00513726007" c2="0.0185605995" c3="0"/>
+            <r3 c0="-0.120729998" c1="0.00194331002" c2="-0.415724009" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="0.990450978" c1="-0.137874007" c2="-9.79370998e-006" c3="0"/>
+            <r1 c0="0.137874007" c1="0.990449011" c2="6.68444e-006" c3="0"/>
+            <r2 c0="8.7785802e-006" c1="-7.96852964e-006" c2="0.999998987" c3="0"/>
+            <r3 c0="5.55111976e-017" c1="8.67362048e-019" c2="0" c3="1"/>
+          </local>
+          <childshapes/>
+          <childjoints>
+            <childjoint>00000000-0000-0000-0000-400000025118</childjoint>
+          </childjoints>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform25522" id="00000000-0000-0000-0002-400000025522">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.997609973" y="-3.67143002e-006" z="-4.65411995e-006" w="0.0691023991"/>
+          <world>
+            <r0 c0="0.0186826009" c1="0.0248096008" c2="0.999517024" c3="0"/>
+            <r1 c0="0.00467426982" c1="0.999678016" c2="-0.0249010008" c3="0"/>
+            <r2 c0="-0.999814987" c1="0.00513726007" c2="0.0185605995" c3="0"/>
+            <r3 c0="-0.120729998" c1="0.00194331002" c2="-0.415724009" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="0.990450978" c1="-0.137874007" c2="-9.79370998e-006" c3="0"/>
+            <r1 c0="0.137874007" c1="0.990449011" c2="6.68444e-006" c3="0"/>
+            <r2 c0="8.7785802e-006" c1="-7.96852964e-006" c2="0.999998987" c3="0"/>
+            <r3 c0="5.55111976e-017" c1="8.67362048e-019" c2="0" c3="1"/>
+          </local>
+          <childshapes/>
+          <childjoints>
+            <childjoint>00000000-0000-0000-0000-400000025522</childjoint>
+          </childjoints>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform25882" id="00000000-0000-0000-0002-400000025882">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.997609973" y="-3.67143002e-006" z="-4.65411995e-006" w="0.0691023991"/>
+          <world>
+            <r0 c0="0.0186826009" c1="0.0248096008" c2="0.999517024" c3="0"/>
+            <r1 c0="0.00467426982" c1="0.999678016" c2="-0.0249010008" c3="0"/>
+            <r2 c0="-0.999814987" c1="0.00513726007" c2="0.0185605995" c3="0"/>
+            <r3 c0="-0.120729998" c1="0.00194331002" c2="-0.415724009" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="0.990450978" c1="-0.137874007" c2="-9.79370998e-006" c3="0"/>
+            <r1 c0="0.137874007" c1="0.990449011" c2="6.68444e-006" c3="0"/>
+            <r2 c0="8.7785802e-006" c1="-7.96852964e-006" c2="0.999998987" c3="0"/>
+            <r3 c0="5.55111976e-017" c1="8.67362048e-019" c2="0" c3="1"/>
+          </local>
+          <childshapes/>
+          <childjoints>
+            <childjoint>00000000-0000-0000-0000-400000025882</childjoint>
+          </childjoints>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform26725" id="00000000-0000-0000-0002-400000026725">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.997609973" y="-3.67143002e-006" z="-4.65411995e-006" w="0.0691023991"/>
+          <world>
+            <r0 c0="0.0186826009" c1="0.0248096008" c2="0.999517024" c3="0"/>
+            <r1 c0="0.00467426982" c1="0.999678016" c2="-0.0249010008" c3="0"/>
+            <r2 c0="-0.999814987" c1="0.00513726007" c2="0.0185605995" c3="0"/>
+            <r3 c0="-0.120729998" c1="0.00194331002" c2="-0.415724009" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="0.990450978" c1="-0.137874007" c2="-9.79370998e-006" c3="0"/>
+            <r1 c0="0.137874007" c1="0.990449011" c2="6.68444e-006" c3="0"/>
+            <r2 c0="8.7785802e-006" c1="-7.96852964e-006" c2="0.999998987" c3="0"/>
+            <r3 c0="5.55111976e-017" c1="8.67362048e-019" c2="0" c3="1"/>
+          </local>
+          <childshapes/>
+          <childjoints>
+            <childjoint>00000000-0000-0000-0000-400000026725</childjoint>
+          </childjoints>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform27129" id="00000000-0000-0000-0002-400000027129">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.997609973" y="-3.67143002e-006" z="-4.65411995e-006" w="0.0691023991"/>
+          <world>
+            <r0 c0="0.0186826009" c1="0.0248096008" c2="0.999517024" c3="0"/>
+            <r1 c0="0.00467426982" c1="0.999678016" c2="-0.0249010008" c3="0"/>
+            <r2 c0="-0.999814987" c1="0.00513726007" c2="0.0185605995" c3="0"/>
+            <r3 c0="-0.120729998" c1="0.00194331002" c2="-0.415724009" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="0.990450978" c1="-0.137874007" c2="-9.79370998e-006" c3="0"/>
+            <r1 c0="0.137874007" c1="0.990449011" c2="6.68444e-006" c3="0"/>
+            <r2 c0="8.7785802e-006" c1="-7.96852964e-006" c2="0.999998987" c3="0"/>
+            <r3 c0="5.55111976e-017" c1="8.67362048e-019" c2="0" c3="1"/>
+          </local>
+          <childshapes/>
+          <childjoints>
+            <childjoint>00000000-0000-0000-0000-400000027129</childjoint>
+          </childjoints>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform27382" id="00000000-0000-0000-0002-400000027382">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.997609973" y="-3.67143002e-006" z="-4.65411995e-006" w="0.0691023991"/>
+          <world>
+            <r0 c0="0.0186826009" c1="0.0248096008" c2="0.999517024" c3="0"/>
+            <r1 c0="0.00467426982" c1="0.999678016" c2="-0.0249010008" c3="0"/>
+            <r2 c0="-0.999814987" c1="0.00513726007" c2="0.0185605995" c3="0"/>
+            <r3 c0="-0.120729998" c1="0.00194331002" c2="-0.415724009" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="0.990450978" c1="-0.137874007" c2="-9.79370998e-006" c3="0"/>
+            <r1 c0="0.137874007" c1="0.990449011" c2="6.68444e-006" c3="0"/>
+            <r2 c0="8.7785802e-006" c1="-7.96852964e-006" c2="0.999998987" c3="0"/>
+            <r3 c0="5.55111976e-017" c1="8.67362048e-019" c2="0" c3="1"/>
+          </local>
+          <childshapes/>
+          <childjoints>
+            <childjoint>00000000-0000-0000-0000-400000027382</childjoint>
+          </childjoints>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform27635" id="00000000-0000-0000-0002-400000027635">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.997609973" y="-3.67143002e-006" z="-4.65411995e-006" w="0.0691023991"/>
+          <world>
+            <r0 c0="0.0186826009" c1="0.0248096008" c2="0.999517024" c3="0"/>
+            <r1 c0="0.00467426982" c1="0.999678016" c2="-0.0249010008" c3="0"/>
+            <r2 c0="-0.999814987" c1="0.00513726007" c2="0.0185605995" c3="0"/>
+            <r3 c0="-0.120729998" c1="0.00194331002" c2="-0.415724009" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="0.990450978" c1="-0.137874007" c2="-9.79370998e-006" c3="0"/>
+            <r1 c0="0.137874007" c1="0.990449011" c2="6.68444e-006" c3="0"/>
+            <r2 c0="8.7785802e-006" c1="-7.96852964e-006" c2="0.999998987" c3="0"/>
+            <r3 c0="5.55111976e-017" c1="8.67362048e-019" c2="0" c3="1"/>
+          </local>
+          <childshapes/>
+          <childjoints>
+            <childjoint>00000000-0000-0000-0000-400000027635</childjoint>
+          </childjoints>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform28039" id="00000000-0000-0000-0002-400000028039">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.997609973" y="-3.67143002e-006" z="-4.65411995e-006" w="0.0691023991"/>
+          <world>
+            <r0 c0="0.0186826009" c1="0.0248096008" c2="0.999517024" c3="0"/>
+            <r1 c0="0.00467426982" c1="0.999678016" c2="-0.0249010008" c3="0"/>
+            <r2 c0="-0.999814987" c1="0.00513726007" c2="0.0185605995" c3="0"/>
+            <r3 c0="-0.120729998" c1="0.00194331002" c2="-0.415724009" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="0.990450978" c1="-0.137874007" c2="-9.79370998e-006" c3="0"/>
+            <r1 c0="0.137874007" c1="0.990449011" c2="6.68444e-006" c3="0"/>
+            <r2 c0="8.7785802e-006" c1="-7.96852964e-006" c2="0.999998987" c3="0"/>
+            <r3 c0="5.55111976e-017" c1="8.67362048e-019" c2="0" c3="1"/>
+          </local>
+          <childshapes/>
+          <childjoints>
+            <childjoint>00000000-0000-0000-0000-400000028039</childjoint>
+          </childjoints>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform28443" id="00000000-0000-0000-0002-400000028443">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.997609973" y="-3.67143002e-006" z="-4.65411995e-006" w="0.0691023991"/>
+          <world>
+            <r0 c0="0.0186826009" c1="0.0248096008" c2="0.999517024" c3="0"/>
+            <r1 c0="0.00467426982" c1="0.999678016" c2="-0.0249010008" c3="0"/>
+            <r2 c0="-0.999814987" c1="0.00513726007" c2="0.0185605995" c3="0"/>
+            <r3 c0="-0.120729998" c1="0.00194331002" c2="-0.415724009" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="0.990450978" c1="-0.137874007" c2="-9.79370998e-006" c3="0"/>
+            <r1 c0="0.137874007" c1="0.990449011" c2="6.68444e-006" c3="0"/>
+            <r2 c0="8.7785802e-006" c1="-7.96852964e-006" c2="0.999998987" c3="0"/>
+            <r3 c0="5.55111976e-017" c1="8.67362048e-019" c2="0" c3="1"/>
+          </local>
+          <childshapes/>
+          <childjoints>
+            <childjoint>00000000-0000-0000-0000-400000028443</childjoint>
+          </childjoints>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform28847" id="00000000-0000-0000-0002-400000028847">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.997609973" y="-3.67143002e-006" z="-4.65411995e-006" w="0.0691023991"/>
+          <world>
+            <r0 c0="0.0186826009" c1="0.0248096008" c2="0.999517024" c3="0"/>
+            <r1 c0="0.00467426982" c1="0.999678016" c2="-0.0249010008" c3="0"/>
+            <r2 c0="-0.999814987" c1="0.00513726007" c2="0.0185605995" c3="0"/>
+            <r3 c0="-0.120729998" c1="0.00194331002" c2="-0.415724009" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="0.990450978" c1="-0.137874007" c2="-9.79370998e-006" c3="0"/>
+            <r1 c0="0.137874007" c1="0.990449011" c2="6.68444e-006" c3="0"/>
+            <r2 c0="8.7785802e-006" c1="-7.96852964e-006" c2="0.999998987" c3="0"/>
+            <r3 c0="5.55111976e-017" c1="8.67362048e-019" c2="0" c3="1"/>
+          </local>
+          <childshapes/>
+          <childjoints>
+            <childjoint>00000000-0000-0000-0000-400000028847</childjoint>
+          </childjoints>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+        <mayatransform name="transform29251" id="00000000-0000-0000-0002-400000029251">
+          <jointorient x="1" y="0" z="0" w="0"/>
+          <rotateorient x="1" y="0" z="0" w="0"/>
+          <scale x="1" y="1" z="1"/>
+          <translate x="-0.0136099998" y="-0.00365999993" z="8.03537023e-006"/>
+          <rotate x="0.997609973" y="-3.67143002e-006" z="-4.65411995e-006" w="0.0691023991"/>
+          <world>
+            <r0 c0="0.0186826009" c1="0.0248096008" c2="0.999517024" c3="0"/>
+            <r1 c0="0.00467426982" c1="0.999678016" c2="-0.0249010008" c3="0"/>
+            <r2 c0="-0.999814987" c1="0.00513726007" c2="0.0185605995" c3="0"/>
+            <r3 c0="-0.120729998" c1="0.00194331002" c2="-0.415724009" c3="1"/>
+          </world>
+          <local>
+            <r0 c0="0.990450978" c1="-0.137874007" c2="-9.79370998e-006" c3="0"/>
+            <r1 c0="0.137874007" c1="0.990449011" c2="6.68444e-006" c3="0"/>
+            <r2 c0="8.7785802e-006" c1="-7.96852964e-006" c2="0.999998987" c3="0"/>
+            <r3 c0="5.55111976e-017" c1="8.67362048e-019" c2="0" c3="1"/>
+          </local>
+          <childshapes/>
+          <childjoints>
+            <childjoint>00000000-0000-0000-0000-400000029251</childjoint>
+          </childjoints>
+          <childvolumes/>
+          <dofx>true</dofx>
+          <dofy>true</dofy>
+          <dofz>true</dofz>
+        </mayatransform>
+      </mayatransform>
+      <volume name="Foot_Left" id="00000000-0000-0000-0000-100000019688">
+        <box name="Foot_Left" id="00000000-0000-0000-0000-200000019688">
+          <relativetransform>
+            <r0 c0="1" c1="0" c2="0" c3="0"/>
+            <r1 c0="0" c1="1" c2="0" c3="0"/>
+            <r2 c0="0" c1="0" c2="1" c3="0"/>
+            <r3 c0="0" c1="0" c2="0" c3="1"/>
+          </relativetransform>
+          <dimensionx>0.11</dimensionx>
+          <dimensiony>0.069721</dimensiony>
+          <dimensionz>0.249152</dimensionz>
+        </box>
+      </volume>
+      <volume name="Shin_Left" id="00000000-0000-0000-0000-100000020092">
+        <capsule name="Shin_Left" id="00000000-0000-0000-0000-200000020092">
+          <relativetransform>
+            <r0 c0="1" c1="0" c2="0" c3="0"/>
+            <r1 c0="0" c1="1" c2="0" c3="0"/>
+            <r2 c0="0" c1="0" c2="1" c3="0"/>
+            <r3 c0="0" c1="0" c2="0" c3="1"/>
+          </relativetransform>
+          <radius>0.0660997</radius>
+          <height>0.382098</height>
+        </capsule>
+      </volume>
+      <volume name="Thigh_Left" id="00000000-0000-0000-0000-100000020452">
+        <capsule name="Thigh_Left" id="00000000-0000-0000-0000-200000020452">
+          <relativetransform>
+            <r0 c0="1" c1="0" c2="0" c3="0"/>
+            <r1 c0="0" c1="1" c2="0" c3="0"/>
+            <r2 c0="0" c1="0" c2="1" c3="0"/>
+            <r3 c0="0" c1="0" c2="0" c3="1"/>
+          </relativetransform>
+          <radius>0.0823072</radius>
+          <height>0.37</height>
+        </capsule>
+      </volume>
+      <volume name="Foot_Right" id="00000000-0000-0000-0000-100000020987">
+        <box name="Foot_Right" id="00000000-0000-0000-0000-200000020987">
+          <relativetransform>
+            <r0 c0="1" c1="0" c2="0" c3="0"/>
+            <r1 c0="0" c1="1" c2="0" c3="0"/>
+            <r2 c0="0" c1="0" c2="1" c3="0"/>
+            <r3 c0="0" c1="0" c2="0" c3="1"/>
+          </relativetransform>
+          <dimensionx>0.11</dimensionx>
+          <dimensiony>0.0732841</dimensiony>
+          <dimensionz>0.258521</dimensionz>
+        </box>
+      </volume>
+      <volume name="Shin_Right" id="00000000-0000-0000-0000-100000021391">
+        <capsule name="Shin_Right" id="00000000-0000-0000-0000-200000021391">
+          <relativetransform>
+            <r0 c0="1" c1="0" c2="0" c3="0"/>
+            <r1 c0="0" c1="1" c2="0" c3="0"/>
+            <r2 c0="0" c1="0" c2="1" c3="0"/>
+            <r3 c0="0" c1="0" c2="0" c3="1"/>
+          </relativetransform>
+          <radius>0.0672882</radius>
+          <height>0.385199</height>
+        </capsule>
+      </volume>
+      <volume name="Thigh_Right" id="00000000-0000-0000-0000-100000021751">
+        <capsule name="Thigh_Right" id="00000000-0000-0000-0000-200000021751">
+          <relativetransform>
+            <r0 c0="1" c1="0" c2="0" c3="0"/>
+            <r1 c0="0" c1="1" c2="0" c3="0"/>
+            <r2 c0="0" c1="0" c2="1" c3="0"/>
+            <r3 c0="0" c1="0" c2="0" c3="1"/>
+          </relativetransform>
+          <radius>0.0826458</radius>
+          <height>0.37</height>
+        </capsule>
+      </volume>
+      <volume name="Buttocks" id="00000000-0000-0000-0000-100000022408">
+        <capsule name="Buttocks" id="00000000-0000-0000-0000-200000022408">
+          <relativetransform>
+            <r0 c0="1" c1="0" c2="0" c3="0"/>
+            <r1 c0="0" c1="1" c2="0" c3="0"/>
+            <r2 c0="0" c1="0" c2="1" c3="0"/>
+            <r3 c0="0" c1="0" c2="0" c3="1"/>
+          </relativetransform>
+          <radius>0.124752</radius>
+          <height>0.0988377</height>
+        </capsule>
+      </volume>
+      <volume name="Hand_Left" id="00000000-0000-0000-0000-100000023327">
+        <box name="Hand_Left" id="00000000-0000-0000-0000-200000023327">
+          <relativetransform>
+            <r0 c0="1" c1="0" c2="0" c3="0"/>
+            <r1 c0="0" c1="1" c2="0" c3="0"/>
+            <r2 c0="0" c1="0" c2="1" c3="0"/>
+            <r3 c0="0" c1="0" c2="0" c3="1"/>
+          </relativetransform>
+          <dimensionx>0.0430283</dimensionx>
+          <dimensiony>0.16912</dimensiony>
+          <dimensionz>0.080229</dimensionz>
+        </box>
+      </volume>
+      <volume name="Lower_Arm_Left" id="00000000-0000-0000-0000-100000023731">
+        <capsule name="Lower_Arm_Left" id="00000000-0000-0000-0000-200000023731">
+          <relativetransform>
+            <r0 c0="1" c1="0" c2="0" c3="0"/>
+            <r1 c0="0" c1="1" c2="0" c3="0"/>
+            <r2 c0="0" c1="0" c2="1" c3="0"/>
+            <r3 c0="0" c1="0" c2="0" c3="1"/>
+          </relativetransform>
+          <radius>0.0418717</radius>
+          <height>0.237</height>
+        </capsule>
+      </volume>
+      <volume name="Upper_Arm_Left" id="00000000-0000-0000-0000-100000024091">
+        <capsule name="Upper_Arm_Left" id="00000000-0000-0000-0000-200000024091">
+          <relativetransform>
+            <r0 c0="1" c1="0" c2="0" c3="0"/>
+            <r1 c0="0" c1="1" c2="0" c3="0"/>
+            <r2 c0="0" c1="0" c2="1" c3="0"/>
+            <r3 c0="0" c1="0" c2="0" c3="1"/>
+          </relativetransform>
+          <radius>0.0522481</radius>
+          <height>0.254</height>
+        </capsule>
+      </volume>
+      <volume name="Clavicle_Left" id="00000000-0000-0000-0000-100000024495">
+        <capsule name="Clavicle_Left" id="00000000-0000-0000-0000-200000024495">
+          <relativetransform>
+            <r0 c0="1" c1="0" c2="0" c3="0"/>
+            <r1 c0="0" c1="1" c2="0" c3="0"/>
+            <r2 c0="0" c1="0" c2="1" c3="0"/>
+            <r3 c0="0" c1="0" c2="0" c3="1"/>
+          </relativetransform>
+          <radius>0.055378</radius>
+          <height>0.104651</height>
+        </capsule>
+      </volume>
+      <volume name="Hand_Right" id="00000000-0000-0000-0000-100000025030">
+        <box name="Hand_Right" id="00000000-0000-0000-0000-200000025030">
+          <relativetransform>
+            <r0 c0="1" c1="0" c2="0" c3="0"/>
+            <r1 c0="0" c1="1" c2="0" c3="0"/>
+            <r2 c0="0" c1="0" c2="1" c3="0"/>
+            <r3 c0="0" c1="0" c2="0" c3="1"/>
+          </relativetransform>
+          <dimensionx>0.0452609</dimensionx>
+          <dimensiony>0.156718</dimensiony>
+          <dimensionz>0.0779839</dimensionz>
+        </box>
+      </volume>
+      <volume name="Lower_Arm_Right" id="00000000-0000-0000-0000-100000025434">
+        <capsule name="Lower_Arm_Right" id="00000000-0000-0000-0000-200000025434">
+          <relativetransform>
+            <r0 c0="1" c1="0" c2="0" c3="0"/>
+            <r1 c0="0" c1="1" c2="0" c3="0"/>
+            <r2 c0="0" c1="0" c2="1" c3="0"/>
+            <r3 c0="0" c1="0" c2="0" c3="1"/>
+          </relativetransform>
+          <radius>0.0410386</radius>
+          <height>0.237</height>
+        </capsule>
+      </volume>
+      <volume name="Upper_Arm_Right" id="00000000-0000-0000-0000-100000025794">
+        <capsule name="Upper_Arm_Right" id="00000000-0000-0000-0000-200000025794">
+          <relativetransform>
+            <r0 c0="1" c1="0" c2="0" c3="0"/>
+            <r1 c0="0" c1="1" c2="0" c3="0"/>
+            <r2 c0="0" c1="0" c2="1" c3="0"/>
+            <r3 c0="0" c1="0" c2="0" c3="1"/>
+          </relativetransform>
+          <radius>0.0521498</radius>
+          <height>0.254</height>
+        </capsule>
+      </volume>
+      <volume name="Clavicle_Right" id="00000000-0000-0000-0000-100000026198">
+        <capsule name="Clavicle_Right" id="00000000-0000-0000-0000-200000026198">
+          <relativetransform>
+            <r0 c0="1" c1="0" c2="0" c3="0"/>
+            <r1 c0="0" c1="1" c2="0" c3="0"/>
+            <r2 c0="0" c1="0" c2="1" c3="0"/>
+            <r3 c0="0" c1="0" c2="0" c3="1"/>
+          </relativetransform>
+          <radius>0.0536494</radius>
+          <height>0.11015</height>
+        </capsule>
+      </volume>
+      <volume name="Head" id="00000000-0000-0000-0000-100000026637">
+        <capsule name="Head" id="00000000-0000-0000-0000-200000026637">
+          <relativetransform>
+            <r0 c0="1" c1="0" c2="0" c3="0"/>
+            <r1 c0="0" c1="1" c2="0" c3="0"/>
+            <r2 c0="0" c1="0" c2="1" c3="0"/>
+            <r3 c0="0" c1="0" c2="0" c3="1"/>
+          </relativetransform>
+          <radius>0.0902923</radius>
+          <height>0.0676425</height>
+        </capsule>
+      </volume>
+      <volume name="Neck" id="00000000-0000-0000-0000-100000027041">
+        <capsule name="Neck" id="00000000-0000-0000-0000-200000027041">
+          <relativetransform>
+            <r0 c0="1" c1="0" c2="0" c3="0"/>
+            <r1 c0="0" c1="1" c2="0" c3="0"/>
+            <r2 c0="0" c1="0" c2="1" c3="0"/>
+            <r3 c0="0" c1="0" c2="0" c3="1"/>
+          </relativetransform>
+          <radius>0.0480339</radius>
+          <height>0.057</height>
+        </capsule>
+      </volume>
+      <volume name="Spine3" id="00000000-0000-0000-0000-100000027951">
+        <capsule name="Spine3" id="00000000-0000-0000-0000-200000027951">
+          <relativetransform>
+            <r0 c0="1" c1="0" c2="0" c3="0"/>
+            <r1 c0="0" c1="1" c2="0" c3="0"/>
+            <r2 c0="0" c1="0" c2="1" c3="0"/>
+            <r3 c0="0" c1="0" c2="0" c3="1"/>
+          </relativetransform>
+          <radius>0.119282</radius>
+          <height>0.139059</height>
+        </capsule>
+      </volume>
+      <volume name="Spine2" id="00000000-0000-0000-0000-100000028355">
+        <capsule name="Spine2" id="00000000-0000-0000-0000-200000028355">
+          <relativetransform>
+            <r0 c0="1" c1="0" c2="0" c3="0"/>
+            <r1 c0="0" c1="1" c2="0" c3="0"/>
+            <r2 c0="0" c1="0" c2="1" c3="0"/>
+            <r3 c0="0" c1="0" c2="0" c3="1"/>
+          </relativetransform>
+          <radius>0.121952</radius>
+          <height>0.0547472</height>
+        </capsule>
+      </volume>
+      <volume name="Spine1" id="00000000-0000-0000-0000-100000028759">
+        <capsule name="Spine1" id="00000000-0000-0000-0000-200000028759">
+          <relativetransform>
+            <r0 c0="1" c1="0" c2="0" c3="0"/>
+            <r1 c0="0" c1="1" c2="0" c3="0"/>
+            <r2 c0="0" c1="0" c2="1" c3="0"/>
+            <r3 c0="0" c1="0" c2="0" c3="1"/>
+          </relativetransform>
+          <radius>0.112308</radius>
+          <height>0.0684988</height>
+        </capsule>
+      </volume>
+      <volume name="Spine0" id="00000000-0000-0000-0000-100000029163">
+        <capsule name="Spine0" id="00000000-0000-0000-0000-200000029163">
+          <relativetransform>
+            <r0 c0="1" c1="0" c2="0" c3="0"/>
+            <r1 c0="0" c1="1" c2="0" c3="0"/>
+            <r2 c0="0" c1="0" c2="1" c3="0"/>
+            <r3 c0="0" c1="0" c2="0" c3="1"/>
+          </relativetransform>
+          <radius>0.116312</radius>
+          <height>0.0931088</height>
+        </capsule>
+      </volume>
+    </clump>
+  </rockstardbroot>
+</rockstardb>

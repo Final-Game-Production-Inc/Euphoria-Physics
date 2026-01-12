@@ -1,0 +1,4 @@
+Project nmutils
+Files {
+	NMCustomMemory.cpp
+}

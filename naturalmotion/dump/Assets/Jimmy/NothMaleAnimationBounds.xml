@@ -1,0 +1,897 @@
+<?xml version="1.0"?>
+<MODEL>
+  <Part>
+    <name>
+      "Buttocks"
+    </name>
+    <full_path>
+      "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_PelvisPhysicsBodyTM|SKEL_PelvisPhysicsBody"
+    </full_path>
+    <world>
+      <m00> 2.27997468e-14 </m00>  <m01> 6.66449165e-15 </m01>  <m02> 1 </m02>  <m03> 0 </m03>
+      <m10> -1 </m10>  <m11> -7.54639271e-15 </m11>  <m12> -2.27997468e-14 </m12>  <m13> 0 </m13>
+      <m20> 6.66446201e-15 </m20>  <m21> -1 </m21>  <m22> -6.66448403e-15 </m22>  <m23> 0 </m23>
+      <m30> 3.19719657e-05 </m30>  <m31> -0.0231384505 </m31>  <m32> -0.0774832368 </m32>  <m33> 1 </m33>
+    </world>
+    <local>
+      <m00> -1 </m00>  <m01> 1.50995959e-07 </m01>  <m02> 5.2054844e-07 </m02>  <m03> 0 </m03>
+      <m10> -5.2054844e-07 </m10>  <m11> -1.50995746e-07 </m11>  <m12> -1 </m12>  <m13> 0 </m13>
+      <m20> -1.50995874e-07 </m20>  <m21> -1 </m21>  <m22> 1.50995831e-07 </m22>  <m23> 0 </m23>
+      <m30> 0.0587769747 </m30>  <m31> -0.0160376802 </m31>  <m32> -0.000120058154 </m32>  <m33> 1 </m33>
+    </local>
+    <Volume>
+      <Capsule>
+        <relativeTransform>
+          <m00> 1 </m00>  <m01> 0 </m01>  <m02> 0 </m02>  <m03> 0 </m03>
+          <m10> 0 </m10>  <m11> 1 </m11>  <m12> 0 </m12>  <m13> 0 </m13>
+          <m20> 0 </m20>  <m21> 0 </m21>  <m22> 1 </m22>  <m23> 0 </m23>
+          <m30> 0 </m30>  <m31> 0 </m31>  <m32> 0 </m32>  <m33> 1 </m33>
+        </relativeTransform>
+        <name>
+          "Buttocks"
+        </name>
+        <full_path>
+          "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_PelvisPhysicsBodyTM|SKEL_PelvisPhysicsBody"
+        </full_path>
+        <radius>
+          0.133
+        </radius>
+        <height>
+          0.125
+        </height>
+      </Capsule>
+    </Volume>
+  </Part>
+  <Part>
+    <name>
+      "Thigh_Left"
+    </name>
+    <full_path>
+      "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_L_Thigh|SKEL_L_ThighPhysicsBodyTM|SKEL_L_ThighPhysicsBody"
+    </full_path>
+    <world>
+      <m00> 0.997015655 </m00>  <m01> -4.97641821e-08 </m01>  <m02> -0.0771999434 </m02>  <m03> 0 </m03>
+      <m10> 0.0771335959 </m10>  <m11> 0.0414502323 </m11>  <m12> 0.996158779 </m12>  <m13> 0 </m13>
+      <m20> 0.00319990376 </m20>  <m21> -0.99914062 </m21>  <m22> 0.041326534 </m22>  <m23> 0 </m23>
+      <m30> -0.111796185 </m30>  <m31> -0.0157515407 </m31>  <m32> -0.294693112 </m32>  <m33> 1 </m33>
+    </world>
+    <local>
+      <m00> -1.86748665e-07 </m00>  <m01> -0.0376275852 </m01>  <m02> 0.999291718 </m02>  <m03> 0 </m03>
+      <m10> -1 </m10>  <m11> 3.60889317e-07 </m11>  <m12> -1.73292023e-07 </m12>  <m13> 0 </m13>
+      <m20> -3.54113155e-07 </m20>  <m21> -0.999291778 </m21>  <m22> -0.0376275852 </m22>  <m23> 0 </m23>
+      <m30> 0.203259453 </m30>  <m31> -1.5591084e-08 </m31>  <m32> 5.01257844e-08 </m32>  <m33> 1 </m33>
+    </local>
+    <Volume>
+      <Capsule>
+        <relativeTransform>
+          <m00> 1 </m00>  <m01> 0 </m01>  <m02> 0 </m02>  <m03> 0 </m03>
+          <m10> 0 </m10>  <m11> 1 </m11>  <m12> 0 </m12>  <m13> 0 </m13>
+          <m20> 0 </m20>  <m21> 0 </m21>  <m22> 1 </m22>  <m23> 0 </m23>
+          <m30> 0 </m30>  <m31> 0 </m31>  <m32> 0 </m32>  <m33> 1 </m33>
+        </relativeTransform>
+        <name>
+          "Thigh_Left"
+        </name>
+        <full_path>
+          "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_L_Thigh|SKEL_L_ThighPhysicsBodyTM|SKEL_L_ThighPhysicsBody"
+        </full_path>
+        <radius>
+          0.087
+        </radius>
+        <height>
+          0.37
+        </height>
+      </Capsule>
+    </Volume>
+  </Part>
+  <Part>
+    <name>
+      "Shin_Left"
+    </name>
+    <full_path>
+      "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_L_Thigh|SKEL_L_Calf|SKEL_L_CalfPhysicsBodyTM|SKEL_L_CalfPhysicsBody"
+    </full_path>
+    <world>
+      <m00> 0.997136712 </m00>  <m01> -1.42479317e-08 </m01>  <m02> -0.0756225064 </m02>  <m03> 0 </m03>
+      <m10> 0.0753599256 </m10>  <m11> 0.083261013 </m11>  <m12> 0.993674517 </m12>  <m13> 0 </m13>
+      <m20> 0.00629638182 </m20>  <m21> -0.996527851 </m21>  <m22> 0.0830225721 </m22>  <m23> 0 </m23>
+      <m30> -0.14303492 </m30>  <m31> -0.0413687117 </m31>  <m32> -0.702350378 </m32>  <m33> 1 </m33>
+    </world>
+    <local>
+      <m00> 3.56939324e-07 </m00>  <m01> -0.0377264619 </m01>  <m02> 0.999288142 </m02>  <m03> 0 </m03>
+      <m10> -1.00000024 </m10>  <m11> -6.73542777e-09 </m11>  <m12> 3.56939381e-07 </m12>  <m13> 0 </m13>
+      <m20> -6.73542599e-09 </m20>  <m21> -0.999288082 </m21>  <m22> -0.0377264619 </m22>  <m23> 0 </m23>
+      <m30> 0.206484661 </m30>  <m31> 3.84202465e-08 </m31>  <m32> -2.69030362e-08 </m32>  <m33> 1 </m33>
+    </local>
+    <Volume>
+      <Capsule>
+        <relativeTransform>
+          <m00> 1 </m00>  <m01> 0 </m01>  <m02> 0 </m02>  <m03> 0 </m03>
+          <m10> 0 </m10>  <m11> 1 </m11>  <m12> 0 </m12>  <m13> 0 </m13>
+          <m20> 0 </m20>  <m21> 0 </m21>  <m22> 1 </m22>  <m23> 0 </m23>
+          <m30> 0 </m30>  <m31> 0 </m31>  <m32> 0 </m32>  <m33> 1 </m33>
+        </relativeTransform>
+        <name>
+          "Shin_Left"
+        </name>
+        <full_path>
+          "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_L_Thigh|SKEL_L_Calf|SKEL_L_CalfPhysicsBodyTM|SKEL_L_CalfPhysicsBody"
+        </full_path>
+        <radius>
+          0.0644876
+        </radius>
+        <height>
+          0.45
+        </height>
+      </Capsule>
+    </Volume>
+  </Part>
+  <Part>
+    <name>
+      "Foot_Left"
+    </name>
+    <full_path>
+      "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_L_Thigh|SKEL_L_Calf|SKEL_L_Foot|SKEL_L_FootPhysicsBodyTM|SKEL_L_FootPhysicsBody"
+    </full_path>
+    <world>
+      <m00> 1 </m00>  <m01> -9.52246637e-08 </m01>  <m02> -9.29826616e-09 </m02>  <m03> 0 </m03>
+      <m10> -1.39032554e-08 </m10>  <m11> 4.06085434e-07 </m11>  <m12> 0.99999994 </m12>  <m13> 0 </m13>
+      <m20> -9.47540286e-08 </m20>  <m21> -0.99999994 </m21>  <m22> 4.71644086e-07 </m22>  <m23> 0 </m23>
+      <m30> -0.161255419 </m30>  <m31> 0.0224758144 </m31>  <m32> -0.965346277 </m32>  <m33> 1 </m33>
+    </world>
+    <local>
+      <m00> -0.0359716937 </m00>  <m01> -0.0113260895 </m01>  <m02> 0.99928838 </m02>  <m03> 0 </m03>
+      <m10> -0.300310284 </m10>  <m11> 0.953841448 </m11>  <m12> 6.25214113e-07 </m12>  <m13> 0 </m13>
+      <m20> -0.953162789 </m20>  <m21> -0.300096601 </m21>  <m22> -0.0377126373 </m22>  <m23> 0 </m23>
+      <m30> 0.0947000012 </m30>  <m31> -0.0307999961 </m31>  <m32> 0.00039801278 </m32>  <m33> 1 </m33>
+    </local>
+    <Volume>
+      <Box>
+        <relativeTransform>
+          <m00> 1 </m00>  <m01> 0 </m01>  <m02> 0 </m02>  <m03> 0 </m03>
+          <m10> 0 </m10>  <m11> 1 </m11>  <m12> 0 </m12>  <m13> 0 </m13>
+          <m20> 0 </m20>  <m21> 0 </m21>  <m22> 1 </m22>  <m23> 0 </m23>
+          <m30> 0 </m30>  <m31> 0 </m31>  <m32> 0 </m32>  <m33> 1 </m33>
+        </relativeTransform>
+        <name>
+          "Foot_Left"
+        </name>
+        <full_path>
+          "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_L_Thigh|SKEL_L_Calf|SKEL_L_Foot|SKEL_L_FootPhysicsBodyTM|SKEL_L_FootPhysicsBody"
+        </full_path>
+        <dimensionX>
+          0.11
+        </dimensionX>
+        <dimensionY>
+          0.075
+        </dimensionY>
+        <dimensionZ>
+          0.3
+        </dimensionZ>
+      </Box>
+    </Volume>
+  </Part>
+  <Part>
+    <name>
+      "Thigh_Right"
+    </name>
+    <full_path>
+      "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_R_Thigh|SKEL_R_ThighPhysicsBodyTM|SKEL_R_ThighPhysicsBody"
+    </full_path>
+    <world>
+      <m00> 0.997015595 </m00>  <m01> -2.61699729e-08 </m01>  <m02> 0.0772012994 </m02>  <m03> 0 </m03>
+      <m10> -0.0771349519 </m10>  <m11> 0.0414497443 </m11>  <m12> 0.996158779 </m12>  <m13> 0 </m13>
+      <m20> -0.00319999899 </m20>  <m21> -0.99914062 </m21>  <m22> 0.0413260348 </m22>  <m23> 0 </m23>
+      <m30> 0.111796379 </m30>  <m31> -0.0157515202 </m31>  <m32> -0.294692546 </m32>  <m33> 1 </m33>
+    </world>
+    <local>
+      <m00> -3.34772125e-07 </m00>  <m01> 0.037627589 </m01>  <m02> 0.999291837 </m02>  <m03> 0 </m03>
+      <m10> -1.00000012 </m10>  <m11> -3.63675241e-07 </m11>  <m12> -3.21315468e-07 </m12>  <m13> 0 </m13>
+      <m20> 3.51327287e-07 </m20>  <m21> -0.999291778 </m21>  <m22> 0.0376275852 </m22>  <m23> 0 </m23>
+      <m30> 0.203259021 </m30>  <m31> 1.66560916e-08 </m31>  <m32> 4.15410781e-08 </m32>  <m33> 1 </m33>
+    </local>
+    <Volume>
+      <Capsule>
+        <relativeTransform>
+          <m00> 1 </m00>  <m01> 0 </m01>  <m02> 0 </m02>  <m03> 0 </m03>
+          <m10> 0 </m10>  <m11> 1 </m11>  <m12> 0 </m12>  <m13> 0 </m13>
+          <m20> 0 </m20>  <m21> 0 </m21>  <m22> 1 </m22>  <m23> 0 </m23>
+          <m30> 0 </m30>  <m31> 0 </m31>  <m32> 0 </m32>  <m33> 1 </m33>
+        </relativeTransform>
+        <name>
+          "Thigh_Right"
+        </name>
+        <full_path>
+          "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_R_Thigh|SKEL_R_ThighPhysicsBodyTM|SKEL_R_ThighPhysicsBody"
+        </full_path>
+        <radius>
+          0.087
+        </radius>
+        <height>
+          0.37
+        </height>
+      </Capsule>
+    </Volume>
+  </Part>
+  <Part>
+    <name>
+      "Shin_Right"
+    </name>
+    <full_path>
+      "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_R_Thigh|SKEL_R_Calf|SKEL_R_CalfPhysicsBodyTM|SKEL_R_CalfPhysicsBody"
+    </full_path>
+    <world>
+      <m00> 0.997136712 </m00>  <m01> -6.43640732e-08 </m01>  <m02> 0.0756222755 </m02>  <m03> 0 </m03>
+      <m10> -0.0753597096 </m10>  <m11> 0.0832608119 </m11>  <m12> 0.993674576 </m12>  <m13> 0 </m13>
+      <m20> -0.00629641721 </m20>  <m21> -0.99652797 </m21>  <m22> 0.0830223709 </m22>  <m23> 0 </m23>
+      <m30> 0.143035471 </m30>  <m31> -0.0413687006 </m31>  <m32> -0.702349305 </m32>  <m33> 1 </m33>
+    </world>
+    <local>
+      <m00> 8.33660408e-07 </m00>  <m01> 0.0377265736 </m01>  <m02> 0.999287903 </m02>  <m03> 0 </m03>
+      <m10> -1.00000024 </m10>  <m11> 1.57311852e-08 </m11>  <m12> 8.33660692e-07 </m12>  <m13> 0 </m13>
+      <m20> 1.57311799e-08 </m20>  <m21> -0.999288082 </m21>  <m22> 0.0377265811 </m22>  <m23> 0 </m23>
+      <m30> 0.20648469 </m30>  <m31> -1.51663926e-08 </m31>  <m32> -9.29315007e-08 </m32>  <m33> 1 </m33>
+    </local>
+    <Volume>
+      <Capsule>
+        <relativeTransform>
+          <m00> 1 </m00>  <m01> 0 </m01>  <m02> 0 </m02>  <m03> 0 </m03>
+          <m10> 0 </m10>  <m11> 1 </m11>  <m12> 0 </m12>  <m13> 0 </m13>
+          <m20> 0 </m20>  <m21> 0 </m21>  <m22> 1 </m22>  <m23> 0 </m23>
+          <m30> 0 </m30>  <m31> 0 </m31>  <m32> 0 </m32>  <m33> 1 </m33>
+        </relativeTransform>
+        <name>
+          "Shin_Right"
+        </name>
+        <full_path>
+          "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_R_Thigh|SKEL_R_Calf|SKEL_R_CalfPhysicsBodyTM|SKEL_R_CalfPhysicsBody"
+        </full_path>
+        <radius>
+          0.0648068
+        </radius>
+        <height>
+          0.45
+        </height>
+      </Capsule>
+    </Volume>
+  </Part>
+  <Part>
+    <name>
+      "Foot_Right"
+    </name>
+    <full_path>
+      "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_R_Thigh|SKEL_R_Calf|SKEL_R_Foot|SKEL_R_FootPhysicsBodyTM|SKEL_R_FootPhysicsBody"
+    </full_path>
+    <world>
+      <m00> 0.99999994 </m00>  <m01> 3.58471652e-08 </m01>  <m02> -4.84857932e-10 </m02>  <m03> 0 </m03>
+      <m10> 3.53545104e-08 </m10>  <m11> 1.61344326e-06 </m11>  <m12> 0.99999994 </m12>  <m13> 0 </m13>
+      <m20> 4.94321135e-08 </m20>  <m21> -0.99999994 </m21>  <m22> 1.75686398e-06 </m22>  <m23> 0 </m23>
+      <m30> 0.161227837 </m30>  <m31> 0.0225003306 </m31>  <m32> -0.965368927 </m32>  <m33> 1 </m33>
+    </world>
+    <local>
+      <m00> 0.0359726287 </m00>  <m01> 0.011325065 </m01>  <m02> 0.999288142 </m02>  <m03> 0 </m03>
+      <m10> -0.300310463 </m10>  <m11> 0.953841388 </m11>  <m12> 6.41457916e-07 </m12>  <m13> 0 </m13>
+      <m20> -0.953162611 </m20>  <m21> -0.30009675 </m21>  <m22> 0.0377132259 </m22>  <m23> 0 </m23>
+      <m30> 0.0947295278 </m30>  <m31> -0.030815471 </m31>  <m32> -0.00042728259 </m32>  <m33> 1 </m33>
+    </local>
+    <Volume>
+      <Box>
+        <relativeTransform>
+          <m00> 1 </m00>  <m01> 0 </m01>  <m02> 0 </m02>  <m03> 0 </m03>
+          <m10> 0 </m10>  <m11> 1 </m11>  <m12> 0 </m12>  <m13> 0 </m13>
+          <m20> 0 </m20>  <m21> 0 </m21>  <m22> 1 </m22>  <m23> 0 </m23>
+          <m30> 0 </m30>  <m31> 0 </m31>  <m32> 0 </m32>  <m33> 1 </m33>
+        </relativeTransform>
+        <name>
+          "Foot_Right"
+        </name>
+        <full_path>
+          "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_R_Thigh|SKEL_R_Calf|SKEL_R_Foot|SKEL_R_FootPhysicsBodyTM|SKEL_R_FootPhysicsBody"
+        </full_path>
+        <dimensionX>
+          0.11
+        </dimensionX>
+        <dimensionY>
+          0.075
+        </dimensionY>
+        <dimensionZ>
+          0.3
+        </dimensionZ>
+      </Box>
+    </Volume>
+  </Part>
+  <Part>
+    <name>
+      "Spine0"
+    </name>
+    <full_path>
+      "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_Spine0|SKEL_Spine0PhysicsBodyTM|SKEL_Spine0PhysicsBody"
+    </full_path>
+    <world>
+      <m00> 6.60453964e-07 </m00>  <m01> -0.0823154077 </m01>  <m02> 0.996606469 </m02>  <m03> 0 </m03>
+      <m10> -1 </m10>  <m11> 5.29036086e-08 </m11>  <m12> 6.67072413e-07 </m12>  <m13> 0 </m13>
+      <m20> -1.07634428e-07 </m20>  <m21> -0.99660635 </m21>  <m22> -0.0823153928 </m22>  <m23> 0 </m23>
+      <m30> -0.000104031569 </m30>  <m31> -0.0212066118 </m31>  <m32> 0.0505094342 </m32>  <m33> 1 </m33>
+    </world>
+    <local>
+      <m00> 1.00000012 </m00>  <m01> -1.50995817e-07 </m01>  <m02> -4.66283392e-12 </m02>  <m03> 0 </m03>
+      <m10> 4.68563339e-12 </m10>  <m11> 1.50995803e-07 </m11>  <m12> 1 </m12>  <m13> 0 </m13>
+      <m20> -1.50995803e-07 </m20>  <m21> -1 </m21>  <m22> 1.50995803e-07 </m22>  <m23> 0 </m23>
+      <m30> 0.0490239225 </m30>  <m31> -6.51366339e-09 </m31>  <m32> -9.30708635e-12 </m32>  <m33> 1 </m33>
+    </local>
+    <Volume>
+      <Capsule>
+        <relativeTransform>
+          <m00> 1 </m00>  <m01> 0 </m01>  <m02> 0 </m02>  <m03> 0 </m03>
+          <m10> 0 </m10>  <m11> 1 </m11>  <m12> 0 </m12>  <m13> 0 </m13>
+          <m20> 0 </m20>  <m21> 0 </m21>  <m22> 1 </m22>  <m23> 0 </m23>
+          <m30> 0 </m30>  <m31> 0 </m31>  <m32> 0 </m32>  <m33> 1 </m33>
+        </relativeTransform>
+        <name>
+          "Spine0"
+        </name>
+        <full_path>
+          "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_Spine0|SKEL_Spine0PhysicsBodyTM|SKEL_Spine0PhysicsBody"
+        </full_path>
+        <radius>
+          0.129592
+        </radius>
+        <height>
+          0.1
+        </height>
+      </Capsule>
+    </Volume>
+  </Part>
+  <Part>
+    <name>
+      "Spine1"
+    </name>
+    <full_path>
+      "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_Spine0|SKEL_Spine1|SKEL_Spine1PhysicsBodyTM|SKEL_Spine1PhysicsBody"
+    </full_path>
+    <world>
+      <m00> 2.30432511e-06 </m00>  <m01> -0.00545123173 </m01>  <m02> 0.999985218 </m02>  <m03> 0 </m03>
+      <m10> -1 </m10>  <m11> 1.00057676e-07 </m11>  <m12> 2.30490423e-06 </m12>  <m13> 0 </m13>
+      <m20> -1.12617577e-07 </m20>  <m21> -0.999985218 </m21>  <m22> -0.00545123173 </m22>  <m23> 0 </m23>
+      <m30> -0.000103882041 </m30>  <m31> -0.0255191829 </m31>  <m32> 0.150210157 </m32>  <m33> 1 </m33>
+    </world>
+    <local>
+      <m00> 1 </m00>  <m01> -1.50995803e-07 </m01>  <m02> -1.17232867e-06 </m02>  <m03> 0 </m03>
+      <m10> 1.17232685e-06 </m10>  <m11> -1.08798295e-05 </m11>  <m12> 0.999999762 </m12>  <m13> 0 </m13>
+      <m20> -1.51008564e-07 </m20>  <m21> -1 </m21>  <m22> -1.08798322e-05 </m22>  <m23> 0 </m23>
+      <m30> 0.050843969 </m30>  <m31> -5.58434188e-09 </m31>  <m32> -5.95987366e-08 </m32>  <m33> 1 </m33>
+    </local>
+    <Volume>
+      <Capsule>
+        <relativeTransform>
+          <m00> 1 </m00>  <m01> 0 </m01>  <m02> 0 </m02>  <m03> 0 </m03>
+          <m10> 0 </m10>  <m11> 1 </m11>  <m12> 0 </m12>  <m13> 0 </m13>
+          <m20> 0 </m20>  <m21> 0 </m21>  <m22> 1 </m22>  <m23> 0 </m23>
+          <m30> 0 </m30>  <m31> 0 </m31>  <m32> 0 </m32>  <m33> 1 </m33>
+        </relativeTransform>
+        <name>
+          "Spine1"
+        </name>
+        <full_path>
+          "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_Spine0|SKEL_Spine1|SKEL_Spine1PhysicsBodyTM|SKEL_Spine1PhysicsBody"
+        </full_path>
+        <radius>
+          0.13394
+        </radius>
+        <height>
+          0.1
+        </height>
+      </Capsule>
+    </Volume>
+  </Part>
+  <Part>
+    <name>
+      "Spine2"
+    </name>
+    <full_path>
+      "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_Spine0|SKEL_Spine1|SKEL_Spine2|SKEL_Spine2PhysicsBodyTM|SKEL_Spine2PhysicsBody"
+    </full_path>
+    <world>
+      <m00> 4.10040457e-06 </m00>  <m01> -0.0606612489 </m01>  <m02> 0.998158336 </m02>  <m03> 0 </m03>
+      <m10> -1 </m10>  <m11> 9.17669922e-08 </m11>  <m12> 4.1135454e-06 </m12>  <m13> 0 </m13>
+      <m20> -3.41128498e-07 </m20>  <m21> -0.998158336 </m21>  <m22> -0.0606612489 </m22>  <m23> 0 </m23>
+      <m30> -0.000103395592 </m30>  <m31> -0.0234692227 </m31>  <m32> 0.290769249 </m32>  <m33> 1 </m33>
+    </world>
+    <local>
+      <m00> 0.999999762 </m00>  <m01> -1.5099576e-07 </m01>  <m02> -1.18352693e-06 </m02>  <m03> 0 </m03>
+      <m10> 1.18352693e-06 </m10>  <m11> 2.0583434e-06 </m11>  <m12> 0.999999523 </m12>  <m13> 0 </m13>
+      <m20> -1.5099333e-07 </m20>  <m21> -0.999999762 </m21>  <m22> 2.05834408e-06 </m22>  <m23> 0 </m23>
+      <m30> 0.0894094035 </m30>  <m31> 0.00776509242 </m31>  <m32> -1.21818417e-07 </m32>  <m33> 1 </m33>
+    </local>
+    <Volume>
+      <Capsule>
+        <relativeTransform>
+          <m00> 1 </m00>  <m01> 0 </m01>  <m02> 0 </m02>  <m03> 0 </m03>
+          <m10> 0 </m10>  <m11> 1 </m11>  <m12> 0 </m12>  <m13> 0 </m13>
+          <m20> 0 </m20>  <m21> 0 </m21>  <m22> 1 </m22>  <m23> 0 </m23>
+          <m30> 0 </m30>  <m31> 0 </m31>  <m32> 0 </m32>  <m33> 1 </m33>
+        </relativeTransform>
+        <name>
+          "Spine2"
+        </name>
+        <full_path>
+          "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_Spine0|SKEL_Spine1|SKEL_Spine2|SKEL_Spine2PhysicsBodyTM|SKEL_Spine2PhysicsBody"
+        </full_path>
+        <radius>
+          0.127497
+        </radius>
+        <height>
+          0.085
+        </height>
+      </Capsule>
+    </Volume>
+  </Part>
+  <Part>
+    <name>
+      "Spine3"
+    </name>
+    <full_path>
+      "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_Spine0|SKEL_Spine1|SKEL_Spine2|SKEL_Spine3|SKEL_Spine3PhysicsBodyTM|SKEL_Spine3PhysicsBody"
+    </full_path>
+    <world>
+      <m00> -6.07212614e-11 </m00>  <m01> 9.522158e-08 </m01>  <m02> 1 </m02>  <m03> 0 </m03>
+      <m10> -1.00000012 </m10>  <m11> 3.66478616e-08 </m11>  <m12> 3.50491247e-10 </m12>  <m13> 0 </m13>
+      <m20> -3.66417119e-08 </m20>  <m21> -1 </m21>  <m22> 9.4055018e-08 </m22>  <m23> 0 </m23>
+      <m30> 0.000392567075 </m30>  <m31> -0.0301768333 </m31>  <m32> 0.430297226 </m32>  <m33> 1 </m33>
+    </world>
+    <local>
+      <m00> 0.99990207 </m00>  <m01> -0.0134359617 </m01>  <m02> 0.00385313598 </m02>  <m03> 0 </m03>
+      <m10> -0.00385272712 </m10>  <m11> 5.62130917e-05 </m11>  <m12> 0.999992013 </m12>  <m13> 0 </m13>
+      <m20> -0.013436079 </m20>  <m21> -0.99990952 </m21>  <m22> 4.44249326e-06 </m22>  <m23> 0 </m23>
+      <m30> 0.128718793 </m30>  <m31> -4.49286608e-10 </m31>  <m32> 1.13398874e-10 </m32>  <m33> 1 </m33>
+    </local>
+    <Volume>
+      <Capsule>
+        <relativeTransform>
+          <m00> 1 </m00>  <m01> 0 </m01>  <m02> 0 </m02>  <m03> 0 </m03>
+          <m10> 0 </m10>  <m11> 1 </m11>  <m12> 0 </m12>  <m13> 0 </m13>
+          <m20> 0 </m20>  <m21> 0 </m21>  <m22> 1 </m22>  <m23> 0 </m23>
+          <m30> 0 </m30>  <m31> 0 </m31>  <m32> 0 </m32>  <m33> 1 </m33>
+        </relativeTransform>
+        <name>
+          "Spine3"
+        </name>
+        <full_path>
+          "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_Spine0|SKEL_Spine1|SKEL_Spine2|SKEL_Spine3|SKEL_Spine3PhysicsBodyTM|SKEL_Spine3PhysicsBody"
+        </full_path>
+        <radius>
+          0.117488
+        </radius>
+        <height>
+          0.223579
+        </height>
+      </Capsule>
+    </Volume>
+  </Part>
+  <Part>
+    <name>
+      "Clavicle_Left"
+    </name>
+    <full_path>
+      "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_Spine0|SKEL_Spine1|SKEL_Spine2|SKEL_Spine3|SKEL_L_Clavicle|SKEL_L_ClaviclePhysicsBodyTM|SKEL_L_ClaviclePhysicsBody"
+    </full_path>
+    <world>
+      <m00> -0.242348269 </m00>  <m01> 6.3715072e-07 </m01>  <m02> 0.970189393 </m02>  <m03> 0 </m03>
+      <m10> 0.92189157 </m10>  <m11> 0.311585128 </m11>  <m12> 0.23028335 </m12>  <m13> 0 </m13>
+      <m20> -0.302296698 </m20>  <m21> 0.950218201 </m21>  <m22> -0.0755127072 </m22>  <m23> 0 </m23>
+      <m30> -0.143711045 </m30>  <m31> -0.0305467509 </m31>  <m32> 0.472764105 </m32>  <m33> 1 </m33>
+    </world>
+    <local>
+      <m00> -6.71544171e-07 </m00>  <m01> 0 </m01>  <m02> -0.999999762 </m02>  <m03> 0 </m03>
+      <m10> -0.999999344 </m10>  <m11> -1.50995703e-07 </m11>  <m12> 6.71543887e-07 </m12>  <m13> 0 </m13>
+      <m20> -1.50995774e-07 </m20>  <m21> 0.999999821 </m21>  <m22> 1.01400354e-13 </m22>  <m23> 0 </m23>
+      <m30> 0.121263333 </m30>  <m31> 1.88976212e-08 </m31>  <m32> -2.95530604e-08 </m32>  <m33> 1 </m33>
+    </local>
+    <Volume>
+      <Capsule>
+        <relativeTransform>
+          <m00> 1 </m00>  <m01> 0 </m01>  <m02> 0 </m02>  <m03> 0 </m03>
+          <m10> 0 </m10>  <m11> 1 </m11>  <m12> 0 </m12>  <m13> 0 </m13>
+          <m20> 0 </m20>  <m21> 0 </m21>  <m22> 1 </m22>  <m23> 0 </m23>
+          <m30> 0 </m30>  <m31> 0 </m31>  <m32> 0 </m32>  <m33> 1 </m33>
+        </relativeTransform>
+        <name>
+          "Clavicle_Left"
+        </name>
+        <full_path>
+          "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_Spine0|SKEL_Spine1|SKEL_Spine2|SKEL_Spine3|SKEL_L_Clavicle|SKEL_L_ClaviclePhysicsBodyTM|SKEL_L_ClaviclePhysicsBody"
+        </full_path>
+        <radius>
+          0.068
+        </radius>
+        <height>
+          0.128
+        </height>
+      </Capsule>
+    </Volume>
+  </Part>
+  <Part>
+    <name>
+      "Upper_Arm_Left"
+    </name>
+    <full_path>
+      "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_Spine0|SKEL_Spine1|SKEL_Spine2|SKEL_Spine3|SKEL_L_Clavicle|SKEL_L_UpperArm|SKEL_L_UpperArmPhysicsBodyTM|SKEL_L_UpperArmPhysicsBody"
+    </full_path>
+    <world>
+      <m00> 0.838908195 </m00>  <m01> 9.0490073e-07 </m01>  <m02> -0.544273138 </m02>  <m03> 0 </m03>
+      <m10> 0.544116557 </m10>  <m11> 0.0239985511 </m11>  <m12> 0.83866632 </m12>  <m13> 0 </m13>
+      <m20> 0.0130625227 </m20>  <m21> -0.99971199 </m21>  <m22> 0.020132076 </m22>  <m23> 0 </m23>
+      <m30> -0.265083611 </m30>  <m31> -0.05272853 </m31>  <m32> 0.337920129 </m32>  <m33> 1 </m33>
+    </world>
+    <local>
+      <m00> -1.02917181e-06 </m00>  <m01> 0 </m01>  <m02> 0.999999523 </m02>  <m03> 0 </m03>
+      <m10> -0.999999642 </m10>  <m11> 4.90732361e-07 </m11>  <m12> -1.02917193e-06 </m12>  <m13> 0 </m13>
+      <m20> -4.90732361e-07 </m20>  <m21> -0.999999702 </m21>  <m22> -5.05048152e-13 </m22>  <m23> 0 </m23>
+      <m30> 0.137085006 </m30>  <m31> -6.68777957e-08 </m31>  <m32> 0.0108636562 </m32>  <m33> 1 </m33>
+    </local>
+    <Volume>
+      <Capsule>
+        <relativeTransform>
+          <m00> 1 </m00>  <m01> 0 </m01>  <m02> 0 </m02>  <m03> 0 </m03>
+          <m10> 0 </m10>  <m11> 1 </m11>  <m12> 0 </m12>  <m13> 0 </m13>
+          <m20> 0 </m20>  <m21> 0 </m21>  <m22> 1 </m22>  <m23> 0 </m23>
+          <m30> 0 </m30>  <m31> 0 </m31>  <m32> 0 </m32>  <m33> 1 </m33>
+        </relativeTransform>
+        <name>
+          "Upper_Arm_Left"
+        </name>
+        <full_path>
+          "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_Spine0|SKEL_Spine1|SKEL_Spine2|SKEL_Spine3|SKEL_L_Clavicle|SKEL_L_UpperArm|SKEL_L_UpperArmPhysicsBodyTM|SKEL_L_UpperArmPhysicsBody"
+        </full_path>
+        <radius>
+          0.0711045
+        </radius>
+        <height>
+          0.254
+        </height>
+      </Capsule>
+    </Volume>
+  </Part>
+  <Part>
+    <name>
+      "Lower_Arm_Left"
+    </name>
+    <full_path>
+      "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_Spine0|SKEL_Spine1|SKEL_Spine2|SKEL_Spine3|SKEL_L_Clavicle|SKEL_L_UpperArm|SKEL_L_Forearm|SKEL_L_ForearmPhysicsBodyTM|SKEL_L_ForearmPhysicsBody"
+    </full_path>
+    <world>
+      <m00> 0.838908076 </m00>  <m01> 1.04473122e-06 </m01>  <m02> -0.544273257 </m02>  <m03> 0 </m03>
+      <m10> 0.54345113 </m10>  <m11> -0.054955218 </m11>  <m12> 0.837640107 </m12>  <m13> 0 </m13>
+      <m20> -0.0299098026 </m20>  <m21> -0.998488724 </m21>  <m22> -0.0461029373 </m22>  <m23> 0 </m23>
+      <m30> -0.419218063 </m30>  <m31> -0.0488962866 </m31>  <m32> 0.120308064 </m32>  <m33> 1 </m33>
+    </world>
+    <local>
+      <m00> -1.5060084e-06 </m00>  <m01> 0 </m01>  <m02> 0.999999285 </m02>  <m03> 0 </m03>
+      <m10> -0.999999642 </m10>  <m11> 4.64425909e-07 </m11>  <m12> -1.50600886e-06 </m12>  <m13> 0 </m13>
+      <m20> -4.64425881e-07 </m20>  <m21> -0.999999583 </m21>  <m22> -6.99429772e-13 </m22>  <m23> 0 </m23>
+      <m30> 0.129597992 </m30>  <m31> -5.34936468e-08 </m31>  <m32> -5.07536377e-08 </m32>  <m33> 1 </m33>
+    </local>
+    <Volume>
+      <Capsule>
+        <relativeTransform>
+          <m00> 1 </m00>  <m01> 0 </m01>  <m02> 0 </m02>  <m03> 0 </m03>
+          <m10> 0 </m10>  <m11> 1 </m11>  <m12> 0 </m12>  <m13> 0 </m13>
+          <m20> 0 </m20>  <m21> 0 </m21>  <m22> 1 </m22>  <m23> 0 </m23>
+          <m30> 0 </m30>  <m31> 0 </m31>  <m32> 0 </m32>  <m33> 1 </m33>
+        </relativeTransform>
+        <name>
+          "Lower_Arm_Left"
+        </name>
+        <full_path>
+          "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_Spine0|SKEL_Spine1|SKEL_Spine2|SKEL_Spine3|SKEL_L_Clavicle|SKEL_L_UpperArm|SKEL_L_Forearm|SKEL_L_ForearmPhysicsBodyTM|SKEL_L_ForearmPhysicsBody"
+        </full_path>
+        <radius>
+          0.045
+        </radius>
+        <height>
+          0.237
+        </height>
+      </Capsule>
+    </Volume>
+  </Part>
+  <Part>
+    <name>
+      "Hand_Left"
+    </name>
+    <full_path>
+      "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_Spine0|SKEL_Spine1|SKEL_Spine2|SKEL_Spine3|SKEL_L_Clavicle|SKEL_L_UpperArm|SKEL_L_Forearm|SKEL_L_Hand|SKEL_L_HandPhysicsBodyTM|SKEL_L_HandPhysicsBody"
+    </full_path>
+    <world>
+      <m00> 0.817770362 </m00>  <m01> 2.01712197e-07 </m01>  <m02> -0.575545073 </m02>  <m03> 0 </m03>
+      <m10> 0.570818663 </m10>  <m11> -0.127895072 </m11>  <m12> 0.81105417 </m12>  <m13> 0 </m13>
+      <m20> -0.0736092627 </m20>  <m21> -0.991787732 </m21>  <m22> -0.104588896 </m22>  <m23> 0 </m23>
+      <m30> -0.547677338 </m30>  <m31> -0.024224991 </m31>  <m32> -0.0706986934 </m32>  <m33> 1 </m33>
+    </world>
+    <local>
+      <m00> 0.0376803242 </m00>  <m01> -0.00207471522 </m01>  <m02> 0.999287128 </m02>  <m03> 0 </m03>
+      <m10> -0.996611595 </m10>  <m11> -0.0732362643 </m11>  <m12> 0.0374273844 </m12>  <m13> 0 </m13>
+      <m20> 0.0731064603 </m20>  <m21> -0.997312129 </m21>  <m22> -0.00482725538 </m22>  <m23> 0 </m23>
+      <m30> 0.101563931 </m30>  <m31> 0.0119858058 </m31>  <m32> -0.00380511256 </m32>  <m33> 1 </m33>
+    </local>
+    <Volume>
+      <Box>
+        <relativeTransform>
+          <m00> 1 </m00>  <m01> 0 </m01>  <m02> 0 </m02>  <m03> 0 </m03>
+          <m10> 0 </m10>  <m11> 1 </m11>  <m12> 0 </m12>  <m13> 0 </m13>
+          <m20> 0 </m20>  <m21> 0 </m21>  <m22> 1 </m22>  <m23> 0 </m23>
+          <m30> 0 </m30>  <m31> 0 </m31>  <m32> 0 </m32>  <m33> 1 </m33>
+        </relativeTransform>
+        <name>
+          "Hand_Left"
+        </name>
+        <full_path>
+          "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_Spine0|SKEL_Spine1|SKEL_Spine2|SKEL_Spine3|SKEL_L_Clavicle|SKEL_L_UpperArm|SKEL_L_Forearm|SKEL_L_Hand|SKEL_L_HandPhysicsBodyTM|SKEL_L_HandPhysicsBody"
+        </full_path>
+        <dimensionX>
+          0.055
+        </dimensionX>
+        <dimensionY>
+          0.18
+        </dimensionY>
+        <dimensionZ>
+          0.1
+        </dimensionZ>
+      </Box>
+    </Volume>
+  </Part>
+  <Part>
+    <name>
+      "Clavicle_Right"
+    </name>
+    <full_path>
+      "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_Spine0|SKEL_Spine1|SKEL_Spine2|SKEL_Spine3|SKEL_R_Clavicle|SKEL_R_ClaviclePhysicsBodyTM|SKEL_R_ClaviclePhysicsBody"
+    </full_path>
+    <world>
+      <m00> 0.242345631 </m00>  <m01> 1.61202731e-08 </m01>  <m02> 0.970190108 </m02>  <m03> 0 </m03>
+      <m10> -0.924048185 </m10>  <m11> 0.304725021 </m11>  <m12> 0.230819568 </m12>  <m13> 0 </m13>
+      <m20> -0.295641392 </m20>  <m21> -0.952440381 </m21>  <m22> 0.073848784 </m22>  <m23> 0 </m23>
+      <m30> 0.143710449 </m30>  <m31> -0.0305467732 </m31>  <m32> 0.472764522 </m32>  <m33> 1 </m33>
+    </world>
+    <local>
+      <m00> -2.75463276e-06 </m00>  <m01> -5.9096385e-07 </m01>  <m02> 0.999999762 </m02>  <m03> 0 </m03>
+      <m10> -0.999973476 </m10>  <m11> -0.00721127633 </m11>  <m12> -2.75882189e-06 </m12>  <m13> 0 </m13>
+      <m20> 0.00721127819 </m20>  <m21> -0.999973774 </m21>  <m22> -5.71084058e-07 </m22>  <m23> 0 </m23>
+      <m30> 0.121263303 </m30>  <m31> 9.50102308e-09 </m31>  <m32> 3.47699853e-07 </m32>  <m33> 1 </m33>
+    </local>
+    <Volume>
+      <Capsule>
+        <relativeTransform>
+          <m00> 1 </m00>  <m01> 0 </m01>  <m02> 0 </m02>  <m03> 0 </m03>
+          <m10> 0 </m10>  <m11> 1 </m11>  <m12> 0 </m12>  <m13> 0 </m13>
+          <m20> 0 </m20>  <m21> 0 </m21>  <m22> 1 </m22>  <m23> 0 </m23>
+          <m30> 0 </m30>  <m31> 0 </m31>  <m32> 0 </m32>  <m33> 1 </m33>
+        </relativeTransform>
+        <name>
+          "Clavicle_Right"
+        </name>
+        <full_path>
+          "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_Spine0|SKEL_Spine1|SKEL_Spine2|SKEL_Spine3|SKEL_R_Clavicle|SKEL_R_ClaviclePhysicsBodyTM|SKEL_R_ClaviclePhysicsBody"
+        </full_path>
+        <radius>
+          0.068
+        </radius>
+        <height>
+          0.128
+        </height>
+      </Capsule>
+    </Volume>
+  </Part>
+  <Part>
+    <name>
+      "Upper_Arm_Right"
+    </name>
+    <full_path>
+      "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_Spine0|SKEL_Spine1|SKEL_Spine2|SKEL_Spine3|SKEL_R_Clavicle|SKEL_R_UpperArm|SKEL_R_UpperArmPhysicsBodyTM|SKEL_R_UpperArmPhysicsBody"
+    </full_path>
+    <world>
+      <m00> 0.838906467 </m00>  <m01> -8.70401607e-07 </m01>  <m02> 0.544275641 </m02>  <m03> 0 </m03>
+      <m10> -0.544119179 </m10>  <m11> 0.0239979103 </m11>  <m12> 0.838664651 </m12>  <m13> 0 </m13>
+      <m20> -0.0130622312 </m20>  <m21> -0.999711931 </m21>  <m22> 0.0201315414 </m22>  <m23> 0 </m23>
+      <m30> 0.262746245 </m30>  <m31> -0.0527284853 </m31>  <m32> 0.336404115 </m32>  <m33> 1 </m33>
+    </world>
+    <local>
+      <m00> -1.50600863e-06 </m00>  <m01> 0 </m01>  <m02> 0.999999464 </m02>  <m03> 0 </m03>
+      <m10> -0.999999642 </m10>  <m11> 5.05976097e-08 </m11>  <m12> -1.50600886e-06 </m12>  <m13> 0 </m13>
+      <m20> -5.05976097e-08 </m20>  <m21> -0.999999642 </m21>  <m22> -7.62004798e-14 </m22>  <m23> 0 </m23>
+      <m30> 0.137085393 </m30>  <m31> -1.22632811e-08 </m31>  <m32> -0.0136495912 </m32>  <m33> 1 </m33>
+    </local>
+    <Volume>
+      <Capsule>
+        <relativeTransform>
+          <m00> 1 </m00>  <m01> 0 </m01>  <m02> 0 </m02>  <m03> 0 </m03>
+          <m10> 0 </m10>  <m11> 1 </m11>  <m12> 0 </m12>  <m13> 0 </m13>
+          <m20> 0 </m20>  <m21> 0 </m21>  <m22> 1 </m22>  <m23> 0 </m23>
+          <m30> 0 </m30>  <m31> 0 </m31>  <m32> 0 </m32>  <m33> 1 </m33>
+        </relativeTransform>
+        <name>
+          "Upper_Arm_Right"
+        </name>
+        <full_path>
+          "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_Spine0|SKEL_Spine1|SKEL_Spine2|SKEL_Spine3|SKEL_R_Clavicle|SKEL_R_UpperArm|SKEL_R_UpperArmPhysicsBodyTM|SKEL_R_UpperArmPhysicsBody"
+        </full_path>
+        <radius>
+          0.0711
+        </radius>
+        <height>
+          0.254
+        </height>
+      </Capsule>
+    </Volume>
+  </Part>
+  <Part>
+    <name>
+      "Lower_Arm_Right"
+    </name>
+    <full_path>
+      "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_Spine0|SKEL_Spine1|SKEL_Spine2|SKEL_Spine3|SKEL_R_Clavicle|SKEL_R_UpperArm|SKEL_R_Forearm|SKEL_R_ForearmPhysicsBodyTM|SKEL_R_ForearmPhysicsBody"
+    </full_path>
+    <world>
+      <m00> 0.838906288 </m00>  <m01> -1.43129614e-06 </m01>  <m02> 0.54427582 </m02>  <m03> 0 </m03>
+      <m10> -0.543453693 </m10>  <m11> -0.0549560674 </m11>  <m12> 0.837638259 </m12>  <m13> 0 </m13>
+      <m20> 0.0299100708 </m20>  <m21> -0.998488784 </m21>  <m22> -0.0461037531 </m22>  <m23> 0 </m23>
+      <m30> 0.419217736 </m30>  <m31> -0.0488960631 </m31>  <m32> 0.120307654 </m32>  <m33> 1 </m33>
+    </world>
+    <local>
+      <m00> -1.50600852e-06 </m00>  <m01> 0 </m01>  <m02> 0.999999404 </m02>  <m03> 0 </m03>
+      <m10> -0.999999583 </m10>  <m11> 2.16398462e-07 </m11>  <m12> -1.50600874e-06 </m12>  <m13> 0 </m13>
+      <m20> -2.1639849e-07 </m20>  <m21> -0.999999762 </m21>  <m22> -3.25898163e-13 </m22>  <m23> 0 </m23>
+      <m30> 0.129597962 </m30>  <m31> -2.49500296e-08 </m31>  <m32> -5.80385731e-08 </m32>  <m33> 1 </m33>
+    </local>
+    <Volume>
+      <Capsule>
+        <relativeTransform>
+          <m00> 1 </m00>  <m01> 0 </m01>  <m02> 0 </m02>  <m03> 0 </m03>
+          <m10> 0 </m10>  <m11> 1 </m11>  <m12> 0 </m12>  <m13> 0 </m13>
+          <m20> 0 </m20>  <m21> 0 </m21>  <m22> 1 </m22>  <m23> 0 </m23>
+          <m30> 0 </m30>  <m31> 0 </m31>  <m32> 0 </m32>  <m33> 1 </m33>
+        </relativeTransform>
+        <name>
+          "Lower_Arm_Right"
+        </name>
+        <full_path>
+          "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_Spine0|SKEL_Spine1|SKEL_Spine2|SKEL_Spine3|SKEL_R_Clavicle|SKEL_R_UpperArm|SKEL_R_Forearm|SKEL_R_ForearmPhysicsBodyTM|SKEL_R_ForearmPhysicsBody"
+        </full_path>
+        <radius>
+          0.045
+        </radius>
+        <height>
+          0.237
+        </height>
+      </Capsule>
+    </Volume>
+  </Part>
+  <Part>
+    <name>
+      "Hand_Right"
+    </name>
+    <full_path>
+      "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_Spine0|SKEL_Spine1|SKEL_Spine2|SKEL_Spine3|SKEL_R_Clavicle|SKEL_R_UpperArm|SKEL_R_Forearm|SKEL_R_Hand|SKEL_R_HandPhysicsBodyTM|SKEL_R_HandPhysicsBody"
+    </full_path>
+    <world>
+      <m00> 0.817768276 </m00>  <m01> -2.30971111e-07 </m01>  <m02> 0.575547755 </m02>  <m03> 0 </m03>
+      <m10> -0.570821524 </m10>  <m11> -0.127895132 </m11>  <m12> 0.811052144 </m12>  <m13> 0 </m13>
+      <m20> 0.0736096203 </m20>  <m21> -0.991787791 </m21>  <m22> -0.104588695 </m22>  <m23> 0 </m23>
+      <m30> 0.548046529 </m30>  <m31> -0.0271305349 </m31>  <m32> -0.0712241381 </m32>  <m33> 1 </m33>
+    </world>
+    <local>
+      <m00> -0.0376834013 </m00>  <m01> 0.0020753094 </m01>  <m02> 0.999287128 </m02>  <m03> 0 </m03>
+      <m10> -0.996611655 </m10>  <m11> -0.0732354447 </m11>  <m12> -0.0374304093 </m12>  <m13> 0 </m13>
+      <m20> 0.0731056109 </m20>  <m21> -0.997312367 </m21>  <m22> 0.00482804142 </m22>  <m23> 0 </m23>
+      <m30> 0.102044865 </m30>  <m31> 0.00904897042 </m31>  <m32> 0.00382935884 </m32>  <m33> 1 </m33>
+    </local>
+    <Volume>
+      <Box>
+        <relativeTransform>
+          <m00> 1 </m00>  <m01> 0 </m01>  <m02> 0 </m02>  <m03> 0 </m03>
+          <m10> 0 </m10>  <m11> 1 </m11>  <m12> 0 </m12>  <m13> 0 </m13>
+          <m20> 0 </m20>  <m21> 0 </m21>  <m22> 1 </m22>  <m23> 0 </m23>
+          <m30> 0 </m30>  <m31> 0 </m31>  <m32> 0 </m32>  <m33> 1 </m33>
+        </relativeTransform>
+        <name>
+          "Hand_Right"
+        </name>
+        <full_path>
+          "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_Spine0|SKEL_Spine1|SKEL_Spine2|SKEL_Spine3|SKEL_R_Clavicle|SKEL_R_UpperArm|SKEL_R_Forearm|SKEL_R_Hand|SKEL_R_HandPhysicsBodyTM|SKEL_R_HandPhysicsBody"
+        </full_path>
+        <dimensionX>
+          0.055
+        </dimensionX>
+        <dimensionY>
+          0.18
+        </dimensionY>
+        <dimensionZ>
+          0.1
+        </dimensionZ>
+      </Box>
+    </Volume>
+  </Part>
+  <Part>
+    <name>
+      "Neck"
+    </name>
+    <full_path>
+      "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_Spine0|SKEL_Spine1|SKEL_Spine2|SKEL_Spine3|SKEL_Neck_1|SKEL_Neck_1PhysicsBodyTM|SKEL_Neck_1PhysicsBody"
+    </full_path>
+    <world>
+      <m00> 0.999984205 </m00>  <m01> 1.2270831e-09 </m01>  <m02> 0.00563352276 </m02>  <m03> 0 </m03>
+      <m10> -0.00539600849 </m10>  <m11> 0.287308127 </m11>  <m12> 0.957823098 </m12>  <m13> 0 </m13>
+      <m20> -0.00161855679 </m20>  <m21> -0.957838237 </m21>  <m22> 0.287303567 </m22>  <m23> 0 </m23>
+      <m30> 0.000491908635 </m30>  <m31> -0.013339133 </m31>  <m32> 0.583230078 </m32>  <m33> 1 </m33>
+    </world>
+    <local>
+      <m00> 2.17817728e-06 </m00>  <m01> -8.56362817e-07 </m01>  <m02> -0.999999404 </m02>  <m03> 0 </m03>
+      <m10> 0.999999881 </m10>  <m11> 0.000187158555 </m11>  <m12> 2.17801812e-06 </m12>  <m13> 0 </m13>
+      <m20> 0.000187158541 </m20>  <m21> -0.999999762 </m21>  <m22> 8.56770782e-07 </m22>  <m23> 0 </m23>
+      <m30> 0.0539009944 </m30>  <m31> -5.19590238e-09 </m31>  <m32> 1.18985518e-07 </m32>  <m33> 1 </m33>
+    </local>
+    <Volume>
+      <Capsule>
+        <relativeTransform>
+          <m00> 1 </m00>  <m01> 0 </m01>  <m02> 0 </m02>  <m03> 0 </m03>
+          <m10> 0 </m10>  <m11> 1 </m11>  <m12> 0 </m12>  <m13> 0 </m13>
+          <m20> 0 </m20>  <m21> 0 </m21>  <m22> 1 </m22>  <m23> 0 </m23>
+          <m30> 0 </m30>  <m31> 0 </m31>  <m32> 0 </m32>  <m33> 1 </m33>
+        </relativeTransform>
+        <name>
+          "Neck"
+        </name>
+        <full_path>
+          "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_Spine0|SKEL_Spine1|SKEL_Spine2|SKEL_Spine3|SKEL_Neck_1|SKEL_Neck_1PhysicsBodyTM|SKEL_Neck_1PhysicsBody"
+        </full_path>
+        <radius>
+          0.068
+        </radius>
+        <height>
+          0.057
+        </height>
+      </Capsule>
+    </Volume>
+  </Part>
+  <Part>
+    <name>
+      "Head"
+    </name>
+    <full_path>
+      "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_Spine0|SKEL_Spine1|SKEL_Spine2|SKEL_Spine3|SKEL_Neck_1|SKEL_Head|SKEL_HeadPhysicsBodyTM|SKEL_HeadPhysicsBody"
+    </full_path>
+    <world>
+      <m00> 1 </m00>  <m01> 6.63466381e-06 </m01>  <m02> -5.63609028e-05 </m02>  <m03> 0 </m03>
+      <m10> 5.67426832e-05 </m10>  <m11> -0.133542627 </m11>  <m12> 0.991043031 </m12>  <m13> 0 </m13>
+      <m20> -9.5138455e-07 </m20>  <m21> -0.99104315 </m21>  <m22> -0.133542597 </m22>  <m23> 0 </m23>
+      <m30> 0.000205258664 </m30>  <m31> 0.0108531667 </m31>  <m32> 0.711033225 </m32>  <m33> 1 </m33>
+    </world>
+    <local>
+      <m00> -1.65720976e-07 </m00>  <m01> 2.16517274e-05 </m01>  <m02> -0.999999166 </m02>  <m03> 0 </m03>
+      <m10> 0.992141247 </m10>  <m11> -0.125120237 </m11>  <m12> -2.8734903e-06 </m12>  <m13> 0 </m13>
+      <m20> -0.125120252 </m20>  <m21> -0.992141366 </m21>  <m22> -2.14608572e-05 </m22>  <m23> 0 </m23>
+      <m30> 0.076095812 </m30>  <m31> 0.00936240703 </m31>  <m32> 2.0662948e-07 </m32>  <m33> 1 </m33>
+    </local>
+    <Volume>
+      <Capsule>
+        <relativeTransform>
+          <m00> 1 </m00>  <m01> 0 </m01>  <m02> 0 </m02>  <m03> 0 </m03>
+          <m10> 0 </m10>  <m11> 1 </m11>  <m12> 0 </m12>  <m13> 0 </m13>
+          <m20> 0 </m20>  <m21> 0 </m21>  <m22> 1 </m22>  <m23> 0 </m23>
+          <m30> 0 </m30>  <m31> 0 </m31>  <m32> 0 </m32>  <m33> 1 </m33>
+        </relativeTransform>
+        <name>
+          "Head"
+        </name>
+        <full_path>
+          "|Scene|character|physicsCharacter|SKEL_ROOT|SKEL_Pelvis|SKEL_Spine0|SKEL_Spine1|SKEL_Spine2|SKEL_Spine3|SKEL_Neck_1|SKEL_Head|SKEL_HeadPhysicsBodyTM|SKEL_HeadPhysicsBody"
+        </full_path>
+        <radius>
+          0.1
+        </radius>
+        <height>
+          0.065
+        </height>
+      </Capsule>
+    </Volume>
+  </Part>
+</MODEL>

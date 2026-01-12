@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup />
+  <ItemGroup>
+    <ClInclude Include="instance.h" />
+    <ClInclude Include="manager.h" />
+    <ClInclude Include="nmbehavior.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="instance.cpp" />
+    <ClCompile Include="manager.cpp" />
+    <ClCompile Include="nmbehavior.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="nmbehavior.psc" />
+  </ItemGroup>
+</Project>

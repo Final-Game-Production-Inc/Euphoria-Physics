@@ -1,0 +1,261 @@
+// 
+// pheffects/winddisturbancehemisphere.cpp 
+// 
+// Copyright (C) 1999-2011 Rockstar Games.  All Rights Reserved. 
+// 
+
+///////////////////////////////////////////////////////////////////////////////
+//  INCLUDES
+///////////////////////////////////////////////////////////////////////////////
+
+#include "winddisturbancehemisphere.h"
+#include "wind_optimisations.h"
+
+// rage
+#if __BANK
+#include "grcore/debugdraw.h"
+#endif
+
+WIND_OPTIMISATIONS()
+
+namespace rage
+{
+	///////////////////////////////////////////////////////////////////////////////
+	//  CODE
+	///////////////////////////////////////////////////////////////////////////////
+
+	///////////////////////////////////////////////////////////////////////////////
+	//  CLASS phWindHemisphere
+	///////////////////////////////////////////////////////////////////////////////
+
+	///////////////////////////////////////////////////////////////////////////////
+	//  Constructor
+	///////////////////////////////////////////////////////////////////////////////
+
+	phWindHemisphere::phWindHemisphere						()
+	{
+		m_vPos = Vec3V(V_ZERO);
+		m_type = WIND_DIST_GLOBAL;
+
+		m_vDir.ZeroComponents();
+		m_Radius_Force = Vec2V(V_ZERO);
+
+		m_processed = false;
+	}
+
+
+	///////////////////////////////////////////////////////////////////////////////
+	//  Constructor
+	///////////////////////////////////////////////////////////////////////////////
+
+	phWindHemisphere::phWindHemisphere						(phWindDistType_e type, Vec3V_In pos, const phHemisphereSettings& settings)
+	{
+		m_vPos = pos;
+		m_type = type;
+
+		m_vDir = settings.vDir;
+		m_Radius_Force = Vec2V(settings.radius, settings.force);
+
+		m_processed = false;
+	}
+
+
+	///////////////////////////////////////////////////////////////////////////////
+	//  Update
+	///////////////////////////////////////////////////////////////////////////////
+
+	bool			phWindHemisphere::Update							(float UNUSED_PARAM(dt))
+	{
+		return m_processed;
+	}
+
+
+	///////////////////////////////////////////////////////////////////////////////
+	//  Apply
+	///////////////////////////////////////////////////////////////////////////////
+
+	void			phWindHemisphere::Apply							(phWindField* RESTRICT UNUSED_PARAM(pDisturbanceField), u32 UNUSED_PARAM(startGridX), u32 UNUSED_PARAM(endGridX))
+	{
+		m_processed = true;
+	}
+
+
+	///////////////////////////////////////////////////////////////////////////////
+	//  GetVelocity
+	///////////////////////////////////////////////////////////////////////////////
+
+	Vec3V_Out			phWindHemisphere::GetVelocity					(Vec3V_In vPos, ScalarV_In UNUSED_PARAM(windSpeed), ScalarV_In UNUSED_PARAM(waterSpeed))
+	{
+		Vec3V vVel(V_ZERO);
+		ScalarV radius = m_Radius_Force.GetX();
+		ScalarV force = m_Radius_Force.GetY();
+		Vec3V vDir = vPos - m_vPos;
+		if (IsLessThanOrEqualAll(MagSquared(vDir), square(radius)))
+		{
+			vDir = NormalizeSafe(vDir, Vec3V(V_X_AXIS_WZERO));
+			ScalarV angle = Dot(vDir, m_vDir);
+			if (IsGreaterThanAll(angle, ScalarV(V_ZERO)))
+			{
+				vVel += Scale(vDir, force*angle);
+			}
+		}
+
+		return vVel;
+	}
+
+
+	///////////////////////////////////////////////////////////////////////////////
+	//  DebugDraw
+	///////////////////////////////////////////////////////////////////////////////
+
+#if __BANK
+	void			phWindHemisphere::DebugDraw							()
+	{
+		grcDebugDraw::PartialSphere(GetPos(), m_Radius_Force.GetXf(), m_vDir, PI*0.5f, Color32(0.0f, 1.0f, 0.0f, 1.0f), false);
+	}
+#endif // __BANK
+
+
+
+	///////////////////////////////////////////////////////////////////////////////
+	//  CLASS phWindHemisphereGroup
+	///////////////////////////////////////////////////////////////////////////////
+
+	///////////////////////////////////////////////////////////////////////////////
+	//  Constructor
+	///////////////////////////////////////////////////////////////////////////////
+
+	phWindHemisphereGroup::phWindHemisphereGroup					()											
+	{
+		m_disturbances.Reset();
+	}
+
+	///////////////////////////////////////////////////////////////////////////////
+	//  Init
+	///////////////////////////////////////////////////////////////////////////////
+
+	void phWindHemisphereGroup::Init					(int groupSize)											
+	{
+		m_disturbances.Resize(groupSize);
+	}
+
+	///////////////////////////////////////////////////////////////////////////////
+	//  Reset
+	///////////////////////////////////////////////////////////////////////////////
+
+	void phWindHemisphereGroup::Reset					()											
+	{
+		for(int i = 0; i < m_disturbances.GetCount(); i++)
+		{
+			m_disturbances[i].SetIsActive(false);
+		}
+	}
+
+	///////////////////////////////////////////////////////////////////////////////
+	//  Update
+	///////////////////////////////////////////////////////////////////////////////
+
+	void			phWindHemisphereGroup::Update							(float dt)
+	{
+		// remove processed hemisphees from the array
+		for (int i=0; i<m_disturbances.GetCount(); i++)
+		{
+			// only if they've been processed already
+			if (this->m_disturbances[i].GetIsActive())
+			{
+				if (this->m_disturbances[i].Update(dt))
+				{
+					this->m_disturbances[i].SetIsActive(false);
+				}
+			}
+		}
+	}
+
+
+	///////////////////////////////////////////////////////////////////////////////
+	//  Apply
+	///////////////////////////////////////////////////////////////////////////////
+
+	void			phWindHemisphereGroup::Apply							(phWindField* RESTRICT pDisturbanceField, int batch)
+	{
+		// calc the start and end of this batch
+		u32 startGridX = WINDFIELD_NUM_ELEMENTS_X * batch / WIND_NUM_BATCHES;
+		u32 endGridX = WINDFIELD_NUM_ELEMENTS_X * (batch+1) / WIND_NUM_BATCHES;
+
+		// loop through the active disturbances
+		for (int i=0; i<m_disturbances.GetCount(); i++)
+		{			
+			if (this->m_disturbances[i].GetIsActive())
+			{
+				this->m_disturbances[i].Apply(pDisturbanceField, startGridX, endGridX);
+			}
+		}
+	}
+
+	///////////////////////////////////////////////////////////////////////////////
+	//  AddDisturbance
+	///////////////////////////////////////////////////////////////////////////////
+
+	int 			phWindHemisphereGroup::AddDisturbance				(const phWindDisturbanceBase* pDisturbance)
+	{
+		for (int i=0; i<m_disturbances.GetCount(); i++)
+		{
+			if (m_disturbances[i].GetIsActive()==false)
+			{
+				m_disturbances[i] = *(static_cast<const phWindHemisphere*>(pDisturbance));
+				m_disturbances[i].SetIsActive(true);
+				return i;
+			}
+		}
+
+		return -1;
+	}
+
+	///////////////////////////////////////////////////////////////////////////////
+	//  RemoveDisturbance
+	///////////////////////////////////////////////////////////////////////////////
+
+	void			phWindHemisphereGroup::RemoveDisturbance			(int index)
+	{
+		Assertf(index>=0 && index<m_disturbances.GetCount(), "Trying to remove a disturbance out of the array range");
+		m_disturbances[index].SetIsActive(false);
+	}
+
+	///////////////////////////////////////////////////////////////////////////////
+	//  GetNumActiveDisturbances
+	///////////////////////////////////////////////////////////////////////////////
+
+	int				phWindHemisphereGroup::GetNumActiveDisturbances			()	
+	{
+		int count = 0;
+		for (int i=0; i<m_disturbances.GetCount(); i++)
+		{
+			if (m_disturbances[i].GetIsActive())
+			{
+				count++;
+			}
+		}
+
+		return count;
+	}
+
+#if __BANK
+	///////////////////////////////////////////////////////////////////////////////
+	//  DebugDraw
+	///////////////////////////////////////////////////////////////////////////////
+
+	void			phWindHemisphereGroup::DebugDraw					()
+	{
+		// loop through the active disturbances
+		for (int i=0; i<m_disturbances.GetCount(); i++)
+		{
+			if (m_disturbances[i].GetIsActive())
+			{
+				m_disturbances[i].DebugDraw();
+			}
+		}
+	}
+#endif
+
+
+} // namespace rage

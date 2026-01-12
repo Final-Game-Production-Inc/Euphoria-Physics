@@ -1,0 +1,46 @@
+#include <cell/spurs/task.h>
+
+// This is the one place we really expect atArray to reallocate memory etc.
+#define spu_undefined_atArray_operation()
+
+
+#include "phcore\constants.h"
+#include "system\cellsyncmutex.cpp"
+#include "system\dma.h"
+
+//#include "data\resource.cpp"
+//#include "diag\debuglog.cpp"
+//#include "phbound\bound.cpp"
+//#include "phbound\boundbox.cpp"
+//#include "phbound\boundcapsule.cpp"
+//#include "phbound\boundcurvedgeom.cpp"
+//#include "phbound\boundpolyhedron.cpp"
+//#include "phbound\boundsphere.cpp"
+//#include "phbound\boundtaperedcapsule.cpp"
+//#include "phbullet\boxBoxDistance.cpp"
+//#include "phbullet\btGjkEpa2.cpp"
+//#include "phbullet\btGjkEpaPenetrationDepthSolver.cpp"
+//#include "phbullet\ContinuousConvexCollision.cpp"
+//#include "phbullet\ConvexCast.cpp"
+//#include "phbullet\ConvexIntersector.cpp"
+//#include "phbullet\GjkPairDetector.cpp"
+//#include "phbullet\MinkowskiPenetrationDepthSolver.cpp"
+//#include "phbullet\TrianglePenetrationDepthSolver.cpp"
+//#include "phbullet\VoronoiSimplexSolver.cpp"
+//#include "phcore\poly.cpp"
+//#include "physics\collider.cpp"
+//#include "physics\collision.cpp"
+//#include "physics\contact.cpp"
+#include "physics\levelnew.cpp"
+//#include "physics\manifold.cpp"
+//#include "physics\manifoldresult.cpp"
+//#include "system\tinyheap.cpp"
+//#include "system\spinlock.cpp"
+//#include "vector\geometry.cpp"
+//#include "vector\quaternion.cpp"
+//#include "vector\matrix34.cpp"
+//#include "vector\allbitsf.cpp"
+
+#include "commitdeferredoctreeupdatestask.cpp"
+
+#include "phcore\workerthreadmain.cpp"

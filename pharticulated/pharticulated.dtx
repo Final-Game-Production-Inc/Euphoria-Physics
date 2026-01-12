@@ -1,0 +1,44 @@
+@@Overview
+
+* Origin Of Module Name *
+phArticulated is for physically articulated objects, with individual parts connected by joints.
+
+* Overview *
+The phArticulated library contains the classes for physically simulating objects with multiple
+parts that are physically connected by joints, such as creature ragdolls and cars with swinging
+doors. This is an adaptation of the Featherstone method for fully simulating articulated objects,
+and it has been integrated with contact forces. It simulates fully physical objects (ragdolls)
+with tunable rigidity. It will allow the combination of animations and physical responses, with
+some limbs physical while others are animated on the same body, and also with limbs animated with
+physical responses at the same time. The new system will also allow animated creatures to drag
+articulated objects, and it will support fixed articulated objects, such as flexible bridges.
+
+@@Components
+These are the classes in the physics library:
+	*	phArticulatedBody manages the set of body parts and joints, and provides an interface for use
+		by the collider and the articulated body manager.
+	*	phArticulatedCollider is derived from phCollider, and it updates the articulated body when the
+		collider updates. It also provides an interface for use by the simulator and the contact manager
+		to handle collisions with articulated objects.
+	*	phArticulatedBodyInertia provides inertial math calculations for the joints.
+	*	phArticulatedBodyPart simulates a single rigid part of the articulated body.
+	*	phJoint is the base joint class, from which joints with one degree of freedom (elbow joints) and
+		three degrees of freedom (ball-and-socket joints) are derived.
+	*	phJoint1Dof simulates a joint with one degree of rotational freedom (elbows and knees in ragdolls).
+	*	phJoint3Dof simulates a joint with all three degrees of rotational freedom (shoulders, hips, neck and
+		waists in ragdolls).
+	*	phPhaseSpaceVector is a 6-dimensional vector for linear and rotational motion combined in a single class.
+		It is used for joints (linear and angular velocity) and for interactions (force and torque).
+
+@@Relationships
+phArticulated is an optional RAGE library for simulating articulated objects. No RAGE projects depend
+on phArticulated except for tools and samples.
+A rough linear order of dependence for the classes in the physics library is, from bottom to top:
+phPhaseSpaceVector
+phArticulatedBodyInertia
+phArticulatedBodyPart
+phJoint
+phJoint1Dof
+phJoint3Dof
+phArticulatedBody
+phArticulatedCollider

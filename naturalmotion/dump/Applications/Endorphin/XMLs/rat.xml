@@ -1,0 +1,1138 @@
+<PhysicsCharacter>
+  <ChildObjects>
+    <PhysicsJoint>
+      <name>SKEL_Root</name>
+      <path>|Scene|character|physicsCharacter|SKEL_Root</path>
+      <localFrame>
+        <xAxis_x>-4.37113882867e-08</xAxis_x>  <xAxis_y>1.0</xAxis_y>  <xAxis_z>-3.25842165694e-07</xAxis_z>
+        <yAxis_x>-1.0</yAxis_x>  <yAxis_y>-4.37112817053e-08</yAxis_y>  <yAxis_z>3.25841654103e-07</yAxis_z>
+        <zAxis_x>3.25841625681e-07</zAxis_x>  <zAxis_y>3.25842194115e-07</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+        <trans_x>-1.61516001091e-15</trans_x>  <trans_y>-7.45058059692e-09</trans_y>  <trans_z>-9.91348958479e-09</trans_z>
+      </localFrame>
+      <worldFrame>
+        <xAxis_x>-4.37113882867e-08</xAxis_x>  <xAxis_y>1.0</xAxis_y>  <xAxis_z>-3.25842165694e-07</xAxis_z>
+        <yAxis_x>-1.0</yAxis_x>  <yAxis_y>-4.37112817053e-08</yAxis_y>  <yAxis_z>3.25841654103e-07</yAxis_z>
+        <zAxis_x>3.25841625681e-07</zAxis_x>  <zAxis_y>3.25842194115e-07</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+        <trans_x>-1.61516001091e-15</trans_x>  <trans_y>0.0999999940395</trans_y>  <trans_z>-9.91348958479e-09</trans_z>
+      </worldFrame>
+    </PhysicsJoint>
+      <ChildObjects>
+        <PhysicsJoint>
+          <name>SKEL_Spine0</name>
+          <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Spine0</path>
+          <localFrame>
+            <xAxis_x>-0.130307078362</xAxis_x>  <xAxis_y>-0.991473674774</xAxis_y>  <xAxis_z>4.76836873986e-07</xAxis_z>
+            <yAxis_x>0.991473674774</yAxis_x>  <yAxis_y>-0.130307078362</yAxis_y>  <yAxis_z>3.57627612857e-07</yAxis_z>
+            <zAxis_x>-2.92443132821e-07</zAxis_x>  <zAxis_y>5.19372633789e-07</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+            <trans_x>-0.0102118998766</trans_x>  <trans_y>-0.0103888995945</trans_y>  <trans_z>-1.29788995764e-05</trans_z>
+          </localFrame>
+          <worldFrame>
+            <xAxis_x>0.991473674774</xAxis_x>  <xAxis_y>-0.130307033658</xAxis_y>  <xAxis_z>1.96232988969e-07</xAxis_z>
+            <yAxis_x>0.130307033658</yAxis_x>  <yAxis_y>0.991473674774</yAxis_y>  <yAxis_z>-7.89579068794e-09</yAxis_z>
+            <zAxis_x>-1.93530993897e-07</zAxis_x>  <zAxis_y>3.33990399781e-08</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+            <trans_x>0.0103888995945</trans_x>  <trans_y>0.0897880941629</trans_y>  <trans_z>-1.29888703668e-05</trans_z>
+          </worldFrame>
+        </PhysicsJoint>
+          <ChildObjects>
+            <PhysicsJoint>
+              <name>SKEL_Spine1</name>
+              <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Spine0|SKEL_Spine1</path>
+              <localFrame>
+                <xAxis_x>0.998463332653</xAxis_x>  <xAxis_y>0.055416688323</xAxis_y>  <xAxis_z>-1.27895802393e-07</xAxis_z>
+                <yAxis_x>-0.055416688323</yAxis_x>  <yAxis_y>0.998463332653</yAxis_y>  <yAxis_z>-1.52100554374e-13</yAxis_z>
+                <zAxis_x>1.27699266272e-07</zAxis_x>  <zAxis_y>7.0877135272e-09</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                <trans_x>0.0376673974097</trans_x>  <trans_y>1.5836314482e-09</trans_y>  <trans_z>-4.45245973424e-09</trans_z>
+              </localFrame>
+              <worldFrame>
+                <xAxis_x>0.997171282768</xAxis_x>  <xAxis_y>-0.0751626044512</xAxis_y>  <xAxis_z>6.75980800224e-08</xAxis_z>
+                <yAxis_x>0.0751626044512</yAxis_x>  <yAxis_y>0.997171282768</yAxis_y>  <yAxis_z>-1.87583921729e-08</yAxis_z>
+                <zAxis_x>-6.59969572325e-08</zAxis_x>  <zAxis_y>2.37862085584e-08</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                <trans_x>0.047735132277</trans_x>  <trans_y>0.084879770875</trans_y>  <trans_z>-1.29859308799e-05</trans_z>
+              </worldFrame>
+            </PhysicsJoint>
+              <ChildObjects>
+                <PhysicsJoint>
+                  <name>SKEL_Spine3</name>
+                  <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Spine0|SKEL_Spine1|SKEL_Spine3</path>
+                  <localFrame>
+                    <xAxis_x>0.999855697155</xAxis_x>  <xAxis_y>-0.0169878397137</xAxis_y>  <xAxis_z>-2.01404078961e-13</xAxis_z>
+                    <yAxis_x>0.0169878397137</yAxis_x>  <yAxis_y>0.999855697155</yAxis_y>  <yAxis_z>-2.06265888836e-14</yAxis_z>
+                    <zAxis_x>2.01725422933e-13</zAxis_x>  <zAxis_y>1.7202192226e-14</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                    <trans_x>0.0425884127617</trans_x>  <trans_y>4.40643688204e-10</trans_y>  <trans_z>-3.39963354776e-13</trans_z>
+                  </localFrame>
+                  <worldFrame>
+                    <xAxis_x>0.995750546455</xAxis_x>  <xAxis_y>-0.0920915454626</xAxis_y>  <xAxis_z>6.79067895248e-08</xAxis_z>
+                    <yAxis_x>0.0920915454626</yAxis_x>  <yAxis_y>0.995750546455</yAxis_y>  <yAxis_z>-1.76073609026e-08</yAxis_z>
+                    <zAxis_x>-6.59967582806e-08</zAxis_x>  <zAxis_y>2.37862103347e-08</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                    <trans_x>0.090203076601</trans_x>  <trans_y>0.0816787183285</trans_y>  <trans_z>-1.29830523292e-05</trans_z>
+                  </worldFrame>
+                </PhysicsJoint>
+                  <ChildObjects>
+                    <PhysicsJoint>
+                      <name>SKEL_Head</name>
+                      <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Spine0|SKEL_Spine1|SKEL_Spine3|SKEL_Head</path>
+                      <localFrame>
+                        <xAxis_x>0.996021747589</xAxis_x>  <xAxis_y>0.0891105607152</xAxis_y>  <xAxis_z>-1.23926477968e-08</xAxis_z>
+                        <yAxis_x>-0.0891105607152</yAxis_x>  <yAxis_y>0.996021747589</yAxis_y>  <yAxis_z>8.21564953519e-15</yAxis_z>
+                        <zAxis_x>1.23433476773e-08</zAxis_x>  <zAxis_y>1.10430764533e-09</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                        <trans_x>0.037076998502</trans_x>  <trans_y>-2.78864642489e-09</trans_y>  <trans_z>1.07608963407e-10</trans_z>
+                      </localFrame>
+                      <worldFrame>
+                        <xAxis_x>0.999995529652</xAxis_x>  <xAxis_y>-0.00299329240806</xAxis_y>  <xAxis_z>5.36749880098e-08</xAxis_z>
+                        <yAxis_x>0.00299329240806</yAxis_x>  <yAxis_y>0.999995529652</yAxis_y>  <yAxis_z>-2.35885178057e-08</yAxis_z>
+                        <zAxis_x>-5.36041646626e-08</zAxis_x>  <zAxis_y>2.37491075694e-08</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                        <trans_x>0.1271225214</trans_x>  <trans_y>0.0782642364502</trans_y>  <trans_z>-1.2980426618e-05</trans_z>
+                      </worldFrame>
+                    </PhysicsJoint>
+                      <ChildObjects>
+                          <ChildObjects>
+                            <PhysicsBody>
+                              <name>SKEL_HeadPhysicsBody</name>
+                              <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Spine0|SKEL_Spine1|SKEL_Spine3|SKEL_Head|SKEL_HeadPhysicsBodyTM|SKEL_HeadPhysicsBody</path>
+                              <shape>Capsule</shape>
+                              <length>0.0390972</length>
+                              <radius>0.0274257</radius>
+                              <mass>0.178797</mass>
+                              <localFrame>
+                                <xAxis_x>-2.38454504142e-07</xAxis_x>  <xAxis_y>0.00299282022752</xAxis_y>  <xAxis_z>-0.999995529652</xAxis_z>
+                                <yAxis_x>-1.18852462094e-07</yAxis_x>  <yAxis_y>0.999995529652</yAxis_y>  <yAxis_z>0.00299282022752</yAxis_z>
+                                <zAxis_x>1.0</zAxis_x>  <zAxis_y>1.195655841e-07</zAxis_y>  <zAxis_z>-2.38097740635e-07</zAxis_z>
+                                <trans_x>0.0356391072273</trans_x>  <trans_y>9.1766164112e-11</trans_y>  <trans_z>1.91283647992e-13</trans_z>
+                              </localFrame>
+                              <worldFrame>
+                                <xAxis_x>8.7735361376e-06</xAxis_x>  <xAxis_y>0.00299278390594</xAxis_y>  <xAxis_z>-0.999995529652</xAxis_z>
+                                <yAxis_x>0.00299315992743</yAxis_x>  <yAxis_y>0.999991059303</yAxis_y>  <yAxis_z>0.00299279671162</yAxis_z>
+                                <zAxis_x>0.999995529652</zAxis_x>  <zAxis_y>-0.00299317273311</zAxis_y>  <zAxis_z>-1.8442275973e-07</zAxis_z>
+                                <trans_x>0.162761464715</trans_x>  <trans_y>0.0781575590372</trans_y>  <trans_z>-1.29785139507e-05</trans_z>
+                              </worldFrame>
+                            </PhysicsBody>
+                          </ChildObjects>
+                      </ChildObjects>
+                    <PhysicsJoint>
+                      <name>SKEL_L_FULeg</name>
+                      <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Spine0|SKEL_Spine1|SKEL_Spine3|SKEL_L_FULeg</path>
+                      <localFrame>
+                        <xAxis_x>0.561585664749</xAxis_x>  <xAxis_y>-0.82663333416</xAxis_y>  <xAxis_z>-0.0360409095883</xAxis_z>
+                        <yAxis_x>0.827409923077</yAxis_x>  <yAxis_y>0.561246275902</yAxis_y>  <yAxis_z>0.0198849923909</yAxis_z>
+                        <zAxis_x>0.00379022862762</zAxis_x>  <zAxis_y>-0.0409877337515</zAxis_y>  <zAxis_z>0.999152481556</zAxis_z>
+                        <trans_x>-0.0055811307393</trans_x>  <trans_y>-0.00772991124541</trans_y>  <trans_z>-0.0212402064353</trans_z>
+                      </localFrame>
+                      <worldFrame>
+                        <xAxis_x>0.483073294163</xAxis_x>  <xAxis_y>-0.874837875366</xAxis_y>  <xAxis_z>-0.0360408574343</xAxis_z>
+                        <yAxis_x>0.875579893589</yAxis_x>  <yAxis_y>0.482663840055</yAxis_y>  <yAxis_z>0.019885038957</yAxis_z>
+                        <zAxis_x>-5.67459892409e-07</zAxis_x>  <zAxis_y>-0.041162583977</zAxis_y>  <zAxis_z>0.999152481556</zAxis_z>
+                        <trans_x>0.0839338079095</trans_x>  <trans_y>0.0744956284761</trans_y>  <trans_z>-0.021253189072</trans_z>
+                      </worldFrame>
+                    </PhysicsJoint>
+                      <ChildObjects>
+                        <PhysicsJoint>
+                          <name>SKEL_L_FLLeg</name>
+                          <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Spine0|SKEL_Spine1|SKEL_Spine3|SKEL_L_FULeg|SKEL_L_FLLeg</path>
+                          <localFrame>
+                            <xAxis_x>0.979274749756</xAxis_x>  <xAxis_y>0.202536389232</xAxis_y>  <xAxis_z>-8.23904031222e-07</xAxis_z>
+                            <yAxis_x>-0.202536389232</yAxis_x>  <yAxis_y>0.979274749756</yAxis_y>  <yAxis_z>-5.11958489824e-07</yAxis_z>
+                            <zAxis_x>7.03138198332e-07</zAxis_x>  <zAxis_y>6.68218547162e-07</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                            <trans_x>0.0604936107993</trans_x>  <trans_y>-3.76607012242e-08</trans_y>  <trans_z>-5.22245979795e-09</trans_z>
+                          </localFrame>
+                          <worldFrame>
+                            <xAxis_x>0.650398254395</xAxis_x>  <xAxis_y>-0.758949637413</xAxis_y>  <xAxis_z>-0.0312672816217</xAxis_z>
+                            <yAxis_x>0.759593367577</yAxis_x>  <yAxis_y>0.64984703064</yAxis_y>  <yAxis_z>0.0267719905823</yAxis_z>
+                            <zAxis_x>3.57286126018e-07</zAxis_x>  <zAxis_y>-0.0411628782749</zAxis_y>  <zAxis_z>0.999152481556</zAxis_z>
+                            <trans_x>0.113156624138</trans_x>  <trans_y>0.0215735081583</trans_y>  <trans_z>-0.0234334375709</trans_z>
+                          </worldFrame>
+                        </PhysicsJoint>
+                          <ChildObjects>
+                              <ChildObjects>
+                                <PhysicsBody>
+                                  <name>SKEL_L_FLLegPhysicsBody</name>
+                                  <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Spine0|SKEL_Spine1|SKEL_Spine3|SKEL_L_FULeg|SKEL_L_FLLeg|SKEL_L_FLLegPhysicsBodyTM|SKEL_L_FLLegPhysicsBody</path>
+                                  <shape>Capsule</shape>
+                                  <length>0.0127587</length>
+                                  <radius>0.0274257</radius>
+                                  <mass>0.116559</mass>
+                                  <localFrame>
+                                    <xAxis_x>4.98030090057e-07</xAxis_x>  <xAxis_y>0.741619110107</xAxis_y>  <xAxis_z>-0.67082118988</xAxis_z>
+                                    <yAxis_x>3.7498830352e-07</yAxis_x>  <yAxis_y>0.67082118988</yAxis_y>  <yAxis_z>0.741619110107</yAxis_z>
+                                    <zAxis_x>1.0</zAxis_x>  <zAxis_y>-6.2089873154e-07</zAxis_y>  <zAxis_z>5.59906467856e-08</zAxis_z>
+                                    <trans_x>0.0116301849484</trans_x>  <trans_y>-4.21368273607e-09</trans_y>  <trans_z>7.05715486049e-11</trans_z>
+                                  </localFrame>
+                                  <worldFrame>
+                                    <xAxis_x>0.563329041004</xAxis_x>  <xAxis_y>0.509551525116</xAxis_y>  <xAxis_z>-0.650398075581</xAxis_z>
+                                    <yAxis_x>0.509551823139</yAxis_x>  <yAxis_y>0.405403703451</yAxis_y>  <yAxis_z>0.758949756622</yAxis_z>
+                                    <zAxis_x>0.650397777557</zAxis_x>  <zAxis_y>-0.758950054646</zAxis_y>  <zAxis_z>-0.0312672406435</zAxis_z>
+                                    <trans_x>0.120720870793</trans_x>  <trans_y>0.0127467811108</trans_y>  <trans_z>-0.0237970817834</trans_z>
+                                  </worldFrame>
+                                </PhysicsBody>
+                              </ChildObjects>
+                          </ChildObjects>
+                        <PhysicsJointLimit>
+                          <name>SKEL_L_FLLegPhysicsJointLimit</name>
+                          <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Spine0|SKEL_Spine1|SKEL_Spine3|SKEL_L_FULeg|SKEL_L_FLLegPhysicsJointLimit</path>
+                          <type>BallSocket</type>
+                          <swing1Angle>0.174533</swing1Angle>
+                          <swing2Angle>0.174533</swing2Angle>
+                          <twistAngle>0.174533</twistAngle>
+                          <twistOffset>0</twistOffset>
+                          <localFrame>
+                            <xAxis_x>0.979274749756</xAxis_x>  <xAxis_y>0.202536374331</xAxis_y>  <xAxis_z>-8.06382502105e-07</xAxis_z>
+                            <yAxis_x>-0.202536374331</yAxis_x>  <yAxis_y>0.979274749756</yAxis_y>  <yAxis_z>-4.79620098304e-07</yAxis_z>
+                            <zAxis_x>6.9252951107e-07</zAxis_x>  <zAxis_y>6.33001661754e-07</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                            <trans_x>0.0604936107993</trans_x>  <trans_y>-3.76607012242e-08</trans_y>  <trans_z>-5.22245979795e-09</trans_z>
+                          </localFrame>
+                          <worldFixedFrame>
+                            <xAxis_x>0.650398254395</xAxis_x>  <xAxis_y>-0.758949637413</xAxis_y>  <xAxis_z>-0.0312672629952</xAxis_z>
+                            <yAxis_x>0.759593367577</yAxis_x>  <yAxis_y>0.64984703064</yAxis_y>  <yAxis_z>0.0267720222473</yAxis_z>
+                            <zAxis_x>3.21326155017e-07</zAxis_x>  <zAxis_y>-0.0411628857255</zAxis_y>  <zAxis_z>0.999152481556</zAxis_z>
+                            <trans_x>0.113156624138</trans_x>  <trans_y>0.0215735081583</trans_y>  <trans_z>-0.0234334375709</trans_z>
+                          </worldFixedFrame>
+                          <worldMovingFrame>
+                            <xAxis_x>0.650398254395</xAxis_x>  <xAxis_y>-0.758949637413</xAxis_y>  <xAxis_z>-0.0312672816217</xAxis_z>
+                            <yAxis_x>0.759593367577</yAxis_x>  <yAxis_y>0.64984703064</yAxis_y>  <yAxis_z>0.0267719905823</yAxis_z>
+                            <zAxis_x>3.57286126018e-07</zAxis_x>  <zAxis_y>-0.0411628782749</zAxis_y>  <zAxis_z>0.999152481556</zAxis_z>
+                            <trans_x>0.113156624138</trans_x>  <trans_y>0.0215735081583</trans_y>  <trans_z>-0.0234334375709</trans_z>
+                          </worldMovingFrame>
+                        </PhysicsJointLimit>
+                          <ChildObjects>
+                            <PhysicsBody>
+                              <name>SKEL_L_FULegPhysicsBody</name>
+                              <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Spine0|SKEL_Spine1|SKEL_Spine3|SKEL_L_FULeg|SKEL_L_FULegPhysicsBodyTM|SKEL_L_FULegPhysicsBody</path>
+                              <shape>Capsule</shape>
+                              <length>0.0331816</length>
+                              <radius>0.0274257</radius>
+                              <mass>0.164819</mass>
+                              <localFrame>
+                                <xAxis_x>9.94056449599e-07</xAxis_x>  <xAxis_y>0.865615189075</xAxis_y>  <xAxis_z>-0.500709891319</xAxis_z>
+                                <yAxis_x>-6.92584819717e-07</yAxis_x>  <yAxis_y>0.500709891319</yAxis_y>  <yAxis_z>0.865615189075</yAxis_z>
+                                <zAxis_x>1.0</zAxis_x>  <zAxis_y>-5.13686302384e-07</zAxis_y>  <zAxis_z>1.09724578579e-06</zAxis_z>
+                                <trans_x>0.0302467979491</trans_x>  <trans_y>-2.12205577554e-08</trans_y>  <trans_z>-5.51059475828e-10</trans_z>
+                              </localFrame>
+                              <worldFrame>
+                                <xAxis_x>0.757916033268</xAxis_x>  <xAxis_y>0.438410788774</xAxis_y>  <xAxis_z>-0.483072787523</xAxis_z>
+                                <yAxis_x>0.438410699368</yAxis_x>  <yAxis_y>0.206044211984</yAxis_y>  <yAxis_z>0.874838232994</yAxis_z>
+                                <zAxis_x>0.483072847128</zAxis_x>  <zAxis_y>-0.874838173389</zAxis_y>  <zAxis_z>-0.0360397696495</zAxis_z>
+                                <trans_x>0.0985452085733</trans_x>  <trans_y>0.0480345748365</trans_y>  <trans_z>-0.0223433114588</trans_z>
+                              </worldFrame>
+                            </PhysicsBody>
+                          </ChildObjects>
+                      </ChildObjects>
+                    <PhysicsJoint>
+                      <name>SKEL_R_FULeg</name>
+                      <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Spine0|SKEL_Spine1|SKEL_Spine3|SKEL_R_FULeg</path>
+                      <localFrame>
+                        <xAxis_x>0.561585605145</xAxis_x>  <xAxis_y>-0.82663333416</xAxis_y>  <xAxis_z>0.0360411927104</xAxis_z>
+                        <yAxis_x>-0.827409982681</yAxis_x>  <yAxis_y>-0.561246216297</yAxis_y>  <yAxis_z>0.0198855157942</yAxis_z>
+                        <zAxis_x>0.00378995272331</zAxis_x>  <zAxis_y>-0.0409882627428</zAxis_y>  <zAxis_z>-0.999152481556</zAxis_z>
+                        <trans_x>-0.00558113493025</trans_x>  <trans_y>-0.00772991264239</trans_y>  <trans_z>0.0215499028563</trans_z>
+                      </localFrame>
+                      <worldFrame>
+                        <xAxis_x>0.483073234558</xAxis_x>  <xAxis_y>-0.874837875366</xAxis_y>  <xAxis_z>0.0360412448645</xAxis_z>
+                        <yAxis_x>-0.875579953194</yAxis_x>  <yAxis_y>-0.482663750648</yAxis_y>  <yAxis_z>0.019885469228</yAxis_z>
+                        <zAxis_x>-7.59025681418e-07</zAxis_x>  <zAxis_y>-0.0411631315947</zAxis_y>  <zAxis_z>-0.999152481556</zAxis_z>
+                        <trans_x>0.0839338004589</trans_x>  <trans_y>0.0744956284761</trans_y>  <trans_z>0.0215369202197</trans_z>
+                      </worldFrame>
+                    </PhysicsJoint>
+                      <ChildObjects>
+                        <PhysicsJoint>
+                          <name>SKEL_R_FLLeg</name>
+                          <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Spine0|SKEL_Spine1|SKEL_Spine3|SKEL_R_FULeg|SKEL_R_FLLeg</path>
+                          <localFrame>
+                            <xAxis_x>0.979274749756</xAxis_x>  <xAxis_y>-0.202536433935</xAxis_y>  <xAxis_z>-8.17055138214e-07</xAxis_z>
+                            <yAxis_x>0.202536433935</yAxis_x>  <yAxis_y>0.979274749756</yAxis_y>  <yAxis_z>-1.64648010781e-08</yAxis_z>
+                            <zAxis_x>8.03456202902e-07</zAxis_x>  <zAxis_y>-1.49359863144e-07</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                            <trans_x>0.0604936033487</trans_x>  <trans_y>3.07853973425e-08</trans_y>  <trans_z>-7.8709048168e-09</trans_z>
+                          </localFrame>
+                          <worldFrame>
+                            <xAxis_x>0.650398254395</xAxis_x>  <xAxis_y>-0.758949637413</xAxis_y>  <xAxis_z>0.0312675647438</xAxis_z>
+                            <yAxis_x>-0.759593427181</yAxis_x>  <yAxis_y>-0.649846971035</yAxis_y>  <yAxis_z>0.0267730187625</yAxis_z>
+                            <zAxis_x>-2.40120982653e-07</zAxis_x>  <zAxis_y>-0.0411637611687</zAxis_y>  <zAxis_z>-0.999152481556</zAxis_z>
+                            <trans_x>0.113156616688</trans_x>  <trans_y>0.0215735193342</trans_y>  <trans_z>0.023717192933</trans_z>
+                          </worldFrame>
+                        </PhysicsJoint>
+                          <ChildObjects>
+                              <ChildObjects>
+                                <PhysicsBody>
+                                  <name>SKEL_R_FLLegPhysicsBody</name>
+                                  <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Spine0|SKEL_Spine1|SKEL_Spine3|SKEL_R_FULeg|SKEL_R_FLLeg|SKEL_R_FLLegPhysicsBodyTM|SKEL_R_FLLegPhysicsBody</path>
+                                  <shape>Capsule</shape>
+                                  <length>0.0127587</length>
+                                  <radius>0.0274257</radius>
+                                  <mass>0.116559</mass>
+                                  <localFrame>
+                                    <xAxis_x>1.51186000608e-07</xAxis_x>  <xAxis_y>-0.776478767395</xAxis_y>  <xAxis_z>0.630143404007</xAxis_z>
+                                    <yAxis_x>7.94237791979e-07</yAxis_x>  <yAxis_y>-0.630143404007</yAxis_y>  <yAxis_z>-0.776478767395</yAxis_z>
+                                    <zAxis_x>1.0</zAxis_x>  <zAxis_y>6.17876423803e-07</zAxis_y>  <zAxis_z>5.21439915246e-07</zAxis_z>
+                                    <trans_x>0.0116302082315</trans_x>  <trans_y>6.82102152538e-09</trans_y>  <trans_z>-2.49247378292e-09</trans_z>
+                                  </localFrame>
+                                  <worldFrame>
+                                    <xAxis_x>0.589808106422</xAxis_x>  <xAxis_y>0.47865319252</xAxis_y>  <xAxis_z>-0.650398015976</xAxis_z>
+                                    <yAxis_x>0.478653490543</yAxis_x>  <yAxis_y>0.441458970308</yAxis_y>  <yAxis_z>0.758949875832</yAxis_z>
+                                    <zAxis_x>0.650397777557</zAxis_x>  <zAxis_y>-0.758950054646</zAxis_y>  <zAxis_z>0.0312670618296</zAxis_z>
+                                    <trans_x>0.120720878243</trans_x>  <trans_y>0.0127467727289</trans_y>  <trans_z>0.024080844596</trans_z>
+                                  </worldFrame>
+                                </PhysicsBody>
+                              </ChildObjects>
+                          </ChildObjects>
+                        <PhysicsJointLimit>
+                          <name>SKEL_R_FLLegPhysicsJointLimit</name>
+                          <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Spine0|SKEL_Spine1|SKEL_Spine3|SKEL_R_FULeg|SKEL_R_FLLegPhysicsJointLimit</path>
+                          <type>BallSocket</type>
+                          <swing1Angle>0.174533</swing1Angle>
+                          <swing2Angle>0.174533</swing2Angle>
+                          <twistAngle>0.174533</twistAngle>
+                          <twistOffset>0</twistOffset>
+                          <localFrame>
+                            <xAxis_x>0.979274749756</xAxis_x>  <xAxis_y>-0.202536389232</xAxis_y>  <xAxis_z>-7.9980384271e-07</xAxis_z>
+                            <yAxis_x>0.202536374331</yAxis_x>  <yAxis_y>0.979274690151</yAxis_y>  <yAxis_z>1.61621438455e-09</yAxis_z>
+                            <zAxis_x>7.82900372087e-07</zAxis_x>  <zAxis_y>-1.63572096312e-07</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                            <trans_x>0.0604936033487</trans_x>  <trans_y>3.07853973425e-08</trans_y>  <trans_z>-7.8709048168e-09</trans_z>
+                          </localFrame>
+                          <worldFixedFrame>
+                            <xAxis_x>0.65039819479</xAxis_x>  <xAxis_y>-0.758949637413</xAxis_y>  <xAxis_z>0.0312675498426</xAxis_z>
+                            <yAxis_x>-0.759593367577</yAxis_x>  <yAxis_y>-0.64984691143</yAxis_y>  <yAxis_z>0.0267729982734</yAxis_z>
+                            <zAxis_x>-2.376070114e-07</zAxis_x>  <zAxis_y>-0.041163738817</zAxis_y>  <zAxis_z>-0.999152481556</zAxis_z>
+                            <trans_x>0.113156616688</trans_x>  <trans_y>0.0215735193342</trans_y>  <trans_z>0.023717192933</trans_z>
+                          </worldFixedFrame>
+                          <worldMovingFrame>
+                            <xAxis_x>0.650398254395</xAxis_x>  <xAxis_y>-0.758949637413</xAxis_y>  <xAxis_z>0.0312675647438</xAxis_z>
+                            <yAxis_x>-0.759593427181</yAxis_x>  <yAxis_y>-0.649846971035</yAxis_y>  <yAxis_z>0.0267730187625</yAxis_z>
+                            <zAxis_x>-2.40120982653e-07</zAxis_x>  <zAxis_y>-0.0411637611687</zAxis_y>  <zAxis_z>-0.999152481556</zAxis_z>
+                            <trans_x>0.113156616688</trans_x>  <trans_y>0.0215735193342</trans_y>  <trans_z>0.023717192933</trans_z>
+                          </worldMovingFrame>
+                        </PhysicsJointLimit>
+                          <ChildObjects>
+                            <PhysicsBody>
+                              <name>SKEL_R_FULegPhysicsBody</name>
+                              <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Spine0|SKEL_Spine1|SKEL_Spine3|SKEL_R_FULeg|SKEL_R_FULegPhysicsBodyTM|SKEL_R_FULegPhysicsBody</path>
+                              <shape>Capsule</shape>
+                              <length>0.0331816</length>
+                              <radius>0.0274257</radius>
+                              <mass>0.164819</mass>
+                              <localFrame>
+                                <xAxis_x>1.33259550239e-06</xAxis_x>  <xAxis_y>-0.88485211134</xAxis_y>  <xAxis_z>0.465872049332</xAxis_z>
+                                <yAxis_x>-8.91824470273e-07</yAxis_x>  <yAxis_y>-0.465872049332</yAxis_y>  <yAxis_z>-0.88485211134</yAxis_z>
+                                <zAxis_x>1.0</zAxis_x>  <zAxis_y>7.63673824622e-07</zAxis_y>  <zAxis_z>-1.40995177844e-06</zAxis_z>
+                                <trans_x>0.0302468016744</trans_x>  <trans_y>1.91330862265e-08</trans_y>  <trans_z>-2.1220007973e-09</trans_z>
+                              </localFrame>
+                              <worldFrame>
+                                <xAxis_x>0.774759054184</xAxis_x>  <xAxis_y>0.407908111811</xAxis_y>  <xAxis_z>-0.48307287693</xAxis_z>
+                                <yAxis_x>0.407908469439</yAxis_x>  <yAxis_y>0.261283606291</yAxis_y>  <yAxis_z>0.87483805418</yAxis_z>
+                                <zAxis_x>0.483072578907</zAxis_x>  <zAxis_y>-0.874838173389</zAxis_y>  <zAxis_z>0.0360426679254</zAxis_z>
+                                <trans_x>0.0985452011228</trans_x>  <trans_y>0.0480345711112</trans_y>  <trans_z>0.022627055645</trans_z>
+                              </worldFrame>
+                            </PhysicsBody>
+                          </ChildObjects>
+                      </ChildObjects>
+                    <PhysicsJointLimit>
+                      <name>SKEL_HeadPhysicsJointLimit</name>
+                      <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Spine0|SKEL_Spine1|SKEL_Spine3|SKEL_HeadPhysicsJointLimit</path>
+                      <type>BallSocket</type>
+                      <swing1Angle>0.174533</swing1Angle>
+                      <swing2Angle>0.174533</swing2Angle>
+                      <twistAngle>0.174533</twistAngle>
+                      <twistOffset>0</twistOffset>
+                      <localFrame>
+                        <xAxis_x>0.996021747589</xAxis_x>  <xAxis_y>0.0891107991338</xAxis_y>  <xAxis_z>-1.23926460205e-08</xAxis_z>
+                        <yAxis_x>-0.0891107991338</yAxis_x>  <yAxis_y>0.996021747589</yAxis_y>  <yAxis_z>2.16493468626e-15</yAxis_z>
+                        <zAxis_x>1.23433476773e-08</zAxis_x>  <zAxis_y>1.10431663813e-09</zAxis_y>  <zAxis_z>1.00000023842</zAxis_z>
+                        <trans_x>0.037076998502</trans_x>  <trans_y>-2.78864642489e-09</trans_y>  <trans_z>1.07608963407e-10</trans_z>
+                      </localFrame>
+                      <worldFixedFrame>
+                        <xAxis_x>0.999995529652</xAxis_x>  <xAxis_y>-0.00299305515364</xAxis_y>  <xAxis_z>5.36749880098e-08</xAxis_z>
+                        <yAxis_x>0.00299305515364</yAxis_x>  <yAxis_y>0.999995529652</yAxis_y>  <yAxis_z>-2.35885408983e-08</yAxis_z>
+                        <zAxis_x>-5.36041788735e-08</zAxis_x>  <zAxis_y>2.37491217803e-08</zAxis_y>  <zAxis_z>1.00000023842</zAxis_z>
+                        <trans_x>0.1271225214</trans_x>  <trans_y>0.0782642364502</trans_y>  <trans_z>-1.2980426618e-05</trans_z>
+                      </worldFixedFrame>
+                      <worldMovingFrame>
+                        <xAxis_x>0.999995529652</xAxis_x>  <xAxis_y>-0.00299329240806</xAxis_y>  <xAxis_z>5.36749880098e-08</xAxis_z>
+                        <yAxis_x>0.00299329240806</yAxis_x>  <yAxis_y>0.999995529652</yAxis_y>  <yAxis_z>-2.35885178057e-08</yAxis_z>
+                        <zAxis_x>-5.36041646626e-08</zAxis_x>  <zAxis_y>2.37491075694e-08</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                        <trans_x>0.1271225214</trans_x>  <trans_y>0.0782642364502</trans_y>  <trans_z>-1.2980426618e-05</trans_z>
+                      </worldMovingFrame>
+                    </PhysicsJointLimit>
+                    <PhysicsJointLimit>
+                      <name>SKEL_L_FULegPhysicsJointLimit</name>
+                      <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Spine0|SKEL_Spine1|SKEL_Spine3|SKEL_L_FULegPhysicsJointLimit</path>
+                      <type>BallSocket</type>
+                      <swing1Angle>0.174533</swing1Angle>
+                      <swing2Angle>0.174533</swing2Angle>
+                      <twistAngle>0.174533</twistAngle>
+                      <twistOffset>0</twistOffset>
+                      <localFrame>
+                        <xAxis_x>0.561585664749</xAxis_x>  <xAxis_y>-0.82663333416</xAxis_y>  <xAxis_z>-0.0360409133136</xAxis_z>
+                        <yAxis_x>0.827409923077</yAxis_x>  <yAxis_y>0.561246275902</yAxis_y>  <yAxis_z>0.0198849476874</yAxis_z>
+                        <zAxis_x>0.00379026774317</zAxis_x>  <zAxis_y>-0.0409877113998</zAxis_y>  <zAxis_z>0.999152481556</zAxis_z>
+                        <trans_x>-0.0055811307393</trans_x>  <trans_y>-0.00772991124541</trans_y>  <trans_z>-0.0212402064353</trans_z>
+                      </localFrame>
+                      <worldFixedFrame>
+                        <xAxis_x>0.483073294163</xAxis_x>  <xAxis_y>-0.874837875366</xAxis_y>  <xAxis_z>-0.0360408611596</xAxis_z>
+                        <yAxis_x>0.875579893589</yAxis_x>  <yAxis_y>0.482663840055</yAxis_y>  <yAxis_z>0.0198849942535</yAxis_z>
+                        <zAxis_x>-5.26452140548e-07</zAxis_x>  <zAxis_y>-0.0411625653505</zAxis_y>  <zAxis_z>0.999152481556</zAxis_z>
+                        <trans_x>0.0839338079095</trans_x>  <trans_y>0.0744956284761</trans_y>  <trans_z>-0.021253189072</trans_z>
+                      </worldFixedFrame>
+                      <worldMovingFrame>
+                        <xAxis_x>0.483073294163</xAxis_x>  <xAxis_y>-0.874837875366</xAxis_y>  <xAxis_z>-0.0360408574343</xAxis_z>
+                        <yAxis_x>0.875579893589</yAxis_x>  <yAxis_y>0.482663840055</yAxis_y>  <yAxis_z>0.019885038957</yAxis_z>
+                        <zAxis_x>-5.67459892409e-07</zAxis_x>  <zAxis_y>-0.041162583977</zAxis_y>  <zAxis_z>0.999152481556</zAxis_z>
+                        <trans_x>0.0839338079095</trans_x>  <trans_y>0.0744956284761</trans_y>  <trans_z>-0.021253189072</trans_z>
+                      </worldMovingFrame>
+                    </PhysicsJointLimit>
+                    <PhysicsJointLimit>
+                      <name>SKEL_R_FULegPhysicsJointLimit</name>
+                      <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Spine0|SKEL_Spine1|SKEL_Spine3|SKEL_R_FULegPhysicsJointLimit</path>
+                      <type>BallSocket</type>
+                      <swing1Angle>0.174533</swing1Angle>
+                      <swing2Angle>0.174533</swing2Angle>
+                      <twistAngle>0.174533</twistAngle>
+                      <twistOffset>0</twistOffset>
+                      <localFrame>
+                        <xAxis_x>0.56158554554</xAxis_x>  <xAxis_y>-0.826633393764</xAxis_y>  <xAxis_z>0.0360411927104</xAxis_z>
+                        <yAxis_x>-0.827410101891</yAxis_x>  <yAxis_y>-0.561246216297</yAxis_y>  <yAxis_z>0.0198855157942</yAxis_z>
+                        <zAxis_x>0.00378995155916</zAxis_x>  <zAxis_y>-0.040988266468</zAxis_y>  <zAxis_z>-0.999152600765</zAxis_z>
+                        <trans_x>-0.00558113493025</trans_x>  <trans_y>-0.00772991264239</trans_y>  <trans_z>0.0215499028563</trans_z>
+                      </localFrame>
+                      <worldFixedFrame>
+                        <xAxis_x>0.483073174953</xAxis_x>  <xAxis_y>-0.874837934971</xAxis_y>  <xAxis_z>0.0360412448645</xAxis_z>
+                        <yAxis_x>-0.875580072403</yAxis_x>  <yAxis_y>-0.482663750648</yAxis_y>  <yAxis_z>0.019885469228</yAxis_z>
+                        <zAxis_x>-7.60527996135e-07</zAxis_x>  <zAxis_y>-0.0411631353199</zAxis_y>  <zAxis_z>-0.999152600765</zAxis_z>
+                        <trans_x>0.0839338004589</trans_x>  <trans_y>0.0744956284761</trans_y>  <trans_z>0.0215369202197</trans_z>
+                      </worldFixedFrame>
+                      <worldMovingFrame>
+                        <xAxis_x>0.483073234558</xAxis_x>  <xAxis_y>-0.874837875366</xAxis_y>  <xAxis_z>0.0360412448645</xAxis_z>
+                        <yAxis_x>-0.875579953194</yAxis_x>  <yAxis_y>-0.482663750648</yAxis_y>  <yAxis_z>0.019885469228</yAxis_z>
+                        <zAxis_x>-7.59025681418e-07</zAxis_x>  <zAxis_y>-0.0411631315947</zAxis_y>  <zAxis_z>-0.999152481556</zAxis_z>
+                        <trans_x>0.0839338004589</trans_x>  <trans_y>0.0744956284761</trans_y>  <trans_z>0.0215369202197</trans_z>
+                      </worldMovingFrame>
+                    </PhysicsJointLimit>
+                      <ChildObjects>
+                        <PhysicsBody>
+                          <name>SKEL_Spine3PhysicsBody</name>
+                          <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Spine0|SKEL_Spine1|SKEL_Spine3|SKEL_Spine3PhysicsBodyTM|SKEL_Spine3PhysicsBody</path>
+                          <shape>Capsule</shape>
+                          <length>0.00827638</length>
+                          <radius>0.0274257</radius>
+                          <mass>0.105967</mass>
+                          <localFrame>
+                            <xAxis_x>0.309002786875</xAxis_x>  <xAxis_y>0.501781284809</xAxis_y>  <xAxis_z>-0.807918965816</xAxis_z>
+                            <yAxis_x>0.408744513988</yAxis_x>  <yAxis_y>0.696969330311</yAxis_y>  <yAxis_z>0.589204311371</yAxis_z>
+                            <zAxis_x>0.858746409416</zAxis_x>  <zAxis_y>-0.512298226357</zAxis_y>  <zAxis_z>0.0102651184425</zAxis_z>
+                            <trans_x>0.00647868355736</trans_x>  <trans_y>-0.00386495608836</trans_y>  <trans_z>7.74249419919e-05</trans_z>
+                          </localFrame>
+                          <worldFrame>
+                            <xAxis_x>0.353899568319</xAxis_x>  <xAxis_y>0.471192419529</xAxis_y>  <xAxis_z>-0.807918965816</xAxis_z>
+                            <yAxis_x>0.471192508936</yAxis_x>  <yAxis_y>0.656365692616</yAxis_y>  <yAxis_z>0.589204311371</yAxis_z>
+                            <zAxis_x>0.807918846607</zAxis_x>  <zAxis_y>-0.589204549789</zAxis_y>  <zAxis_z>0.0102651854977</zAxis_z>
+                            <trans_x>0.0962982997298</trans_x>  <trans_y>0.0772335529327</trans_y>  <trans_z>6.44423998892e-05</trans_z>
+                          </worldFrame>
+                        </PhysicsBody>
+                      </ChildObjects>
+                  </ChildObjects>
+                <PhysicsJointLimit>
+                  <name>SKEL_Spine3PhysicsJointLimit</name>
+                  <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Spine0|SKEL_Spine1|SKEL_Spine3PhysicsJointLimit</path>
+                  <type>BallSocket</type>
+                  <swing1Angle>0.174533</swing1Angle>
+                  <swing2Angle>0.174533</swing2Angle>
+                  <twistAngle>0.174533</twistAngle>
+                  <twistOffset>0</twistOffset>
+                  <localFrame>
+                    <xAxis_x>0.99985563755</xAxis_x>  <xAxis_y>-0.0169879253954</xAxis_y>  <xAxis_z>-1.73069244618e-14</xAxis_z>
+                    <yAxis_x>0.0169879253954</yAxis_x>  <yAxis_y>0.99985563755</yAxis_y>  <yAxis_z>-1.70677020287e-14</yAxis_z>
+                    <zAxis_x>1.75943735628e-14</zAxis_x>  <zAxis_y>1.67712320268e-14</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                    <trans_x>0.0425884127617</trans_x>  <trans_y>4.40643688204e-10</trans_y>  <trans_z>-3.39963354776e-13</trans_z>
+                  </localFrame>
+                  <worldFixedFrame>
+                    <xAxis_x>0.995750486851</xAxis_x>  <xAxis_y>-0.092091627419</xAxis_y>  <xAxis_z>6.79069671605e-08</xAxis_z>
+                    <yAxis_x>0.092091627419</yAxis_x>  <yAxis_y>0.995750486851</yAxis_y>  <yAxis_z>-1.76073502445e-08</yAxis_z>
+                    <zAxis_x>-6.59969359162e-08</zAxis_x>  <zAxis_y>2.37862245456e-08</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                    <trans_x>0.090203076601</trans_x>  <trans_y>0.0816787183285</trans_y>  <trans_z>-1.29830523292e-05</trans_z>
+                  </worldFixedFrame>
+                  <worldMovingFrame>
+                    <xAxis_x>0.995750546455</xAxis_x>  <xAxis_y>-0.0920915454626</xAxis_y>  <xAxis_z>6.79067895248e-08</xAxis_z>
+                    <yAxis_x>0.0920915454626</yAxis_x>  <yAxis_y>0.995750546455</yAxis_y>  <yAxis_z>-1.76073609026e-08</yAxis_z>
+                    <zAxis_x>-6.59967582806e-08</zAxis_x>  <zAxis_y>2.37862103347e-08</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                    <trans_x>0.090203076601</trans_x>  <trans_y>0.0816787183285</trans_y>  <trans_z>-1.29830523292e-05</trans_z>
+                  </worldMovingFrame>
+                </PhysicsJointLimit>
+                  <ChildObjects>
+                    <PhysicsBody>
+                      <name>SKEL_Spine1PhysicsBody</name>
+                      <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Spine0|SKEL_Spine1|SKEL_Spine1PhysicsBodyTM|SKEL_Spine1PhysicsBody</path>
+                      <shape>Capsule</shape>
+                      <length>0.0233604</length>
+                      <radius>0.0274257</radius>
+                      <mass>0.141611</mass>
+                      <localFrame>
+                        <xAxis_x>-2.36246776808e-07</xAxis_x>  <xAxis_y>0.0751623511314</xAxis_y>  <xAxis_z>-0.997171401978</xAxis_z>
+                        <yAxis_x>8.89100526535e-09</yAxis_x>  <yAxis_y>0.997171401978</yAxis_y>  <yAxis_z>0.0751623511314</yAxis_z>
+                        <zAxis_x>1.00000023842</zAxis_x>  <zAxis_y>8.89100704171e-09</zAxis_y>  <zAxis_z>-2.3624680523e-07</zAxis_z>
+                        <trans_x>0.0212942007929</trans_x>  <trans_y>3.93435395374e-10</trans_y>  <trans_z>-8.75707655262e-13</trans_z>
+                      </localFrame>
+                      <worldFrame>
+                        <xAxis_x>0.00564922811463</xAxis_x>  <xAxis_y>0.0749497339129</xAxis_y>  <xAxis_z>-0.997171401978</xAxis_z>
+                        <yAxis_x>0.0749500021338</yAxis_x>  <yAxis_y>0.994350671768</yAxis_y>  <yAxis_z>0.0751623287797</yAxis_z>
+                        <zAxis_x>0.997171521187</zAxis_x>  <zAxis_y>-0.0751626119018</zAxis_y>  <zAxis_z>-1.68648710996e-07</zAxis_z>
+                        <trans_x>0.0689691007137</trans_x>  <trans_y>0.0832792446017</trans_y>  <trans_z>-1.29844920593e-05</trans_z>
+                      </worldFrame>
+                    </PhysicsBody>
+                  </ChildObjects>
+              </ChildObjects>
+            <PhysicsJointLimit>
+              <name>SKEL_Spine1PhysicsJointLimit</name>
+              <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Spine0|SKEL_Spine1PhysicsJointLimit</path>
+              <type>BallSocket</type>
+              <swing1Angle>0.174533</swing1Angle>
+              <swing2Angle>0.174533</swing2Angle>
+              <twistAngle>0.174533</twistAngle>
+              <twistOffset>0</twistOffset>
+              <localFrame>
+                <xAxis_x>0.998463451862</xAxis_x>  <xAxis_y>0.0554166808724</xAxis_y>  <xAxis_z>-1.27895702917e-07</xAxis_z>
+                <yAxis_x>-0.0554166808724</yAxis_x>  <yAxis_y>0.998463451862</yAxis_y>  <yAxis_z>-2.22044631395e-16</yAxis_z>
+                <zAxis_x>1.27699152586e-07</zAxis_x>  <zAxis_y>7.08755365508e-09</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                <trans_x>0.0376673974097</trans_x>  <trans_y>1.5836314482e-09</trans_y>  <trans_z>-4.45245973424e-09</trans_z>
+              </localFrame>
+              <worldFixedFrame>
+                <xAxis_x>0.997171401978</xAxis_x>  <xAxis_y>-0.0751626268029</xAxis_y>  <xAxis_z>6.75982079201e-08</xAxis_z>
+                <yAxis_x>0.0751626268029</yAxis_x>  <yAxis_y>0.997171401978</yAxis_y>  <yAxis_z>-1.87582394062e-08</yAxis_z>
+                <zAxis_x>-6.59970851302e-08</zAxis_x>  <zAxis_y>2.37860646735e-08</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                <trans_x>0.047735132277</trans_x>  <trans_y>0.084879770875</trans_y>  <trans_z>-1.29859308799e-05</trans_z>
+              </worldFixedFrame>
+              <worldMovingFrame>
+                <xAxis_x>0.997171282768</xAxis_x>  <xAxis_y>-0.0751626044512</xAxis_y>  <xAxis_z>6.75980800224e-08</xAxis_z>
+                <yAxis_x>0.0751626044512</yAxis_x>  <yAxis_y>0.997171282768</yAxis_y>  <yAxis_z>-1.87583921729e-08</yAxis_z>
+                <zAxis_x>-6.59969572325e-08</zAxis_x>  <zAxis_y>2.37862085584e-08</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                <trans_x>0.047735132277</trans_x>  <trans_y>0.084879770875</trans_y>  <trans_z>-1.29859308799e-05</trans_z>
+              </worldMovingFrame>
+            </PhysicsJointLimit>
+              <ChildObjects>
+                <PhysicsBody>
+                  <name>SKEL_Spine0PhysicsBody</name>
+                  <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Spine0|SKEL_Spine0PhysicsBodyTM|SKEL_Spine0PhysicsBody</path>
+                  <shape>Capsule</shape>
+                  <length>0.0206611</length>
+                  <radius>0.0274257</radius>
+                  <mass>0.135233</mass>
+                  <localFrame>
+                    <xAxis_x>-1.765675961e-07</xAxis_x>  <xAxis_y>0.130306884646</xAxis_y>  <xAxis_z>-0.991473734379</xAxis_z>
+                    <yAxis_x>1.1553238366e-08</yAxis_x>  <yAxis_y>0.991473734379</yAxis_y>  <yAxis_z>0.130306884646</yAxis_z>
+                    <zAxis_x>1.0</zAxis_x>  <zAxis_y>1.15532410305e-08</zAxis_y>  <zAxis_z>-1.765675961e-07</zAxis_z>
+                    <trans_x>0.0188337024301</trans_x>  <trans_y>-6.48401332626e-10</trans_y>  <trans_z>-2.22572160702e-09</trans_z>
+                  </localFrame>
+                  <worldFrame>
+                    <xAxis_x>0.0169799197465</xAxis_x>  <xAxis_y>0.129195839167</xAxis_y>  <xAxis_z>-0.991473734379</xAxis_z>
+                    <yAxis_x>0.129195988178</yAxis_x>  <yAxis_y>0.98302012682</yAxis_y>  <yAxis_z>0.130306869745</yAxis_z>
+                    <zAxis_x>0.991473674774</zAxis_x>  <zAxis_y>-0.130307018757</zAxis_y>  <zAxis_z>1.96653928697e-08</zAxis_z>
+                    <trans_x>0.0290620196611</trans_x>  <trans_y>0.087333932519</trans_y>  <trans_z>-1.29874006234e-05</trans_z>
+                  </worldFrame>
+                </PhysicsBody>
+              </ChildObjects>
+          </ChildObjects>
+        <PhysicsJoint>
+          <name>SKEL_Pelvis</name>
+          <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Pelvis</path>
+          <localFrame>
+            <xAxis_x>-0.522016406059</xAxis_x>  <xAxis_y>0.852935433388</xAxis_y>  <xAxis_z>-1.50995902004e-07</xAxis_z>
+            <yAxis_x>-0.852935433388</yAxis_x>  <yAxis_y>-0.522016406059</yAxis_y>  <yAxis_z>8.74223502478e-08</yAxis_z>
+            <zAxis_x>-4.25671808912e-09</zAxis_x>  <zAxis_y>1.74425650812e-07</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+            <trans_x>-0.0134423002601</trans_x>  <trans_y>-0.00527651002631</trans_y>  <trans_z>-1.29864001792e-05</trans_z>
+          </localFrame>
+          <worldFrame>
+            <xAxis_x>-0.852935433388</xAxis_x>  <xAxis_y>-0.522016465664</xAxis_y>  <xAxis_z>2.97020960716e-07</xAxis_z>
+            <yAxis_x>0.522016465664</yAxis_x>  <yAxis_y>-0.852935433388</yAxis_y>  <yAxis_z>1.95249995727e-07</yAxis_z>
+            <zAxis_x>1.51415974869e-07</zAxis_x>  <zAxis_y>3.21585474694e-07</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+            <trans_x>0.00527651049197</trans_x>  <trans_y>0.0865576937795</trans_y>  <trans_z>-1.299365249e-05</trans_z>
+          </worldFrame>
+        </PhysicsJoint>
+          <ChildObjects>
+            <PhysicsJoint>
+              <name>SKEL_Tail1</name>
+              <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Pelvis|SKEL_Tail1</path>
+              <localFrame>
+                <xAxis_x>0.982302904129</xAxis_x>  <xAxis_y>-0.187299311161</xAxis_y>  <xAxis_z>-2.46469511467e-14</xAxis_z>
+                <yAxis_x>0.187299311161</yAxis_x>  <yAxis_y>0.982302904129</yAxis_y>  <yAxis_z>3.25242410781e-08</yAxis_z>
+                <zAxis_x>-6.09174355404e-09</zAxis_x>  <zAxis_y>-3.19486623823e-08</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                <trans_x>0.0703393220901</trans_x>  <trans_y>-2.68610245158e-10</trans_y>  <trans_z>7.15213044344e-09</trans_z>
+              </localFrame>
+              <worldFrame>
+                <xAxis_x>-0.935614287853</xAxis_x>  <xAxis_y>-0.353024065495</xAxis_y>  <xAxis_z>2.55194350984e-07</xAxis_z>
+                <yAxis_x>0.353024065495</yAxis_x>  <yAxis_y>-0.935614287853</yAxis_y>  <yAxis_z>2.79950711501e-07</yAxis_z>
+                <zAxis_x>1.3993411585e-07</zAxis_x>  <zAxis_y>3.52015604221e-07</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                <trans_x>-0.0547183901072</trans_x>  <trans_y>0.0498394109309</trans_y>  <trans_z>-1.29656082208e-05</trans_z>
+              </worldFrame>
+            </PhysicsJoint>
+              <ChildObjects>
+                <PhysicsJoint>
+                  <name>SKEL_Tail2</name>
+                  <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Pelvis|SKEL_Tail1|SKEL_Tail2</path>
+                  <localFrame>
+                    <xAxis_x>0.997445881367</xAxis_x>  <xAxis_y>-0.0714261829853</xAxis_y>  <xAxis_z>-5.57331958362e-14</xAxis_z>
+                    <yAxis_x>0.0714261829853</yAxis_x>  <yAxis_y>0.997445881367</yAxis_y>  <yAxis_z>5.99342975249e-09</yAxis_z>
+                    <zAxis_x>-4.28032220778e-10</zAxis_x>  <zAxis_y>-5.97812599423e-09</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                    <trans_x>0.0748729705811</trans_x>  <trans_y>-1.7957308529e-08</trans_y>  <trans_z>7.28108862091e-09</trans_z>
+                  </localFrame>
+                  <worldFrame>
+                    <xAxis_x>-0.958439767361</xAxis_x>  <xAxis_y>-0.285295039415</xAxis_y>  <xAxis_z>2.34546689626e-07</xAxis_z>
+                    <yAxis_x>0.285295039415</yAxis_x>  <yAxis_y>-0.958439767361</yAxis_y>  <yAxis_z>3.03456658912e-07</yAxis_z>
+                    <zAxis_x>1.38224166335e-07</zAxis_x>  <zAxis_y>3.57759915914e-07</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                    <trans_x>-0.124770618975</trans_x>  <trans_y>0.0234074667096</trans_y>  <trans_z>-1.29392201416e-05</trans_z>
+                  </worldFrame>
+                </PhysicsJoint>
+                  <ChildObjects>
+                    <PhysicsJoint>
+                      <name>SKEL_Tail3</name>
+                      <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Pelvis|SKEL_Tail1|SKEL_Tail2|SKEL_Tail3</path>
+                      <localFrame>
+                        <xAxis_x>0.966279506683</xAxis_x>  <xAxis_y>-0.257495492697</xAxis_y>  <xAxis_z>5.75095526756e-14</xAxis_z>
+                        <yAxis_x>0.257495492697</yAxis_x>  <yAxis_y>0.966279506683</yAxis_y>  <yAxis_z>2.31149215324e-08</yAxis_z>
+                        <zAxis_x>-5.95204374676e-09</zAxis_x>  <zAxis_y>-2.2335459704e-08</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                        <trans_x>0.0613384097815</trans_x>  <trans_y>-4.95976193449e-09</trans_y>  <trans_z>5.95327609432e-09</trans_z>
+                      </localFrame>
+                      <worldFrame>
+                        <xAxis_x>-0.999582886696</xAxis_x>  <xAxis_y>-0.0288808289915</xAxis_y>  <xAxis_z>1.48498997987e-07</xAxis_z>
+                        <yAxis_x>0.0288808289915</yAxis_x>  <yAxis_y>-0.999582886696</yAxis_y>  <yAxis_z>3.76733595431e-07</yAxis_z>
+                        <zAxis_x>1.37556639856e-07</zAxis_x>  <zAxis_y>3.80865202487e-07</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                        <trans_x>-0.183559790254</trans_x>  <trans_y>0.00590792763978</trans_y>  <trans_z>-1.29188802021e-05</trans_z>
+                      </worldFrame>
+                    </PhysicsJoint>
+                      <ChildObjects>
+                          <ChildObjects>
+                            <PhysicsBody>
+                              <name>SKEL_Tail3PhysicsBody</name>
+                              <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Pelvis|SKEL_Tail1|SKEL_Tail2|SKEL_Tail3|SKEL_Tail3PhysicsBodyTM|SKEL_Tail3PhysicsBody</path>
+                              <shape>Capsule</shape>
+                              <length>0.0564888</length>
+                              <radius>0.0274257</radius>
+                              <mass>0.219894</mass>
+                              <localFrame>
+                                <xAxis_x>-1.80293554308e-07</xAxis_x>  <xAxis_y>0.028881188482</xAxis_y>  <xAxis_z>0.999582946301</xAxis_z>
+                                <yAxis_x>8.48187013958e-08</yAxis_x>  <yAxis_y>-0.999582946301</yAxis_y>  <yAxis_z>0.028881188482</yAxis_z>
+                                <zAxis_x>1.00000023842</zAxis_x>  <zAxis_y>8.99904222251e-08</zAxis_y>  <zAxis_z>1.7776869754e-07</zAxis_z>
+                                <trans_x>0.0514924935997</trans_x>  <trans_y>-3.28741545097e-09</trans_y>  <trans_z>4.85435558417e-09</trans_z>
+                              </localFrame>
+                              <worldFrame>
+                                <xAxis_x>0.000834430393297</xAxis_x>  <xAxis_y>-0.0288687553257</xAxis_y>  <xAxis_z>0.999582946301</xAxis_z>
+                                <yAxis_x>-0.0288688652217</yAxis_x>  <yAxis_y>0.99916601181</yAxis_y>  <yAxis_z>0.0288808122277</yAxis_z>
+                                <zAxis_x>-0.999583125114</zAxis_x>  <zAxis_y>-0.0288809258491</zAxis_y>  <zAxis_z>3.26267752371e-07</zAxis_z>
+                                <trans_x>-0.235030800104</trans_x>  <trans_y>0.00442078523338</trans_y>  <trans_z>-1.29063791974e-05</trans_z>
+                              </worldFrame>
+                            </PhysicsBody>
+                          </ChildObjects>
+                      </ChildObjects>
+                    <PhysicsJointLimit>
+                      <name>SKEL_Tail3PhysicsJointLimit</name>
+                      <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Pelvis|SKEL_Tail1|SKEL_Tail2|SKEL_Tail3PhysicsJointLimit</path>
+                      <type>BallSocket</type>
+                      <swing1Angle>0.174533</swing1Angle>
+                      <swing2Angle>0.174533</swing2Angle>
+                      <twistAngle>0.174533</twistAngle>
+                      <twistOffset>0</twistOffset>
+                      <localFrame>
+                        <xAxis_x>0.966279625893</xAxis_x>  <xAxis_y>-0.257495522499</xAxis_y>  <xAxis_z>-1.95399269275e-14</xAxis_z>
+                        <yAxis_x>0.257495522499</yAxis_x>  <yAxis_y>0.966279625893</yAxis_y>  <yAxis_z>2.31148806762e-08</yAxis_z>
+                        <zAxis_x>-5.95195759345e-09</zAxis_x>  <zAxis_y>-2.23354366113e-08</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                        <trans_x>0.0613384097815</trans_x>  <trans_y>-4.95976193449e-09</trans_y>  <trans_z>5.95327609432e-09</trans_z>
+                      </localFrame>
+                      <worldFixedFrame>
+                        <xAxis_x>-0.999583005905</xAxis_x>  <xAxis_y>-0.0288808345795</xAxis_y>  <xAxis_z>1.48498941144e-07</xAxis_z>
+                        <yAxis_x>0.0288808345795</yAxis_x>  <yAxis_y>-0.999583005905</yAxis_y>  <yAxis_z>3.76733595431e-07</yAxis_z>
+                        <zAxis_x>1.37556568802e-07</zAxis_x>  <zAxis_y>3.80865145644e-07</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                        <trans_x>-0.183559790254</trans_x>  <trans_y>0.00590792763978</trans_y>  <trans_z>-1.29188802021e-05</trans_z>
+                      </worldFixedFrame>
+                      <worldMovingFrame>
+                        <xAxis_x>-0.999582886696</xAxis_x>  <xAxis_y>-0.0288808289915</xAxis_y>  <xAxis_z>1.48498997987e-07</xAxis_z>
+                        <yAxis_x>0.0288808289915</yAxis_x>  <yAxis_y>-0.999582886696</yAxis_y>  <yAxis_z>3.76733595431e-07</yAxis_z>
+                        <zAxis_x>1.37556639856e-07</zAxis_x>  <zAxis_y>3.80865202487e-07</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                        <trans_x>-0.183559790254</trans_x>  <trans_y>0.00590792763978</trans_y>  <trans_z>-1.29188802021e-05</trans_z>
+                      </worldMovingFrame>
+                    </PhysicsJointLimit>
+                      <ChildObjects>
+                        <PhysicsBody>
+                          <name>SKEL_Tail2PhysicsBody</name>
+                          <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Pelvis|SKEL_Tail1|SKEL_Tail2|SKEL_Tail2PhysicsBodyTM|SKEL_Tail2PhysicsBody</path>
+                          <shape>Capsule</shape>
+                          <length>0.033645</length>
+                          <radius>0.0274257</radius>
+                          <mass>0.165914</mass>
+                          <localFrame>
+                            <xAxis_x>4.29657319501e-07</xAxis_x>  <xAxis_y>0.285295248032</xAxis_y>  <xAxis_z>0.958439707756</xAxis_z>
+                            <yAxis_x>3.08037222396e-08</yAxis_x>  <yAxis_y>-0.958439707756</yAxis_y>  <yAxis_z>0.285295248032</yAxis_z>
+                            <zAxis_x>1.0</zAxis_x>  <zAxis_y>-9.30556822709e-08</zAxis_y>  <zAxis_z>-4.20588804673e-07</zAxis_z>
+                            <trans_x>0.0306691955775</trans_x>  <trans_y>-3.01244251766e-10</trans_y>  <trans_z>2.97653923731e-09</trans_z>
+                          </localFrame>
+                          <worldFrame>
+                            <xAxis_x>0.0813930407166</xAxis_x>  <xAxis_y>-0.273438096046</xAxis_y>  <xAxis_z>0.958439767361</xAxis_z>
+                            <yAxis_x>-0.273438096046</yAxis_x>  <yAxis_y>0.918606817722</yAxis_y>  <yAxis_z>0.285294950008</yAxis_z>
+                            <zAxis_x>-0.958439767361</zAxis_x>  <zAxis_y>-0.285294950008</zAxis_y>  <zAxis_z>-1.86042143469e-07</zAxis_z>
+                            <trans_x>-0.154165193439</trans_x>  <trans_y>0.0146576976404</trans_y>  <trans_z>-1.29290501718e-05</trans_z>
+                          </worldFrame>
+                        </PhysicsBody>
+                      </ChildObjects>
+                  </ChildObjects>
+                <PhysicsJointLimit>
+                  <name>SKEL_Tail2PhysicsJointLimit</name>
+                  <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Pelvis|SKEL_Tail1|SKEL_Tail2PhysicsJointLimit</path>
+                  <type>BallSocket</type>
+                  <swing1Angle>0.174533</swing1Angle>
+                  <swing2Angle>0.174533</swing2Angle>
+                  <twistAngle>0.174533</twistAngle>
+                  <twistOffset>0</twistOffset>
+                  <localFrame>
+                    <xAxis_x>0.997445821762</xAxis_x>  <xAxis_y>-0.0714261904359</xAxis_y>  <xAxis_z>2.78249628606e-14</xAxis_z>
+                    <yAxis_x>0.0714261904359</yAxis_x>  <yAxis_y>0.997445821762</yAxis_y>  <yAxis_z>5.99362648401e-09</yAxis_z>
+                    <zAxis_x>-4.28129726116e-10</zAxis_x>  <zAxis_y>-5.9783165085e-09</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                    <trans_x>0.0748729705811</trans_x>  <trans_y>-1.7957308529e-08</trans_y>  <trans_z>7.28108862091e-09</trans_z>
+                  </localFrame>
+                  <worldFixedFrame>
+                    <xAxis_x>-0.958439707756</xAxis_x>  <xAxis_y>-0.285295009613</xAxis_y>  <xAxis_z>2.3454676068e-07</xAxis_z>
+                    <yAxis_x>0.285295009613</yAxis_x>  <yAxis_y>-0.958439707756</yAxis_y>  <yAxis_z>3.03456857864e-07</yAxis_z>
+                    <zAxis_x>1.38224194757e-07</zAxis_x>  <zAxis_y>3.57760143288e-07</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                    <trans_x>-0.124770618975</trans_x>  <trans_y>0.0234074667096</trans_y>  <trans_z>-1.29392201416e-05</trans_z>
+                  </worldFixedFrame>
+                  <worldMovingFrame>
+                    <xAxis_x>-0.958439767361</xAxis_x>  <xAxis_y>-0.285295039415</xAxis_y>  <xAxis_z>2.34546689626e-07</xAxis_z>
+                    <yAxis_x>0.285295039415</yAxis_x>  <yAxis_y>-0.958439767361</yAxis_y>  <yAxis_z>3.03456658912e-07</yAxis_z>
+                    <zAxis_x>1.38224166335e-07</zAxis_x>  <zAxis_y>3.57759915914e-07</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                    <trans_x>-0.124770618975</trans_x>  <trans_y>0.0234074667096</trans_y>  <trans_z>-1.29392201416e-05</trans_z>
+                  </worldMovingFrame>
+                </PhysicsJointLimit>
+                  <ChildObjects>
+                    <PhysicsBody>
+                      <name>SKEL_Tail1PhysicsBody</name>
+                      <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Pelvis|SKEL_Tail1|SKEL_Tail1PhysicsBodyTM|SKEL_Tail1PhysicsBody</path>
+                      <shape>Capsule</shape>
+                      <length>0.041069</length>
+                      <radius>0.0274257</radius>
+                      <mass>0.183457</mass>
+                      <localFrame>
+                        <xAxis_x>4.47489895805e-07</xAxis_x>  <xAxis_y>0.353023946285</xAxis_y>  <xAxis_z>0.935614287853</xAxis_z>
+                        <yAxis_x>-1.88590348671e-07</yAxis_x>  <yAxis_y>-0.935614287853</yAxis_y>  <yAxis_z>0.353023946285</yAxis_z>
+                        <zAxis_x>1.0</zAxis_x>  <zAxis_y>-3.34422480819e-07</zAxis_y>  <zAxis_z>-3.5210103988e-07</zAxis_z>
+                        <trans_x>0.0374364964664</trans_x>  <trans_y>-1.12335332147e-08</trans_y>  <trans_z>3.64015639853e-09</trans_z>
+                      </localFrame>
+                      <worldFrame>
+                        <xAxis_x>0.124625660479</xAxis_x>  <xAxis_y>-0.330294072628</xAxis_y>  <xAxis_z>0.935614407063</xAxis_z>
+                        <yAxis_x>-0.330294132233</yAxis_x>  <yAxis_y>0.875374257565</yAxis_y>  <yAxis_z>0.353023678064</yAxis_z>
+                        <zAxis_x>-0.935614407063</zAxis_x>  <zAxis_y>-0.353023767471</zAxis_y>  <zAxis_z>-9.69067812662e-08</zAxis_z>
+                        <trans_x>-0.089744515717</trans_x>  <trans_y>0.0366234369576</trans_y>  <trans_z>-1.29524141812e-05</trans_z>
+                      </worldFrame>
+                    </PhysicsBody>
+                  </ChildObjects>
+              </ChildObjects>
+            <PhysicsJoint>
+              <name>SKEL_R_BULeg</name>
+              <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Pelvis|SKEL_R_BULeg</path>
+              <localFrame>
+                <xAxis_x>0.605041205883</xAxis_x>  <xAxis_y>0.789786100388</xAxis_y>  <xAxis_z>0.100812137127</xAxis_z>
+                <yAxis_x>0.794381916523</yAxis_x>  <yAxis_y>-0.607343614101</yAxis_y>  <yAxis_z>-0.00954508967698</yAxis_z>
+                <zAxis_x>0.0536890290678</zAxis_x>  <zAxis_y>0.0858585089445</zAxis_y>  <zAxis_z>-0.994859695435</zAxis_z>
+                <trans_x>0.000300183804939</trans_x>  <trans_y>0.0038893383462</trans_y>  <trans_z>0.0248763002455</trans_z>
+              </localFrame>
+              <worldFrame>
+                <xAxis_x>-0.10377971828</xAxis_x>  <xAxis_y>-0.989477992058</xAxis_y>  <xAxis_z>0.100812472403</xAxis_z>
+                <yAxis_x>-0.994599878788</yAxis_x>  <yAxis_y>0.103344447911</yAxis_y>  <yAxis_z>-0.00954497233033</yAxis_z>
+                <zAxis_x>-0.000973870512098</zAxis_x>  <zAxis_y>-0.101258642972</zAxis_y>  <zAxis_z>-0.99485963583</zAxis_z>
+                <trans_x>0.00705077545717</trans_x>  <trans_y>0.0830836445093</trans_y>  <trans_z>0.0248633082956</trans_z>
+              </worldFrame>
+            </PhysicsJoint>
+              <ChildObjects>
+                <PhysicsJoint>
+                  <name>SKEL_R_BLLeg</name>
+                  <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Pelvis|SKEL_R_BULeg|SKEL_R_BLLeg</path>
+                  <localFrame>
+                    <xAxis_x>0.565412461758</xAxis_x>  <xAxis_y>-0.824808299541</xAxis_y>  <xAxis_z>5.92785852405e-07</xAxis_z>
+                    <yAxis_x>0.824808299541</yAxis_x>  <yAxis_y>0.565412461758</yAxis_y>  <yAxis_z>1.44926545431e-07</yAxis_z>
+                    <zAxis_x>-4.54705116226e-07</zAxis_x>  <zAxis_y>4.06991404134e-07</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                    <trans_x>0.0651511028409</trans_x>  <trans_y>1.49856909104e-08</trans_y>  <trans_z>1.53572781159e-08</trans_z>
+                  </localFrame>
+                  <worldFrame>
+                    <xAxis_x>0.76167589426</xAxis_x>  <xAxis_y>-0.644702613354</xAxis_y>  <xAxis_z>0.0648728087544</xAxis_z>
+                    <yAxis_x>-0.6479575634</yAxis_x>  <yAxis_y>-0.757697463036</yAxis_y>  <yAxis_z>0.0777539759874</yAxis_z>
+                    <zAxis_x>-0.000974228139967</zAxis_x>  <zAxis_y>-0.101258151233</zAxis_y>  <zAxis_z>-0.994859695435</zAxis_z>
+                    <trans_x>0.000289397430606</trans_x>  <trans_y>0.0186180621386</trans_y>  <trans_z>0.0314313359559</trans_z>
+                  </worldFrame>
+                </PhysicsJoint>
+                  <ChildObjects>
+                      <ChildObjects>
+                        <PhysicsBody>
+                          <name>SKEL_R_BLLegPhysicsBody</name>
+                          <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Pelvis|SKEL_R_BULeg|SKEL_R_BLLeg|SKEL_R_BLLegPhysicsBodyTM|SKEL_R_BLLegPhysicsBody</path>
+                          <shape>Capsule</shape>
+                          <length>0.0111657</length>
+                          <radius>0.0274257</radius>
+                          <mass>0.112795</mass>
+                          <localFrame>
+                            <xAxis_x>5.31182422492e-08</xAxis_x>  <xAxis_y>-0.703572452068</xAxis_y>  <xAxis_z>0.710623562336</xAxis_z>
+                            <yAxis_x>-7.0531655183e-07</yAxis_x>  <yAxis_y>-0.710623562336</yAxis_y>  <yAxis_z>-0.703572452068</yAxis_z>
+                            <zAxis_x>1.0</zAxis_x>  <zAxis_y>-4.63842042109e-07</zAxis_y>  <zAxis_z>-5.33988384177e-07</zAxis_z>
+                            <trans_x>0.0101781524718</trans_x>  <trans_y>-1.0335527989e-09</trans_y>  <trans_z>-3.83929865677e-09</trans_z>
+                          </localFrame>
+                          <worldFrame>
+                            <xAxis_x>0.455192834139</xAxis_x>  <xAxis_y>0.461138606071</xAxis_y>  <xAxis_z>-0.761676311493</xAxis_z>
+                            <yAxis_x>0.461138814688</yAxis_x>  <yAxis_y>0.609680593014</yAxis_y>  <yAxis_z>0.644702017307</yAxis_z>
+                            <zAxis_x>0.761676192284</zAxis_x>  <zAxis_y>-0.644702196121</zAxis_y>  <zAxis_z>0.0648733004928</zAxis_z>
+                            <trans_x>0.00804185122252</trans_x>  <trans_y>0.0120561821386</trans_y>  <trans_z>0.0320916250348</trans_z>
+                          </worldFrame>
+                        </PhysicsBody>
+                      </ChildObjects>
+                  </ChildObjects>
+                <PhysicsJointLimit>
+                  <name>SKEL_R_BLLegPhysicsJointLimit</name>
+                  <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Pelvis|SKEL_R_BULeg|SKEL_R_BLLegPhysicsJointLimit</path>
+                  <type>BallSocket</type>
+                  <swing1Angle>0.174533</swing1Angle>
+                  <swing2Angle>0.174533</swing2Angle>
+                  <twistAngle>0.174533</twistAngle>
+                  <twistOffset>0</twistOffset>
+                  <localFrame>
+                    <xAxis_x>0.565412282944</xAxis_x>  <xAxis_y>-0.824808418751</xAxis_y>  <xAxis_z>4.62007818669e-07</xAxis_z>
+                    <yAxis_x>0.824808418751</yAxis_x>  <yAxis_y>0.565412282944</yAxis_y>  <yAxis_z>5.02429031712e-09</yAxis_z>
+                    <zAxis_x>-2.653689819e-07</zAxis_x>  <zAxis_y>3.78227156261e-07</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                    <trans_x>0.0651511028409</trans_x>  <trans_y>1.49856909104e-08</trans_y>  <trans_z>1.53572781159e-08</trans_z>
+                  </localFrame>
+                  <worldFixedFrame>
+                    <xAxis_x>0.76167601347</xAxis_x>  <xAxis_y>-0.64470243454</xAxis_y>  <xAxis_z>0.0648729205132</xAxis_z>
+                    <yAxis_x>-0.647957384586</yAxis_x>  <yAxis_y>-0.757697582245</yAxis_y>  <yAxis_z>0.077754124999</yAxis_z>
+                    <zAxis_x>-0.000974219175987</zAxis_x>  <zAxis_y>-0.101258344948</zAxis_y>  <zAxis_z>-0.994859695435</zAxis_z>
+                    <trans_x>0.000289397430606</trans_x>  <trans_y>0.0186180621386</trans_y>  <trans_z>0.0314313359559</trans_z>
+                  </worldFixedFrame>
+                  <worldMovingFrame>
+                    <xAxis_x>0.76167589426</xAxis_x>  <xAxis_y>-0.644702613354</xAxis_y>  <xAxis_z>0.0648728087544</xAxis_z>
+                    <yAxis_x>-0.6479575634</yAxis_x>  <yAxis_y>-0.757697463036</yAxis_y>  <yAxis_z>0.0777539759874</yAxis_z>
+                    <zAxis_x>-0.000974228139967</zAxis_x>  <zAxis_y>-0.101258151233</zAxis_y>  <zAxis_z>-0.994859695435</zAxis_z>
+                    <trans_x>0.000289397430606</trans_x>  <trans_y>0.0186180621386</trans_y>  <trans_z>0.0314313359559</trans_z>
+                  </worldMovingFrame>
+                </PhysicsJointLimit>
+                  <ChildObjects>
+                    <PhysicsBody>
+                      <name>SKEL_R_BULegPhysicsBody</name>
+                      <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Pelvis|SKEL_R_BULeg|SKEL_R_BULegPhysicsBodyTM|SKEL_R_BULegPhysicsBody</path>
+                      <shape>Capsule</shape>
+                      <length>0.0357364</length>
+                      <radius>0.0274257</radius>
+                      <mass>0.170856</mass>
+                      <localFrame>
+                        <xAxis_x>3.12503743771e-07</xAxis_x>  <xAxis_y>-0.995499670506</xAxis_y>  <xAxis_z>-0.0947650894523</xAxis_z>
+                        <yAxis_x>4.57495765716e-08</yAxis_x>  <yAxis_y>0.0947650894523</yAxis_y>  <yAxis_z>-0.995499670506</yAxis_z>
+                        <zAxis_x>1.0</zAxis_x>  <zAxis_y>3.06761904767e-07</zAxis_y>  <zAxis_z>7.51581339387e-08</zAxis_z>
+                        <trans_x>0.0325755476952</trans_x>  <trans_y>8.79973249823e-09</trans_y>  <trans_z>4.55437554336e-09</trans_z>
+                      </localFrame>
+                      <worldFrame>
+                        <xAxis_x>0.990216135979</xAxis_x>  <xAxis_y>-0.0932838916779</xAxis_y>  <xAxis_z>0.103780008852</xAxis_z>
+                        <yAxis_x>-0.0932838618755</yAxis_x>  <yAxis_y>0.110596343875</yAxis_y>  <yAxis_z>0.989477932453</yAxis_z>
+                        <zAxis_x>-0.103780023754</zAxis_x>  <zAxis_y>-0.989477992058</zAxis_y>  <zAxis_z>0.100812397897</zAxis_z>
+                        <trans_x>0.00367008545436</trans_x>  <trans_y>0.0508508570492</trans_y>  <trans_z>0.0281473249197</trans_z>
+                      </worldFrame>
+                    </PhysicsBody>
+                  </ChildObjects>
+              </ChildObjects>
+            <PhysicsJoint>
+              <name>SKEL_L_BULeg</name>
+              <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Pelvis|SKEL_L_BULeg</path>
+              <localFrame>
+                <xAxis_x>0.605041444302</xAxis_x>  <xAxis_y>0.789785921574</xAxis_y>  <xAxis_z>-0.100812077522</xAxis_z>
+                <yAxis_x>-0.794381856918</yAxis_x>  <yAxis_y>0.60734385252</yAxis_y>  <yAxis_z>-0.00954528711736</yAxis_z>
+                <zAxis_x>0.0536888614297</zAxis_x>  <zAxis_y>0.0858585759997</zAxis_y>  <zAxis_z>0.994859814644</zAxis_z>
+                <trans_x>0.000300201150822</trans_x>  <trans_y>0.00388932670467</trans_y>  <trans_z>-0.024566700682</trans_z>
+              </localFrame>
+              <worldFrame>
+                <xAxis_x>-0.103780046105</xAxis_x>  <xAxis_y>-0.989478051662</xAxis_y>  <xAxis_z>-0.100811742246</xAxis_z>
+                <yAxis_x>0.994599938393</yAxis_x>  <yAxis_y>-0.103344686329</yAxis_y>  <yAxis_z>-0.00954540446401</yAxis_z>
+                <zAxis_x>-0.000973391288426</zAxis_x>  <zAxis_y>-0.101257972419</zAxis_y>  <zAxis_z>0.994859874249</zAxis_z>
+                <trans_x>0.00705074705184</trans_x>  <trans_y>0.0830836296082</trans_y>  <trans_z>-0.024579692632</trans_z>
+              </worldFrame>
+            </PhysicsJoint>
+              <ChildObjects>
+                <PhysicsJoint>
+                  <name>SKEL_L_BLLeg</name>
+                  <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Pelvis|SKEL_L_BULeg|SKEL_L_BLLeg</path>
+                  <localFrame>
+                    <xAxis_x>0.565412282944</xAxis_x>  <xAxis_y>0.824808418751</xAxis_y>  <xAxis_z>6.86050896093e-08</xAxis_z>
+                    <yAxis_x>-0.824808418751</yAxis_x>  <yAxis_y>0.565412282944</yAxis_y>  <yAxis_z>-1.30715520186e-07</yAxis_z>
+                    <zAxis_x>-1.46605415807e-07</zAxis_x>  <zAxis_y>1.73221046396e-08</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                    <trans_x>0.0651510134339</trans_x>  <trans_y>-1.61772177876e-08</trans_y>  <trans_z>1.53357362365e-08</trans_z>
+                  </localFrame>
+                  <worldFrame>
+                    <xAxis_x>0.76167589426</xAxis_x>  <xAxis_y>-0.644702613354</xAxis_y>  <xAxis_z>-0.0648732557893</xAxis_z>
+                    <yAxis_x>0.64795768261</yAxis_x>  <yAxis_y>0.757697463036</yAxis_y>  <yAxis_z>0.0777531564236</yAxis_z>
+                    <zAxis_x>-0.000973358866759</zAxis_x>  <zAxis_y>-0.101257830858</zAxis_y>  <zAxis_z>0.994859874249</zAxis_z>
+                    <trans_x>0.000289355783025</trans_x>  <trans_y>0.0186181310564</trans_y>  <trans_z>-0.0311476644129</trans_z>
+                  </worldFrame>
+                </PhysicsJoint>
+                  <ChildObjects>
+                      <ChildObjects>
+                        <PhysicsBody>
+                          <name>SKEL_L_BLLegPhysicsBody</name>
+                          <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Pelvis|SKEL_L_BULeg|SKEL_L_BLLeg|SKEL_L_BLLegPhysicsBodyTM|SKEL_L_BLLegPhysicsBody</path>
+                          <shape>Capsule</shape>
+                          <length>0.0111657</length>
+                          <radius>0.0274257</radius>
+                          <mass>0.112795</mass>
+                          <localFrame>
+                            <xAxis_x>4.4138026567e-08</xAxis_x>  <xAxis_y>0.584625899792</xAxis_y>  <xAxis_z>-0.811303138733</xAxis_z>
+                            <yAxis_x>-6.10292715919e-07</yAxis_x>  <yAxis_y>0.811303138733</yAxis_y>  <yAxis_z>0.584625899792</yAxis_z>
+                            <zAxis_x>1.00000023842</zAxis_x>  <zAxis_y>4.69328170993e-07</zAxis_y>  <zAxis_z>3.92602260035e-07</zAxis_z>
+                            <trans_x>0.0101781506091</trans_x>  <trans_y>2.19634777032e-09</trans_y>  <trans_z>2.0775967613e-09</trans_z>
+                          </localFrame>
+                          <worldFrame>
+                            <xAxis_x>0.37960255146</xAxis_x>  <xAxis_y>0.525120317936</xAxis_y>  <xAxis_z>-0.761676430702</xAxis_z>
+                            <yAxis_x>0.525120556355</yAxis_x>  <yAxis_y>0.555524766445</yAxis_y>  <yAxis_z>0.644702255726</yAxis_z>
+                            <zAxis_x>0.761676371098</zAxis_x>  <zAxis_y>-0.64470243454</zAxis_y>  <zAxis_z>-0.0648728460073</zAxis_z>
+                            <trans_x>0.008041809313</trans_x>  <trans_y>0.0120562519878</trans_y>  <trans_z>-0.0318079516292</trans_z>
+                          </worldFrame>
+                        </PhysicsBody>
+                      </ChildObjects>
+                  </ChildObjects>
+                <PhysicsJointLimit>
+                  <name>SKEL_L_BLLegPhysicsJointLimit</name>
+                  <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Pelvis|SKEL_L_BULeg|SKEL_L_BLLegPhysicsJointLimit</path>
+                  <type>BallSocket</type>
+                  <swing1Angle>0.174533</swing1Angle>
+                  <swing2Angle>0.174533</swing2Angle>
+                  <twistAngle>0.174533</twistAngle>
+                  <twistOffset>0</twistOffset>
+                  <localFrame>
+                    <xAxis_x>0.565412282944</xAxis_x>  <xAxis_y>0.824808418751</xAxis_y>  <xAxis_z>-2.21841460757e-08</xAxis_z>
+                    <yAxis_x>-0.824808418751</yAxis_x>  <yAxis_y>0.565412282944</yAxis_y>  <yAxis_z>5.87775339511e-09</yAxis_z>
+                    <zAxis_x>1.73912084733e-08</zAxis_x>  <zAxis_y>1.49743168976e-08</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                    <trans_x>0.0651510134339</trans_x>  <trans_y>-1.61772177876e-08</trans_y>  <trans_z>1.53357362365e-08</trans_z>
+                  </localFrame>
+                  <worldFixedFrame>
+                    <xAxis_x>0.76167589426</xAxis_x>  <xAxis_y>-0.644702613354</xAxis_y>  <xAxis_z>-0.0648733526468</xAxis_z>
+                    <yAxis_x>0.64795768261</yAxis_x>  <yAxis_y>0.757697463036</yAxis_y>  <yAxis_z>0.077753290534</yAxis_z>
+                    <zAxis_x>-0.000973378191702</zAxis_x>  <zAxis_y>-0.101257994771</zAxis_y>  <zAxis_z>0.994859874249</zAxis_z>
+                    <trans_x>0.000289355783025</trans_x>  <trans_y>0.0186181310564</trans_y>  <trans_z>-0.0311476644129</trans_z>
+                  </worldFixedFrame>
+                  <worldMovingFrame>
+                    <xAxis_x>0.76167589426</xAxis_x>  <xAxis_y>-0.644702613354</xAxis_y>  <xAxis_z>-0.0648732557893</xAxis_z>
+                    <yAxis_x>0.64795768261</yAxis_x>  <yAxis_y>0.757697463036</yAxis_y>  <yAxis_z>0.0777531564236</yAxis_z>
+                    <zAxis_x>-0.000973358866759</zAxis_x>  <zAxis_y>-0.101257830858</zAxis_y>  <zAxis_z>0.994859874249</zAxis_z>
+                    <trans_x>0.000289355783025</trans_x>  <trans_y>0.0186181310564</trans_y>  <trans_z>-0.0311476644129</trans_z>
+                  </worldMovingFrame>
+                </PhysicsJointLimit>
+                  <ChildObjects>
+                    <PhysicsBody>
+                      <name>SKEL_L_BULegPhysicsBody</name>
+                      <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Pelvis|SKEL_L_BULeg|SKEL_L_BULegPhysicsBodyTM|SKEL_L_BULegPhysicsBody</path>
+                      <shape>Capsule</shape>
+                      <length>0.0357363</length>
+                      <radius>0.0274257</radius>
+                      <mass>0.170855</mass>
+                      <localFrame>
+                        <xAxis_x>4.30309626154e-07</xAxis_x>  <xAxis_y>0.993498086929</xAxis_y>  <xAxis_z>0.113848879933</xAxis_z>
+                        <yAxis_x>4.7123765512e-07</yAxis_x>  <yAxis_y>-0.113848879933</yAxis_y>  <yAxis_z>0.993498086929</yAxis_z>
+                        <zAxis_x>1.0</zAxis_x>  <zAxis_y>-3.73861922753e-07</zAxis_y>  <zAxis_z>-5.17163982749e-07</zAxis_z>
+                        <trans_x>0.0325754992664</trans_x>  <trans_y>-1.06768931474e-08</trans_y>  <trans_z>1.06756617435e-11</trans_z>
+                      </localFrame>
+                      <worldFrame>
+                        <xAxis_x>0.988022267818</xAxis_x>  <xAxis_y>-0.114201277494</xAxis_y>  <xAxis_z>0.103780299425</xAxis_z>
+                        <yAxis_x>-0.114201202989</yAxis_x>  <yAxis_y>-0.0888343900442</yAxis_y>  <yAxis_z>0.989478051662</yAxis_z>
+                        <zAxis_x>-0.103780418634</zAxis_x>  <zAxis_y>-0.989477932453</zAxis_y>  <zAxis_z>-0.100812256336</zAxis_z>
+                        <trans_x>0.00367004959844</trans_x>  <trans_y>0.0508508905768</trans_y>  <trans_z>-0.0278636850417</trans_z>
+                      </worldFrame>
+                    </PhysicsBody>
+                  </ChildObjects>
+              </ChildObjects>
+            <PhysicsJointLimit>
+              <name>SKEL_Tail1PhysicsJointLimit</name>
+              <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Pelvis|SKEL_Tail1PhysicsJointLimit</path>
+              <type>BallSocket</type>
+              <swing1Angle>0.174533</swing1Angle>
+              <swing2Angle>0.174533</swing2Angle>
+              <twistAngle>0.174533</twistAngle>
+              <twistOffset>0</twistOffset>
+              <localFrame>
+                <xAxis_x>0.982303023338</xAxis_x>  <xAxis_y>-0.187299326062</xAxis_y>  <xAxis_z>-4.08562106943e-14</xAxis_z>
+                <yAxis_x>0.187299326062</yAxis_x>  <yAxis_y>0.982303023338</yAxis_y>  <yAxis_z>3.25240243626e-08</yAxis_z>
+                <zAxis_x>-6.09168671062e-09</zAxis_x>  <zAxis_y>-3.19484492195e-08</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                <trans_x>0.0703393220901</trans_x>  <trans_y>-2.68610245158e-10</trans_y>  <trans_z>7.15213044344e-09</trans_z>
+              </localFrame>
+              <worldFixedFrame>
+                <xAxis_x>-0.935614407063</xAxis_x>  <xAxis_y>-0.353024125099</xAxis_y>  <xAxis_z>2.55194350984e-07</xAxis_z>
+                <yAxis_x>0.353024125099</yAxis_x>  <yAxis_y>-0.935614407063</yAxis_y>  <yAxis_z>2.79950512549e-07</yAxis_z>
+                <zAxis_x>1.39934172694e-07</zAxis_x>  <zAxis_y>3.52015405269e-07</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                <trans_x>-0.0547183901072</trans_x>  <trans_y>0.0498394109309</trans_y>  <trans_z>-1.29656082208e-05</trans_z>
+              </worldFixedFrame>
+              <worldMovingFrame>
+                <xAxis_x>-0.935614287853</xAxis_x>  <xAxis_y>-0.353024065495</xAxis_y>  <xAxis_z>2.55194350984e-07</xAxis_z>
+                <yAxis_x>0.353024065495</yAxis_x>  <yAxis_y>-0.935614287853</yAxis_y>  <yAxis_z>2.79950711501e-07</yAxis_z>
+                <zAxis_x>1.3993411585e-07</zAxis_x>  <zAxis_y>3.52015604221e-07</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+                <trans_x>-0.0547183901072</trans_x>  <trans_y>0.0498394109309</trans_y>  <trans_z>-1.29656082208e-05</trans_z>
+              </worldMovingFrame>
+            </PhysicsJointLimit>
+            <PhysicsJointLimit>
+              <name>SKEL_R_BULegPhysicsJointLimit</name>
+              <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Pelvis|SKEL_R_BULegPhysicsJointLimit</path>
+              <type>BallSocket</type>
+              <swing1Angle>0.174533</swing1Angle>
+              <swing2Angle>0.174533</swing2Angle>
+              <twistAngle>0.174533</twistAngle>
+              <twistOffset>0</twistOffset>
+              <localFrame>
+                <xAxis_x>0.605041265488</xAxis_x>  <xAxis_y>0.789786100388</xAxis_y>  <xAxis_z>0.100811898708</xAxis_z>
+                <yAxis_x>0.794382035732</yAxis_x>  <yAxis_y>-0.607343733311</yAxis_y>  <yAxis_z>-0.0095450906083</yAxis_z>
+                <zAxis_x>0.053688891232</zAxis_x>  <zAxis_y>0.08585832268</zAxis_y>  <zAxis_z>-0.994859755039</zAxis_z>
+                <trans_x>0.000300183804939</trans_x>  <trans_y>0.0038893383462</trans_y>  <trans_z>0.0248763002455</trans_z>
+              </localFrame>
+              <worldFixedFrame>
+                <xAxis_x>-0.103779770434</xAxis_x>  <xAxis_y>-0.989477992058</xAxis_y>  <xAxis_z>0.100812233984</xAxis_z>
+                <yAxis_x>-0.994599997997</yAxis_x>  <yAxis_y>0.103344485164</yAxis_y>  <yAxis_z>-0.00954497326165</yAxis_z>
+                <zAxis_x>-0.000973850197624</zAxis_x>  <zAxis_y>-0.101258412004</zAxis_y>  <zAxis_z>-0.994859695435</zAxis_z>
+                <trans_x>0.00705077545717</trans_x>  <trans_y>0.0830836445093</trans_y>  <trans_z>0.0248633082956</trans_z>
+              </worldFixedFrame>
+              <worldMovingFrame>
+                <xAxis_x>-0.10377971828</xAxis_x>  <xAxis_y>-0.989477992058</xAxis_y>  <xAxis_z>0.100812472403</xAxis_z>
+                <yAxis_x>-0.994599878788</yAxis_x>  <yAxis_y>0.103344447911</yAxis_y>  <yAxis_z>-0.00954497233033</yAxis_z>
+                <zAxis_x>-0.000973870512098</zAxis_x>  <zAxis_y>-0.101258642972</zAxis_y>  <zAxis_z>-0.99485963583</zAxis_z>
+                <trans_x>0.00705077545717</trans_x>  <trans_y>0.0830836445093</trans_y>  <trans_z>0.0248633082956</trans_z>
+              </worldMovingFrame>
+            </PhysicsJointLimit>
+            <PhysicsJointLimit>
+              <name>SKEL_L_BULegPhysicsJointLimit</name>
+              <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Pelvis|SKEL_L_BULegPhysicsJointLimit</path>
+              <type>BallSocket</type>
+              <swing1Angle>0.174533</swing1Angle>
+              <swing2Angle>0.174533</swing2Angle>
+              <twistAngle>0.174533</twistAngle>
+              <twistOffset>0</twistOffset>
+              <localFrame>
+                <xAxis_x>0.605041384697</xAxis_x>  <xAxis_y>0.789786100388</xAxis_y>  <xAxis_z>-0.100811883807</xAxis_z>
+                <yAxis_x>-0.794381856918</yAxis_x>  <yAxis_y>0.607343733311</yAxis_y>  <yAxis_z>-0.00954529363662</yAxis_z>
+                <zAxis_x>0.0536887273192</zAxis_x>  <zAxis_y>0.0858584269881</zAxis_y>  <zAxis_z>0.994859814644</zAxis_z>
+                <trans_x>0.000300201150822</trans_x>  <trans_y>0.00388932670467</trans_y>  <trans_z>-0.024566700682</trans_z>
+              </localFrame>
+              <worldFixedFrame>
+                <xAxis_x>-0.103779904544</xAxis_x>  <xAxis_y>-0.989478170872</xAxis_y>  <xAxis_z>-0.100811548531</xAxis_z>
+                <yAxis_x>0.994599878788</yAxis_x>  <yAxis_y>-0.103344582021</yAxis_y>  <yAxis_z>-0.00954541098326</yAxis_z>
+                <zAxis_x>-0.000973354675807</zAxis_x>  <zAxis_y>-0.101257771254</zAxis_y>  <zAxis_z>0.994859874249</zAxis_z>
+                <trans_x>0.00705074705184</trans_x>  <trans_y>0.0830836296082</trans_y>  <trans_z>-0.024579692632</trans_z>
+              </worldFixedFrame>
+              <worldMovingFrame>
+                <xAxis_x>-0.103780046105</xAxis_x>  <xAxis_y>-0.989478051662</xAxis_y>  <xAxis_z>-0.100811742246</xAxis_z>
+                <yAxis_x>0.994599938393</yAxis_x>  <yAxis_y>-0.103344686329</yAxis_y>  <yAxis_z>-0.00954540446401</yAxis_z>
+                <zAxis_x>-0.000973391288426</zAxis_x>  <zAxis_y>-0.101257972419</zAxis_y>  <zAxis_z>0.994859874249</zAxis_z>
+                <trans_x>0.00705074705184</trans_x>  <trans_y>0.0830836296082</trans_y>  <trans_z>-0.024579692632</trans_z>
+              </worldMovingFrame>
+            </PhysicsJointLimit>
+              <ChildObjects>
+                <PhysicsBody>
+                  <name>SKEL_PelvisPhysicsBody</name>
+                  <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Pelvis|SKEL_PelvisPhysicsBodyTM|SKEL_PelvisPhysicsBody</path>
+                  <shape>Capsule</shape>
+                  <length>0.0195725</length>
+                  <radius>0.0274257</radius>
+                  <mass>0.13266</mass>
+                  <localFrame>
+                    <xAxis_x>-0.0666932165623</xAxis_x>  <xAxis_y>0.608229637146</xAxis_y>  <xAxis_z>0.790954351425</xAxis_z>
+                    <yAxis_x>0.0862132534385</yAxis_x>  <yAxis_y>-0.786241710186</yAxis_y>  <yAxis_z>0.61187517643</yAxis_z>
+                    <zAxis_x>0.994041919708</zAxis_x>  <zAxis_y>0.108998671174</zAxis_y>  <zAxis_z>-4.67208337795e-07</zAxis_z>
+                    <trans_x>0.0177349187434</trans_x>  <trans_y>0.00194466894027</trans_y>  <trans_z>7.74020008976e-05</trans_z>
+                  </localFrame>
+                  <worldFrame>
+                    <xAxis_x>0.374391019344</xAxis_x>  <xAxis_y>-0.483965396881</xAxis_y>  <xAxis_z>0.790954470634</xAxis_z>
+                    <yAxis_x>-0.483965367079</yAxis_x>  <yAxis_y>0.625608861446</yAxis_y>  <yAxis_z>0.61187505722</yAxis_z>
+                    <zAxis_x>-0.790954470634</zAxis_x>  <zAxis_y>-0.61187505722</zAxis_y>  <zAxis_z>-1.50675063537e-07</zAxis_z>
+                    <trans_x>-0.00883508101106</trans_x>  <trans_y>0.0756410956383</trans_y>  <trans_z>6.44139945507e-05</trans_z>
+                  </worldFrame>
+                </PhysicsBody>
+              </ChildObjects>
+          </ChildObjects>
+        <PhysicsJointLimit>
+          <name>SKEL_Spine0PhysicsJointLimit</name>
+          <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_Spine0PhysicsJointLimit</path>
+          <type>BallSocket</type>
+          <swing1Angle>0.174533</swing1Angle>
+          <swing2Angle>0.174533</swing2Angle>
+          <twistAngle>0.174533</twistAngle>
+          <twistOffset>0</twistOffset>
+          <localFrame>
+            <xAxis_x>-0.130307078362</xAxis_x>  <xAxis_y>-0.991473674774</xAxis_y>  <xAxis_z>4.76836675034e-07</xAxis_z>
+            <yAxis_x>0.991473674774</yAxis_x>  <yAxis_y>-0.130307078362</yAxis_y>  <yAxis_z>3.57627044423e-07</yAxis_z>
+            <zAxis_x>-2.92442592809e-07</zAxis_x>  <zAxis_y>5.19372349572e-07</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+            <trans_x>-0.0102118998766</trans_x>  <trans_y>-0.0103888995945</trans_y>  <trans_z>-1.29788995764e-05</trans_z>
+          </localFrame>
+          <worldFixedFrame>
+            <xAxis_x>0.991473674774</xAxis_x>  <xAxis_y>-0.130307033658</xAxis_y>  <xAxis_z>1.96232790017e-07</xAxis_z>
+            <yAxis_x>0.130307033658</yAxis_x>  <yAxis_y>0.991473674774</yAxis_y>  <yAxis_z>-7.89635912213e-09</yAxis_z>
+            <zAxis_x>-1.9353070968e-07</zAxis_x>  <zAxis_y>3.33995799906e-08</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+            <trans_x>0.0103888995945</trans_x>  <trans_y>0.0897880941629</trans_y>  <trans_z>-1.29888703668e-05</trans_z>
+          </worldFixedFrame>
+          <worldMovingFrame>
+            <xAxis_x>0.991473674774</xAxis_x>  <xAxis_y>-0.130307033658</xAxis_y>  <xAxis_z>1.96232988969e-07</xAxis_z>
+            <yAxis_x>0.130307033658</yAxis_x>  <yAxis_y>0.991473674774</yAxis_y>  <yAxis_z>-7.89579068794e-09</yAxis_z>
+            <zAxis_x>-1.93530993897e-07</zAxis_x>  <zAxis_y>3.33990399781e-08</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+            <trans_x>0.0103888995945</trans_x>  <trans_y>0.0897880941629</trans_y>  <trans_z>-1.29888703668e-05</trans_z>
+          </worldMovingFrame>
+        </PhysicsJointLimit>
+        <PhysicsJointLimit>
+          <name>SKEL_PelvisPhysicsJointLimit</name>
+          <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_PelvisPhysicsJointLimit</path>
+          <type>BallSocket</type>
+          <swing1Angle>0.174533</swing1Angle>
+          <swing2Angle>0.174533</swing2Angle>
+          <twistAngle>0.174533</twistAngle>
+          <twistOffset>0</twistOffset>
+          <localFrame>
+            <xAxis_x>-0.522016406059</xAxis_x>  <xAxis_y>0.852935433388</xAxis_y>  <xAxis_z>-1.50995802528e-07</xAxis_z>
+            <yAxis_x>-0.852935433388</yAxis_x>  <yAxis_y>-0.522016406059</yAxis_y>  <yAxis_z>8.74227552572e-08</yAxis_z>
+            <zAxis_x>-4.25632062928e-09</zAxis_x>  <zAxis_y>1.7442577871e-07</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+            <trans_x>-0.0134423002601</trans_x>  <trans_y>-0.00527651002631</trans_y>  <trans_z>-1.29864001792e-05</trans_z>
+          </localFrame>
+          <worldFixedFrame>
+            <xAxis_x>-0.852935433388</xAxis_x>  <xAxis_y>-0.522016465664</xAxis_y>  <xAxis_z>2.97021045981e-07</xAxis_z>
+            <yAxis_x>0.522016465664</yAxis_x>  <yAxis_y>-0.852935433388</yAxis_y>  <yAxis_z>1.95250393631e-07</yAxis_z>
+            <zAxis_x>1.51415846972e-07</zAxis_x>  <zAxis_y>3.21585872598e-07</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+            <trans_x>0.00527651049197</trans_x>  <trans_y>0.0865576937795</trans_y>  <trans_z>-1.299365249e-05</trans_z>
+          </worldFixedFrame>
+          <worldMovingFrame>
+            <xAxis_x>-0.852935433388</xAxis_x>  <xAxis_y>-0.522016465664</xAxis_y>  <xAxis_z>2.97020960716e-07</xAxis_z>
+            <yAxis_x>0.522016465664</yAxis_x>  <yAxis_y>-0.852935433388</yAxis_y>  <yAxis_z>1.95249995727e-07</yAxis_z>
+            <zAxis_x>1.51415974869e-07</zAxis_x>  <zAxis_y>3.21585474694e-07</zAxis_y>  <zAxis_z>1.0</zAxis_z>
+            <trans_x>0.00527651049197</trans_x>  <trans_y>0.0865576937795</trans_y>  <trans_z>-1.299365249e-05</trans_z>
+          </worldMovingFrame>
+        </PhysicsJointLimit>
+          <ChildObjects>
+            <PhysicsBody>
+              <name>SKEL_RootPhysicsBody</name>
+              <path>|Scene|character|physicsCharacter|SKEL_Root|SKEL_RootPhysicsBodyTM|SKEL_RootPhysicsBody</path>
+              <shape>Capsule</shape>
+              <length>0.0103747</length>
+              <radius>0.0274257</radius>
+              <mass>0.110926</mass>
+              <localFrame>
+                <xAxis_x>0.460356205702</xAxis_x>  <xAxis_y>-0.695121347904</xAxis_y>  <xAxis_z>-0.552157998085</xAxis_z>
+                <yAxis_x>0.30487832427</yAxis_x>  <yAxis_y>-0.460356086493</yAxis_y>  <yAxis_z>0.833739578724</yAxis_z>
+                <zAxis_x>-0.833739459515</zAxis_x>  <zAxis_y>-0.552158176899</zAxis_y>  <zAxis_z>-3.4953592376e-07</zAxis_z>
+                <trans_x>-0.00788473337889</trans_x>  <trans_y>-0.00522180274129</trans_y>  <trans_z>-8.65509991854e-06</trans_z>
+              </localFrame>
+              <worldFrame>
+                <xAxis_x>0.69512116909</xAxis_x>  <xAxis_y>0.46035605669</xAxis_y>  <xAxis_z>-0.552158355713</xAxis_z>
+                <yAxis_x>0.460356354713</yAxis_x>  <yAxis_y>0.304878622293</yAxis_y>  <yAxis_z>0.833739340305</yAxis_z>
+                <zAxis_x>0.552158236504</zAxis_x>  <zAxis_y>-0.833739459515</zAxis_y>  <zAxis_z>-2.57784591895e-07</zAxis_z>
+                <trans_x>0.00522180320695</trans_x>  <trans_y>0.0921152606606</trans_y>  <trans_z>-8.66414575285e-06</trans_z>
+              </worldFrame>
+            </PhysicsBody>
+          </ChildObjects>
+      </ChildObjects>
+  </ChildObjects>
+  <CollisionSets>
+    <CollisionSet>
+      <name>All</name>
+      <item>SKEL_HeadPhysicsBody</item>
+      <item>SKEL_L_FLLegPhysicsBody</item>
+      <item>SKEL_L_FULegPhysicsBody</item>
+      <item>SKEL_R_FLLegPhysicsBody</item>
+      <item>SKEL_R_FULegPhysicsBody</item>
+      <item>SKEL_Spine3PhysicsBody</item>
+      <item>SKEL_Spine1PhysicsBody</item>
+      <item>SKEL_Spine0PhysicsBody</item>
+      <item>SKEL_Tail3PhysicsBody</item>
+      <item>SKEL_Tail2PhysicsBody</item>
+      <item>SKEL_Tail1PhysicsBody</item>
+      <item>SKEL_R_BLLegPhysicsBody</item>
+      <item>SKEL_R_BULegPhysicsBody</item>
+      <item>SKEL_L_BLLegPhysicsBody</item>
+      <item>SKEL_L_BULegPhysicsBody</item>
+      <item>SKEL_PelvisPhysicsBody</item>
+      <item>SKEL_RootPhysicsBody</item>
+    </CollisionSet>
+  </CollisionSets>
+</PhysicsCharacter>

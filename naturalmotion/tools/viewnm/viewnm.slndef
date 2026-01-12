@@ -1,0 +1,29 @@
+Solution viewnm { 
+Include %RS_TOOLSROOT%\etc\projgen\sample.slnTargets 
+Include X:\gta5\tools\etc\projgen\sample.slnRules 
+Projects { 
+viewnm viewnm { 
+Dependencies { 
+ RageCore \gta5\src\dev\rage\base\src\vcproj\RageCore\RageCore 
+ RageGraphics \gta5\src\dev\rage\base\src\vcproj\RageGraphics\RageGraphics 
+ RagePhysics \gta5\src\dev\rage\base\src\vcproj\RagePhysics\RagePhysics 
+ RageBaseSample \gta5\src\dev\rage\base\samples\vcproj\RageBaseSample\RageBaseSample 
+ RageAudio \gta5\src\dev\rage\base\src\vcproj\RageAudio\RageAudio 
+ NaturalMotion \gta5\src\dev\rage\naturalmotion\vcproj\NaturalMotion\NaturalMotion 
+ rmptfx x:\gta5\src\dev\rage\suite\src\rmptfx\rmptfx 
+ fragment x:\gta5\src\dev\rage\suite\src\fragment\fragment 
+ cloth x:\gta5\src\dev\rage\suite\src\cloth\cloth 
+ spatialdata x:\gta5\src\dev\rage\base\src\spatialdata\spatialdata 
+ grrope x:\gta5\src\dev\rage\suite\src\grrope\grrope 
+ event x:\gta5\src\dev\rage\suite\src\event\event 
+ eventtypes x:\gta5\src\dev\rage\suite\src\eventtypes\eventtypes 
+ phglass x:\gta5\src\dev\rage\suite\src\phglass\phglass 
+ breakableglass x:\gta5\src\dev\rage\suite\src\breakableglass\breakableglass 
+ sample_physics x:\gta5\src\dev\rage\base\samples\sample_physics\sample_physics 
+ sample_fragment x:\gta5\src\dev\rage\suite\samples\sample_fragment\sample_fragment 
+ sample_rmcore x:\gta5\src\dev\rage\base\samples\sample_rmcore\sample_rmcore 
+ stlport x:\gta5\src\dev\rage\stlport\STLport-5.0RC5\src\stlport 
+} 
+} 
+} 
+} 

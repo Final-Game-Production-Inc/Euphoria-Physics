@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup />
+  <ItemGroup>
+    <ClInclude Include="MinkowskiSumShape.h" />
+    <ClInclude Include="TriangleShape.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="MinkowskiSumShape.cpp" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,33 @@
+// 
+// physics/forcesolver.task 
+// 
+// Copyright (C) 1999-2008 Rockstar Games.  All Rights Reserved. 
+// 
+
+#include "vector/vector3_consts_spu.cpp"
+#include "system/dma.h"
+
+#include "collider.cpp"
+#include "sleep.cpp"
+
+#include "pharticulated/articulatedbody.cpp"
+#include "pharticulated/articulatedcollider.cpp"
+#include "pharticulated/bodyinertia.cpp"
+#include "pharticulated/bodypart.cpp"
+#include "pharticulated/joint.cpp"
+#include "pharticulated/joint1dof.cpp"
+#include "pharticulated/joint3dof.cpp"
+#include "pharticulated/prismaticjoint.cpp"
+#include "pharticulated/spudma.cpp"
+
+#include "phbound/bound.cpp"
+#include "phbound/boundcomposite.cpp"
+#include "phbound/OptimizedBvh.cpp"
+
+#include "phcore/phmath.cpp"
+
+#include "vector/matrix34.cpp"
+#include "vector/quaternion.cpp"
+
+#include "collidertask.cpp"
+#include "phcore/workerthreadmain.cpp"

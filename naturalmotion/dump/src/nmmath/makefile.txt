@@ -1,0 +1,4 @@
+Project nmmath
+Files {
+	OldMath.cpp
+}

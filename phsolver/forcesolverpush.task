@@ -1,0 +1,9 @@
+// 
+// physics/forcesolverpush.task 
+// 
+// Copyright (C) 1999-2008 Rockstar Games.  All Rights Reserved. 
+// 
+
+#define SPU_FORCE_SOLVER_USE_PUSH 1
+
+#include "forcesolver.task"

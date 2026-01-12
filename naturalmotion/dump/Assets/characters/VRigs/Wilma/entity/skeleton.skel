@@ -1,0 +1,594 @@
+Version: 109
+AuthoredOrientation 1
+NumBones 74
+bone0 SKEL_ROOT {
+	offset -0.000000 0.007101 -0.018706
+	euler -0.000000 0.000000 3.141593
+	orient -0.000000 0.000000 3.141593
+	sorient 0.000000 -0.000000 0.000000
+	transX transY transZ rotX rotY rotZ projectData0X 
+	bone1 SKEL_Pelvis {
+		boneid 11816
+		offset -0.000000 -0.000000 0.000000
+		euler -0.000000 1.570796 0.000000
+		orient -0.000000 1.570796 0.000000
+		sorient 0.000000 -0.000000 0.000000
+		rotX rotY rotZ 
+		bone2 SKEL_L_Thigh {
+			boneid 58271
+			offset 0.073508 -0.000226 -0.096118
+			euler -0.042293 0.077150 -0.041698
+			orient -0.042293 0.077150 -0.041698
+			sorient 0.000000 -0.000000 0.000000
+			rotX rotY rotZ 
+			bone3 SKEL_L_Calf {
+				boneid 63931
+				offset 0.406519 -0.000000 -0.000000
+				euler -0.000000 -0.000000 -0.041925
+				orient -0.000000 -0.000000 -0.041925
+				sorient 0.000000 -0.000000 0.000000
+				rotX rotY rotZ 
+				bone4 SKEL_L_Foot {
+					boneid 14201
+					offset 0.412969 -0.000000 0.000000
+					euler -0.074904 -0.024434 1.336501
+					orient -0.074904 -0.024434 1.336501
+					sorient 0.000000 -0.000000 0.000000
+					rotX rotY rotZ 
+					bone5 SKEL_L_Toe0 {
+						boneid 2108
+						offset 0.161524 0.000000 0.000000
+						euler -3.141593 0.000000 0.354662
+						orient -3.141593 0.000000 0.354662
+						sorient 0.000000 -0.000000 0.000000
+						rotX rotY rotZ 
+					}
+				}
+			}
+			bone6 MH_L_Knee {
+				boneid 46078
+				offset 0.406518 0.000000 0.000000
+				euler -0.000000 0.000000 -0.041925
+				orient -0.000000 0.000000 -0.041925
+				sorient 0.000000 -0.000000 0.000000
+				transX transY transZ rotX rotY rotZ 
+			}
+		}
+		bone7 SKEL_R_Thigh {
+			boneid 51826
+			offset 0.073508 -0.000226 0.096118
+			euler 0.042293 -0.077150 -0.041698
+			orient 0.042293 -0.077150 -0.041698
+			sorient 0.000000 -0.000000 0.000000
+			rotX rotY rotZ 
+			bone8 SKEL_R_Calf {
+				boneid 36864
+				offset 0.406519 -0.000000 -0.000000
+				euler -0.000000 0.000000 -0.041925
+				orient -0.000000 0.000000 -0.041925
+				sorient 0.000000 -0.000000 0.000000
+				rotX rotY rotZ 
+				bone9 SKEL_R_Foot {
+					boneid 52301
+					offset 0.412970 0.000000 0.000000
+					euler 0.074906 0.024433 1.336503
+					orient 0.074906 0.024433 1.336503
+					sorient 0.000000 -0.000000 0.000000
+					rotX rotY rotZ 
+					bone10 SKEL_R_Toe0 {
+						boneid 20781
+						offset 0.161524 -0.000000 -0.000000
+						euler 3.141593 -0.000000 0.354662
+						orient 3.141593 -0.000000 0.354662
+						sorient 0.000000 -0.000000 0.000000
+						rotX rotY rotZ 
+					}
+				}
+			}
+			bone11 MH_R_Knee {
+				boneid 16335
+				offset 0.406519 -0.000000 -0.000000
+				euler -0.000000 -0.000000 -0.041925
+				orient -0.000000 -0.000000 -0.041925
+				sorient 0.000000 -0.000000 0.000000
+				transX transY transZ rotX rotY rotZ 
+			}
+		}
+		bone12 RB_L_ThighRoll {
+			boneid 23639
+			offset 0.073508 -0.000226 -0.096118
+			euler -0.042293 0.077150 -0.041697
+			orient -0.042293 0.077150 -0.041697
+			sorient 0.000000 -0.000000 0.000000
+			rotX rotY rotZ 
+		}
+		bone13 RB_R_ThighRoll {
+			boneid 6442
+			offset 0.073508 -0.000226 0.096118
+			euler 0.042293 -0.077150 -0.041698
+			orient 0.042293 -0.077150 -0.041698
+			sorient 0.000000 -0.000000 0.000000
+			rotX rotY rotZ 
+		}
+	}
+	bone14 SKEL_Spine_Root {
+		boneid 57597
+		offset -0.000000 -0.000000 0.000000
+		euler 0.000000 -1.570796 0.000000
+		orient 0.000000 -1.570796 0.000000
+		sorient 0.000000 -0.000000 0.000000
+		rotX rotY rotZ 
+		bone15 SKEL_Spine0 {
+			boneid 23553
+			offset 0.018706 -0.010070 0.000000
+			euler -0.000000 -0.000000 -0.095257
+			orient -0.000000 -0.000000 -0.095257
+			sorient 0.000000 -0.000000 0.000000
+			rotX rotY rotZ 
+			bone16 SKEL_Spine1 {
+				boneid 24816
+				offset 0.084855 0.000000 0.000000
+				euler -0.000010 0.000000 0.088805
+				orient -0.000010 0.000000 0.088805
+				sorient 0.000000 -0.000000 0.000000
+				rotX rotY rotZ 
+				bone17 SKEL_Spine2 {
+					boneid 24817
+					offset 0.085922 0.000000 0.000000
+					euler 0.000010 0.000000 -0.047694
+					orient 0.000010 0.000000 -0.047694
+					sorient 0.000000 -0.000000 0.000000
+					rotX rotY rotZ 
+					bone18 SKEL_Spine3 {
+						boneid 24818
+						offset 0.112896 -0.000000 -0.000000
+						euler -0.000004 0.000000 0.066584
+						orient -0.000004 0.000000 0.066584
+						sorient 0.000000 -0.000000 0.000000
+						rotX rotY rotZ 
+						bone19 SKEL_L_Clavicle {
+							boneid 64729
+							offset 0.218040 0.036434 0.031919
+							euler 2.246564 -1.172932 -2.219702
+							orient 2.246564 -1.172932 -2.219702
+							sorient 0.000000 -0.000000 0.000000
+							rotX rotY rotZ 
+							bone20 SKEL_L_UpperArm {
+								boneid 45509
+								offset 0.181895 0.000000 0.000003
+								euler 0.022373 -0.750219 0.284051
+								orient 0.022373 -0.750219 0.284051
+								sorient 0.000000 -0.000000 0.000000
+								rotX rotY rotZ 
+								bone21 SKEL_L_Forearm {
+									boneid 61163
+									offset 0.274173 0.000000 0.000001
+									euler 0.000000 -0.000001 0.078983
+									orient 0.000000 -0.000001 0.078983
+									sorient 0.000000 -0.000000 0.000000
+									transX transY transZ rotX rotY rotZ 
+									bone22 SKEL_L_Hand {
+										boneid 18905
+										offset 0.259194 0.000000 -0.000002
+										euler 0.000001 -0.000000 0.000000
+										orient 0.000001 -0.000000 0.000000
+										sorient 0.000000 -0.000000 0.000000
+										transX transY transZ rotX rotY rotZ 
+										bone23 SKEL_L_Finger00 {
+											boneid 26610
+											offset 0.025858 0.022765 0.000611
+											euler -0.180539 -0.276654 0.534123
+											orient -0.180539 -0.276654 0.534123
+											sorient 0.000000 -0.000000 0.000000
+											rotX rotY rotZ 
+											bone24 SKEL_L_Finger01 {
+												boneid 4089
+												offset 0.056322 -0.000000 -0.000000
+												euler 0.007063 0.025036 -0.288945
+												orient 0.007063 0.025036 -0.288945
+												sorient 0.000000 -0.000000 0.000000
+												rotX rotY rotZ 
+												bone25 SKEL_L_Finger02 {
+													boneid 4090
+													offset 0.035984 -0.000000 -0.000000
+													euler 0.000878 0.020271 -0.231579
+													orient 0.000878 0.020271 -0.231579
+													sorient 0.000000 -0.000000 0.000000
+													rotX rotY rotZ 
+												}
+											}
+										}
+										bone26 SKEL_L_Finger10 {
+											boneid 26611
+											offset 0.106708 0.029155 -0.021098
+											euler -1.407044 -0.132900 0.026180
+											orient -1.407044 -0.132900 0.026180
+											sorient 0.000000 -0.000000 0.000000
+											rotX rotY rotZ 
+											bone27 SKEL_L_Finger11 {
+												boneid 4169
+												offset 0.047289 -0.000001 0.000000
+												euler -0.017478 -0.068528 -0.491124
+												orient -0.017478 -0.068528 -0.491124
+												sorient 0.000000 -0.000000 0.000000
+												rotX rotY rotZ 
+												bone28 SKEL_L_Finger12 {
+													boneid 4170
+													offset 0.024108 0.000000 -0.000000
+													euler -0.008733 -0.021683 -0.271281
+													orient -0.008733 -0.021683 -0.271281
+													sorient 0.000000 -0.000000 0.000000
+													rotX rotY rotZ 
+												}
+											}
+										}
+										bone29 SKEL_L_Finger20 {
+											boneid 26612
+											offset 0.106343 0.005138 -0.022736
+											euler -1.577120 -0.320738 -0.034929
+											orient -1.577120 -0.320738 -0.034929
+											sorient 0.000000 -0.000000 0.000000
+											rotX rotY rotZ 
+											bone30 SKEL_L_Finger21 {
+												boneid 4185
+												offset 0.051797 -0.000001 -0.000000
+												euler -0.007628 -0.032687 -0.411806
+												orient -0.007628 -0.032687 -0.411806
+												sorient 0.000000 -0.000000 0.000000
+												rotX rotY rotZ 
+												bone31 SKEL_L_Finger22 {
+													boneid 4186
+													offset 0.032839 0.000001 0.000000
+													euler -0.020065 -0.062543 -0.409392
+													orient -0.020065 -0.062543 -0.409392
+													sorient 0.000000 -0.000000 0.000000
+													rotX rotY rotZ 
+												}
+											}
+										}
+										bone32 SKEL_L_Finger30 {
+											boneid 26613
+											offset 0.100143 -0.017510 -0.013328
+											euler -1.812123 -0.265007 -0.132989
+											orient -1.812123 -0.265007 -0.132989
+											sorient 0.000000 -0.000000 0.000000
+											rotX rotY rotZ 
+											bone33 SKEL_L_Finger31 {
+												boneid 4137
+												offset 0.044589 -0.000000 0.000000
+												euler 0.004051 -0.001734 -0.505204
+												orient 0.004051 -0.001734 -0.505204
+												sorient 0.000000 -0.000000 0.000000
+												rotX rotY rotZ 
+												bone34 SKEL_L_Finger32 {
+													boneid 4138
+													offset 0.030654 -0.000000 -0.000000
+													euler -0.051024 -0.022217 -0.454524
+													orient -0.051024 -0.022217 -0.454524
+													sorient 0.000000 -0.000000 0.000000
+													rotX rotY rotZ 
+												}
+											}
+										}
+										bone35 SKEL_L_Finger40 {
+											boneid 26614
+											offset 0.093704 -0.033939 0.001599
+											euler -1.984890 -0.115676 -0.245319
+											orient -1.984890 -0.115676 -0.245319
+											sorient 0.000000 -0.000000 0.000000
+											rotX rotY rotZ 
+											bone36 SKEL_L_Finger41 {
+												boneid 4153
+												offset 0.038221 0.000000 0.000000
+												euler 0.022634 -0.044461 -0.715423
+												orient 0.022634 -0.044461 -0.715423
+												sorient 0.000000 -0.000000 0.000000
+												rotX rotY rotZ 
+												bone37 SKEL_L_Finger42 {
+													boneid 4154
+													offset 0.022898 0.000000 -0.000000
+													euler -0.039205 -0.020508 -0.208308
+													orient -0.039205 -0.020508 -0.208308
+													sorient 0.000000 -0.000000 0.000000
+													rotX rotY rotZ 
+												}
+											}
+										}
+										bone38 PH_L_Hand {
+											boneid 60309
+											offset 0.054434 -0.000000 -0.000000
+											euler 0.000001 -0.000000 0.000000
+											orient 0.000001 -0.000000 0.000000
+											sorient 0.000000 -0.000000 0.000000
+											transX transY transZ rotX rotY rotZ 
+										}
+										bone39 IK_L_Hand {
+											boneid 36029
+											offset 0.054434 -0.000000 -0.000000
+											euler 0.000001 -0.000000 0.000000
+											orient 0.000001 -0.000000 0.000000
+											sorient 0.000000 -0.000000 0.000000
+											transX transY transZ rotX rotY rotZ 
+										}
+									}
+									bone40 RB_L_ForeArmRoll {
+										boneid 61007
+										offset 0.129598 -0.000000 -0.000000
+										euler 0.000001 -0.000000 0.000000
+										orient 0.000001 -0.000000 0.000000
+										sorient 0.000000 -0.000000 0.000000
+										rotX rotY rotZ 
+									}
+								}
+								bone41 RB_L_ArmRoll {
+									boneid 5232
+									offset 0.000000 0.000000 -0.000000
+									euler 0.000001 -0.000001 0.000000
+									orient 0.000001 -0.000001 0.000000
+									sorient 0.000000 -0.000000 0.000000
+									rotX rotY rotZ 
+								}
+								bone42 MH_L_Elbow {
+									boneid 22711
+									offset 0.274173 -0.000000 0.000001
+									euler 0.000000 -0.000001 0.078983
+									orient 0.000000 -0.000001 0.078983
+									sorient 0.000000 -0.000000 0.000000
+									transX transY transZ rotX rotY rotZ 
+								}
+								bone43 MH_L_Bicep {
+									boneid 54337
+									offset 0.180821 0.048885 0.025786
+									euler 0.000000 -0.000000 0.000000
+									orient 0.000000 -0.000000 0.000000
+									sorient 0.000000 -0.000000 0.000000
+									scaleX scaleY scaleZ rotX rotY rotZ 
+								}
+							}
+						}
+						bone44 SKEL_R_Clavicle {
+							boneid 10706
+							offset 0.218040 0.036434 -0.031919
+							euler -2.246579 1.172938 -2.219714
+							orient -2.246579 1.172938 -2.219714
+							sorient 0.000000 -0.000000 0.000000
+							rotX rotY rotZ 
+							bone45 SKEL_R_UpperArm {
+								boneid 40269
+								offset 0.181896 0.000000 -0.000002
+								euler -0.022372 0.750219 0.284051
+								orient -0.022372 0.750219 0.284051
+								sorient 0.000000 -0.000000 0.000000
+								rotX rotY rotZ 
+								bone46 SKEL_R_Forearm {
+									boneid 28252
+									offset 0.274172 0.000000 -0.000002
+									euler 0.000001 0.000000 0.078984
+									orient 0.000001 0.000000 0.078984
+									sorient 0.000000 -0.000000 0.000000
+									transX transY transZ rotX rotY rotZ 
+									bone47 SKEL_R_Hand {
+										boneid 57005
+										offset 0.259194 0.000000 0.000002
+										euler 0.000001 -0.000000 -0.000001
+										orient 0.000001 -0.000000 -0.000001
+										sorient 0.000000 -0.000000 0.000000
+										transX transY transZ rotX rotY rotZ 
+										bone48 SKEL_R_Finger00 {
+											boneid 58866
+											offset 0.025859 0.022765 -0.000612
+											euler 0.180542 0.276651 0.534122
+											orient 0.180542 0.276651 0.534122
+											sorient 0.000000 -0.000000 0.000000
+											rotX rotY rotZ 
+											bone49 SKEL_R_Finger01 {
+												boneid 64016
+												offset 0.056322 -0.000000 0.000000
+												euler -0.007057 -0.025042 -0.288949
+												orient -0.007057 -0.025042 -0.288949
+												sorient 0.000000 -0.000000 0.000000
+												rotX rotY rotZ 
+												bone50 SKEL_R_Finger02 {
+													boneid 64017
+													offset 0.035984 -0.000000 0.000000
+													euler -0.000871 -0.020266 -0.231586
+													orient -0.000871 -0.020266 -0.231586
+													sorient 0.000000 -0.000000 0.000000
+													rotX rotY rotZ 
+												}
+											}
+										}
+										bone51 SKEL_R_Finger10 {
+											boneid 58867
+											offset 0.106709 0.029155 0.021097
+											euler -1.734551 0.132899 0.026180
+											orient -1.734551 0.132899 0.026180
+											sorient 0.000000 -0.000000 0.000000
+											rotX rotY rotZ 
+											bone52 SKEL_R_Finger11 {
+												boneid 64096
+												offset 0.047290 -0.000000 -0.000000
+												euler 0.017477 -0.068528 0.491125
+												orient 0.017477 -0.068528 0.491125
+												sorient 0.000000 -0.000000 0.000000
+												rotX rotY rotZ 
+												bone53 SKEL_R_Finger12 {
+													boneid 64097
+													offset 0.024108 0.000001 0.000000
+													euler 0.008733 -0.021683 0.271281
+													orient 0.008733 -0.021683 0.271281
+													sorient 0.000000 -0.000000 0.000000
+													rotX rotY rotZ 
+												}
+											}
+										}
+										bone54 SKEL_R_Finger20 {
+											boneid 58868
+											offset 0.106344 0.005138 0.022735
+											euler -1.564474 0.320737 -0.034929
+											orient -1.564474 0.320737 -0.034929
+											sorient 0.000000 -0.000000 0.000000
+											rotX rotY rotZ 
+											bone55 SKEL_R_Finger21 {
+												boneid 64112
+												offset 0.051797 0.000001 -0.000000
+												euler 0.007627 -0.032687 0.411805
+												orient 0.007627 -0.032687 0.411805
+												sorient 0.000000 -0.000000 0.000000
+												rotX rotY rotZ 
+												bone56 SKEL_R_Finger22 {
+													boneid 64113
+													offset 0.032839 0.000000 0.000000
+													euler 0.020064 -0.062543 0.409392
+													orient 0.020064 -0.062543 0.409392
+													sorient 0.000000 -0.000000 0.000000
+													rotX rotY rotZ 
+												}
+											}
+										}
+										bone57 SKEL_R_Finger30 {
+											boneid 58869
+											offset 0.100144 -0.017510 0.013328
+											euler -1.329468 0.265006 -0.132990
+											orient -1.329468 0.265006 -0.132990
+											sorient 0.000000 -0.000000 0.000000
+											rotX rotY rotZ 
+											bone58 SKEL_R_Finger31 {
+												boneid 64064
+												offset 0.044589 0.000000 -0.000000
+												euler -0.004051 -0.001737 0.505204
+												orient -0.004051 -0.001737 0.505204
+												sorient 0.000000 -0.000000 0.000000
+												rotX rotY rotZ 
+												bone59 SKEL_R_Finger32 {
+													boneid 64065
+													offset 0.030654 0.000000 0.000000
+													euler 0.051024 -0.022219 0.454524
+													orient 0.051024 -0.022219 0.454524
+													sorient 0.000000 -0.000000 0.000000
+													rotX rotY rotZ 
+												}
+											}
+										}
+										bone60 SKEL_R_Finger40 {
+											boneid 58870
+											offset 0.093705 -0.033939 -0.001600
+											euler -1.156699 0.115678 -0.245321
+											orient -1.156699 0.115678 -0.245321
+											sorient 0.000000 -0.000000 0.000000
+											rotX rotY rotZ 
+											bone61 SKEL_R_Finger41 {
+												boneid 64080
+												offset 0.038221 -0.000000 0.000000
+												euler -0.022631 -0.044462 0.715424
+												orient -0.022631 -0.044462 0.715424
+												sorient 0.000000 -0.000000 0.000000
+												rotX rotY rotZ 
+												bone62 SKEL_R_Finger42 {
+													boneid 64081
+													offset 0.022898 -0.000000 0.000000
+													euler 0.039205 -0.020507 0.208309
+													orient 0.039205 -0.020507 0.208309
+													sorient 0.000000 -0.000000 0.000000
+													rotX rotY rotZ 
+												}
+											}
+										}
+										bone63 PH_R_Hand {
+											boneid 28422
+											offset 0.054435 0.000000 -0.000000
+											euler 0.000001 -0.000001 -0.000001
+											orient 0.000001 -0.000001 -0.000001
+											sorient 0.000000 -0.000000 0.000000
+											transX transY transZ rotX rotY rotZ 
+										}
+										bone64 IK_R_Hand {
+											boneid 6286
+											offset 0.054435 0.000000 -0.000000
+											euler 0.000001 -0.000001 -0.000001
+											orient 0.000001 -0.000001 -0.000001
+											sorient 0.000000 -0.000000 0.000000
+											transX transY transZ rotX rotY rotZ 
+										}
+									}
+									bone65 RB_R_ForeArmRoll {
+										boneid 43810
+										offset 0.129598 0.000000 0.000000
+										euler 0.000001 0.000000 -0.000001
+										orient 0.000001 0.000000 -0.000001
+										sorient 0.000000 -0.000000 0.000000
+										rotX rotY rotZ 
+									}
+								}
+								bone66 RB_R_ArmRoll {
+									boneid 37119
+									offset 0.000000 -0.000000 0.000000
+									euler 0.000001 0.000001 0.000000
+									orient 0.000001 0.000001 0.000000
+									sorient 0.000000 -0.000000 0.000000
+									rotX rotY rotZ 
+								}
+								bone67 MH_R_Elbow {
+									boneid 2992
+									offset 0.274173 0.000000 -0.000001
+									euler 0.000001 0.000001 0.078984
+									orient 0.000001 0.000001 0.078984
+									sorient 0.000000 -0.000000 0.000000
+									transX transY transZ rotX rotY rotZ 
+								}
+								bone68 MH_R_Bicep {
+									boneid 34618
+									offset 0.181000 0.048889 -0.025513
+									euler 0.000000 0.000001 -0.022141
+									orient 0.000000 0.000001 -0.022141
+									sorient 0.000000 -0.000000 0.000000
+									scaleX scaleY scaleZ rotX rotY rotZ 
+								}
+							}
+						}
+						bone69 SKEL_Neck_1 {
+							boneid 39317
+							offset 0.248499 -0.000000 -0.000000
+							euler 0.000006 -0.000001 0.218665
+							orient 0.000006 -0.000001 0.218665
+							sorient 0.000000 -0.000000 0.000000
+							rotX rotY rotZ 
+							bone70 SKEL_Head {
+								boneid 31086
+								offset 0.113076 -0.000001 0.000000
+								euler 0.000024 0.000001 -0.239909
+								orient 0.000024 0.000001 -0.239909
+								sorient 0.000000 -0.000000 0.000000
+								rotX rotY rotZ 
+							}
+							bone71 RB_Neck_1 {
+								boneid 35731
+								offset 0.056537 0.000000 -0.000000
+								euler 0.000009 -0.000000 -0.000001
+								orient 0.000009 -0.000000 -0.000001
+								sorient 0.000000 -0.000000 0.000000
+								rotX rotY rotZ 
+							}
+						}
+						bone72 SPR_L_Breast {
+							boneid 64654
+							offset -0.000247 0.186703 0.094470
+							euler 3.128556 -1.570796 0.000000
+							orient 3.128556 -1.570796 0.000000
+							sorient 0.000000 -0.000000 0.000000
+							transX transY transZ rotX rotY rotZ 
+						}
+						bone73 SPR_R_Breast {
+							boneid 34911
+							offset -0.000250 0.186672 -0.094535
+							euler 3.128556 -1.570796 0.000000
+							orient 3.128556 -1.570796 0.000000
+							sorient 0.000000 -0.000000 0.000000
+							transX transY transZ rotX rotY rotZ 
+						}
+					}
+				}
+			}
+		}
+	}
+}

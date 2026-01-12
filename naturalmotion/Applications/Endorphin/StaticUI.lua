@@ -1,0 +1,468 @@
+-- Run the python UI startup script
+--
+app.scene():runPython("execfile('" .. app.path("Scripts"):gsub("\\","/") .. "PythonStartup.py')")
+
+------------------------------------------------------------------------------------------------------------------------
+-- Window menu definition
+------------------------------------------------------------------------------------------------------------------------
+local WindowMenuStructure = {
+					 { "General",       { "Animation Curves", "Attribute Connections", "Attributes", "Collision Groups", "Display Groups", "Explorer", "Object Connections", "Scripts", "Selection Groups", "Simulation Scripts", "Timeline", "Trajectories"  } },
+					 { "Utility",       { "Log", "Plugins"  } },
+           { "Viewports",     { "Viewport 1",  "Viewport 2",  "Viewport 3",  "Viewport 4"} } }
+           
+------------------------------------------------------------------------------------------------------------------------
+-- Utility functions
+------------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------------------
+function loadUtilities()
+	local fullname = utils.getRootFolder() .. "\\scripts\\utils.lua"
+	dofile(fullname)
+end
+
+------------------------------------------------------------------------------------------------------------------------
+function showWindow(windowName)
+  local layoutManager = ui.getWindow("MainFrame|LayoutManager")
+  if (layoutManager:isShown(windowName)) then
+    layoutManager:showWindow{name = windowName, show = false}
+  else
+    layoutManager:showWindow{name = windowName, show = true}
+  end
+end
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+-- File menu
+------------------------------------------------------------------------------------------------------------------------
+
+function addFileMenu(mainMenuBar)
+
+  local fileMenu = mainMenuBar:addSubMenu{label = "File"}
+  fileMenu:addItem{label = "New",         accelerator = "Ctrl+N",       onClick = "app.newScene()" }
+  fileMenu:addSeparator()
+  fileMenu:addItem{label = "Open...",     accelerator = "Ctrl+O",       onClick = "app.openScene()" }
+  fileMenu:addStockMenu{type = "RecentFilesMenu", label = "Open Recent"}
+  fileMenu:addSeparator()
+  fileMenu:addItem{label = "Save",        accelerator = "Ctrl+S",       onClick = "app.saveScene()" }
+  fileMenu:addItem{label = "Save As...",                                onClick = "app.saveSceneAs()" }  
+  fileMenu:addSeparator()
+  fileMenu:addItem{label = "Import...",                                 onClick = "app.scene():run('ImportFile')", onButtonClick = "app.select('ImportFile')" }
+  fileMenu:addItem{label = "Export...",                                 onClick = "app.scene():run('ExportFile')", onButtonClick = "app.select('ExportFile')" }
+  fileMenu:addSeparator()
+  fileMenu:addItem{label = "Save Settings",                             onClick = "app.saveSettings()" }
+  fileMenu:addItem{label = "Load Settings",                             onClick = "app.loadSettings()" }  
+  fileMenu:addSeparator()
+  fileMenu:addItem{label = "Run Command",      accelerator = "Ctrl+G", onClick = "app.runLastCommand()" }  
+  fileMenu:addSeparator()
+  fileMenu:addItem{label = "Exit",                                      onClick = "app.exit()" }
+
+end
+
+
+------------------------------------------------------------------------------------------------------------------------
+-- Create menu
+------------------------------------------------------------------------------------------------------------------------
+
+function addCreateMenu(mainMenuBar)
+  
+  local createMenu = mainMenuBar:addSubMenu{label = "Create"}
+  createMenu:addItem{label = "Joint",                  onClick = "app.scene():run('CreateJoint')",             onButtonClick = "app.select('CreateJoint')"}
+  createMenu:addItem{label = "Joint Limit",            onClick = "app.scene():run('CreateJointLimit')",        onButtonClick = "app.select('CreateJointLimit')"}
+  createMenu:addItem{label = "Shape",                  onClick = "app.scene():run('CreateShape')",             onButtonClick = "app.select('CreateShape')" }
+  createMenu:addItem{label = "Transform",              onClick = "app.scene():run('CreateTransform')",         onButtonClick = "app.select('CreateTransform')"}
+  createMenu:addSeparator()
+  createMenu:addItem{label = "Physics Body",           onClick = "app.scene():run('CreatePhysicsBody')",       onButtonClick = "app.select('CreatePhysicsBody')" }
+  createMenu:addItem{label = "Physics Constraint",     onClick = "app.scene():run('CreatePhysicsConstraint')", onButtonClick = "app.select('CreatePhysicsConstraint')" }
+  createMenu:addItem{label = "Physics Joint",          onClick = "app.scene():run('CreatePhysicsJoint')",      onButtonClick = "app.select('CreatePhysicsJoint')"}
+  createMenu:addItem{label = "Physics Joint Limit",    onClick = "app.scene():run('CreatePhysicsJointLimit')", onButtonClick = "app.select('CreatePhysicsJointLimit')"}
+
+end
+
+
+------------------------------------------------------------------------------------------------------------------------
+-- Tools menu
+------------------------------------------------------------------------------------------------------------------------
+
+function addToolsMenu(mainMenuBar)
+
+  local toolMenu = mainMenuBar:addSubMenu{label = "Tools"}
+  
+  toolMenu:addItem{label = "Select Tool",      accelerator = "Q",      onClick = "app.scene():run('ActivateSelectTool')" }
+  toolMenu:addItem{label = "Move Tool",        accelerator = "W",      onClick = "app.scene():run('ActivateMoveTool')" }
+  toolMenu:addItem{label = "Rotate Tool",      accelerator = "E",      onClick = "app.scene():run('ActivateRotateTool')" }
+  toolMenu:addItem{label = "Scale Tool",       accelerator = "R",      onClick = "app.scene():run('ActivateScaleTool')" }
+  toolMenu:addItem{label = "Timing Tool",      accelerator = "T",      onClick = "app.scene():run('ActivateTimingTool')" }
+  toolMenu:addSeparator()
+  toolMenu:addItem{label = "Toggle Tool Axis",  accelerator = "X",           onClick = "app.scene():run('ToggleToolAxis')" }
+  toolMenu:addSeparator()
+  local physicsConstraintMenu = toolMenu:addSubMenu{label = "Toggle Sub-Object Mode"}
+  
+  physicsConstraintMenu:addItem{label = "Toggle Mode 1", accelerator = "F5", onClick = "app.scene():run('ToggleSelectedObjectSubObjectEditMode_1')" }
+  physicsConstraintMenu:addItem{label = "Toggle Mode 2", accelerator = "F6", onClick = "app.scene():run('ToggleSelectedObjectSubObjectEditMode_2')" }
+  physicsConstraintMenu:addItem{label = "Toggle Mode 3", accelerator = "F7", onClick = "app.scene():run('ToggleSelectedObjectSubObjectEditMode_3')" }
+  physicsConstraintMenu:addItem{label = "Toggle Mode 4", accelerator = "F8", onClick = "app.scene():run('ToggleSelectedObjectSubObjectEditMode_4')" }
+ end
+
+
+------------------------------------------------------------------------------------------------------------------------
+-- Edit menu
+------------------------------------------------------------------------------------------------------------------------
+
+function addEditMenu(mainMenuBar)
+
+  local editMenu = mainMenuBar:addSubMenu{label = "Edit"}
+  
+  editMenu:addItem{label = "Undo",              accelerator = "Ctrl+Z", onClick = "app.scene():run('Undo')" }
+  editMenu:addItem{label = "Redo",              accelerator = "Ctrl+Y", onClick = "app.scene():run('Redo')" }
+  editMenu:addSeparator()  
+  editMenu:addItem{label = "Delete",           accelerator = "Delete",      onClick = "app.scene():run('Delete')" }
+  editMenu:addItem{label = "Remove",           accelerator = "Ctrl+Delete", onClick = "app.scene():run('Remove')" }
+  editMenu:addSeparator()  
+  editMenu:addItem{label = "Parent",            onClick = "app.scene():run('Parent')",     accelerator = "P" }
+  editMenu:addItem{label = "Unparent",          onClick = "app.scene():run('Unparent')",   accelerator = "U" }
+  editMenu:addItem{label = "Group",             onClick = "app.scene():run('Group')",      accelerator = "G" }
+  editMenu:addSeparator()
+  editMenu:addItem{label = "Copy",         accelerator = "Ctrl+C",      onClick = "app.scene():run('Copy')" }
+  editMenu:addItem{label = "Paste",         accelerator = "Ctrl+V",      onClick = "app.scene():run('Paste')" }
+  editMenu:addItem{label = "Duplicate",         accelerator = "Ctrl+D",      onClick = "app.scene():runPython('nmxu.Copy()')" }
+  editMenu:addItem{label = "Mirror",            accelerator = "Ctrl+M",      onClick = "app.scene():run('Mirror')", onButtonClick = "app.select('Mirror')" }
+  editMenu:addSeparator()
+  editMenu:addItem{label = "Characterize",      onClick = "app.scene():run('Characterize')" }
+  editMenu:addSeparator()
+  editMenu:addItem{label = "Select All",      accelerator = "Ctrl+Shift+A",      onClick = "app.scene():run('SelectAll')" }
+  editMenu:addItem{label = "Select Parent",   accelerator = "Shift+Up",    onClick = "app.scene():run('SelectParent')" }
+  editMenu:addItem{label = "Select Child",    accelerator = "Shift+Down",  onClick = "app.scene():run('SelectChild')" }
+  editMenu:addItem{label = "Select Previous", accelerator = "Shift+Left",  onClick = "app.scene():run('SelectPrevious')" }
+  editMenu:addItem{label = "Select Next",     accelerator = "Shift+Right", onClick = "app.scene():run('SelectNext')" }
+  editMenu:addItem{label = "Clear Selection",                              onClick = "app.scene():run('ClearSelection')" }
+ end
+ 
+
+------------------------------------------------------------------------------------------------------------------------
+-- Modify menu
+------------------------------------------------------------------------------------------------------------------------
+
+function addModifyMenu(mainMenuBar)
+
+  local modifyMenu = mainMenuBar:addSubMenu{label = "Modify"}
+
+  modifyMenu:addItem{label = "Align Axis",         onClick = "app.scene():run('AlignAxis')",       onButtonClick = "app.select('AlignAxis')" }
+  modifyMenu:addItem{label = "Align Joint Limit",  onClick = "app.scene():run('AlignJointLimit')", onButtonClick = "app.select('AlignJointLimit')" }
+  modifyMenu:addItem{label = "Align Hinge Offset", onClick = "app.scene():run('AlignHingeOffset')"}
+  modifyMenu:addSeparator()
+  modifyMenu:addItem{label = "Freeze Transform",   onClick = "app.scene():run('FreezeTransform')", onButtonClick = "app.select('FreezeTransform')" }
+end
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+-- View menu
+------------------------------------------------------------------------------------------------------------------------
+
+function addViewMenu(mainMenuBar)
+  
+  local viewMenu = mainMenuBar:addSubMenu{name = "ViewportMenu", label = "View"}
+
+  viewMenu:addCheckedItem{name = "PerspectiveMenuItem", label = "Perspective", accelerator = "1", onClick = "app.scene():setActiveCamera('perspective')"}
+  viewMenu:addCheckedItem{name = "FrontMenuItem",       label = "Front",       accelerator = "2", onClick = "app.scene():setActiveCamera('front')"}
+  viewMenu:addCheckedItem{name = "SideMenuItem",        label = "Side",        accelerator = "3", onClick = "app.scene():setActiveCamera('side')"}
+  viewMenu:addCheckedItem{name = "TopMenuItem",         label = "Top",         accelerator = "4", onClick = "app.scene():setActiveCamera('top')"}
+  viewMenu:addSeparator()
+  
+  viewMenu:addCheckedItem{name = "ObjectColourMenuItem",         label = "Standard Colour",  onClick = "app.scene():setColourMode('Object')"}
+  viewMenu:addCheckedItem{name = "DisplayGroupColourMenuItem"  , label = "Display Groups",   onClick = "app.scene():setColourMode('DisplayGroup')"}
+  viewMenu:addCheckedItem{name = "SelectionGroupColourMenuItem", label = "Selection Groups", onClick = "app.scene():setColourMode('SelectionGroup')"}
+  viewMenu:addCheckedItem{name = "CollisionGroupColourMenuItem", label = "Collision Groups", onClick = "app.scene():setColourMode('CollisionGroup')"}
+  viewMenu:addSeparator()
+
+  viewMenu:addCheckedItem{name = "NormalDisplayMenuItem", label = "Normal Shading", onClick = "app.scene():setDisplayMode('Normal')"}
+  viewMenu:addCheckedItem{name = "XRayDisplayMenuItem",   label = "X-Ray Shading",  onClick = "app.scene():setDisplayMode('XRay')"}
+  viewMenu:addSeparator()
+  viewMenu:addItem{label = "Toggle Shading", accelerator = "Ctrl+A", onClick = "app.scene():toggleDisplayMode()"}
+  viewMenu:addSeparator()
+
+  viewMenu:addItem{label = "Zoom To Fit", accelerator = "F", onClick = "app.scene():run(\"ZoomToFit\")"}
+  viewMenu:addSeparator()
+
+  local showMenu = viewMenu:addSubMenu{name = "ShowMenu", label = "Show Filter"}  
+  showMenu:addItem{name = "ShowAllMenuItem", label = "Show All", onClick = "app.scene():showAllObjectTypes()"}
+  showMenu:addItem{name = "HideAllMenuItem", label = "Hide All", onClick = "app.scene():hideAllObjectTypes()"}
+  showMenu:addSeparator()
+  showMenu:addCheckedItem{name = "ShowCamerasMenuItem",       label = "Cameras",        onClick = "app.scene():toggleObjectTypeShown('Camera')"}
+  showMenu:addCheckedItem{name = "ShowIKHandlesMenuItem",     label = "IK Handles",     onClick = "app.scene():toggleObjectTypeShown('IKHandle')"}
+  showMenu:addCheckedItem{name = "ShowJointsMenuItem",        label = "Joints",         onClick = "app.scene():toggleObjectTypeShown('Joint')"}
+  showMenu:addCheckedItem{name = "ShowJointLimitsMenuItem",   label = "Joint Limits",   onClick = "app.scene():toggleObjectTypeShown('JointLimit')"}
+  showMenu:addCheckedItem{name = "ShowMeshInstancesMenuItem", label = "Mesh Instances", onClick = "app.scene():toggleObjectTypeShown('MeshInstance')"}
+  showMenu:addCheckedItem{name = "ShowShapesMenuItem",        label = "Shapes",         onClick = "app.scene():toggleObjectTypeShown('Primitive')"}
+  showMenu:addCheckedItem{name = "ShowTrajectoriesMenuItem",  label = "Trajectories",   onClick = "app.scene():toggleObjectTypeShown('Trajectory')"}
+  showMenu:addCheckedItem{name = "ShowTransformsMenuItem",    label = "Transforms",     onClick = "app.scene():toggleObjectTypeShown('Transform')"}
+  showMenu:addSeparator()
+  showMenu:addCheckedItem{name = "ShowPhysicsBodiesMenuItem",      label = "Physics Bodies",       onClick = "app.scene():toggleObjectTypeShown('PhysicsBody')"}
+  showMenu:addCheckedItem{name = "ShowPhysicsConstraintsMenuItem", label = "Physics Controllers",  onClick = "app.scene():toggleObjectTypeShown('PhysicsConstraint')"}
+  showMenu:addCheckedItem{name = "ShowPhysicsJointsMenuItem",      label = "Physics Joints",       onClick = "app.scene():toggleObjectTypeShown('PhysicsJoint')"}
+  showMenu:addCheckedItem{name = "ShowPhysicsJointLimitsMenuItem", label = "Physics Joint Limits", onClick = "app.scene():toggleObjectTypeShown('PhysicsJointLimit')"}
+  showMenu:addSeparator()
+  showMenu:addCheckedItem{name = "ShowGridMenuItem", label = "Grid", onClick = "app.scene():toggleObjectTypeShown('Grid')"}
+
+end
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+-- Trajectory menu
+------------------------------------------------------------------------------------------------------------------------
+
+function addTrajectoryMenu(mainMenuBar)
+  
+  local trajectoryMenu = mainMenuBar:addSubMenu{label = "Trajectory"}
+
+  trajectoryMenu:addItem{label = "Generate Trajectory",             onClick = "app.scene():run('GenerateTrajectory')",      onButtonClick = "app.select('GenerateTrajectory')" }
+  trajectoryMenu:addItem{label = "Generate Motion Path",            onClick = "app.scene():run('GenerateMotionPath')" }
+  trajectoryMenu:addSeparator()
+  trajectoryMenu:addItem{label = "Fit Trajectory", onClick = "app.scene():run('FitTrajectory')", onButtonClick = "app.select('FitTrajectory')" }
+  trajectoryMenu:addItem{label = "Convert To Spline", onClick = "app.scene():run('ToSplineTrajectory')" }
+  trajectoryMenu:addItem{label = "Sample Trajectory Uniformly", onClick = "app.scene():run('SampleTrajectoryUniformly')", onButtonClick = "app.select('SampleTrajectoryUniformly')" }
+  trajectoryMenu:addItem{label = "Sample Trajectory Adaptively", onClick = "app.scene():run('SampleTrajectoryAdaptively')", onButtonClick = "app.select('SampleTrajectoryAdaptively')" }
+end
+
+
+------------------------------------------------------------------------------------------------------------------------
+-- IK menu
+------------------------------------------------------------------------------------------------------------------------
+
+function addIKMenu(mainMenuBar)
+  
+  local ikMenu = mainMenuBar:addSubMenu{label = "IK"}
+  ikMenu:addItem{label = "Create Rig",        onClick = "app.scene():run('CreateIKRig')" }
+  ikMenu:addSeparator()
+  ikMenu:addItem{label = "Set Bind Pose",        onClick = "app.scene():run('SetIKBindPose')" }
+  ikMenu:addItem{label = "Clear Last Bind Pose", onClick = "app.scene():run('ClearLastIKBindPose')" }
+  ikMenu:addItem{label = "Clear All Bind Poses", onClick = "app.scene():run('ClearAllIKBindPoses')" }
+  ikMenu:addSeparator()
+  ikMenu:addItem{label = "Set Root Joints",      onClick = "app.scene():run('SetIKRootJoints')"}
+  ikMenu:addItem{label = "Set End Effectors",    onClick = "app.scene():run('SetIKEndEffectors')" }
+  ikMenu:addSeparator()
+  ikMenu:addItem{label = "Create Pole Vector",     onClick = "app.scene():run('CreatePoleVector')" }
+  ikMenu:addItem{label = "Set Pole Vector Pairs",onClick = "app.scene():run('SetIKPoleVectorPairs')" }
+ 
+  ikMenu:addSeparator()
+  ikMenu:addItem{label = "Retarget Source To Target Rig", onClick = "app.scene():run('RetargetAttach')" }
+  ikMenu:addItem{label = "Disconnect Retargeting Source Rig", onClick = "app.scene():run('RetargetDetach')" }
+  ikMenu:addItem{label = "Set Rig Retarget Origins", onClick = "app.scene():run('RetargetSetJointOrigins')" }
+  ikMenu:addItem{label = "Set Rig To Retarget Origin", onClick = "app.scene():run('RetargetSetJointsToOrigin')" }
+  ikMenu:addItem{label = "Set Joint Reference Joint", onClick = "app.scene():run('RetargetSetJointReferent')" }
+  ikMenu:addItem{label = "Set Joint Referent To World", onClick = "app.scene():run('RetargetSetJointReferenttoWorld')" }
+  ikMenu:addItem{label = "Reset Rig Reference Joints", onClick = "app.scene():run('RetargetResetJointReferents')" }
+  ikMenu:addItem{label = "Disconnect retargeting source rig", onClick = "app.scene():run('RetargetDetach')", onButtonClick = "app.select('RetargetDetach')" }
+  ikMenu:addItem{label = "Set rig retarget origins", onClick = "app.scene():run('RetargetSetJointOrigins')", onButtonClick = "app.select('RetargetSetJointOrigins')" }
+  ikMenu:addItem{label = "Set rig to retarget origin", onClick = "app.scene():run('RetargetSetJointsToOrigin')", onButtonClick = "app.select('RetargetSetJointsToOrigin')" }
+  ikMenu:addItem{label = "Set joint reference joint", onClick = "app.scene():run('RetargetSetJointReferent')", onButtonClick = "app.select('RetargetSetJointReferent')" }
+  ikMenu:addItem{label = "Set joint referent to world", onClick = "app.scene():run('RetargetSetJointReferenttoWorld')", onButtonClick = "app.select('RetargetSetJointReferentToWorld')" }
+  ikMenu:addItem{label = "Reset rig reference joints", onClick = "app.scene():run('RetargetResetJointReferents')", onButtonClick = "app.select('RetargetResetJointReferents')" }
+end
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+-- Animation menu
+------------------------------------------------------------------------------------------------------------------------
+
+function addAnimationMenu(mainMenuBar)
+
+  local animationMenu = mainMenuBar:addSubMenu{label = "Animation"}
+  animationMenu:addItem{label = "Play",         accelerator = "Space",            onClick = "app.scene():run('PlayToggle')" }
+  animationMenu:addSeparator()
+  animationMenu:addItem{label = "First Frame",       accelerator = "Ctrl+Shift+Left",  onClick = "app.scene():run('GoToFirstFrame')" }
+  animationMenu:addItem{label = "Previous Frame",    accelerator = "Ctrl+Left",        onClick = "app.scene():run('GoToPreviousFrame')" }
+  animationMenu:addItem{label = "Next Frame",        accelerator = "Ctrl+Right",       onClick = "app.scene():run('GoToNextFrame')" }
+  animationMenu:addItem{label = "Last Frame",        accelerator = "Ctrl+Shift+Right", onClick = "app.scene():run('GoToLastFrame')" }
+  animationMenu:addSeparator()
+  animationMenu:addItem{label = "Set Key",           accelerator = "S",                onClick = "app.scene():run('SetKey')" }
+  animationMenu:addSeparator()
+  animationMenu:addItem{label = "Create Aim Constraint",         onClick = "app.scene():run('CreateAimConstraint')" }
+  animationMenu:addItem{label = "Create Kinematics Constraint",  onClick = "app.scene():run('CreateKinematicsConstraint')",  onButtonClick = "app.select('CreateKinematicsConstraint')" }
+  animationMenu:addItem{label = "Create Mirror Constraints",     onClick = "app.scene():run('CreateMirrorConstraints')",     onButtonClick = "app.select('CreateMirrorConstraints')" }
+  animationMenu:addItem{label = "Create Skeletal Constraints",   onClick = "app.scene():run('CreateSkeletalConstraint')" }
+  animationMenu:addSeparator()
+  animationMenu:addItem{label = "Bake Animation",      onClick = "app.scene():run('BakeAnimation')",  onButtonClick = "app.select('BakeAnimation')" }
+end
+
+
+------------------------------------------------------------------------------------------------------------------------
+-- Simulation menu
+------------------------------------------------------------------------------------------------------------------------
+
+function addSimulationMenu(mainMenuBar)
+
+  local simulationMenu = mainMenuBar:addSubMenu{label = "Simulation"}
+  simulationMenu:addItem{label = "Simulate",          accelerator = "Ctrl+Space", onClick = "app.scene():run('Simulate')" }
+  simulationMenu:addItem{label = "Bake Simulation",   onClick = "app.scene():run('BakeSimulation')",  onButtonClick = "app.select('BakeSimulation')" }
+  simulationMenu:addItem{label = "Clear Simulation",  onClick = "app.scene():run('ClearSimulation')" }
+  simulationMenu:addSeparator()
+  simulationMenu:addItem{label = "Physicalise",       onClick = "app.scene():run('AutoCreatePhysics')",  onButtonClick = "app.select('AutoCreatePhysics')" }
+  simulationMenu:addSeparator()
+  simulationMenu:addItem{label = "Set Constraint Target",             onClick = "app.scene():run('SetConstraintTarget')"}
+  simulationMenu:addItem{label = "Clear Constraint Target",           onClick = "app.scene():run('ClearConstraintTarget')"}
+
+end
+
+
+------------------------------------------------------------------------------------------------------------------------
+-- Help menu
+------------------------------------------------------------------------------------------------------------------------
+
+function addHelpMenu(mainMenuBar)
+
+  local helpMenu = mainMenuBar:addSubMenu{label = "Help"}
+  helpMenu:addItem{label = "About...", onClick = "app.showWindow('SystemInformation')" }
+
+end
+
+------------------------------------------------------------------------------------------------------------------------
+-- Settings menu
+------------------------------------------------------------------------------------------------------------------------
+
+function addSettingsMenu(mainMenuBar)
+
+  local settingsMenu = mainMenuBar:addSubMenu{label = "Options"}
+  settingsMenu:addItem{label = "Colours...",                                 onClick = "app.showWindow('ColourManager')" }
+
+end
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+-- System menu bar
+------------------------------------------------------------------------------------------------------------------------
+
+function addSystemMenuBar(mainFrame)
+
+  local mainMenuBar = mainFrame:addMenuBar{name="MainMenu", proportion = 0, flags = "expand"}
+
+  addFileMenu(mainMenuBar)
+  addEditMenu(mainMenuBar)
+  addViewMenu(mainMenuBar)
+  addToolsMenu(mainMenuBar)
+  addCreateMenu(mainMenuBar)
+  addModifyMenu(mainMenuBar)
+  addAnimationMenu(mainMenuBar)
+  addSimulationMenu(mainMenuBar)
+  addTrajectoryMenu(mainMenuBar)
+  addIKMenu(mainMenuBar)
+  mainMenuBar:addStockMenu{type = "WindowMenu", label = "Window", structure = WindowMenuStructure }
+  mainMenuBar:addStockMenu{type = "LayoutMenu", label = "Layout"}
+  addSettingsMenu(mainMenuBar)
+  addHelpMenu(mainMenuBar)
+  
+end
+
+
+------------------------------------------------------------------------------------------------------------------------
+-- System tool bar
+------------------------------------------------------------------------------------------------------------------------
+
+function addSystemToolBar(mainFrame)
+  
+  local toolbar = mainFrame:addToolBar{name="SystemToolbar", orientation="horizontal"} 
+  toolbar:addSeparator()
+  toolbar:addImageButton{name = "NewScene",    image = loadAppImage("FileNew16.png"),    helpText = "New Scene",   onClick = "app.newScene()" }
+  toolbar:addImageButton{name = "OpenScene",   image = loadAppImage("FileOpen16.png"),   helpText = "Open Scene",  onClick = "app.openScene()" }
+  toolbar:addImageButton{name = "SaveScene",   image = loadAppImage("FileSave16.png"),   helpText = "Save Scene",  onClick = "app.saveScene()" }
+  toolbar:addSeparator()
+  toolbar:addImageButton{name = "FileImport",  image = loadAppImage("FileImport16.png"), helpText = "Import File", onClick = "app.scene():run('ImportFile')", onRightClick = "app.select('ImportFile')" }
+  toolbar:addImageButton{name = "FileExport",  image = loadAppImage("FileExport16.png"), helpText = "Export File", onClick = "app.scene():run('ExportFile')", onRightClick = "app.select('ExportFile')" }
+  toolbar:addSeparator()
+  toolbar:addImageButton{name = "Undo",        image = loadAppImage("Undo16.png"),       helpText = "Undo",        onClick = "app.scene():run('Undo')", onRightClick = "app.select('Undo')" }
+  toolbar:addImageButton{name = "Redo",        image = loadAppImage("Redo16.png"),       helpText = "Redo",        onClick = "app.scene():run('Redo')", onRightClick = "app.select('Redo')" }
+  toolbar:addSeparator()
+  toolbar:addImageButton{name = "CreateTransform",          image = loadAppImage("CreateTransform16.png"),          helpText = "Transform",           onClick = "app.scene():run('CreateTransform')",          onRightClick = "app.select('CreateTransform')" }
+  toolbar:addImageButton{name = "CreateJoint",              image = loadAppImage("CreateJoint16.png"),              helpText = "Joint",                     onClick = "app.scene():run('CreateJoint')",              onRightClick = "app.select('CreateJoint')" }          
+  toolbar:addImageButton{name = "CreateJointLimit",         image = loadAppImage("CreateJointLimit16.png"),         helpText = "Joint Limit (Ball Socket)",   onClick = "app.command('CreateJointLimit'):attribute('LimitType'):set('BallSocket') app.scene():run('CreateJointLimit')",    onRightClick = "app.command('CreateJointLimit'):attribute('LimitType'):set('BallSocket') app.select('CreateJointLimit')" }  
+  toolbar:addImageButton{name = "CreateJointLimitHinge",    image = loadAppImage("CreateJointLimitHinge16.png"),         helpText = "Joint Limit (Hinge)",         onClick = "app.command('CreateJointLimit'):attribute('LimitType'):set('Hinge') app.scene():run('CreateJointLimit')",         onRightClick = "app.command('CreateJointLimit'):attribute('LimitType'):set('Hinge') app.select('CreateJointLimit')" }  
+  toolbar:addSeparator()
+  toolbar:addImageButton{name = "CreatePhysicsJoint",            image = loadAppImage("CreatePhysicsJoint16.png"),       helpText = "Physics Joint",                   onClick = "app.scene():run('CreatePhysicsJoint')",       onRightClick = "app.select('CreatePhysicsJoint')" }
+  toolbar:addImageButton{name = "CreatePhysicsJointLimit",       image = loadAppImage("CreatePhysicsJointLimit16.png"),  helpText = "Physics Joint Limit (Ball Socket)", onClick = "app.command('CreatePhysicsJointLimit'):attribute('LimitType'):set('BallSocket') app.scene():run('CreatePhysicsJointLimit')",  onRightClick = "app.command('CreatePhysicsJointLimit'):attribute('LimitType'):set('BallSocket') app.select('CreatePhysicsJointLimit')" }
+  toolbar:addImageButton{name = "CreatePhysicsJointLimitHinge",  image = loadAppImage("CreatePhysicsJointLimitHinge16.png"),  helpText = "Physics Joint Limit (Hinge)",       onClick = "app.command('CreatePhysicsJointLimit'):attribute('LimitType'):set('Hinge') app.scene():run('CreatePhysicsJointLimit')",       onRightClick = "app.command('CreatePhysicsJointLimit'):attribute('LimitType'):set('Hinge') app.select('CreatePhysicsJointLimit')" }
+  toolbar:addImageButton{name = "CreatePhysicsBox",         image = loadAppImage("CreatePhysicsBodyBox16.png"),     helpText = "Physics Body (Box)",    onClick = "app.command('CreatePhysicsBody'):attribute('Shape'):set('Box') app.scene():run('CreatePhysicsBody')",      onRightClick = "app.command('CreatePhysicsBody'):attribute('Shape'):set('Box') app.select('CreatePhysicsBody')" }  
+  toolbar:addImageButton{name = "CreatePhysicsCapsule",     image = loadAppImage("CreatePhysicsBodyCapsule16.png"), helpText = "Physics Body (Capsule)",onClick = "app.command('CreatePhysicsBody'):attribute('Shape'):set('Capsule')  app.scene():run('CreatePhysicsBody')", onRightClick = "app.command('CreatePhysicsBody'):attribute('Shape'):set('Sphere') app.select('CreatePhysicsBody')" }
+  toolbar:addImageButton{name = "CreatePhysicsSphere",      image = loadAppImage("CreatePhysicsBodySphere16.png"),  helpText = "Physics Body (Sphere)", onClick = "app.command('CreatePhysicsBody'):attribute('Shape'):set('Sphere') app.scene():run('CreatePhysicsBody')",   onRightClick = "app.command('CreatePhysicsBody'):attribute('Shape'):set('Capsule') app.select('CreatePhysicsBody')" }
+  toolbar:addSeparator()
+  toolbar:addImageButton{name = "GenerateTrajectory",       image = loadAppImage("CreateTrajectory16.png"),         helpText = "Trajectory",          onClick = "app.scene():run('GenerateTrajectory')",         onRightClick = "app.select('GenerateTrajectory')" }
+  toolbar:addSeparator()
+  toolbar:addImageButton{name = "CreateKinematicsConstraint",   image = loadAppImage("CreateTransform16.png"),          helpText = "Kinematics Constraint",   onClick = "app.scene():run('CreateKinematicsConstraint')",   onRightClick = "app.select('CreateKinematicsConstraint')" } 
+  toolbar:addImageButton{name = "CreatePhysicsConstraint",  image = loadAppImage("CreatePhysicsConstraint16.png"),  helpText = "Physics Constraint",  onClick = "app.scene():run('CreatePhysicsConstraint')",  onRightClick = "app.select('CreatePhysicsConstraint')" }
+  toolbar:addSeparator()
+  toolbar:addImageButton{name = "ShowLog",                        helpText = "Log Window",                   image = loadAppImage("Log16.png"),                onClick = "showWindow('Log')" }
+  toolbar:addImageButton{name = "ShowScriptEditor",               helpText = "Scripts",               image = loadAppImage("ScriptEditor16.png"),       onClick = "showWindow('Scripts')" }
+  toolbar:addImageButton{name = "ShowSceneExplorer",              helpText = "Explorer",              image = loadAppImage("SceneExplorer16.png"),      onClick = "showWindow('Explorer')" }
+  toolbar:addImageButton{name = "ShowAttributeEditor",            helpText = "Attributes",            image = loadAppImage("AttributeEditor16.png"),    onClick = "showWindow('Attributes')" }
+  toolbar:addImageButton{name = "ShowObjectConnectionsEditor",    helpText = "Object Connections",    image = loadAppImage("HierarchyEditor16.png"),    onClick = "showWindow('Object Connections')" }
+  toolbar:addImageButton{name = "ShowAttributeConnectionsEditor", helpText = "Attribute Connections", image = loadAppImage("HierarchyEditor16.png"),    onClick = "showWindow('Attribute Connections')" }
+  toolbar:addImageButton{name = "ShowTimeline",                   helpText = "Timeline",              image = loadAppImage("Timeline16.png"),           onClick = "showWindow('Timeline')" }
+  toolbar:addImageButton{name = "ShowCurveEditor",                helpText = "Animation Curves",      image = loadAppImage("CurveEditor16.png"),        onClick = "showWindow('Animation Curves')" }
+  
+  toolbar = mainFrame:addToolBar{name="RSystemToolbar", orientation="horizontal"} 
+  toolbar:addImageButton{name = "R*IntializeWorkspace",                     helpText = "R* Initialize Workspace",              label = "InitW",        onClick = "app.scene():runPython('physicsCharacterPath = \"|Scene|character|physicsCharacter\"; physicsCharacter = nmx.scene().object(physicsCharacterPath); loadDefaultFile = False; execfile(\"" .. app.path("Scripts"):gsub("\\","/") .. "\" + r\"RockstarRigging.py\"); initWorkspace(physicsCharacter)' )" }
+  toolbar:addImageButton{name = "R*ChangeAttributes",                     helpText = "R* Change Endorphin Attributes",         label = "CEA",        onClick = "app.scene():runPython('physicsCharacterPath = \"|Scene|character|physicsCharacter\"; physicsCharacter = nmx.scene().object(physicsCharacterPath); loadDefaultFile = True; execfile(\"" .. app.path("Scripts"):gsub("\\","/") .. "\" + r\"RockstarRigging.py\"); changeEndorphinAttributes(physicsCharacter)' )" }
+  toolbar:addImageButton{name = "R*AddR*Attributes",                      helpText = "R* Add R* Attributes",                   label = "+R*A",        onClick = "app.scene():runPython('physicsCharacterPath = \"|Scene|character|physicsCharacter\"; physicsCharacter = nmx.scene().object(physicsCharacterPath); loadDefaultFile = True; execfile(\"" .. app.path("Scripts"):gsub("\\","/") .. "\" + r\"RockstarRigging.py\"); addRockstarAttributes(physicsCharacter)' )" }
+  toolbar:addImageButton{name = "R*orientatePhysicsBodiesFromDefault",    helpText = "R* orientate Physics Bodies From Default",    label = "Bodies",        onClick = "app.scene():runPython('physicsCharacterPath = \"|Scene|character|physicsCharacter\"; physicsCharacter = nmx.scene().object(physicsCharacterPath); loadDefaultFile = True; execfile(\"" .. app.path("Scripts"):gsub("\\","/") .. "\" + r\"RockstarRigging.py\"); orientatePhysicsBodiesFromDefault(physicsCharacter)' )" }
+  toolbar:addImageButton{name = "R*orientateJointMovingFramesFromDefault",    helpText = "R* orientate Joint Moving Frames From Default",    label = "Joints",        onClick = "app.scene():runPython('physicsCharacterPath = \"|Scene|character|physicsCharacter\"; physicsCharacter = nmx.scene().object(physicsCharacterPath); loadDefaultFile = True; execfile(\"" .. app.path("Scripts"):gsub("\\","/") .. "\" + r\"RockstarRigging.py\"); orientateJointMovingFramesFromDefault(physicsCharacter)' )" }
+  toolbar:addImageButton{name = "R*orientateAllJointLimitsFromAttributes",    helpText = "R* orientate All Joint Limits From Attributes",    label = "JLimits",        onClick = "app.scene():runPython('physicsCharacterPath = \"|Scene|character|physicsCharacter\"; physicsCharacter = nmx.scene().object(physicsCharacterPath); loadDefaultFile = True; execfile(\"" .. app.path("Scripts"):gsub("\\","/") .. "\" + r\"RockstarRigging.py\"); orientateAllJointLimitsFromAttributes(physicsCharacter)' )" }
+  toolbar:addImageButton{name = "R*exportPhysicsCharacter",    helpText = "R* export Physics Character 121.xml format",    label = "Export",        onClick = "app.scene():runPython('physicsCharacterPath = \"|Scene|character|physicsCharacter\"; physicsCharacter = nmx.scene().object(physicsCharacterPath); loadDefaultFile = True; execfile(\"" .. app.path("Scripts"):gsub("\\","/") .. "\" + r\"RockstarRigging.py\"); exportPhysicsCharacter(physicsCharacter)' )" }
+  toolbar:addImageButton{name = "R*exportNMXML",    helpText = "R* export export NM XML",    label = "NM XML",        onClick = "app.scene():runPython('physicsCharacterPath = \"|Scene|character|physicsCharacter\"; physicsCharacter = nmx.scene().object(physicsCharacterPath); loadDefaultFile = True; execfile(\"" .. app.path("Scripts"):gsub("\\","/") .. "\" + r\"RockstarRigging.py\"); exportNMXML(physicsCharacter)' )" }
+  toolbar:addImageButton{name = "R*exportAnimationCollisionBounds",    helpText = "R* export Animation Collision Bounds R*xml format",    label = "AnimBounds",        onClick = "app.scene():runPython('physicsCharacterPath = \"|Scene|character|physicsCharacter\"; physicsCharacter = nmx.scene().object(physicsCharacterPath); loadDefaultFile = True; execfile(\"" .. app.path("Scripts"):gsub("\\","/") .. "\" + r\"RockstarRigging.py\"); exportAnimationCollisionBounds(physicsCharacter)' )" }
+  toolbar:addImageButton{name = "R*exportModifications",    helpText = "R* save modifications",    label = "Save2Default",                                               onClick = "app.scene():runPython('physicsCharacterPath = \"|Scene|character|physicsCharacter\"; physicsCharacter = nmx.scene().object(physicsCharacterPath); loadDefaultFile = True; execfile(\"" .. app.path("Scripts"):gsub("\\","/") .. "\" + r\"RockstarRigging.py\"); saveModifications(physicsCharacter)' )" }    
+
+  toolbar:addImageButton{name = "R*exportAnimalAnimationBounds",    helpText = "R* export Animal Animation Bounds",    label = "AnimalAnimBounds",                     onClick = "app.scene():runPython('physicsCharacterPath = \"|Scene|character|physicsCharacter\"; physicsCharacter = nmx.scene().object(physicsCharacterPath); loadDefaultFile = True; execfile(\"" .. app.path("Scripts"):gsub("\\","/") .. "\" + r\"ExportAnimalAnimationBounds.py\"); exportAnimalAnimationCollisionBounds(physicsCharacter)' )" }  
+  toolbar:addImageButton{name = "R*transform",    helpText = "R* transform character",    label = "trans",                     onClick = "app.scene():runPython('physicsCharacterPath = \"|Scene|character|physicsCharacter\"; physicsCharacter = nmx.scene().object(physicsCharacterPath); loadDefaultFile = True; execfile(\"" .. app.path("Scripts"):gsub("\\","/") .. "\" + r\"RockstarRigging.py\"); transformCharacter2Model(physicsCharacter,False)' )" }  
+  toolbar:addImageButton{name = "R*UnTransform",    helpText = "R* UnTransform character",    label = "UnTrans",                     onClick = "app.scene():runPython('physicsCharacterPath = \"|Scene|character|physicsCharacter\"; physicsCharacter = nmx.scene().object(physicsCharacterPath); loadDefaultFile = True; execfile(\"" .. app.path("Scripts"):gsub("\\","/") .. "\" + r\"RockstarRigging.py\"); transformCharacter2Model(physicsCharacter,True)' )" }  
+  toolbar:addImageButton{name = "R*RemoveJoint",    helpText = "R* Remove Joint",    label = "RemoveJoint",                     onClick = "app.scene():runPython('loadDefaultFile = False; execfile(\"" .. app.path("Scripts"):gsub("\\","/") .. "\" + r\"RockstarRigging.py\"); removeJoint()' )" }  
+end
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+-- staticUI
+------------------------------------------------------------------------------------------------------------------------
+
+function staticUI()
+
+  loadUtilities()
+
+  -- MainFrame is the only uniquely named window, added by the application automatically.
+  local mainFrame = ui.getWindow("MainFrame")
+  
+  -- Add windows vertically
+  mainFrame:beginVSizer{ flags = "expand", proportion = 1 }
+    
+    -- System menu bar which contains file, edit menus etc.
+    addSystemMenuBar(mainFrame)
+
+    -- System toolbar contains application wide utility controls.
+    addSystemToolBar(mainFrame)
+
+
+    mainFrame:beginHSizer{ flags = "expand", proportion = 1 }
+  
+      -- Main layout manager
+      mainFrame:beginVSizer{ flags = "expand", proportion = 1 }
+      mainFrame:addLayoutManager{name = "LayoutManager", proportion = 1, flags = "expand"}
+      mainFrame:endSizer()
+      
+  mainFrame:endSizer()
+  
+  local statusBar = mainFrame:addPanel{name="SystemStatusbar", orientation="horizontal"} 
+      statusBar:beginVSizer{ flags = "expand", proportion = 1 }
+      local staticText = statusBar:addStaticText{name = "LayoutManager", proportion = 1, flags = "expand"}
+      staticText:setLabel("  Ready")
+      statusBar:endSizer()
+
+  mainFrame:endSizer()
+  
+  -- Run custom commands.
+  if (customStaticUI) then
+  	customStaticUI()
+  end
+
+end

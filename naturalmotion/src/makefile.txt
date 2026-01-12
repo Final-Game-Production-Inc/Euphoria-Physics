@@ -1,0 +1,6 @@
+Directory {
+	fragmentnm
+	art
+	nmutils
+	rockstar
+}

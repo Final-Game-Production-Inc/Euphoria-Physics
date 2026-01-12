@@ -1,0 +1,171 @@
+// 
+// physics/forcesolvertables.cpp 
+// 
+// Copyright (C) 1999-2008 Rockstar Games.  All Rights Reserved. 
+// 
+
+#include "forcesolvertables.h"
+
+#include "forcesolverartconstraints.h"
+#include "forcesolverartcontacts.h"
+#include "forcesolverartjoints.h"
+#include "forcesolverconstraints.h"
+#include "forcesolvercontacts.h"
+
+#include "system/codefrag_spu.h"
+
+#if __PS3
+DECLARE_FRAG_INTERFACE(AssertFunc);
+DECLARE_FRAG_INTERFACE(NullFunc);
+
+DECLARE_FRAG_INTERFACE(UpdateContactsFixAndMov);
+DECLARE_FRAG_INTERFACE(UpdateContactsFixAndArt);
+DECLARE_FRAG_INTERFACE(UpdateContactsFixedPointFixAndMov);
+DECLARE_FRAG_INTERFACE(UpdateContactsFixedPointFixAndArt);
+DECLARE_FRAG_INTERFACE(UpdateContactsRotationFixAndMov);
+DECLARE_FRAG_INTERFACE(UpdateContactsRotationFixAndArt);
+DECLARE_FRAG_INTERFACE(UpdateContactsMovAndFix);
+DECLARE_FRAG_INTERFACE(UpdateContactsMovAndMov);
+DECLARE_FRAG_INTERFACE(UpdateContactsMovAndArt);
+DECLARE_FRAG_INTERFACE(UpdateContactsFixedPointMovAndFix);
+DECLARE_FRAG_INTERFACE(UpdateContactsFixedPointMovAndMov);
+DECLARE_FRAG_INTERFACE(UpdateContactsFixedPointMovAndArt);
+DECLARE_FRAG_INTERFACE(UpdateContactsRotationMovAndFix);
+DECLARE_FRAG_INTERFACE(UpdateContactsRotationMovAndMov);
+DECLARE_FRAG_INTERFACE(UpdateContactsRotationMovAndArt);
+DECLARE_FRAG_INTERFACE(UpdateContactsArtAndFix);
+DECLARE_FRAG_INTERFACE(UpdateContactsArtAndMov);
+DECLARE_FRAG_INTERFACE(UpdateContactsArtAndArt);
+DECLARE_FRAG_INTERFACE(UpdateContactsFixedPointArtAndFix);
+DECLARE_FRAG_INTERFACE(UpdateContactsFixedPointArtAndMov);
+DECLARE_FRAG_INTERFACE(UpdateContactsFixedPointArtAndArt);
+DECLARE_FRAG_INTERFACE(UpdateContactsRotationArtAndFix);
+DECLARE_FRAG_INTERFACE(UpdateContactsRotationArtAndMov);
+DECLARE_FRAG_INTERFACE(UpdateContactsRotationArtAndArt);
+
+DECLARE_FRAG_INTERFACE(PreResponseArtAndArt);
+DECLARE_FRAG_INTERFACE(PreResponseArtAndFix);
+DECLARE_FRAG_INTERFACE(PreResponseArtAndMov);
+DECLARE_FRAG_INTERFACE(PreResponseFixAndArt);
+DECLARE_FRAG_INTERFACE(PreResponseFixAndMov);
+DECLARE_FRAG_INTERFACE(PreResponseMovAndArt);
+DECLARE_FRAG_INTERFACE(PreResponseMovAndFix);
+DECLARE_FRAG_INTERFACE(PreResponseMovAndMov);
+DECLARE_FRAG_INTERFACE(PreResponseFixedPointArtAndArt);
+DECLARE_FRAG_INTERFACE(PreResponseFixedPointArtAndFix);
+DECLARE_FRAG_INTERFACE(PreResponseFixedPointArtAndMov);
+DECLARE_FRAG_INTERFACE(PreResponseFixedPointFixAndArt);
+DECLARE_FRAG_INTERFACE(PreResponseFixedPointFixAndMov);
+DECLARE_FRAG_INTERFACE(PreResponseFixedPointMovAndArt);
+DECLARE_FRAG_INTERFACE(PreResponseFixedPointMovAndFix);
+DECLARE_FRAG_INTERFACE(PreResponseFixedPointMovAndMov);
+DECLARE_FRAG_INTERFACE(PreResponseRotationArtAndArt);
+DECLARE_FRAG_INTERFACE(PreResponseRotationArtAndFix);
+DECLARE_FRAG_INTERFACE(PreResponseRotationArtAndMov);
+DECLARE_FRAG_INTERFACE(PreResponseRotationFixAndArt);
+DECLARE_FRAG_INTERFACE(PreResponseRotationFixAndMov);
+DECLARE_FRAG_INTERFACE(PreResponseRotationMovAndArt);
+DECLARE_FRAG_INTERFACE(PreResponseRotationMovAndFix);
+DECLARE_FRAG_INTERFACE(PreResponseRotationMovAndMov);
+
+DECLARE_FRAG_INTERFACE(ApplyImpulseArtAndArt);
+DECLARE_FRAG_INTERFACE(ApplyImpulseArtAndFix);
+DECLARE_FRAG_INTERFACE(ApplyImpulseArtAndMov);
+DECLARE_FRAG_INTERFACE(ApplyImpulseFixAndArt);
+DECLARE_FRAG_INTERFACE(ApplyImpulseFixAndMov);
+DECLARE_FRAG_INTERFACE(ApplyImpulseMovAndArt);
+DECLARE_FRAG_INTERFACE(ApplyImpulseMovAndFix);
+DECLARE_FRAG_INTERFACE(ApplyImpulseMovAndMov);
+DECLARE_FRAG_INTERFACE(ApplyImpulseFixedPointArtAndArt);
+DECLARE_FRAG_INTERFACE(ApplyImpulseFixedPointArtAndFix);
+DECLARE_FRAG_INTERFACE(ApplyImpulseFixedPointArtAndMov);
+DECLARE_FRAG_INTERFACE(ApplyImpulseFixedPointFixAndArt);
+DECLARE_FRAG_INTERFACE(ApplyImpulseFixedPointFixAndMov);
+DECLARE_FRAG_INTERFACE(ApplyImpulseFixedPointMovAndArt);
+DECLARE_FRAG_INTERFACE(ApplyImpulseFixedPointMovAndFix);
+DECLARE_FRAG_INTERFACE(ApplyImpulseFixedPointMovAndMov);
+DECLARE_FRAG_INTERFACE(ApplyImpulseFixedRotationArtAndArt);
+DECLARE_FRAG_INTERFACE(ApplyImpulseFixedRotationArtAndFix);
+DECLARE_FRAG_INTERFACE(ApplyImpulseFixedRotationArtAndMov);
+DECLARE_FRAG_INTERFACE(ApplyImpulseFixedRotationFixAndArt);
+DECLARE_FRAG_INTERFACE(ApplyImpulseFixedRotationFixAndMov);
+DECLARE_FRAG_INTERFACE(ApplyImpulseFixedRotationMovAndArt);
+DECLARE_FRAG_INTERFACE(ApplyImpulseFixedRotationMovAndFix);
+DECLARE_FRAG_INTERFACE(ApplyImpulseFixedRotationMovAndMov);
+DECLARE_FRAG_INTERFACE(ApplyImpulseSlideRotationArtAndArt);
+DECLARE_FRAG_INTERFACE(ApplyImpulseSlideRotationArtAndFix);
+DECLARE_FRAG_INTERFACE(ApplyImpulseSlideRotationArtAndMov);
+DECLARE_FRAG_INTERFACE(ApplyImpulseSlideRotationFixAndArt);
+DECLARE_FRAG_INTERFACE(ApplyImpulseSlideRotationFixAndMov);
+DECLARE_FRAG_INTERFACE(ApplyImpulseSlideRotationMovAndArt);
+DECLARE_FRAG_INTERFACE(ApplyImpulseSlideRotationMovAndFix);
+DECLARE_FRAG_INTERFACE(ApplyImpulseSlideRotationMovAndMov);
+DECLARE_FRAG_INTERFACE(ApplyImpulsePivotRotationArtAndArt);
+DECLARE_FRAG_INTERFACE(ApplyImpulsePivotRotationArtAndFix);
+DECLARE_FRAG_INTERFACE(ApplyImpulsePivotRotationArtAndMov);
+DECLARE_FRAG_INTERFACE(ApplyImpulsePivotRotationFixAndArt);
+DECLARE_FRAG_INTERFACE(ApplyImpulsePivotRotationFixAndMov);
+DECLARE_FRAG_INTERFACE(ApplyImpulsePivotRotationMovAndArt);
+DECLARE_FRAG_INTERFACE(ApplyImpulsePivotRotationMovAndFix);
+DECLARE_FRAG_INTERFACE(ApplyImpulsePivotRotationMovAndMov);
+
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushArtAndArt);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushArtAndFix);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushArtAndMov);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushFixAndArt);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushFixAndMov);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushMovAndArt);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushMovAndFix);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushMovAndMov);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushFixedPointArtAndArt);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushFixedPointArtAndFix);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushFixedPointArtAndMov);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushFixedPointFixAndArt);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushFixedPointFixAndMov);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushFixedPointMovAndArt);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushFixedPointMovAndFix);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushFixedPointMovAndMov);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushFixedRotationArtAndArt);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushFixedRotationArtAndFix);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushFixedRotationArtAndMov);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushFixedRotationFixAndArt);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushFixedRotationFixAndMov);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushFixedRotationMovAndArt);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushFixedRotationMovAndFix);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushFixedRotationMovAndMov);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushSlideRotationArtAndArt);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushSlideRotationArtAndFix);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushSlideRotationArtAndMov);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushSlideRotationFixAndArt);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushSlideRotationFixAndMov);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushSlideRotationMovAndArt);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushSlideRotationMovAndFix);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushSlideRotationMovAndMov);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushPivotRotationArtAndArt);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushPivotRotationArtAndFix);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushPivotRotationArtAndMov);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushPivotRotationFixAndArt);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushPivotRotationFixAndMov);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushPivotRotationMovAndArt);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushPivotRotationMovAndFix);
+DECLARE_FRAG_INTERFACE(ApplyImpulseAndPushPivotRotationMovAndMov);
+#endif // __PS3
+
+namespace rage {
+
+#define TABLE_DECL(X) phForceSolver::ConstraintTable X##ConstraintTable
+#define CNST_FNC(X) X
+
+#include "forcesolvertablesinternal.h"
+
+#if __PS3
+#undef CNST_FNC
+#undef TABLE_DECL
+
+#define TABLE_DECL(X) phForceSolver::SpuConstraintTable X##SpuConstraintTable
+#define CNST_FNC(X) FRAG_SPU_CODE(X)
+
+#include "forcesolvertablesinternal.h"
+#endif // __PS3
+
+} // namespace rage

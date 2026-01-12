@@ -1,0 +1,13 @@
+scene = nmx.Application.instance().activeScene()
+objects = nmx.ObjectArray()
+scene.objects("PhysicsBody",nmx.IsObjectType,objects)
+
+totalMass = 0 
+for i in range(objects.size()):
+  if i > 0:
+    mass = objects.at(i).attribute("Mass").float()
+    print i, mass, objects.at(i).attribute("Name")
+    totalMass = totalMass + mass
+
+print "actualMass =", totalMass
+

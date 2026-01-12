@@ -1,0 +1,19 @@
+
+@@Overview
+* Origin Of Module Name *
+Phbound stands for "PHysics BOUNDs".
+
+* Overview *
+In AGE physics, everything that exists in the physics world must have a phBound. All software that describes a physical system has some data structure that holds information about the shape of the objects in that system. Some other common terms used in other software are bounding boxes, bounding spheres, and bounding volumes. The generic term in AGE physics is phBound.
+
+phBound is the base class for several kinds of bounds, which serve different purposes. They are classified in order of complexity. Simple and fast are at one end, while slow but powerful are at the other. This order is specified by the order of the enumeration <LINK phBound::BoundType>.
+
+Each type of bound is a class derived from phBound. Most of the implementation files in the phbound project contain exactly one bound, with the exception of boundloader, which contains some routines for handling phBound's polymorphicly.
+
+@@Components
+Here's a table listing the primary components of this module.
+
+@@Relationships
+<image phbounddep>
+
+

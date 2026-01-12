@@ -1,0 +1,7 @@
+Files {
+	ClientPlatformIncludes.h
+	MemoryStream.h
+	NMCustomMemory.h
+	NMTypes.h
+	TypeUtils.h
+}

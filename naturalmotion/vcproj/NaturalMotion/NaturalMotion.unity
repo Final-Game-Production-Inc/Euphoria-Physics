@@ -1,0 +1,22 @@
+# Unity config file - v1.0 
+# - defines 'unity' compilation units for a project/solution.
+#
+# Top Tips
+#  Regex
+#   - Regexs can be of a form that include folders and exclude specific files / file patterns.
+#      - eg. ^(((\.*|\w:)\/)*)(ai|animation)\/(((?!exclusions_can\.|go_here\.).)*)(\.)(cpp|c)$
+#      - Interactive regexp help? :- http://www.rubular.com/
+#  Commands
+#   - In addition to regexs global exclusions are supported making it easy to see what is being excluded.
+#   - Ideally nothing should need to be excluded, too many exclusions will lead to a slow build.
+#   - Leave a comment why something is excluded.
+#   - Comment out 'set enabled' to disable the unity build.
+#  Design
+#   - Coupling related systems within each compilation unit can lead to better build speed.
+#   - Evenly balancing the number of matched files across each compilation is also good practice.
+# https://devstar.rockstargames.com/wiki/index.php/Unity_Build
+
+set enabled
+
+# compilation units ( unity files ) : unity_id, regexp, regexps_option
+src     ^(((\.*|\w:)\/)*)(include|src)\/(.*)(\.)(cpp|c)$ 		i

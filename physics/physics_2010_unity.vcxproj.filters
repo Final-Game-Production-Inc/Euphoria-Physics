@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup />
+  <ItemGroup>
+    <ClInclude Include="broadphase.h" />
+    <ClInclude Include="btAxisSweep1.h" />
+    <ClInclude Include="btAxisSweep3.h" />
+    <ClInclude Include="btSpatialHash.h" />
+    <ClInclude Include="btImmediateModeBroadphase.h" />
+    <ClInclude Include="btNxN.h" />
+    <ClInclude Include="HashBroadPhase16.h" />
+    <ClInclude Include="btBroadphaseProxy.h" />
+    <ClInclude Include="btOverlappingPairCache.h" />
+    <ClInclude Include="levelbroadphase.h" />
+    <ClInclude Include="overlappingpairarray.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="btAxisSweep1.cpp" />
+    <ClCompile Include="btAxisSweep3.cpp" />
+    <ClCompile Include="btSpatialHash.cpp" />
+    <ClCompile Include="btImmediateModeBroadphase.cpp" />
+    <ClCompile Include="btNxN.cpp" />
+    <ClCompile Include="HashBroadPhase16.cpp" />
+    <ClCompile Include="btOverlappingPairCache.cpp" />
+    <ClCompile Include="levelbroadphase.cpp" />
+    <ClCompile Include="overlappingpairarray.cpp" />
+  </ItemGroup>
+</Project>

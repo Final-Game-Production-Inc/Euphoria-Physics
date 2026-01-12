@@ -1,0 +1,3 @@
+#define ENVIRONMENT_CLOTH	1
+#define ENVIRONMENT_ROPE	0
+#include "cloth_verlet_spu.cpp"

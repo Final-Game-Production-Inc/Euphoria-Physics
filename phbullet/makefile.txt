@@ -1,0 +1,77 @@
+Project phbullet
+Files {
+	Folder CollisionShapes {
+		MinkowskiSumShape.cpp
+		MinkowskiSumShape.h
+		TriangleShape.h
+	}
+	Folder CollisionDispatch {
+		btCollisionCreateFunc.h
+		btCollisionAlgorithm.cpp
+		btCollisionAlgorithm.h
+		btCollisionDispatcher.cpp
+		btCollisionDispatcher.h
+		btCompoundCollisionAlgorithm.cpp
+		btCompoundCollisionAlgorithm.h
+		btConvexConcaveCollisionAlgorithm.cpp
+		btConvexConcaveCollisionAlgorithm.h
+		btConvexConvexAlgorithm.cpp
+		btConvexConvexAlgorithm.h
+		btdispatcher.cpp
+		btdispatcher.h
+		btEmptyCollisionAlgorithm.cpp
+		btEmptyCollisionAlgorithm.h
+		btSphereBoxCollisionAlgorithm.cpp
+		btSphereBoxCollisionAlgorithm.h
+		btSphereSphereCollisionAlgorithm.cpp
+		btSphereSphereCollisionAlgorithm.h
+		CollisionObject.cpp
+		CollisionObject.h
+	}
+	Folder NarrowPhaseCollision {
+		ContinuousConvexCollision.cpp
+		ContinuousConvexCollision.h
+		ConvexIntersector.cpp
+		ConvexIntersector.h
+		boxBoxDistance.cpp
+		boxBoxDistance.h
+		btBoxBoxDetector.cpp
+		btBoxBoxDetector.h
+		btGjkEpa.cpp
+		btGjkEpa.h
+		btGjkEpa2.cpp
+		btGjkEpa2.h
+		btGjkEpaPenetrationDepthSolver.cpp
+		btGjkEpaPenetrationDepthSolver.h
+		GjkPairDetector.cpp
+		GjkPairDetector.h
+		GjkSimplexCache.cpp
+		GjkSimplexCache.h
+		IterativeCast.cpp
+		IterativeCast.h
+		MinkowskiPenetrationDepthSolver.cpp
+		MinkowskiPenetrationDepthSolver.h
+		ConvexCast.cpp
+		ConvexCast.h
+		TrianglePenetrationDepthSolver.cpp
+		TrianglePenetrationDepthSolver.h
+		VoronoiDegenerateSimplexSolver.cpp
+		VoronoiDegenerateSimplexSolver.h
+		VoronoiSimplexSolver.cpp
+		VoronoiSimplexSolver.h
+		VoronoiSingleSimplexSolver.cpp
+		VoronoiSingleSimplexSolver.h
+		DiscreteCollisionDetectorInterface.h
+		ConvexPenetrationDepthSolver.h
+		CollisionMargin.h
+		SimplexSolverInterface.h
+		PointCollector.h
+	}
+	Folder LinearMath {
+		btStackAlloc.h
+		SimdTransformUtil.h
+	}
+	Folder SpuSupport {
+		CollisionWorkUnit.h
+	}
+}

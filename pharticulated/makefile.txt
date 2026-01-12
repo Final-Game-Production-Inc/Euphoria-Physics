@@ -1,0 +1,28 @@
+Project pharticulated
+Files {
+	articulatedbody.cpp
+	articulatedbody.h
+	articulatedcollider.cpp
+	articulatedcollider.h
+	joint3dof.cpp
+	joint3dof.h
+	joint1dof.cpp
+	joint1dof.h
+	jointdispatch.h
+	prismaticjoint.cpp
+	prismaticjoint.h
+	joint.cpp
+	joint.h
+	bodypart.cpp
+	bodypart.h
+	bodyinertia.cpp
+	bodyinertia.h
+	phasespacevector.h
+	savedstate.cpp
+	savedstate.h
+	spudma.cpp
+	spudma.h
+}
+Custom {
+	pharticulated.dtx
+}

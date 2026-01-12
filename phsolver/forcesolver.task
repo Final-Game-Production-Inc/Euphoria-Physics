@@ -1,0 +1,41 @@
+// 
+// physics/forcesolver.task 
+// 
+// Copyright (C) 1999-2008 Rockstar Games.  All Rights Reserved. 
+// 
+
+#ifndef SPU_FORCE_SOLVER_USE_PUSH
+#define SPU_FORCE_SOLVER_USE_PUSH 0
+#endif
+
+#define SYS_DMA_VALIDATION 0
+#define SYS_DMA_TIMING 0
+#define SYS_DMA_DETAILED_TIMING 0
+#define SYS_DMA_BLOCKING 0
+#define SYS_DMA_DELAYED 0
+#define SYS_DMA_DELAYED_SPEW 0
+
+#include "vector/vector3_consts_spu.cpp"
+#include "system/dma.h"
+
+#include "applyimpulseartjoint.cpp"
+#include "applyimpulseandpushartjoint.cpp"
+#include "forcesolver.cpp"
+#include "preresponseartjoint.cpp"
+#include "spucachearray.cpp"
+
+#include "pharticulated/articulatedbody.cpp"
+#include "pharticulated/bodypart.cpp"
+#include "physics/collider.cpp"
+#include "physics/contact.cpp"
+#include "physics/manifold.cpp"
+#include "pharticulated/joint.cpp"
+#include "pharticulated/joint1dof.cpp"
+#include "pharticulated/joint3dof.cpp"
+#include "pharticulated/prismaticjoint.cpp"
+#include "pharticulated/articulatedcollider.cpp"
+#include "pharticulated/spudma.cpp"
+#include "phcore/phmath.cpp"
+#include "phcore/workerthreadmain.cpp"
+#include "system/barrier.cpp"
+#include "system/dmaplan.cpp"

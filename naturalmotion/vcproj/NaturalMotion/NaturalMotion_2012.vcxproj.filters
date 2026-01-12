@@ -1,0 +1,694 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="_projgen">
+      <UniqueIdentifier>{56869F06-4999-05B0-5434-00405EF4CCB5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\art">
+      <UniqueIdentifier>{688A464F-D624-BF20-0F58-640C0BC423BC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\bspy">
+      <UniqueIdentifier>{295594D0-9A15-20E3-4D88-BB2B1390EBCA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\nmutils">
+      <UniqueIdentifier>{923FA6B8-05A2-A027-68A1-EAC965056785}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{D8B0ECD3-3690-768D-59EE-54010045B835}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\fragmentnm">
+      <UniqueIdentifier>{75868429-0357-0E18-FF6F-7899B7642F12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\art">
+      <UniqueIdentifier>{688A464F-D624-BF20-0F58-640C0BC423BC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\nmutils">
+      <UniqueIdentifier>{923FA6B8-05A2-A027-68A1-EAC965056785}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\rockstar\CBU">
+      <UniqueIdentifier>{AA3A47F0-54C5-299D-6C25-A26B8825DC5B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\rockstar\CBU-SPU">
+      <UniqueIdentifier>{571F7981-0CE9-9494-B4E5-4AC0BC5CFF2C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\rockstar">
+      <UniqueIdentifier>{6893611A-1C71-2DB7-014A-3499B651F068}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{E2ED7FF2-0B22-32CD-6AEE-3E86DDFD4EBD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="[Parser Files]">
+      <UniqueIdentifier>{C53FF48F-5BA1-58C8-43D5-7FC9AA0A9FE1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\art\ART.h">
+      <Filter>include\art</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\art\ARTBaseDefs.h">
+      <Filter>include\art</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\art\ARTFeedback.h">
+      <Filter>include\art</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\art\ARTInternal.h">
+      <Filter>include\art</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\art\ARTMemory.h">
+      <Filter>include\art</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\art\ARTMemoryManager.h">
+      <Filter>include\art</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\art\ARTRockstar.h">
+      <Filter>include\art</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\art\bSpyServer.h">
+      <Filter>include\art</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\art\MessageParams.h">
+      <Filter>include\art</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\bspy\bSpyCommonPackets.h">
+      <Filter>include\bspy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\bspy\bSpyPacket.h">
+      <Filter>include\bspy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\bspy\NmRsSpyPackets.h">
+      <Filter>include\bspy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\nmutils\ClientPlatformIncludes.h">
+      <Filter>include\nmutils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\nmutils\NMCustomMemory.h">
+      <Filter>include\nmutils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\nmutils\NMTypes.h">
+      <Filter>include\nmutils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\nmutils\TypeUtils.h">
+      <Filter>include\nmutils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\fragmentnm\instance.h">
+      <Filter>src\fragmentnm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\fragmentnm\manager.h">
+      <Filter>src\fragmentnm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\fragmentnm\nmbehavior.h">
+      <Filter>src\fragmentnm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\fragmentnm\nm_channel.h">
+      <Filter>src\fragmentnm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRs1DofSoftLimit.h">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsArticulatedWrapper.h">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsBodyLayout.h">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsBullet.h">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCharacter.h">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCommon.h">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsEffectorDefs.h">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsEffectorInputBlendable.h">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsEffectorInputWrapper.h">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsEffectors.h">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsEngine.h">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsFrictionHelper.h">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsGenericPart.h">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsHashtable.h">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsIK.h">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsIkHelpers.h">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsInclude.h">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsLimbInputBlendable.h">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsLimbInputData.h">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsLimbInputWrapper.h">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsLimbManager.h">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsLimbs.h">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsMessageDefinitions.h">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsMinimalInclude.h">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsPhInstNM.h">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsPosture.h">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsShadows.h">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsSpy.h">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsStateMachine.h">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsTypeUtils.h">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsUtils.h">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_AnimPose.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_ArmsWindmill.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_ArmsWindmillAdaptive.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_BalancerCollisionsReaction.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_BodyBalance.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_BodyFoetal.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_BodyWrithe.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_Buoyancy.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_BraceForImpact.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_Carried.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_Catchfall.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_Dangle.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_DBMBalanceSolve.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_DBMCommon.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_DBMFootPlacement.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_DBMPelvisControl.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_DebugRig.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_Dragged.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_DynamicBalancer.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_Electrocute.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_FallOverWall.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_Flinch.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_Grab.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_HeadLook.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_HighFall.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_InjuredOnGround.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_Landing.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_LearnedCrawl.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_OnFire.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_Pedal.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_PointArm.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_PointGun.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_RollDownStairs.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_RollUp.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_Shared.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_Shot.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_SmartFall.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_SpineTwist.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_StaggerFall.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_Stumble.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_TaskBase.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_TaskManager.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_Teeter.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsCBU_Yanked.h">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\fragmentnm\nmbehavior_parser.h">
+      <Filter>[Parser Files]</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\fragmentnm\instance.cpp">
+      <Filter>src\fragmentnm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\fragmentnm\manager.cpp">
+      <Filter>src\fragmentnm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\fragmentnm\nmbehavior.cpp">
+      <Filter>src\fragmentnm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\art\ARTMemoryManager.cpp">
+      <Filter>src\art</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\art\bSpyServer.cpp">
+      <Filter>src\art</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\art\MessageParams.cpp">
+      <Filter>src\art</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\nmutils\NMCustomMemory.cpp">
+      <Filter>src\nmutils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRs1DofEffector.cpp">
+      <Filter>src\rockstar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRs1DofSoftLimit.cpp">
+      <Filter>src\rockstar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRs3DofEffector.cpp">
+      <Filter>src\rockstar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsArticulatedWrapper.cpp">
+      <Filter>src\rockstar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsBullet.cpp">
+      <Filter>src\rockstar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCharacter.cpp">
+      <Filter>src\rockstar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCharacterDebugViz.cpp">
+      <Filter>src\rockstar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCharacterDeserialize.cpp">
+      <Filter>src\rockstar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCharacterDInvoke.cpp">
+      <Filter>src\rockstar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCharacterMasking.cpp">
+      <Filter>src\rockstar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCharacterPatch.cpp">
+      <Filter>src\rockstar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCharacterPhysicsHelpers.cpp">
+      <Filter>src\rockstar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCommon.cpp">
+      <Filter>src\rockstar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsEffectorInputBlendable.cpp">
+      <Filter>src\rockstar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsEffectorInputWrapper.cpp">
+      <Filter>src\rockstar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsEffectors.cpp">
+      <Filter>src\rockstar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsEngine.cpp">
+      <Filter>src\rockstar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsFrictionHelper.cpp">
+      <Filter>src\rockstar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsGenericPart.cpp">
+      <Filter>src\rockstar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsIK.cpp">
+      <Filter>src\rockstar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsIKHelpers.cpp">
+      <Filter>src\rockstar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsLimbInputBlendable.cpp">
+      <Filter>src\rockstar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsLimbInputWrapper.cpp">
+      <Filter>src\rockstar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsLimbManager.cpp">
+      <Filter>src\rockstar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsLimbs.cpp">
+      <Filter>src\rockstar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsPhInstNM.cpp">
+      <Filter>src\rockstar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsPosture.cpp">
+      <Filter>src\rockstar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsPublicFns.cpp">
+      <Filter>src\rockstar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsSpy.cpp">
+      <Filter>src\rockstar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsStateMachine.cpp">
+      <Filter>src\rockstar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsUtils.cpp">
+      <Filter>src\rockstar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_AnimPose.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_ArmsWindmill.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_ArmsWindmillAdaptive.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_BalancerCollisionsReaction.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_BodyBalance.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_BodyFoetal.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_BodyWrithe.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_Buoyancy.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_BraceForImpact.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_Carried.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_Catchfall.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_CrawlLearner.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_Dangle.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_DBMBalanceSolve.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_DBMFootPlacement.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_DBMPelvisControl.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_DebugRig.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_Dragged.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_DynamicBalancer.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_Electrocute.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_FallOverWall.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_Flinch.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_Grab.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_Grab_Helper.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_HeadLook.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_HighFall.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_InjuredOnGround.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_Landing.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_LearnedCrawl.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_OnFire.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_Pedal.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_PointArm.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_PointGun.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_RollDownStairs.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_RollUp.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_Shared.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_Shot.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_ShotChickenArms.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_ShotControlStiffness.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_ShotDefaultArmMotion.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_ShotFallToKnees.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_ShotFling.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_ShotFromBehind.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_ShotHeadLook.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_ShotInGuts.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_ShotInjuredLimb.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_ShotJustWhenFallen.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_ShotMelee.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_ShotNewHit.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_ShotOnGround.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_ShotPointGun.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_ShotReachForWound.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_SmartFall.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_SpineTwist.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_StaggerFall.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_Stumble.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_TaskBase.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_TaskManager.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_Teeter.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rockstar\NmRsCBU_Yanked.cpp">
+      <Filter>src\rockstar\CBU</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\src\rockstar\NmRsCBU_DBMBalanceSolve.job">
+      <Filter>src\rockstar\CBU-SPU</Filter>
+    </None>
+    <None Include="..\..\src\rockstar\NmRsCBU_DBMFootPlacement.job">
+      <Filter>src\rockstar\CBU-SPU</Filter>
+    </None>
+    <None Include="..\..\src\rockstar\NmRsCBU_DBMPelvisControl.job">
+      <Filter>src\rockstar\CBU-SPU</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjGenCompile Include="NaturalMotion.txt">
+      <Filter>_projgen</Filter>
+    </ProjGenCompile>
+    <None Include="..\..\include\makefile.txt">
+      <Filter>include</Filter>
+    </None>
+    <None Include="..\..\include\art\makefile.txt">
+      <Filter>include\art</Filter>
+    </None>
+    <None Include="..\..\include\bspy\makefile.txt">
+      <Filter>include\bspy</Filter>
+    </None>
+    <None Include="..\..\include\nmutils\makefile.txt">
+      <Filter>include\nmutils</Filter>
+    </None>
+    <None Include="..\..\src\makefile.txt">
+      <Filter>src</Filter>
+    </None>
+    <None Include="..\..\src\fragmentnm\makefile.txt">
+      <Filter>src\fragmentnm</Filter>
+    </None>
+    <None Include="..\..\src\art\makefile.txt">
+      <Filter>src\art</Filter>
+    </None>
+    <None Include="..\..\src\nmutils\makefile.txt">
+      <Filter>src\nmutils</Filter>
+    </None>
+    <None Include="..\..\src\rockstar\makefile.txt">
+      <Filter>src\rockstar</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\..\..\tools_ng\etc\projgen\game.build">
+      <Filter>_projgen</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\bspy\bSpyPacket.inl">
+      <Filter>include\bspy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\bspy\NmRsSpyPackets.inl">
+      <Filter>include\bspy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rockstar\NmRsEffectorAutoreg.inl">
+      <Filter>src\rockstar</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\src\fragmentnm\nmbehavior.psc">
+      <Filter>src\fragmentnm</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,40 @@
+Project phcore
+
+IncludePath $(RAGE_DIR)\base\src
+
+Files {
+	avl_tree.h
+	bitvector.h
+	coherent_sort.h
+	config.cpp
+	config.h
+	constants.h
+	conversion.h
+	convexpoly.cpp
+	convexpoly.h
+	frameallocator.h
+	LinearMemoryAllocator.h
+	materialmgr.cpp
+	materialmgr.h
+	materialmgrflag.cpp
+	materialmgrflag.h
+	materialmgrimpl.h
+	material.cpp
+	material.h
+	pool.h
+	pfdraw.cpp
+	phmath.cpp
+	phmath.h
+	resourceversions.h
+	segment.h
+	sputaskset.cpp
+	sputaskset.h
+	surface.cpp
+	surface.h
+	workerthread.cpp
+	workerthread.h
+	workerthreadmain.cpp
+}
+Custom {
+	phcore.dtx
+}

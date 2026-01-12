@@ -1,0 +1,869 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="tools_ng\etc\projgen">
+      <UniqueIdentifier>{C3FD447F-C90D-6CF0-75B0-C1EC4BCE7A67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConstraintFuncs\UpdateContacts">
+      <UniqueIdentifier>{80B1A0C7-D4C1-0CBF-04C6-5CF0C93EE676}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConstraintFuncs\PreResponse">
+      <UniqueIdentifier>{E1C16E96-342B-D819-6FD6-6CEB02205C38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConstraintFuncs\ApplyImpulse">
+      <UniqueIdentifier>{737A9837-E993-F0B6-AFAF-1DCD6DB942A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConstraintFuncs\ApplyImpulseAndPush">
+      <UniqueIdentifier>{1E8B6BF3-66B7-B47F-9744-9F5EBB781429}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConstraintFuncs\Headers">
+      <UniqueIdentifier>{F1AF7F61-3966-D676-3BD2-FFAD10EBF1BC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConstraintFuncs">
+      <UniqueIdentifier>{BBB9EA23-879E-864E-D54E-B97F41CDC77F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frags\UpdateContacts">
+      <UniqueIdentifier>{732B8429-89C2-55A1-3A50-B8FA3447C6F8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frags\PreResponse">
+      <UniqueIdentifier>{24AEA7BB-C751-CACE-6AAC-52FD44D08095}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frags\ApplyImpulse">
+      <UniqueIdentifier>{67D3FB8B-9E23-9C82-2BD3-575ACCD124F2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frags\ApplyImpulseAndPush">
+      <UniqueIdentifier>{A05EB8B5-3C3F-C88D-A838-A21091CE3551}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frags">
+      <UniqueIdentifier>{63DE6BD1-19F4-0603-3937-1A5FF603128A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="contactmgr.h" />
+    <ClInclude Include="forcesolver.h" />
+    <ClInclude Include="forcesolverconfig.h" />
+    <ClInclude Include="forcesolvertables.h" />
+    <ClInclude Include="forcesolvertablesinternal.h" />
+    <ClInclude Include="forcesolvertask.h" />
+    <ClInclude Include="spucachearray.h" />
+    <ClInclude Include="forcesolverartconstraints.h">
+      <Filter>ConstraintFuncs\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="forcesolverartcontacts.h">
+      <Filter>ConstraintFuncs\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="forcesolverartjoints.h">
+      <Filter>ConstraintFuncs\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="forcesolverconstraints.h">
+      <Filter>ConstraintFuncs\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="forcesolvercontacts.h">
+      <Filter>ConstraintFuncs\Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="contactmgr.cpp" />
+    <ClCompile Include="forcesolver.cpp" />
+    <ClCompile Include="forcesolvertables.cpp" />
+    <ClCompile Include="spucachearray.cpp" />
+    <ClCompile Include="nullfunc.cpp">
+      <Filter>ConstraintFuncs</Filter>
+    </ClCompile>
+    <ClCompile Include="assertfunc.cpp">
+      <Filter>ConstraintFuncs</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsartandart.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsartandfix.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsartandmov.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsartjoint.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsfixandart.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsfixandmov.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsmovandart.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsmovandfix.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsmovandmov.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsfixedpointartandart.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsfixedpointartandfix.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsfixedpointartandmov.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsfixedpointfixandart.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsfixedpointfixandmov.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsfixedpointmovandart.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsfixedpointmovandfix.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsfixedpointmovandmov.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsrotationartandart.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsrotationartandfix.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsrotationartandmov.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsrotationfixandart.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsrotationfixandmov.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsrotationmovandart.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsrotationmovandfix.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="updatecontactsrotationmovandmov.cpp">
+      <Filter>ConstraintFuncs\UpdateContacts</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponseartandart.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponseartandfix.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponseartandmov.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponsefixandart.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponsefixandmov.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponsemovandart.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponsemovandfix.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponsemovandmov.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponsefixedpointartandart.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponsefixedpointartandfix.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponsefixedpointartandmov.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponsefixedpointfixandart.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponsefixedpointfixandmov.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponsefixedpointmovandart.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponsefixedpointmovandfix.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponsefixedpointmovandmov.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponserotationartandart.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponserotationartandfix.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponserotationartandmov.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponserotationfixandart.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponserotationfixandmov.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponserotationmovandart.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponserotationmovandfix.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponserotationmovandmov.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="preresponseartjoint.cpp">
+      <Filter>ConstraintFuncs\PreResponse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseartandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseartandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseartandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsemovandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsemovandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsemovandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedpointartandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedpointartandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedpointartandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedpointfixandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedpointfixandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedpointmovandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedpointmovandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedpointmovandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedrotationartandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedrotationartandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedrotationartandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedrotationfixandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedrotationfixandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedrotationmovandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedrotationmovandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsefixedrotationmovandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsepivotrotationartandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsepivotrotationartandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsepivotrotationartandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsepivotrotationfixandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsepivotrotationfixandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsepivotrotationmovandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsepivotrotationmovandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsepivotrotationmovandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsesliderotationartandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsesliderotationartandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsesliderotationartandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsesliderotationfixandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsesliderotationfixandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsesliderotationmovandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsesliderotationmovandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulsesliderotationmovandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseartjoint.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulse</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushartandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushartandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushartandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushmovandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushmovandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushmovandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedpointartandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedpointartandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedpointartandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedpointfixandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedpointfixandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedpointmovandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedpointmovandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedpointmovandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedrotationartandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedrotationartandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedrotationartandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedrotationfixandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedrotationfixandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedrotationmovandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedrotationmovandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushfixedrotationmovandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushpivotrotationartandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushpivotrotationartandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushpivotrotationartandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushpivotrotationfixandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushpivotrotationfixandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushpivotrotationmovandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushpivotrotationmovandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushpivotrotationmovandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushsliderotationartandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushsliderotationartandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushsliderotationartandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushsliderotationfixandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushsliderotationfixandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushsliderotationmovandart.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushsliderotationmovandfix.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushsliderotationmovandmov.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+    <ClCompile Include="applyimpulseandpushartjoint.cpp">
+      <Filter>ConstraintFuncs\ApplyImpulseAndPush</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="NullFunc.frag">
+      <Filter>Frags</Filter>
+    </CustomBuild>
+    <CustomBuild Include="AssertFunc.frag">
+      <Filter>Frags</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UpdateContactsArtAndArt.frag">
+      <Filter>Frags\UpdateContacts</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UpdateContactsArtAndFix.frag">
+      <Filter>Frags\UpdateContacts</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UpdateContactsArtAndMov.frag">
+      <Filter>Frags\UpdateContacts</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UpdateContactsFixAndArt.frag">
+      <Filter>Frags\UpdateContacts</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UpdateContactsFixAndMov.frag">
+      <Filter>Frags\UpdateContacts</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UpdateContactsMovAndArt.frag">
+      <Filter>Frags\UpdateContacts</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UpdateContactsMovAndFix.frag">
+      <Filter>Frags\UpdateContacts</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UpdateContactsMovAndMov.frag">
+      <Filter>Frags\UpdateContacts</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UpdateContactsFixedPointArtAndArt.frag">
+      <Filter>Frags\UpdateContacts</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UpdateContactsFixedPointArtAndFix.frag">
+      <Filter>Frags\UpdateContacts</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UpdateContactsFixedPointArtAndMov.frag">
+      <Filter>Frags\UpdateContacts</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UpdateContactsFixedPointFixAndArt.frag">
+      <Filter>Frags\UpdateContacts</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UpdateContactsFixedPointFixAndMov.frag">
+      <Filter>Frags\UpdateContacts</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UpdateContactsFixedPointMovAndArt.frag">
+      <Filter>Frags\UpdateContacts</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UpdateContactsFixedPointMovAndFix.frag">
+      <Filter>Frags\UpdateContacts</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UpdateContactsFixedPointMovAndMov.frag">
+      <Filter>Frags\UpdateContacts</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UpdateContactsRotationArtAndArt.frag">
+      <Filter>Frags\UpdateContacts</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UpdateContactsRotationArtAndFix.frag">
+      <Filter>Frags\UpdateContacts</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UpdateContactsRotationArtAndMov.frag">
+      <Filter>Frags\UpdateContacts</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UpdateContactsRotationFixAndArt.frag">
+      <Filter>Frags\UpdateContacts</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UpdateContactsRotationFixAndMov.frag">
+      <Filter>Frags\UpdateContacts</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UpdateContactsRotationMovAndArt.frag">
+      <Filter>Frags\UpdateContacts</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UpdateContactsRotationMovAndFix.frag">
+      <Filter>Frags\UpdateContacts</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UpdateContactsRotationMovAndMov.frag">
+      <Filter>Frags\UpdateContacts</Filter>
+    </CustomBuild>
+    <CustomBuild Include="PreResponseArtAndArt.frag">
+      <Filter>Frags\PreResponse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="PreResponseArtAndFix.frag">
+      <Filter>Frags\PreResponse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="PreResponseArtAndMov.frag">
+      <Filter>Frags\PreResponse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="PreResponseFixAndArt.frag">
+      <Filter>Frags\PreResponse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="PreResponseFixAndMov.frag">
+      <Filter>Frags\PreResponse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="PreResponseMovAndArt.frag">
+      <Filter>Frags\PreResponse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="PreResponseMovAndFix.frag">
+      <Filter>Frags\PreResponse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="PreResponseMovAndMov.frag">
+      <Filter>Frags\PreResponse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="PreResponseFixedPointArtAndArt.frag">
+      <Filter>Frags\PreResponse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="PreResponseFixedPointArtAndFix.frag">
+      <Filter>Frags\PreResponse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="PreResponseFixedPointArtAndMov.frag">
+      <Filter>Frags\PreResponse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="PreResponseFixedPointFixAndArt.frag">
+      <Filter>Frags\PreResponse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="PreResponseFixedPointFixAndMov.frag">
+      <Filter>Frags\PreResponse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="PreResponseFixedPointMovAndArt.frag">
+      <Filter>Frags\PreResponse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="PreResponseFixedPointMovAndFix.frag">
+      <Filter>Frags\PreResponse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="PreResponseFixedPointMovAndMov.frag">
+      <Filter>Frags\PreResponse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="PreResponseRotationArtAndArt.frag">
+      <Filter>Frags\PreResponse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="PreResponseRotationArtAndFix.frag">
+      <Filter>Frags\PreResponse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="PreResponseRotationArtAndMov.frag">
+      <Filter>Frags\PreResponse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="PreResponseRotationFixAndArt.frag">
+      <Filter>Frags\PreResponse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="PreResponseRotationFixAndMov.frag">
+      <Filter>Frags\PreResponse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="PreResponseRotationMovAndArt.frag">
+      <Filter>Frags\PreResponse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="PreResponseRotationMovAndFix.frag">
+      <Filter>Frags\PreResponse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="PreResponseRotationMovAndMov.frag">
+      <Filter>Frags\PreResponse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseArtAndArt.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseArtAndFix.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseArtAndMov.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseFixAndArt.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseFixAndMov.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseMovAndArt.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseMovAndFix.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseMovAndMov.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseFixedPointArtAndArt.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseFixedPointArtAndFix.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseFixedPointArtAndMov.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseFixedPointFixAndArt.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseFixedPointFixAndMov.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseFixedPointMovAndArt.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseFixedPointMovAndFix.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseFixedPointMovAndMov.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseFixedRotationArtAndArt.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseFixedRotationArtAndFix.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseFixedRotationArtAndMov.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseFixedRotationFixAndArt.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseFixedRotationFixAndMov.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseFixedRotationMovAndArt.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseFixedRotationMovAndFix.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseFixedRotationMovAndMov.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulsePivotRotationArtAndArt.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulsePivotRotationArtAndFix.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulsePivotRotationArtAndMov.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulsePivotRotationFixAndArt.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulsePivotRotationFixAndMov.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulsePivotRotationMovAndArt.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulsePivotRotationMovAndFix.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulsePivotRotationMovAndMov.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseSlideRotationArtAndArt.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseSlideRotationArtAndFix.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseSlideRotationArtAndMov.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseSlideRotationFixAndArt.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseSlideRotationFixAndMov.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseSlideRotationMovAndArt.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseSlideRotationMovAndFix.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseSlideRotationMovAndMov.frag">
+      <Filter>Frags\ApplyImpulse</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushArtAndArt.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushArtAndFix.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushArtAndMov.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushFixAndArt.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushFixAndMov.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushMovAndArt.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushMovAndFix.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushMovAndMov.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushFixedPointArtAndArt.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushFixedPointArtAndFix.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushFixedPointArtAndMov.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushFixedPointFixAndArt.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushFixedPointFixAndMov.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushFixedPointMovAndArt.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushFixedPointMovAndFix.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushFixedPointMovAndMov.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushFixedRotationArtAndArt.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushFixedRotationArtAndFix.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushFixedRotationArtAndMov.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushFixedRotationFixAndArt.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushFixedRotationFixAndMov.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushFixedRotationMovAndArt.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushFixedRotationMovAndFix.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushFixedRotationMovAndMov.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushPivotRotationArtAndArt.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushPivotRotationArtAndFix.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushPivotRotationArtAndMov.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushPivotRotationFixAndArt.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushPivotRotationFixAndMov.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushPivotRotationMovAndArt.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushPivotRotationMovAndFix.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushPivotRotationMovAndMov.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushSlideRotationArtAndArt.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushSlideRotationArtAndFix.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushSlideRotationArtAndMov.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushSlideRotationFixAndArt.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushSlideRotationFixAndMov.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushSlideRotationMovAndArt.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushSlideRotationMovAndFix.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ApplyImpulseAndPushSlideRotationMovAndMov.frag">
+      <Filter>Frags\ApplyImpulseAndPush</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="forcesolver.task" />
+    <CustomBuild Include="forcesolverpush.task" />
+  </ItemGroup>
+</Project>

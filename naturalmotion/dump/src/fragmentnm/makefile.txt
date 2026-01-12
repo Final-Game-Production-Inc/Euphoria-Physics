@@ -1,0 +1,19 @@
+Project fragmentnm
+
+IncludePath ..
+IncludePath $(RAGE_DIR)\base\src
+IncludePath $(RAGE_DIR)\suite\src
+IncludePath $(RAGE_DIR)\naturalmotion\include
+
+Files {
+	instance.cpp
+	instance.h
+	manager.cpp
+	manager.h
+	nmbehavior.cpp
+	nmbehavior.h
+	nm_channel.h
+}
+Parse {
+	nmbehavior
+}
