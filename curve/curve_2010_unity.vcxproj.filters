@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup />
+  <ItemGroup>
+    <ClInclude Include="curve.h" />
+    <ClInclude Include="curvecatrom.h" />
+    <ClInclude Include="curvemgr.h" />
+    <ClInclude Include="curvenurbs.h" />
+    <ClInclude Include="curvecubic.h" />
+    <ClInclude Include="mayacurve.h" />
+    <ClInclude Include="mayacurveindexed.h" />
+    <ClInclude Include="mayaknot.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="curve.cpp" />
+    <ClCompile Include="curvecatrom.cpp" />
+    <ClCompile Include="curvemgr.cpp" />
+    <ClCompile Include="curvenurbs.cpp" />
+    <ClCompile Include="curvecubic.cpp" />
+    <ClCompile Include="mayacurve.cpp" />
+    <ClCompile Include="mayacurveindexed.cpp" />
+    <ClCompile Include="mayaknot.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="curve.dtx" />
+  </ItemGroup>
+</Project>

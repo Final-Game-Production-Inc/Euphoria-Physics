@@ -1,0 +1,17 @@
+Project crskeleton
+Files {
+	bonedata.cpp
+	bonedata.h
+	skeletondata.cpp
+	skeletondata.h
+	skeleton.cpp
+	skeleton.h
+	jointdata.cpp
+	jointdata.h
+}
+Custom {
+	crskeleton.dtx
+}
+Parse {
+	jointdata
+}

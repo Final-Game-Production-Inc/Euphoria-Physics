@@ -1,0 +1,74 @@
+
+@@Overview
+
+* Origin Of Module Name *
+Curve stands for "CURVE".
+
+* Overview *
+The curve module provides some facilities for handling curves. There are two kinds
+of curves available, Nurbs (non-uniform rational B-splines) (crCurveNurbs), and
+Catmull-Rom splines (crCurveCatrom). There is an abstract interface for interacting
+with them without caring about the underlying spline form, (crCurve) and a manager
+for loading and managing a library of curves (crCurveMgr).
+
+A curve is an abstract mathematical concept, basically a continuous differentiable 
+one dimensional manifold embedded in three space. The curve is built by interpolating
+between a series of points (called the control points), and is parameterized along its
+length by a single parameter, usually called t.
+
+@@Components
+These are the major components of the curve module:
+
+@@Relationships
+Insert text with inheritance and dependency info for the
+classes in this library.  Ideally, include UML diagrams
+(as a GIF) followed by any additional explanations.
+
+##BEGIN COMMAND-LINE-SECTION is automatically generated - do not edit this section!
+##END COMMAND-LINE-SECTION is automatically generated - do not edit this section!
+
+@@Working Examples
+##BEGIN SAMPLES-SECTION is automatically generated - do not edit this section!
+@@Sample Curve Sample
+<GROUP Working Examples>
+
+This sample shows the basics of using the rage/curve module
+The sample is broken into several steps:
+1. Add widgets for curve system
+2. The game update loop.
+
+* Add widgets for curve system *
+
+* The game update loop. *
+First update the input mapper.
+<CODE>
+
+m_Mapper.Update();
+
+</CODE>
+Update the curve chart
+<CODE>
+
+m_CurveChart.Update();
+
+</CODE>
+Draw all the debug draw requests that have accumulated over this frame.
+<CODE>
+
+#if __PFDRAW
+GetRageProfileDraw().Render();
+#endif
+#if __STATS
+GetRageProfiler().Draw();
+#endif
+
+</CODE>
+Draw the 2-d data if any
+<CODE>
+
+m_CurveChart.Draw();
+
+</CODE>
+
+
+##END SAMPLES-SECTION is automatically generated - do not edit this section!

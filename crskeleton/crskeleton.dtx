@@ -1,0 +1,40 @@
+
+@@Overview
+
+* Origin Of Module Name *
+Crskeleton stands for "CReature SKELETON", though the library is not limited to storing
+and posing skeletons for non-creature objects.
+
+* Overview *
+This module contains classes related to instances and types of skeletons. A
+crSkeleton is composed of a set of crBone's and an optional set of crBoneOffsets.
+Every crSkeleton is of a type described by a crSkeletonData, which is composed
+of a set of crBoneData's.
+
+The bones form a hierarchy, such that motion of one bone causes a similar motion
+recursively in all child bones. That allows, for instance, the motion of an arm bone
+to cause motion in the hand.
+
+A skeleton is really just a data structure; no interesting processing happens
+in this module. The only think a skeleton can do is Update, which recomputes its
+world (global) matrices from its local matrices.
+
+When in operation, a crAnimation or crRagdoll controls the local matrices of
+a crSkeleton. The global matrices are then updated, and are used by
+rmcDrawable::DrawSkinned to position the vertices of the mesh at the correct
+on-screen locations.
+
+@@Components
+Here's a table listing the primary components of this module.
+
+@@Relationships
+Insert text with inheritance and dependency info for the
+classes in this library.  Ideally, include UML diagrams
+(as a GIF) followed by any additional explanations.
+
+##BEGIN COMMAND-LINE-SECTION is automatically generated - do not edit this section!
+##END COMMAND-LINE-SECTION is automatically generated - do not edit this section!
+
+@@Working Examples
+##BEGIN SAMPLES-SECTION is automatically generated - do not edit this section!
+##END SAMPLES-SECTION is automatically generated - do not edit this section!

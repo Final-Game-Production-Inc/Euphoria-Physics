@@ -1,0 +1,24 @@
+Project curve
+IncludePath $(RAGE_DIR)\base\src
+IncludePath $(RAGE_DIR)\suite\src
+Files {
+	curve.cpp
+	curve.h
+	curvecatrom.cpp
+	curvecatrom.h
+	curvemgr.cpp
+	curvemgr.h
+	curvenurbs.cpp
+	curvenurbs.h
+	curvecubic.cpp
+	curvecubic.h
+	mayacurve.cpp
+	mayacurve.h
+	mayacurveindexed.cpp
+	mayacurveindexed.h
+	mayaknot.cpp
+	mayaknot.h
+}
+Custom {
+	curve.dtx
+}

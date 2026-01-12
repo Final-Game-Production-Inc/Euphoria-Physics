@@ -1,0 +1,29 @@
+Project cloth 
+
+Files {
+	Cloth.cpp
+	Cloth.h
+	ClothArchetype.cpp
+	ClothArchetype.h
+	ClothCapsuleBounds.cpp
+	ClothCapsuleBounds.h
+	ClothConstraintGraph.cpp
+	ClothConstraintGraph.h
+	ClothConstraints.cpp
+	ClothConstraints.h
+	ClothContacts.cpp
+	ClothContacts.h
+	ClothMgr.cpp
+	ClothMgr.h
+	ClothParticles.cpp
+	ClothParticles.h
+	ClothPendants.cpp
+	ClothPendants.h
+	ClothRageInterface.cpp
+	ClothRageInterface.h
+	ClothSprings.cpp
+	ClothSprings.h
+	ClothUpdater.cpp
+	ClothUpdater.h
+}
+

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup />
+  <ItemGroup>
+    <ClInclude Include="bonedata.h" />
+    <ClInclude Include="skeletondata.h" />
+    <ClInclude Include="skeleton.h" />
+    <ClInclude Include="jointdata.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="bonedata.cpp" />
+    <ClCompile Include="skeletondata.cpp" />
+    <ClCompile Include="skeleton.cpp" />
+    <ClCompile Include="jointdata.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="jointdata.psc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="crskeleton.dtx" />
+  </ItemGroup>
+</Project>
