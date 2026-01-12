@@ -1,0 +1,517 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Implementation">
+      <UniqueIdentifier>{4AF0352D-B954-D3DC-55E0-42A32CF6C41D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Advanced\Float_Classes\Implementation">
+      <UniqueIdentifier>{2AB4D9A5-BF73-083C-D970-B030083F4273}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Advanced\Float_Classes">
+      <UniqueIdentifier>{414D75B6-484E-2DB7-18AE-7FB7EDC2B4ED}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Advanced\Float_Core\Implementation">
+      <UniqueIdentifier>{07D69B61-967B-7EF6-B802-5754B868122C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Advanced\Float_Core">
+      <UniqueIdentifier>{D099E185-D923-7126-64EE-8821A6BEF1AF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Advanced\Vector_Core\Implementation\PS3\FastPermutes">
+      <UniqueIdentifier>{633BCBC5-2742-DFB4-1E3F-5D44C148912A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Advanced\Vector_Core\Implementation\PS3">
+      <UniqueIdentifier>{C283F8E5-BA1B-B104-69C4-CD810B6BC79E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Advanced\Vector_Core\Implementation\Win32PC">
+      <UniqueIdentifier>{BBA29121-92A9-F6F3-EFB8-B1BD50CB6224}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Advanced\Vector_Core\Implementation\XBox360\FastPermutes">
+      <UniqueIdentifier>{34F42A64-EEA4-4DE1-F406-1656D8ACCDBC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Advanced\Vector_Core\Implementation\XBox360">
+      <UniqueIdentifier>{5EE995E7-4EF0-A147-6369-E46480CA2534}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Advanced\Vector_Core\Implementation">
+      <UniqueIdentifier>{11A42721-C8C7-3939-A9CF-CC1D01D29D8A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Advanced\Vector_Core">
+      <UniqueIdentifier>{0714E04F-257F-4D34-A642-30EDB94C22A7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Advanced\Structure_Of_Arrays\Implementation">
+      <UniqueIdentifier>{03FC8BD3-2D54-67A8-8338-BA25A102B1E4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Advanced\Structure_Of_Arrays">
+      <UniqueIdentifier>{9E9911B4-1BD1-14DA-4FC6-57538E0E7FE1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Advanced">
+      <UniqueIdentifier>{69FB90BA-F643-9F73-3571-82FE49692B1D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Unit_Tests">
+      <UniqueIdentifier>{F55A535A-ADE5-5453-CE3B-14B69AC4F019}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="classes.h" />
+    <ClInclude Include="boolv.h" />
+    <ClInclude Include="classfreefuncsv.h" />
+    <ClInclude Include="mat44v.h" />
+    <ClInclude Include="mat34v.h" />
+    <ClInclude Include="mat33v.h" />
+    <ClInclude Include="vec2v.h" />
+    <ClInclude Include="vec3v.h" />
+    <ClInclude Include="vec4v.h" />
+    <ClInclude Include="quatv.h" />
+    <ClInclude Include="scalarv.h" />
+    <ClInclude Include="transformv.h" />
+    <ClInclude Include="vecboolv.h" />
+    <ClInclude Include="legacyconvert.h" />
+    <ClInclude Include="vectorconfig.h" />
+    <ClInclude Include="vectortypes.h" />
+    <ClInclude Include="vectorutility.h" />
+    <ClInclude Include="channel.h" />
+    <ClInclude Include="mathops.h" />
+    <ClInclude Include="vectormath.h" />
+    <ClInclude Include="classfreefuncsf.h">
+      <Filter>Advanced\Float_Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="vec2f.h">
+      <Filter>Advanced\Float_Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="vec3f.h">
+      <Filter>Advanced\Float_Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="vec4f.h">
+      <Filter>Advanced\Float_Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="quatf.h">
+      <Filter>Advanced\Float_Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="v1vector4.h">
+      <Filter>Advanced\Float_Core</Filter>
+    </ClInclude>
+    <ClInclude Include="v2vector2.h">
+      <Filter>Advanced\Float_Core</Filter>
+    </ClInclude>
+    <ClInclude Include="v3vector3.h">
+      <Filter>Advanced\Float_Core</Filter>
+    </ClInclude>
+    <ClInclude Include="v2vector4.h">
+      <Filter>Advanced\Float_Core</Filter>
+    </ClInclude>
+    <ClInclude Include="v3vector4.h">
+      <Filter>Advanced\Float_Core</Filter>
+    </ClInclude>
+    <ClInclude Include="v4vector4.h">
+      <Filter>Advanced\Float_Core</Filter>
+    </ClInclude>
+    <ClInclude Include="v1vector4v.h">
+      <Filter>Advanced\Vector_Core</Filter>
+    </ClInclude>
+    <ClInclude Include="v2vector4v.h">
+      <Filter>Advanced\Vector_Core</Filter>
+    </ClInclude>
+    <ClInclude Include="v3vector4v.h">
+      <Filter>Advanced\Vector_Core</Filter>
+    </ClInclude>
+    <ClInclude Include="v4vector4v.h">
+      <Filter>Advanced\Vector_Core</Filter>
+    </ClInclude>
+    <ClInclude Include="v4vector4vutility.h">
+      <Filter>Advanced\Vector_Core</Filter>
+    </ClInclude>
+    <ClInclude Include="classes_soa.h">
+      <Filter>Advanced\Structure_Of_Arrays</Filter>
+    </ClInclude>
+    <ClInclude Include="layoutconvert.h">
+      <Filter>Advanced\Structure_Of_Arrays</Filter>
+    </ClInclude>
+    <ClInclude Include="classfreefuncsv_soa.h">
+      <Filter>Advanced\Structure_Of_Arrays</Filter>
+    </ClInclude>
+    <ClInclude Include="mat44v_soa.h">
+      <Filter>Advanced\Structure_Of_Arrays</Filter>
+    </ClInclude>
+    <ClInclude Include="mat34v_soa.h">
+      <Filter>Advanced\Structure_Of_Arrays</Filter>
+    </ClInclude>
+    <ClInclude Include="mat33v_soa.h">
+      <Filter>Advanced\Structure_Of_Arrays</Filter>
+    </ClInclude>
+    <ClInclude Include="vecbool1v_soa.h">
+      <Filter>Advanced\Structure_Of_Arrays</Filter>
+    </ClInclude>
+    <ClInclude Include="vecbool2v_soa.h">
+      <Filter>Advanced\Structure_Of_Arrays</Filter>
+    </ClInclude>
+    <ClInclude Include="vecbool3v_soa.h">
+      <Filter>Advanced\Structure_Of_Arrays</Filter>
+    </ClInclude>
+    <ClInclude Include="vecbool4v_soa.h">
+      <Filter>Advanced\Structure_Of_Arrays</Filter>
+    </ClInclude>
+    <ClInclude Include="scalarv_soa.h">
+      <Filter>Advanced\Structure_Of_Arrays</Filter>
+    </ClInclude>
+    <ClInclude Include="vec2v_soa.h">
+      <Filter>Advanced\Structure_Of_Arrays</Filter>
+    </ClInclude>
+    <ClInclude Include="vec3v_soa.h">
+      <Filter>Advanced\Structure_Of_Arrays</Filter>
+    </ClInclude>
+    <ClInclude Include="vec4v_soa.h">
+      <Filter>Advanced\Structure_Of_Arrays</Filter>
+    </ClInclude>
+    <ClInclude Include="quatv_soa.h">
+      <Filter>Advanced\Structure_Of_Arrays</Filter>
+    </ClInclude>
+    <ClInclude Include="xboxmath_rage.h">
+      <Filter>Unit_Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="test_benchmarks.h">
+      <Filter>Unit_Tests</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="boolv.cpp">
+      <Filter>Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="mat44v.cpp">
+      <Filter>Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="mat34v.cpp">
+      <Filter>Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="mat33v.cpp">
+      <Filter>Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="vec2v.cpp">
+      <Filter>Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="vec3v.cpp">
+      <Filter>Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="vec4v.cpp">
+      <Filter>Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="quatv.cpp">
+      <Filter>Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="scalarv.cpp">
+      <Filter>Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="vecboolv.cpp">
+      <Filter>Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="vectorutility.cpp">
+      <Filter>Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="mathops.cpp">
+      <Filter>Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="vectormath.cpp">
+      <Filter>Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="vectormath_spu.cpp">
+      <Filter>Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="vec2f.cpp">
+      <Filter>Advanced\Float_Classes\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="vec3f.cpp">
+      <Filter>Advanced\Float_Classes\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="vec4f.cpp">
+      <Filter>Advanced\Float_Classes\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="quatf.cpp">
+      <Filter>Advanced\Float_Classes\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="mat44v_soa.cpp">
+      <Filter>Advanced\Structure_Of_Arrays\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="mat34v_soa.cpp">
+      <Filter>Advanced\Structure_Of_Arrays\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="mat33v_soa.cpp">
+      <Filter>Advanced\Structure_Of_Arrays\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="scalarv_soa.cpp">
+      <Filter>Advanced\Structure_Of_Arrays\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="vec2v_soa.cpp">
+      <Filter>Advanced\Structure_Of_Arrays\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="vec3v_soa.cpp">
+      <Filter>Advanced\Structure_Of_Arrays\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="vec4v_soa.cpp">
+      <Filter>Advanced\Structure_Of_Arrays\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="quatv_soa.cpp">
+      <Filter>Advanced\Structure_Of_Arrays\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="vecbool1v_soa.cpp">
+      <Filter>Advanced\Structure_Of_Arrays\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="vecbool2v_soa.cpp">
+      <Filter>Advanced\Structure_Of_Arrays\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="vecbool3v_soa.cpp">
+      <Filter>Advanced\Structure_Of_Arrays\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="vecbool4v_soa.cpp">
+      <Filter>Advanced\Structure_Of_Arrays\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="test_vec4v_soa.cpp">
+      <Filter>Unit_Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="test_mat33v_soa.cpp">
+      <Filter>Unit_Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="test_mat34v_soa.cpp">
+      <Filter>Unit_Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="test_quatv.cpp">
+      <Filter>Unit_Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="test_vec3v.cpp">
+      <Filter>Unit_Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="test_vec4v.cpp">
+      <Filter>Unit_Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="test_mat33v.cpp">
+      <Filter>Unit_Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="test_mat34v.cpp">
+      <Filter>Unit_Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="test_mat44v.cpp">
+      <Filter>Unit_Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="test_benchmarks.cpp">
+      <Filter>Unit_Tests</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="boolv.inl">
+      <Filter>Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="classfreefuncsv.inl">
+      <Filter>Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="mat44v.inl">
+      <Filter>Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="mat34v.inl">
+      <Filter>Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="mat33v.inl">
+      <Filter>Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="vec2v.inl">
+      <Filter>Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="vec3v.inl">
+      <Filter>Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="vec4v.inl">
+      <Filter>Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="quatv.inl">
+      <Filter>Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="scalarv.inl">
+      <Filter>Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="transformv.inl">
+      <Filter>Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="vecboolv.inl">
+      <Filter>Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="vectortypes.inl">
+      <Filter>Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="mathops.inl">
+      <Filter>Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="classfreefuncsf.inl">
+      <Filter>Advanced\Float_Classes\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="vec2f.inl">
+      <Filter>Advanced\Float_Classes\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="vec3f.inl">
+      <Filter>Advanced\Float_Classes\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="vec4f.inl">
+      <Filter>Advanced\Float_Classes\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="quatf.inl">
+      <Filter>Advanced\Float_Classes\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="v2vector2.inl">
+      <Filter>Advanced\Float_Core\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="v3vector3.inl">
+      <Filter>Advanced\Float_Core\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="v1vector4.inl">
+      <Filter>Advanced\Float_Core\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="v2vector4.inl">
+      <Filter>Advanced\Float_Core\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="v3vector4.inl">
+      <Filter>Advanced\Float_Core\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="v4vector4.inl">
+      <Filter>Advanced\Float_Core\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="v1vector4v.inl">
+      <Filter>Advanced\Vector_Core\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="v2vector4v.inl">
+      <Filter>Advanced\Vector_Core\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="v3vector4v.inl">
+      <Filter>Advanced\Vector_Core\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="v4vector4v.inl">
+      <Filter>Advanced\Vector_Core\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="v4vector4vutility.inl">
+      <Filter>Advanced\Vector_Core\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="v1vector4vcore_ps3.inl">
+      <Filter>Advanced\Vector_Core\Implementation\PS3</Filter>
+    </ClInclude>
+    <ClInclude Include="v2vector4vcore_ps3.inl">
+      <Filter>Advanced\Vector_Core\Implementation\PS3</Filter>
+    </ClInclude>
+    <ClInclude Include="v3vector4vcore_ps3.inl">
+      <Filter>Advanced\Vector_Core\Implementation\PS3</Filter>
+    </ClInclude>
+    <ClInclude Include="v4vector4vcore_ps3.inl">
+      <Filter>Advanced\Vector_Core\Implementation\PS3</Filter>
+    </ClInclude>
+    <ClInclude Include="v4perm1instruction_ps3.inl">
+      <Filter>Advanced\Vector_Core\Implementation\PS3\FastPermutes</Filter>
+    </ClInclude>
+    <ClInclude Include="v4perm2instructions_ps3.inl">
+      <Filter>Advanced\Vector_Core\Implementation\PS3\FastPermutes</Filter>
+    </ClInclude>
+    <ClInclude Include="v4perm3instructions_ps3.inl">
+      <Filter>Advanced\Vector_Core\Implementation\PS3\FastPermutes</Filter>
+    </ClInclude>
+    <ClInclude Include="v4perm4instructions_ps3.inl">
+      <Filter>Advanced\Vector_Core\Implementation\PS3\FastPermutes</Filter>
+    </ClInclude>
+    <ClInclude Include="v4perm5instructions_ps3.inl">
+      <Filter>Advanced\Vector_Core\Implementation\PS3\FastPermutes</Filter>
+    </ClInclude>
+    <ClInclude Include="v4perm6instructions_ps3.inl">
+      <Filter>Advanced\Vector_Core\Implementation\PS3\FastPermutes</Filter>
+    </ClInclude>
+    <ClInclude Include="v4permtwo1instruction_ps3.inl">
+      <Filter>Advanced\Vector_Core\Implementation\PS3\FastPermutes</Filter>
+    </ClInclude>
+    <ClInclude Include="v4permtwo2instructions_ps3.inl">
+      <Filter>Advanced\Vector_Core\Implementation\PS3\FastPermutes</Filter>
+    </ClInclude>
+    <ClInclude Include="v4permtwo3instructions_ps3.inl">
+      <Filter>Advanced\Vector_Core\Implementation\PS3\FastPermutes</Filter>
+    </ClInclude>
+    <ClInclude Include="v4permtwo4instructions_ps3.inl">
+      <Filter>Advanced\Vector_Core\Implementation\PS3\FastPermutes</Filter>
+    </ClInclude>
+    <ClInclude Include="v4permtwo5instructions_ps3.inl">
+      <Filter>Advanced\Vector_Core\Implementation\PS3\FastPermutes</Filter>
+    </ClInclude>
+    <ClInclude Include="v4permtwo6instructions_ps3.inl">
+      <Filter>Advanced\Vector_Core\Implementation\PS3\FastPermutes</Filter>
+    </ClInclude>
+    <ClInclude Include="v1vector4vcore_win32pc.inl">
+      <Filter>Advanced\Vector_Core\Implementation\Win32PC</Filter>
+    </ClInclude>
+    <ClInclude Include="v2vector4vcore_win32pc.inl">
+      <Filter>Advanced\Vector_Core\Implementation\Win32PC</Filter>
+    </ClInclude>
+    <ClInclude Include="v3vector4vcore_win32pc.inl">
+      <Filter>Advanced\Vector_Core\Implementation\Win32PC</Filter>
+    </ClInclude>
+    <ClInclude Include="v4vector4vcore_win32pc.inl">
+      <Filter>Advanced\Vector_Core\Implementation\Win32PC</Filter>
+    </ClInclude>
+    <ClInclude Include="v1vector4vcore_xbox360.inl">
+      <Filter>Advanced\Vector_Core\Implementation\XBox360</Filter>
+    </ClInclude>
+    <ClInclude Include="v2vector4vcore_xbox360.inl">
+      <Filter>Advanced\Vector_Core\Implementation\XBox360</Filter>
+    </ClInclude>
+    <ClInclude Include="v3vector4vcore_xbox360.inl">
+      <Filter>Advanced\Vector_Core\Implementation\XBox360</Filter>
+    </ClInclude>
+    <ClInclude Include="v4vector4vcore_xbox360.inl">
+      <Filter>Advanced\Vector_Core\Implementation\XBox360</Filter>
+    </ClInclude>
+    <ClInclude Include="v4permtwo1instruction_xbox360.inl">
+      <Filter>Advanced\Vector_Core\Implementation\XBox360\FastPermutes</Filter>
+    </ClInclude>
+    <ClInclude Include="v4permtwo2instructions_xbox360.inl">
+      <Filter>Advanced\Vector_Core\Implementation\XBox360\FastPermutes</Filter>
+    </ClInclude>
+    <ClInclude Include="v4permtwo3instructions_xbox360.inl">
+      <Filter>Advanced\Vector_Core\Implementation\XBox360\FastPermutes</Filter>
+    </ClInclude>
+    <ClInclude Include="layoutconvert.inl">
+      <Filter>Advanced\Structure_Of_Arrays\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="classfreefuncsv_soa.inl">
+      <Filter>Advanced\Structure_Of_Arrays\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="mat44v_soa.inl">
+      <Filter>Advanced\Structure_Of_Arrays\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="mat34v_soa.inl">
+      <Filter>Advanced\Structure_Of_Arrays\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="mat33v_soa.inl">
+      <Filter>Advanced\Structure_Of_Arrays\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="scalarv_soa.inl">
+      <Filter>Advanced\Structure_Of_Arrays\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="vec2v_soa.inl">
+      <Filter>Advanced\Structure_Of_Arrays\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="vec3v_soa.inl">
+      <Filter>Advanced\Structure_Of_Arrays\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="vec4v_soa.inl">
+      <Filter>Advanced\Structure_Of_Arrays\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="quatv_soa.inl">
+      <Filter>Advanced\Structure_Of_Arrays\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="vecbool1v_soa.inl">
+      <Filter>Advanced\Structure_Of_Arrays\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="vecbool2v_soa.inl">
+      <Filter>Advanced\Structure_Of_Arrays\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="vecbool3v_soa.inl">
+      <Filter>Advanced\Structure_Of_Arrays\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="vecbool4v_soa.inl">
+      <Filter>Advanced\Structure_Of_Arrays\Implementation</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="vectormath.dtx" />
+  </ItemGroup>
+</Project>

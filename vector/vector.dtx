@@ -1,0 +1,43 @@
+
+@@Overview
+* Origin Of Module Name *
+Vector stands for "VECTOR math".
+
+* Overview *
+The Vector library contains classes for basic vector and matrix
+math, including quaternions and classes for using the vector unit.
+Basic math that does not involve vectors is in the Math library.
+Functions for two- and three-dimensional geometry are in namespaces
+in the Geometry file in the Vector library.
+
+@@Components
+Here's a table listing the primary components of this module.
+
+@@Relationships
+The Vector library depends on Atl, Core, Data, and Math.
+A rough order of class dependence within Vector is, from bottom
+to top:
+Vector classes (Vec, Vector2, Vector3, Vector4, etc)
+Matrix classes (Matrix34, Matrix44)
+Quaternion and Situation
+Geometry
+
+##BEGIN COMMAND-LINE-SECTION is automatically generated - do not edit this section!
+@@Command Line Options
+<TABLE>
+Parameter Name  In File      Description                                                                                  
+--------------  -----------  -------------------------------------------------------------------------------------------  
+fastonly        qaitems.cpp  will only run fast tests allowing for fast tests locally and more stringent tests offline    
+qadraw          qaitems.cpp  Draw drawable qa items                                                                       
+resultsfile     qaitems.cpp  The location of the file to put the results in (defaulting to qaresults).                    
+runname         qaitems.cpp  The name to apply to the current run in the log file (defaults to the RAGE release number).  
+showerrors      qaitems.cpp  outputs fails as errors                                                                      
+testname        qaitems.cpp  Only run the test specified in this parameter.                                               
+xmlformat       qaitems.cpp  saves results in xml format                                                                  
+xmllog          qaitems.cpp  outputs in xml log                                                                           
+</TABLE>
+##END COMMAND-LINE-SECTION is automatically generated - do not edit this section!
+
+@@Working Examples
+##BEGIN SAMPLES-SECTION is automatically generated - do not edit this section!
+##END SAMPLES-SECTION is automatically generated - do not edit this section!

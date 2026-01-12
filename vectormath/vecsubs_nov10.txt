@@ -1,0 +1,234 @@
+// Vectormath batchsub script
+
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+//
+// Usage:
+// Old       New
+// Will convert any string "Old" to "New" provided that
+// "Old" is _not_ preceeded or succeeded by an identifier character
+// (A-Z, a-z, 0-9, _)
+//
+// In other words:
+// Old      becomes    New
+// Old()               New()
+// OldStuff            OldStuff
+// a+Old               a+New
+// OldOld              OldOld
+// Old Old             New New
+//
+// C++ style comments like these will be ignored
+//
+// If you want to delete the Old string, use "***NULL***" as the New string:
+// OBSOLETE_ENUM       ***NULL***
+// (replaces OBSOLETE_ENUM with an empty string)
+//
+// If you need spaces in the Old or New strings, use a
+// "->" to seperate the old and new
+// #include "core/stream.h"   ->   #include "file/stream.h"
+//
+// whitespace in the Old string will match any amount of whitespace in
+// the file that's being modified. So "#include <system>" would match
+// #include <system>
+// #include           <system>
+// #include                                  <system>
+//
+// Also, both "Old" and "New" can be python (and perl, and sed) style
+// regular expressions if you begin the line with *REGEX*
+//
+// So if you want to match exactly one whitespace character you could use
+//  the whitespace matching token \s.
+//      *REGEX*      #include\s<system>       ->    #include <system>
+// will match
+//      #include <system>
+// but not
+//      #include                <system>
+//
+// Characters to watch out for: [ ] ( ) \ ? + * .
+// These all have special meaning for regular expressions,
+// you may need to backslash escape them to make them work.
+// They will work normally on lines that don't begin with *REGEX*
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////
+// Rename all of the scalar pipeline types
+Vec2					Vec2f
+Vec2_Ptr				Vec2f_Ptr
+Vec2_Val				Vec2f_Val
+Vec2_Ref				Vec2f_Ref
+Vec2_ConstRef			Vec2f_ConstRef
+Vec2_In					Vec2f_In
+Vec2_Out				Vec2f_Out
+Vec2_InOut				Vec2f_InOut
+Vec3					Vec3f
+Vec3_Ptr				Vec3f_Ptr
+Vec3_Val				Vec3f_Val
+Vec3_Ref				Vec3f_Ref
+Vec3_ConstRef			Vec3f_ConstRef
+Vec3_In					Vec3f_In
+Vec3_Out				Vec3f_Out
+Vec3_InOut				Vec3f_InOut
+Vec4					Vec4f
+Vec4_Ptr				Vec4f_Ptr
+Vec4_Val				Vec4f_Val
+Vec4_Ref				Vec4f_Ref
+Vec4_ConstRef			Vec4f_ConstRef
+Vec4_In					Vec4f_In
+Vec4_Out				Vec4f_Out
+Vec4_InOut				Vec4f_InOut
+Quat					Quatf
+Quat_Ptr				Quatf_Ptr
+Quat_Val				Quatf_Val
+Quat_Ref				Quatf_Ref
+Quat_ConstRef			Quatf_ConstRef
+Quat_In					Quatf_In
+Quat_Out				Quatf_Out
+Quat_InOut				Quatf_InOut
+
+rc_vector3_to_vec3		rc_vector3_to_vec3f
+rc_vec3_to_vector3		rc_vec3f_to_vector3
+rcc_vector3_to_vec3		rcc_vector3_to_vec3f
+rcc_vec3_to_vector3		rcc_vec3f_to_vector3
+RC_VECTOR3_TO_VEC3		RC_VECTOR3_TO_VEC3F
+RC_VEC3_TO_VECTOR3		RC_VEC3F_TO_VECTOR3
+RCC_VECTOR3_TO_VEC3		RCC_VECTOR3_TO_VEC3F
+RCC_VEC3_TO_VECTOR3		RCC_VEC3F_TO_VECTOR3
+
+
+
+///////////////////////////////////////////
+// Remove now-extraneous namespaces
+
+*REGEX* using\s+namespace\s+rage::VMath::AoS\s*;			-> ***STRIP***
+*REGEX* using\s+namespace\s+rage::VMath::SoA\s*;			-> ***STRIP***
+*REGEX* using\s+namespace\s+rage::VMath\s*;					-> ***STRIP***
+*REGEX* using\s+namespace\s+VMath\s*;						-> ***STRIP***
+*REGEX* using\s+namespace\s+VMath::AoS\s*;					-> ***STRIP***
+*REGEX* using\s+namespace\s+VMath::SoA\s*;					-> ***STRIP***
+*REGEX* using\s+namespace\s+AoS\s*;							-> ***STRIP***
+*REGEX* using\s+namespace\s+SoA\s*;							-> ***STRIP***
+
+  namespace AoS												-> /*namespace AoS*/
+  namespace VMath											-> /*namespace VMath*/
+
+ // Can't do all of VMath::AoS because some functions need to be namespace qualified, but lets get the major ones...
+*REGEX* \bVMath::AoS::Vec(\w+)\b							-> Vec\1
+*REGEX* \bVMath::AoS::ScalarV(\w*)\b								-> ScalarV\1
+*REGEX* \bVMath::AoS::Mat(\d\d)V(\w*)\b						-> Mat\1V\2
+  
+  
+///////////////////////////////////////////
+// All the changes below are to get rid of extraneous 'V's 
+// at the end of function names that return ScalarVs or VecBoolVs.
+
+// Convert the old IsFinite to IsFiniteAll
+IsFinite				IsFiniteAll
+
+SameSignV				SameSign
+IsFiniteV				IsFinite 
+IsNotNanV				IsNotNan
+IsEqualIntV				IsEqualInt
+IsEvenV					IsEven
+IsOddV					IsOdd
+IsCloseV				IsClose
+IsGreaterThanOrEqualV	IsGreaterThanOrEqual
+IsLessThanOrEqualV		IsLessThanOrEqual
+MagXYV					MagXY
+MagXZV					MagXZ
+MagYZV					MagYZ
+MagXYVFast				MagXYFast
+MagXZFast				MagXZFast
+MagYZFast				MagYZFast
+DistXYV					DistXY
+DistXZV					DistXZ
+DistYZV					DistYZ
+DistXYVFast				DistXYFast
+DistXZVFast				DistXZFast
+DistYZVFast				DistYZFast
+MagVFast				MagFast
+MagSquaredV				MagSquared
+InvMagVSafe				InvMagSafe
+InvMagVFast				InvMagFast
+InvMagVFastSafe			InvMagFastSafe
+InvMagSquaredV			InvMagSquared
+InvMagSquaredVSafe		InvMagSquaredSafe		
+InvMagSquaredVFast      InvMagSquaredFast
+InvMagSquaredVFastSafe  InvMagSquaredFastSafe
+AngleV                  Angle
+AngleVNormInput         AngleNormInput
+AngleXV                 AngleX
+AngleYV                 AngleY
+AngleZV                 AngleZ
+AngleXVNormInput        AngleXNormInput
+AngleYVNormInput        AngleYNormInput
+AngleZVNormInput        AngleZNormInput
+CrossV                  Cross
+DistVFast               DistFast
+InvDistVSafe            InvDistSafe
+InvDistVFast            InvDistFast
+InvDistVFastSafe        InvDistFastSafe
+DistSquaredV            DistSquared
+InvDistSquaredV         InvDistSquared
+InvDistSquaredVSafe     InvDistSquaredSafe
+InvDistSquaredVFast     InvDistSquaredFast
+InvDistSquaredVFastSafe InvDistSquaredFastSafe
+DeterminantV            Determinant
+Determinant3x3V			Determinant3x3
+
+// These need to change, _except_ when used as a member function of the old vector library.
+// So only replace them if they're not preceeded by a . or ->
+*REGEX* \b(?<!(.\.|-\>))DotV\b					Dot
+*REGEX* \b(?<!(.\.|-\>))MagV\b					Mag
+*REGEX* \b(?<!(.\.|-\>))InvMagV\b				InvMag
+*REGEX* \b(?<!(.\.|-\>))DistV\b					Dist
+*REGEX* \b(?<!(.\.|-\>))InvDistV\b				InvDist
+*REGEX* \b(?<!(.\.|-\>))IsGreaterThanV\b		IsGreaterThan
+*REGEX* \b(?<!(.\.|-\>))IsLessThanV\b			IsLessThan
+*REGEX* \b(?<!(.\.|-\>))IsEqualV\b				IsEqual
+
+//////////////////////////////////////
+// Change to the new casts
+RCC_INTRIN_TO_SCALARV				RCC_SCALARV
+RCC_VECTOR4_TO_SCALARV				RCC_SCALARV
+RCC_VECTOR3_TO_SCALARV				RCC_SCALARV
+RCC_INTRIN_TO_VEC3V					RCC_VEC3V
+RCC_VECTOR3_TO_VEC3V				RCC_VEC3V
+RCC_VECTOR4_TO_VEC3V				RCC_VEC3V
+RCC_INTRIN_TO_VEC4V					RCC_VEC4V
+RCC_VECTOR4_TO_VEC4V				RCC_VEC4V
+RCC_VECTOR3_TO_VEC4V				RCC_VEC4V
+RCC_QUATERNION_TO_QUATV				RCC_QUATV
+RCC_MATRIX34_TO_MAT34V				RCC_MAT34V
+RCC_MATRIX44_TO_MAT44V				RCC_MAT44V
+RCC_MATRIX33_TO_MAT33V				RCC_MAT33V
+RCC_VEC3F_TO_VECTOR3				RCC_VECTOR3
+RCC_INTRIN_TO_VECTOR3				RCC_VECTOR3
+RCC_VEC3V_TO_VECTOR3				RCC_VECTOR3
+RCC_VEC4V_TO_VECTOR3				RCC_VECTOR3
+RCC_VEC4V_TO_VECTOR4				RCC_VECTOR4
+RCC_VEC3V_TO_VECTOR4				RCC_VECTOR4
+RCC_MAT34V_TO_MATRIX34				RCC_MATRIX34
+RCC_MAT44V_TO_MATRIX44				RCC_MATRIX44
+
+RC_INTRIN_TO_SCALARV				RC_SCALARV
+RC_VECTOR4_TO_SCALARV				RC_SCALARV
+RC_VECTOR3_TO_SCALARV				RC_SCALARV
+RC_INTRIN_TO_VEC3V					RC_VEC3V
+RC_VECTOR3_TO_VEC3V					RC_VEC3V
+RC_VECTOR4_TO_VEC3V					RC_VEC3V
+RC_INTRIN_TO_VEC4V					RC_VEC4V
+RC_VECTOR4_TO_VEC4V					RC_VEC4V
+RC_VECTOR3_TO_VEC4V					RC_VEC4V
+RC_QUATERNION_TO_QUATV				RC_QUATV
+RC_MATRIX34_TO_MAT34V				RC_MAT34V
+RC_MATRIX44_TO_MAT44V				RC_MAT44V
+RC_MATRIX33_TO_MAT33V				RC_MAT33V
+RC_VEC3F_TO_VECTOR3					RC_VECTOR3
+RC_INTRIN_TO_VECTOR3				RC_VECTOR3
+RC_VEC3V_TO_VECTOR3					RC_VECTOR3
+RC_VEC4V_TO_VECTOR3					RC_VECTOR3
+RC_VEC4V_TO_VECTOR4					RC_VECTOR4
+RC_VEC3V_TO_VECTOR4					RC_VECTOR4
+RC_MAT34V_TO_MATRIX34				RC_MATRIX34
+RC_MAT44V_TO_MATRIX44				RC_MATRIX44

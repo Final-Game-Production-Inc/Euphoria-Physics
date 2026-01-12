@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup />
+  <ItemGroup>
+    <ClInclude Include="altivec.h" />
+    <ClInclude Include="altivec2.h" />
+    <ClInclude Include="amath.h" />
+    <ClInclude Include="angmath.h" />
+    <ClInclude Include="channel.h" />
+    <ClInclude Include="constants.h" />
+    <ClInclude Include="float16.h" />
+    <ClInclude Include="intrinsics.h" />
+    <ClInclude Include="math.h" />
+    <ClInclude Include="nan.h" />
+    <ClInclude Include="polynomial.h" />
+    <ClInclude Include="random.h" />
+    <ClInclude Include="simplemath.h" />
+    <ClInclude Include="spu_random.h" />
+    <ClInclude Include="vecmath.h" />
+    <ClInclude Include="vecrand.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="amath.cpp" />
+    <ClCompile Include="angmath.cpp" />
+    <ClCompile Include="float16.cpp" />
+    <ClCompile Include="mathchannel.cpp" />
+    <ClCompile Include="nan.cpp" />
+    <ClCompile Include="polynomial.cpp" />
+    <ClCompile Include="random.cpp" />
+    <ClCompile Include="simplemath.cpp" />
+    <ClCompile Include="vecrand.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="float16.inl" />
+    <ClInclude Include="vecrand.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="math.dtx" />
+  </ItemGroup>
+</Project>

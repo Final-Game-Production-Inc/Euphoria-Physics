@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="tools_ng\etc\projgen">
+      <UniqueIdentifier>{C3FD447F-C90D-6CF0-75B0-C1EC4BCE7A67}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="allbitsf.h" />
+    <ClInclude Include="color32.h" />
+    <ClInclude Include="color64.h" />
+    <ClInclude Include="colorvector3.h" />
+    <ClInclude Include="hull.h" />
+    <ClInclude Include="geometry.h" />
+    <ClInclude Include="matrix34.h" />
+    <ClInclude Include="matrix33.h" />
+    <ClInclude Include="matrix44.h" />
+    <ClInclude Include="quantize.h" />
+    <ClInclude Include="quaternion.h" />
+    <ClInclude Include="vector2.h" />
+    <ClInclude Include="vector3.h" />
+    <ClInclude Include="vector4.h" />
+    <ClInclude Include="vec.h" />
+    <ClInclude Include="colors.h" />
+    <ClInclude Include="vecstd.h" />
+    <ClInclude Include="vectorn.h" />
+    <ClInclude Include="matrixt.h" />
+    <ClInclude Include="vectort.h" />
+    <ClInclude Include="vector3_config.h" />
+    <ClInclude Include="vector3_default.h" />
+    <ClInclude Include="vector3_strings.h" />
+    <ClInclude Include="vector3_win32.h" />
+    <ClInclude Include="vector3_xenon.h" />
+    <ClInclude Include="matrix34_default.h" />
+    <ClInclude Include="matrix34_xenon.h" />
+    <ClInclude Include="matrix33_default.h" />
+    <ClInclude Include="matrix33_xenon.h" />
+    <ClInclude Include="vector4_default.h" />
+    <ClInclude Include="vector4_win32.h" />
+    <ClInclude Include="vector4_xenon.h" />
+    <ClInclude Include="quaternion_default.h" />
+    <ClInclude Include="quaternion_win32.h" />
+    <ClInclude Include="quaternion_xenon.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="allbitsf.cpp" />
+    <ClCompile Include="color32.cpp" />
+    <ClCompile Include="color64.cpp" />
+    <ClCompile Include="colorvector3.cpp" />
+    <ClCompile Include="hull.cpp" />
+    <ClCompile Include="geometry.cpp" />
+    <ClCompile Include="matrix34.cpp" />
+    <ClCompile Include="matrix33.cpp" />
+    <ClCompile Include="matrix44.cpp" />
+    <ClCompile Include="quantize.cpp" />
+    <ClCompile Include="quaternion.cpp" />
+    <ClCompile Include="vector2.cpp" />
+    <ClCompile Include="vector3.cpp" />
+    <ClCompile Include="vector4.cpp" />
+    <ClCompile Include="vec.cpp" />
+    <ClCompile Include="vector3_consts_spu.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vector.dtx" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,50 @@
+Project ik 
+
+Files {
+	IkConfig.h
+	IkManager.cpp
+	IkManager.h
+	IkManagerSolverTypes.cpp
+	IkManagerSolverTypes.h
+	IkRequest.cpp
+	IkRequest.h
+	Directory solvers {
+		ArmIkSolver.cpp
+		ArmIkSolver.h
+		BodyLookSolver.cpp
+		BodyLookSolver.h
+		BodyLookSolverProxy.cpp
+		BodyLookSolverProxy.h
+		BodyRecoilSolver.cpp
+		BodyRecoilSolver.h
+		HeadSolver.cpp
+		HeadSolver.h
+		LegSolver.cpp
+		LegSolver.h
+		LegSolverProxy.cpp
+		LegSolverProxy.h
+		QuadLegSolver.cpp
+		QuadLegSolver.h
+		QuadLegSolverProxy.cpp
+		QuadLegSolverProxy.h
+		QuadrupedReactSolver.cpp
+		QuadrupedReactSolver.h
+		RootSlopeFixupSolver.cpp
+		RootSlopeFixupSolver.h
+		SolverProxy.cpp
+		SolverProxy.h
+		TorsoReactSolver.cpp
+		TorsoReactSolver.h
+		TorsoSolver.cpp
+		TorsoSolver.h
+		TorsoVehicleSolver.cpp
+		TorsoVehicleSolver.h
+		TorsoVehicleSolverProxy.cpp
+		TorsoVehicleSolverProxy.h
+	}
+	Parse {
+		IkManagerSolverTypes
+		Metadata
+	}
+}
+

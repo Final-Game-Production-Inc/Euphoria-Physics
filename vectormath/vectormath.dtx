@@ -1,0 +1,133 @@
+
+@@Overview
+<GROUP vectormath>
+
+* Overview *
+'vectormath' is the latest version of the vector + math library (meant as a replacement for the legacy 'vector' library).
+
+(Will fill out the rest when I see that how the HTML looks...)
+
+@@classInterface
+<TITLE AoS Class Interface>
+
+@@classComparisonFuncs
+<TITLE Comparison Functions>
+<table 35% 20% 5% 5% 5% 5% 5% 5% 5% 5% 5%>
+Function                          Returns             sc     v2     v3     v4     vb     qu     m33     m34     m44
+------------------                ---------------     --     --     --     --     --     --     ---     ---     ---
+IsFiniteAll(T)                       bool                x      x      x      x	        
+IsFiniteStable(T)                 bool                       x      x      x
+SameSign(T,T)                    VecBoolV            x      x      x      x
+SameSignAll(T,T)                  u32                 x      x      x      x
+IsFinite(T)                      VecBoolV            x      x      x      x             x
+IsNotNan(T)                      VecBoolV            x      x      x      x             x
+IsEven(T)                        VecBoolV            x      x      x      x
+IsOdd(T)                         VecBoolV            x      x      x      x
+IsZeroAll(T)                      u32                 x      x      x      x             x 
+IsZeroNone(T)                     u32                        x      x      x             x
+IsBetweenNegAndPosBounds(T,T)     u32                 x      x      x      x
+IsEqual(T,T)                     VecBoolV            x      x      x      x             x
+IsEqualAll(T,T)                   u32                 x      x      x      x             x      x       x       x
+IsEqualNone(T,T)                  u32                 x      x      x      x             x      x       x       x
+IsEqualInt(T,T)                  VecBoolV            x      x      x      x      x      x
+IsEqualIntAll(T,T)                u32                 x      x      x      x      x      x      x       x       x
+IsEqualIntNone(T,T)               u32                 x      x      x      x      x      x      x       x       x
+IsClose(T,T,sc eps)              VecBoolV            x      x      x      x             x
+IsClose(T,T,T eps)               VecBoolV            x      x      x      x             x
+IsCloseAll(T,T,sc eps)            u32                 x      x      x      x             x      x       x       x
+IsCloseAll(T,T,T eps)             u32                 x      x      x      x             x      1       1       1
+IsCloseNone(T,T,sc eps)           u32                        x      x      x             x      x       x       x
+IsCloseNone(T,T,T eps)            u32                        x      x      x             x      1       1       1
+IsGreaterThanAll(T,T)             u32                 x      x      x      x             x      x       x       x
+IsGreaterThan(T,T)               VecBoolV            x      x      x      x             x
+IsGreaterThanOrEqualAll(T,T)      u32                 x      x      x      x             x      x       x       x
+IsGreaterThanOrEqual(T,T)        VecBoolV            x      x      x      x             x
+IsLessThanAll(T,T)                u32                 x      x      x      x             x      x       x       x
+IsLessThan(T,T)                  VecBoolV            x      x      x      x             x
+IsLessThanOrEqualAll(T,T)         u32                 x      x      x      x             x      x       x       x
+IsLessThanOrEqual(T,T)           VecBoolV            x      x      x      x             x
+</table>
+
+(1): For matrices, the third argument is a vector of epsilons the size of a single column
+
+@@classConversionFuncs
+<TITLE Conversion Functions>
+These are some of the basic conversion functions we provide. There are lots of other ways to convert between vector types, but generally when 
+you want to keep the order of the XYZW components the same and don't care about unused or missing components, these are the functions you can use.
+
+From \\ To           ScalarV                     Vec2V               Vec3V               Vec4V                QuatV               float
+-----------          --------                    -------             -------             -----                -----               -----
+ScalarV              -                           Vec2V()             Vec3V()             Vec4V()              QuatV()             .GetXf()
+Vec2V                .GetX()                     -                                       Vec4V()                                  .GetXf()
+Vec3V                .GetX()                     .Get<X,Y>()         -                   Vec4V()              QuatV()             .GetXf()
+Vec4V                .GetX()                     .Get<X,Y>()         .GetXYZ()           -                                        .GetXf()
+QuatV                .GetX()                                         .GetXYZ()           Vec4V()              -                   .GetXf()
+float                ScalarVFromF32()            Vec2VFromF32()      Vec3VFromF32()      Vec4VFromF32()       QuatVFromF32() 
+u32                  ScalarVFromU32()            Vec2VFromU32()      Vec3VFromU32()      Vec4VFromU32()       QuatVFromU32()  
+s32                  ScalarVFromS32()            Vec2VFromS32()      Vec3VFromS32()      Vec4VFromS32()       QuatVFromS32()
+constant u32s        ScalarVConstant<>()         Vec2VConstant<>()   Vec3VConstant<>()   Vec4VConstant<>()    QuatVConstant<>()
+
+@@classMagFuncs
+<TITLE Magnitude Functions>
+<table>
+Function                          Returns             sc     v2     v3     v4  
+------------------                ---------------     --     --     --     --  
+Abs(T)                            T                   x      x      x      x
+Sqrt(T)                           T                   x      x      x      x
+SqrtSafe(T,T)                     T                   x      x      x      x
+SqrtFast(T)                       T                   x      x      x      x
+SqrtFastSafe(T,T)                 T                   x      x      x      x
+InvSqrt(T)                        T                   x      x      x      x
+InvSqrtSafe(T,T)                  T                   x      x      x      x
+InvSqrtFast(T)                    T                   x      x      x      x
+InvSqrtSafeFast(T,T)              T                   x      x      x      x
+Mag[XY,XZ,YZ]V(T)                 ScalarV                           x
+Mag[XY,XZ,YZ]VFast(T)             ScalarV                           x
+Dist[XY,XZ,YZ]V(T,T)              ScalarV                           x                            
+Dist[XY,XZ,YZ]VFast(T,T)          ScalarV                           x
+Mag(T)                           ScalarV                    x      x      x
+MagFast(T)                       ScalarV                    x      x      x
+MagSquared(T)                    ScalarV                    x      x      x
+InvMag(T)                        ScalarV                    x      x      x
+InvMagSafe(T,T)                  ScalarV                    x      x      x
+InvMagFast(T)                    ScalarV                    x      x      x
+InvMagFastSafe(T,T)              ScalarV                    x      x      x
+InvMagSquared(T)                 ScalarV                    x      x      x
+InvMagSquaredSafe(T,T)           ScalarV                    x      x      x
+InvMagSquaredFast(T)             ScalarV                    x      x      x
+InvMagSquaredFastSafe(T,T)       ScalarV                    x      x      x
+Normalize(T)                      T                          x      x      x
+NormalizeSafe(T,T,T)              T                          x      x      x
+NormalizeFast(T)                  T                          x      x      x
+NormalizeFastSafe(T,T,T)          T                          x      x      x
+</table>
+
+
+@@Components
+Here's a table listing the primary components of this module.
+
+@@Relationships
+Insert text with inheritance and dependency info for the
+classes in this library.  Ideally, include UML diagrams
+(as a GIF) followed by any additional explanations.
+
+##BEGIN COMMAND-LINE-SECTION is automatically generated - do not edit this section!
+@@Command Line Options
+<TABLE>
+Parameter Name  In File                                  Description                                                                                           
+--------------  ---------------------------------------  ----------------------------------------------------------------------------------------------------  
+fastonly        X:\rage\base\src\vectormath\qaitems.cpp  [rageqa] will only run fast tests allowing for fast tests locally and more stringent tests offline    
+qadraw          X:\rage\base\src\vectormath\qaitems.cpp  [rageqa] Draw drawable qa items                                                                       
+resultsfile     X:\rage\base\src\vectormath\qaitems.cpp  [rageqa] The location of the file to put the results in (defaulting to qaresults).                    
+runname         X:\rage\base\src\vectormath\qaitems.cpp  [rageqa] The name to apply to the current run in the log file (defaults to the RAGE release number).  
+showerrors      X:\rage\base\src\vectormath\qaitems.cpp  [rageqa] outputs fails as errors                                                                      
+testname        X:\rage\base\src\vectormath\qaitems.cpp  [rageqa] Only run the test specified in this parameter.                                               
+xmlformat       X:\rage\base\src\vectormath\qaitems.cpp  [rageqa] saves results in xml format                                                                  
+xmllog          X:\rage\base\src\vectormath\qaitems.cpp  [rageqa] outputs in xml log                                                                           
+</TABLE>
+##END COMMAND-LINE-SECTION is automatically generated - do not edit this section!
+
+@@Working Examples
+##BEGIN SAMPLES-SECTION is automatically generated - do not edit this section!
+##END SAMPLES-SECTION is automatically generated - do not edit this section!
+

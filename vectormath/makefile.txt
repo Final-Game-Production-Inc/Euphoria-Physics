@@ -1,0 +1,208 @@
+Project vectormath
+Files {
+	classes.h
+	boolv.h
+	classfreefuncsv.h
+	mat44v.h
+	mat34v.h
+	mat33v.h
+	vec2v.h
+	vec3v.h
+	vec4v.h
+	quatv.h
+	scalarv.h
+	transformv.h
+	vecboolv.h
+	legacyconvert.h
+	threadvector.h
+	vectorconfig.h
+	vectortypes.h
+	vectorutility.h
+	channel.h
+	mathops.h
+	vectormath.h
+	Folder Implementation {
+		boolv.inl
+		boolv.cpp
+		classfreefuncsv.inl
+		mat44v.inl
+		mat44v.cpp
+		mat34v.inl
+		mat34v.cpp
+		mat33v.inl
+		mat33v.cpp
+		vec2v.inl
+		vec3v.inl
+		vec4v.inl
+		vec2v.cpp
+		vec3v.cpp
+		vec4v.cpp
+		quatv.inl
+		quatv.cpp
+		scalarv.inl
+		scalarv.cpp
+		transformv.inl
+		vecboolv.inl
+		vecboolv.cpp
+		vectortypes.inl
+		vectorutility.cpp
+		mathops.inl
+		mathops.cpp
+		vectormath.cpp
+		vectormath_spu.cpp
+	}
+	
+	Folder Advanced {
+		Folder Float_Classes {
+			classfreefuncsf.h
+			vec2f.h
+			vec3f.h
+			vec4f.h
+			quatf.h
+			Folder Implementation {
+				classfreefuncsf.inl
+				vec2f.inl
+				vec3f.inl
+				vec4f.inl
+				vec2f.cpp
+				vec3f.cpp
+				vec4f.cpp
+				quatf.inl
+				quatf.cpp
+			}
+		}
+		Folder Float_Core {
+			v1vector4.h
+			v2vector2.h
+			v3vector3.h
+			v2vector4.h
+			v3vector4.h
+			v4vector4.h
+			Folder Implementation {
+				v2vector2.inl
+				v3vector3.inl
+				v1vector4.inl
+				v2vector4.inl
+				v3vector4.inl
+				v4vector4.inl
+			}
+		}
+		Folder Vector_Core {
+			v1vector4v.h
+			v2vector4v.h
+			v3vector4v.h
+			v4vector4v.h
+			v4vector4vutility.h
+			Folder Implementation {
+				v1vector4v.inl
+				v2vector4v.inl
+				v3vector4v.inl
+				v4vector4v.inl
+				v4vector4vutility.inl
+				Folder PS3 {
+					v1vector4vcore_ps3.inl
+					v2vector4vcore_ps3.inl
+					v3vector4vcore_ps3.inl
+					v4vector4vcore_ps3.inl
+					Folder FastPermutes {
+						v4perm1instruction_ps3.inl
+						v4perm2instructions_ps3.inl
+						v4perm3instructions_ps3.inl
+						v4perm4instructions_ps3.inl
+						v4perm5instructions_ps3.inl
+						v4perm6instructions_ps3.inl
+						v4permtwo1instruction_ps3.inl
+						v4permtwo2instructions_ps3.inl
+						v4permtwo3instructions_ps3.inl
+						v4permtwo4instructions_ps3.inl
+						v4permtwo5instructions_ps3.inl
+						v4permtwo6instructions_ps3.inl
+					}
+				}
+				Folder Win32PC {
+					v1vector4vcore_win32pc.inl
+					v2vector4vcore_win32pc.inl
+					v3vector4vcore_win32pc.inl
+					v4vector4vcore_win32pc.inl
+				}
+				Folder XBox360 {
+					v1vector4vcore_xbox360.inl
+					v2vector4vcore_xbox360.inl
+					v3vector4vcore_xbox360.inl
+					v4vector4vcore_xbox360.inl
+					Folder FastPermutes {
+						v4permtwo1instruction_xbox360.inl
+						v4permtwo2instructions_xbox360.inl
+						v4permtwo3instructions_xbox360.inl
+					}
+				}
+			}
+		}
+		Folder Structure_Of_Arrays {
+			classes_soa.h
+			layoutconvert.h
+			classfreefuncsv_soa.h
+			mat44v_soa.h
+			mat34v_soa.h
+			mat33v_soa.h
+			vecbool1v_soa.h
+			vecbool2v_soa.h
+			vecbool3v_soa.h
+			vecbool4v_soa.h
+			scalarv_soa.h
+			vec2v_soa.h
+			vec3v_soa.h
+			vec4v_soa.h
+			quatv_soa.h
+			Folder Implementation {
+				layoutconvert.inl
+				classfreefuncsv_soa.inl
+				mat44v_soa.inl
+				mat44v_soa.cpp
+				mat34v_soa.inl
+				mat34v_soa.cpp
+				mat33v_soa.inl
+				mat33v_soa.cpp
+				scalarv_soa.inl
+				scalarv_soa.cpp
+				vec2v_soa.inl
+				vec2v_soa.cpp
+				vec3v_soa.inl
+				vec3v_soa.cpp
+				vec4v_soa.inl
+				vec4v_soa.cpp
+				quatv_soa.cpp
+				quatv_soa.inl
+				vecbool1v_soa.inl
+				vecbool1v_soa.cpp
+				vecbool2v_soa.inl
+				vecbool2v_soa.cpp
+				vecbool3v_soa.inl
+				vecbool3v_soa.cpp
+				vecbool4v_soa.inl
+				vecbool4v_soa.cpp
+			}
+		}
+	}
+	
+	Folder Unit_Tests {
+		test_vec4v_soa.cpp
+		test_mat33v_soa.cpp
+		test_mat34v_soa.cpp
+		test_quatv.cpp
+		test_vec3v.cpp
+		test_vec4v.cpp
+		test_mat33v.cpp
+		test_mat34v.cpp
+		test_mat44v.cpp
+		xboxmath_rage.h
+		test_benchmarks.h
+		test_benchmarks.cpp
+	}
+
+	README.txt
+
+}
+Custom {
+	vectormath.dtx
+}

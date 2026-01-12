@@ -1,0 +1,124 @@
+#ifndef _TFIT_KEY_IAES2_H_
+#define _TFIT_KEY_IAES2_H_
+#if RSG_CPU_X86 || RSG_CPU_X64  || __RESOURCECOMPILER
+#if RSG_PC && !__RGSC_DLL
+#ifndef _INTPTR
+#define _INTPTR 1
+#endif
+#include <stdio.h>
+#include <arxstdint.h>
+#ifdef __cplusplus
+extern "C" { 
+#endif
+extern TFIT_key_iAES2_t TFIT_Game_key_0_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_1_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_2_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_3_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_4_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_5_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_6_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_7_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_8_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_9_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_10_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_11_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_12_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_13_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_14_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_15_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_16_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_17_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_18_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_19_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_20_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_21_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_22_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_23_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_24_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_25_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_26_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_27_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_28_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_29_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_30_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_31_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_32_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_33_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_34_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_35_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_36_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_37_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_38_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_39_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_40_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_41_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_42_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_43_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_44_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_45_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_46_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_47_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_48_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_49_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_50_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_51_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_52_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_53_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_54_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_55_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_56_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_57_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_58_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_59_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_60_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_61_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_62_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_63_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_64_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_65_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_66_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_67_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_68_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_69_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_70_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_71_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_72_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_73_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_74_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_75_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_76_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_77_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_78_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_79_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_80_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_81_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_82_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_83_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_84_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_85_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_86_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_87_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_88_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_89_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_90_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_91_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_92_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_93_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_94_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_95_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_96_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_97_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_98_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_99_iAES2;
+extern TFIT_key_iAES2_t TFIT_Game_key_100_iAES2;
+
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif
+#endif
+
+#endif //_TFIT_KEY_IAES2_H_
+

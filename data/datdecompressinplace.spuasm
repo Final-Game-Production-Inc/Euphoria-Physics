@@ -1,0 +1,275 @@
+/*
+	Assembly version of Rage/GTA unpack
+	Moved from C due to lack of params allowed :(
+
+	
+	u32 datDecompressInPlace(u8 *dest,const u32 destSize,const u32 offsetOfSrc,const u32 srcSize)
+	
+*/
+
+.globl datDecompressInPlace
+
+
+/*
+ *	$3 is dest address
+ *	$4 is destsize ( not used in code )
+ *	$5 is source offset from dest
+ *	$6 is srcSize
+ *
+ *	For SPU C - $3 through to $79 are volatile
+ *	$1 is Stack - always 16byte aligned
+ *	$0 is return address
+ *
+ *	Returns destsize in $3
+ */ 
+
+#define dest $3
+#define dstsize $4
+#define src $5
+#define size $6	
+
+#define m0 $7
+#define m1 $8
+#define m2 $9
+#define d0 $10
+#define d1 $11
+#define d2 $12
+#define s0 $13
+#define s1 $14
+#define s2 $15
+
+#define dst $16
+#define fetch $17
+#define getmode $18
+#define getmask $19
+#define dwrite $20
+#define gettable $21
+
+#define t0 $22
+#define t1 $23
+#define param $24
+
+#define align $25
+#define mode $26
+#define off $27
+#define compare $28
+#define count $29
+#define ptr $30
+#define insert $31
+
+#define table1 $32
+#define table2 $33
+#define litjump $34
+#define modejump $35
+#define blockjump $36
+#define jump $37
+#define bit30check $38
+#define remaining $39
+#define bytesplat $40
+
+#define	word404f $41
+#define word505f $42
+#define word606f $43
+#define tablesize $44
+
+
+
+/* Tables for overlapping copy */
+
+	.p2align 4
+
+	.word	0x00010203,0x04050607,0x08090a0b,0x0c0d0e0f			#	Default for >17
+__overlap1:
+	.word	0x00000000,0x00000000,0x00000000,0x00000000
+	.word	0x00010001,0x00010001,0x00010001,0x00010001	
+	.word	0x00010200,0x01020001,0x02000102,0x00010200
+	.word	0x00010203,0x00010203,0x00010203,0x00010203
+	.word	0x00010203,0x04000102,0x03040001,0x02030400
+	.word	0x00010203,0x04050001,0x02030405,0x00010203
+	.word	0x00010203,0x04050600,0x01020304,0x05060001
+	.word	0x00010203,0x04050607,0x00010203,0x04050607
+	.word	0x00010203,0x04050607,0x08000102,0x03040506
+	.word	0x00010203,0x04050607,0x08090001,0x02030405
+	.word	0x00010203,0x04050607,0x08090a00,0x01020304
+	.word	0x00010203,0x04050607,0x08090a0b,0x00010203
+	.word	0x00010203,0x04050607,0x08090a0b,0x0c000102
+	.word	0x00010203,0x04050607,0x08090a0b,0x0c0d0001
+	.word	0x00010203,0x04050607,0x08090a0b,0x0c0d0e00
+	.word	0x00010203,0x04050607,0x08090a0b,0x0c0d0e0f
+	.word	0x00010203,0x04050607,0x08090a0b,0x0c0d0e0f
+
+	.word	0x10118080,0x80808080,0x80808080,0x80808080
+__overlap2:
+	.word	0x00008080,0x80808080,0x80808080,0x80808080
+	.word	0x00018080,0x80808080,0x80808080,0x80808080
+	.word	0x01028080,0x80808080,0x80808080,0x80808080
+	.word	0x00018080,0x80808080,0x80808080,0x80808080
+	.word	0x01028080,0x80808080,0x80808080,0x80808080
+	.word	0x04058080,0x80808080,0x80808080,0x80808080
+	.word	0x02038080,0x80808080,0x80808080,0x80808080
+	.word	0x00018080,0x80808080,0x80808080,0x80808080
+	.word	0x07088080,0x80808080,0x80808080,0x80808080
+	.word	0x06078080,0x80808080,0x80808080,0x80808080	
+	.word	0x05068080,0x80808080,0x80808080,0x80808080
+	.word	0x04058080,0x80808080,0x80808080,0x80808080
+	.word	0x03048080,0x80808080,0x80808080,0x80808080
+	.word	0x02038080,0x80808080,0x80808080,0x80808080
+	.word	0x01028080,0x80808080,0x80808080,0x80808080	
+	.word	0x00018080,0x80808080,0x80808080,0x80808080
+	.word	0x10008080,0x80808080,0x80808080,0x80808080
+		
+
+datDecompressInPlace:
+
+	a src,src,dest											;	brsl t0,__pcrel
+__pcrel:
+	ai size,size,-2											;	fsmbi getmask,0xf0ff
+	ai src,src,2											;	fsmbi getmode,0x0080
+	ilh bytesplat,0x303										;	fsmbi bit30check,0xc000
+	ai table2,t0,__overlap2-__pcrel							;	cdd fetch,0($1)
+	ai litjump,t0,__newlit-__pcrel							;	gbb getmask,getmask								// 0000f0ff
+	ai table1,table2,__overlap1-__overlap2					;	gbb getmode,getmode								// 00000080
+	ai modejump,t0,__newmode-__pcrel						;	gbb bit30check,bit30check						// 0000c000
+	ai blockjump,t0,__newblock-__pcrel						;	rotqbyi dst,dest,0
+	andbi fetch,fetch,15									;	rotqbyi getmask,getmask,2						// f0ff0000
+	ilhu gettable,0x8080									;	rotqbyi getmode,getmode,2						// 00800000
+	orbi word404f,fetch,0x40								;	rotqbyi bit30check,bit30check,2					// c0000000
+	ila tablesize,17*16-1										
+	ahi fetch,fetch,0x101									
+							
+	
+	
+	.p2align 3
+__newmode:	
+	shli t0,src,24											;	lqd s0,0(src)					
+	andi t1,src,15											;	lqd s1,16(src)
+	
+	ai size,size,-1											;	shufb param,t1,t1,bytesplat		
+	selb t0,t0,getmode,getmask								
+	iohl gettable,0x0100											
+	ai src,src,1											;	shufb mode,s0,s0,t0		
+	a param,param,fetch										;	brz size,__modefinish			
+	orbi word505f,word404f,0x50								;	lnop
+	ila remaining,8											;	shufb param,s0,s1,param
+	nor mode,mode,mode																							// Needed for Rage - as Rage/GTA uses a 1 bit for literal
+	orbi word606f,word404f,0x60							
+__newlit:
+	clz d2,mode												;	fsmbi m1,0xffff
+	andi m2,dst,15											;	rotqbyi dwrite,dst,0
+	ceq jump,d2,remaining									
+	sfi m2,m2,0												
+	selb jump,blockjump,modejump,jump						
+	rothm m0,m1,m2											
+	
+
+	rotm m1,m1,m2											;	hbr __litbranch,jump	
+	sfi count,d2,0											;	rotqby m2,param,m2																
+	bg d0,size,d2											
+	rothm t0,m0,count														
+	rotm t1,m1,count										;	brnz d0,__literalfinish			
+	sf remaining,d2,remaining								;	lqd d0,0(dwrite)				
+	shl mode,mode,d2										;	lqd d1,16(dwrite)				
+	andc m0,m0,t0											;	lnop	
+	andc m1,m1,t1											;	rotqby param,param,d2							
+	sf dst,count,dst										;	fsmb m0,m0					
+															;	fsmb m1,m1					
+	a size,size,count										
+	sf src,count,src										;	shufb s0,param,param,gettable			
+	selb d0,d0,m2,m0																		
+	selb d1,d1,m2,m1										
+	
+/* We have a block now */
+
+/* Predict block... */
+
+
+
+	cgt t1,bit30check,mode									;	stqd d0,0(dwrite)
+	ceqi d2,remaining,1										;	stqd d1,16(dwrite)			
+	selb t1,blockjump,litjump,t1
+__litbranch:
+				bi jump
+__newblock:				
+	cgt s1,s0,tablesize										;	rotqmbii t0,s0,-4			
+	selb jump,t1,modejump,d2								
+	ai ptr,dst,-1															
+	or s1,s0,s1												;	hbr __blockbranch,jump								// Either valid table, or -1
+	andi count,s0,15										;	rotqbyi dwrite,dst,0								
+	sf ptr,t0,ptr											;	lqx d0,table1,s1		
+	ai size,size,-1											;	lqx d1,table2,s1		
+	andi insert,dst,15										;	rotqbyi param,param,2
+	andi align,ptr,15										;	brz size,__modefinish
+	a mode,mode,mode										;	shufb off,insert,insert,bytesplat
+	ai count,count,3										;	shufb align,align,align,bytesplat		
+	ai remaining,remaining,-1								;	lqd s0,0(ptr)					
+	a dst,dst,count											;	lqd s1,16(ptr)					
+	sf insert,off,word606f									;	lqd s2,32(ptr)					
+	a align,align,word404f									;	shufb compare,count,count,bytesplat				
+	ai src,src,2											;	shufb t0,d0,d1,insert		
+	ai size,size,-1											;	shufb t1,d1,d0,insert		
+	sf m2,off,word606f										;	shufb s0,s0,s1,align		
+	sf m1,off,word505f										;	shufb s1,s1,s2,align		
+	sf m0,off,word404f										;	lqd d2,32(dwrite)									
+	andbi m2,m2,0x3f										;	lqd d1,16(dwrite)									
+	andbi m1,m1,0x3f										;	lqd d0,0(dwrite)								
+	andbi m0,m0,0x3f										;	shufb t0,s0,s1,t0			
+	clgtb m2,compare,m2										;	shufb t1,s0,s1,t1			
+	clgtb m1,compare,m1																			
+	clgtb m0,compare,m0																			
+	selb d2,d2,t0,m2										;	shufb s0,param,param,gettable									
+	selb d1,d1,t1,m1										;	brz size,__blockfinish									
+	selb d0,d0,t0,m0										;	stqd d2,32(dwrite)					
+	cgt t1,bit30check,mode									;	stqd d1,16(dwrite)					
+	ceqi d2,remaining,1										;	stqd d0,0(dwrite)					
+
+	selb t1,blockjump,litjump,t1
+__blockbranch:
+				bi jump
+
+# This is temp code - once I get rid of the bugs I'll put the branch prediction in and schedule this!
+
+
+	
+
+	
+__blockfinish:
+	selb d0,d0,t0,m0										;	stqd d2,32(dwrite)					
+	sf dest,dest,dst										;	stqd d1,16(dwrite)					
+															;	stqd d0,0(dwrite)					
+																	// Size is current write - original
+	bi $0																					// Return directly to calling function
+
+
+__literalfinish:	
+
+/* Should fixup literal here */
+
+	sfi count,size,0										#	Only insert up to size literals!
+	rothm t0,m0,count														
+	rotm t1,m1,count											
+	lqd d0,0(dwrite)				
+	lqd d1,16(dwrite)				
+	andc m0,m0,t0											
+	andc m1,m1,t1											
+	sf dst,count,dst
+	fsmb m0,m0					
+	fsmb m1,m1					
+	selb d0,d0,m2,m0																		
+	selb d1,d1,m2,m1										
+	stqd d0,0(dwrite)	
+	stqd d1,16(dwrite)			
+
+		
+
+
+__modefinish:	
+	sf dest,dest,dst																// Size is current write - original
+	bi $0																					// Return directly to calling function
+
+
+
+	
+	
+	
+	
+	

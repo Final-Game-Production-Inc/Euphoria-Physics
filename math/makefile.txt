@@ -1,0 +1,35 @@
+Project math
+Files {
+	altivec.h
+	altivec2.h
+	amath.cpp
+	amath.h
+	angmath.cpp
+	angmath.h
+	channel.h
+	constants.h
+	float16.cpp
+	float16.h
+	float16.inl
+	intrinsics.h
+	math.h
+	mathchannel.cpp
+	nan.cpp
+	nan.h
+	polynomial.cpp
+	polynomial.h
+	random.cpp
+	random.h
+	simplemath.cpp
+	simplemath.h
+	spu_random.h
+	vecmath.h
+	vecrand.cpp
+	vecrand.h
+	vecrand.inl
+	vecshift.cpp
+	vecshift.h
+}
+Custom {
+	math.dtx
+}
