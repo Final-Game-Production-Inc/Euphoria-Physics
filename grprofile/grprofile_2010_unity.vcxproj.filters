@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="tools_ng\etc\projgen">
+      <UniqueIdentifier>{C3FD447F-C90D-6CF0-75B0-C1EC4BCE7A67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EKG">
+      <UniqueIdentifier>{6A28152B-386C-7D61-2E9E-D87BAD7379BF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Draw">
+      <UniqueIdentifier>{873DA2AF-92A0-3A50-756E-D62B04D32B75}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="timebars.h" />
+    <ClInclude Include="trail.h" />
+    <ClInclude Include="gcmtrace.h" />
+    <ClInclude Include="pix.h" />
+    <ClInclude Include="chart.h">
+      <Filter>EKG</Filter>
+    </ClInclude>
+    <ClInclude Include="ekg.h">
+      <Filter>EKG</Filter>
+    </ClInclude>
+    <ClInclude Include="profiler.h">
+      <Filter>EKG</Filter>
+    </ClInclude>
+    <ClInclude Include="stats.h">
+      <Filter>EKG</Filter>
+    </ClInclude>
+    <ClInclude Include="drawcore.h">
+      <Filter>Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="drawitem.h">
+      <Filter>Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="drawgroup.h">
+      <Filter>Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="drawmanager.h">
+      <Filter>Draw</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="timebars.cpp" />
+    <ClCompile Include="trail.cpp" />
+    <ClCompile Include="gcmtrace.cpp" />
+    <ClCompile Include="pix_common.cpp" />
+    <ClCompile Include="pix_pc.cpp" />
+    <ClCompile Include="pix_gcm.cpp" />
+    <ClCompile Include="pix_gnm.cpp" />
+    <ClCompile Include="chart.cpp">
+      <Filter>EKG</Filter>
+    </ClCompile>
+    <ClCompile Include="ekg.cpp">
+      <Filter>EKG</Filter>
+    </ClCompile>
+    <ClCompile Include="profiler.cpp">
+      <Filter>EKG</Filter>
+    </ClCompile>
+    <ClCompile Include="stats.cpp">
+      <Filter>EKG</Filter>
+    </ClCompile>
+    <ClCompile Include="drawcore.cpp">
+      <Filter>Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="drawitem.cpp">
+      <Filter>Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="drawgroup.cpp">
+      <Filter>Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="drawmanager.cpp">
+      <Filter>Draw</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

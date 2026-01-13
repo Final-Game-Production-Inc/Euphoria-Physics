@@ -1,0 +1,35 @@
+Project grprofile
+Files {
+    Folder EKG {
+        chart.cpp
+        chart.h
+        ekg.cpp
+        ekg.h
+        profiler.cpp
+        profiler.h
+        stats.cpp
+        stats.h
+	}
+
+    Folder Draw {
+        drawcore.cpp
+        drawcore.h
+        drawitem.cpp
+        drawitem.h
+        drawgroup.cpp
+        drawgroup.h
+        drawmanager.cpp
+        drawmanager.h
+    }
+    timebars.cpp
+    timebars.h
+    trail.cpp
+    trail.h
+    gcmtrace.cpp
+    gcmtrace.h
+	pix.h
+	pix_common.cpp
+	pix_pc.cpp
+	pix_gcm.cpp
+	pix_gnm.cpp
+}

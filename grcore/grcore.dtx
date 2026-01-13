@@ -1,0 +1,488 @@
+
+@@Overview
+* Origin Of Module Name *
+Grcore stands for "GRaphics CORE".
+
+* Overview *
+The grcore module implements basic graphics facilities.
+
+There is no active viewport by default. You must make a
+viewport active after calling rmcDevice::BeginFrame. It is
+illegal to make rmcState calls outside of a graphics frame.
+\Note that the rmcState::SetWorld and rmcState::SetCamera
+functions attempt to access the currently active viewport and
+will fail if there is no viewport. Every viewport maintains
+its own camera and world matrix.
+
+
+
+If you want to draw in screen coordinates, the system
+provides a screen viewport in
+grcViewport::GetDefaultScreen().
+
+
+
+All text rendering is done through immediate mode render
+calls, so text will inherit the current world and camera and
+viewport transformations. You will generally want all text
+rendering to be inside a block like this:
+
+<code>
+grcViewport *old = grcViewport::SetCurrent(grcViewport::GetDefaultScreen());
+grcFont::GetCurrent().Draw(100,100,"This is a test.");
+grcViewport::SetCurrent(old);
+</code>
+
+\Note that the default screen viewport has camera and world
+matrices of identity, which is generally what you want.
+
+The grcore module provides platform-independent access to
+basic graphics facilities, broken down as follows:
+
+  * grcDevice: manages the output device (bit depth,
+    resolution, asset creation)
+  * grcViewport: provides a mapping from the 3D world to a
+    specific window on the screen and provides sphere-based
+    culling.
+  * grcState: manages render state (transform, lighting, and
+    pixel state).
+  * grcImage: provides basic image loading support, and is
+    used to generate fonts and textures.
+  * grcFont: provides basic proportional-spaced character
+    \output.
+  * grcTexture: provides texture management
+  * Immediate mode rendering is done through an OpenGL-like
+    interface defined in grcore/im.h
+
+* Effect System *
+New to grcore is a wrapper around a platform-dependent
+graphic effect system. On PC builds, it wraps ID3DXEffect; on
+Xenon builds, it wraps FXLite. It will wrap something
+appropriate on PS3 when it becomes available.
+
+
+
+An effect is a collection of parameters and techniques. Techniques
+contain zero or more passes. Each pass contains a vertex
+shader, a pixel shader, and optional render state.
+
+
+
+At any point in time during the graphics frame there is
+always exactly one technique (and effect) active. If
+higher-level code has not made any shader active through
+grmShader::BeginDraw, then the default effect is active. The
+default effect lives in $/tune/shaders/lib/rage_im.fx,
+although this will be configurable. The default effect has
+five techniques defined: draw, drawskinned, unlit_draw,
+unlit_drawskinned, and drawblit. The first two are for lit
+model rendering (when grcState::GetLightingMode() !=
+grclmNone); the second two are for unlit model rendering. We
+make a distinction between skinned and unskinned rendering
+because skinned rendering requires four matrix transforms per
+vertex, increasing the vertex shader computational load. The
+drawblit technique is used by grcDevice::BlitRectf (and
+indirectly by grmShader::Blit).
+
+
+
+In order to keep the interfaces as consistent as possible, on
+PC builds you also need to supply
+$/tune/shaders/lib/globals.fx, which is a single
+effect that declares all global variables used by all effects
+in your project. Once the PS3 Cgfx framework becomes
+available I will revisit this requirement because I realize
+it's not ideal. One thing to consider is making a globals.fxh
+\file that every effect in your project includes, and have
+globals.fx include that as well. This also simplifies life if
+you're using register semantics to force globals into fixed
+addresses to improve performance.
+
+@@Components
+Here's a table listing the primary components of this module.
+
+
+@@Relationships
+The rmcTexture base class is refined by platform-specific
+subclasses in texturepc.cpp and texturexenon.cpp. All other
+classes in grcore are non-virtual and contain
+platform-dependent implementations.
+
+##BEGIN COMMAND-LINE-SECTION is automatically generated - do not edit this section!
+@@Command Line Options
+<TABLE>
+Parameter Name          In File           Description                                                                                                                                       
+----------------------  ----------------  ------------------------------------------------------------------------------------------------------------------------------------------------  
+adapter                 device_d3d.cpp    Use the specified screen adapter number (zero-based)                                                                                              
+appname                 grcsetup.cpp      Visible name of the application.                                                                                                                  
+ati                     device_d3d.cpp    Sets ATI specific things                                                                                                                          
+blockuntilidle          device_d3d.cpp    Do a BlockUntilIdle after the Swap to avoid unexpected CPU stalls                                                                                 
+colorexpbias            device_d3d.cpp    Color exponent bias                                                                                                                               
+console                 grcsetup.cpp      Enable console on release builds                                                                                                                  
+d3dfpu                  device_d3d.cpp    Prevent D3D from messing with FPU state, leaving useful error conditions trappable (PC ONLY).                                                     
+d3dmt                   device_d3d.cpp    Allow D3D device to be initialized in multithreaded mode (PC ONLY)                                                                                
+d3dsinglestep           device_d3d.cpp    Set D3D_SingelStepper to true, force a BlockUntilIdle() after every D3D call (debug builds only)                                                  
+debugshaders            device_d3d.cpp    Enable D3D shader debugging                                                                                                                       
+debugshaders            device_gcm.cpp    Enable CG shader debugging                                                                                                                        
+debugshaders            device_ogl.cpp    Enable CG shader debugging                                                                                                                        
+displaycaps             device_d3d.cpp    Show display capabilities                                                                                                                         
+fpz                     device_d3d.cpp    Enable floating-point depth buffers                                                                                                               
+fpz                     device_gcm.cpp    Enable floating-point depth buffers                                                                                                               
+framelockinwindow       device_d3d.cpp    Force framelock to work even in a window (works best with 60Hz monitor refresh)                                                                   
+frametime               grcsetup.cpp      Display update, draw, and intra-frame time.                                                                                                       
+fullscreen              grcsetup.cpp      Force fullscreen mode                                                                                                                             
+gcmhud                  device_gcm.cpp    Enable GCM hud (already compiled in)                                                                                                              
+gcmhud                  device_gcm.cpp    Enable GCM hud (not currently supported, need GCM_HUD defined)                                                                                    
+glhaltonerror           device_gcm.cpp    Halt on GL/Cg errors (PS3)                                                                                                                        
+glhaltonerror           device_ogl.cpp    Halt on GL/Cg errors (PS3)                                                                                                                        
+hdr                     device_gcm.cpp    Set backbuffer to full 16bit float.                                                                                                               
+hdr                     device_d3d.cpp    Set the whole rendering pipeline to 10-bit on 360 and 16-bit on PC                                                                                
+height                  device_ogl.cpp    Set height of main render window (default is 480)                                                                                                 
+height                  device_gcm.cpp    Set height of main render window (default is 480)                                                                                                 
+height                  device_d3d.cpp    Set height of main render window (default is 480)                                                                                                 
+height                  device_d3d.cpp    Set height of main render window (default is 480)                                                                                                 
+hidewindow              device_win32.cpp  the main window is created hidden                                                                                                                 
+localbank               grcsetup.cpp      Display local widgets instead of remote widgets.  Optional parameters specify number of lines to show, draw scale (in percent), and base x and y  
+maxtexturesize          grcsetup.cpp      (DEV only) Sets the maximum size for a texture                                                                                                    
+mrt                     device_gcm.cpp    Use a Multiple-Render Target to encode HDR                                                                                                        
+MSAA                    device_gcm.cpp    Anti-aliasing (MSAA_NONE, MSAA_2xMS, MSAA_Centered4xMS, MSAA_Rotated4xMS)                                                                         
+multisample             device_d3d.cpp    Number of multisamples (1, 2, or 4)                                                                                                               
+noBlockOnLostFocus      device_d3d.cpp    Don't block the window update when it loses focus.                                                                                                
+nographics              grcsetup.cpp      Disable graphics window (for automation).                                                                                                         
+nohwtnl                 device_d3d.cpp    Disable hardware transform & light                                                                                                                
+nomousepointer          grcsetup.cpp      Never draw the mouse pointer.                                                                                                                     
+noshaderpatching        device_d3d.cpp    Tell D3D to assert out if it finds avoidable shader patching.                                                                                     
+framelimit              device_gcm.cpp    Limit frame speed to set number of refresh rate updates                                                                                                                          
+framelimit              device_d3d.cpp    Limit frame speed to set number of refresh rate updates                                                                                                                          
+nullhardware            grcsetup.cpp      Use D3D null hardware (only on Xenon).                                                                                                            
+perfhud                 device_d3d.cpp    Add support for running under nVidia's PerfHud utility (PC ONLY                                                                                   
+pixannotation           device_d3d.cpp    Enable Pix annotation via the PIXBegin()/PIXEnd() macros                                                                                          
+pixannotation           device_gcm.cpp    Enable Pix annotation via the PIXBegin()/PIXEnd() macros                                                                                          
+powerconsole            grcsetup.cpp      allows the ability to use powershell console.                                                                                                     
+rag                     grcsetup.cpp      Connect to RAG (a main application).                                                                                                              
+ragAddr                 grcsetup.cpp      Connect with Rag on a specific IP address.                                                                                                        
+ragviewer               grcsetup.cpp      Connect to RAG (a rage viewer).                                                                                                                   
+remotebank              grcsetup.cpp      Attempt to connect to remote bank server.                                                                                                         
+setHwndMain             device_gcm.cpp    override the window that DirectX will render to                                                                                                   
+setHwndMain             device_d3d.cpp    override the window that DirectX will render to                                                                                                   
+setHwndMain             device_ogl.cpp    override the window that DirectX will render to                                                                                                   
+texturesinsystemmemory  texturegcm.cpp    Force all PS3 textures to be in system memory                                                                                                     
+topmost                 grcsetup.cpp      Force window to be on top                                                                                                                         
+trackerrag              grcsetup.cpp      Log all memory tracking activity to a rag plugin.  Add 'true' as a parameter to enable detailed deallocation tracking.                            
+width                   device_d3d.cpp    Set width of main render window (default is 640)                                                                                                  
+width                   device_gcm.cpp    Set width of main render window (default is 640)                                                                                                  
+width                   device_ogl.cpp    Set width of main render window (default is 640)                                                                                                  
+width                   device_d3d.cpp    Set width of main render window (default is 640)                                                                                                  
+windowed                grcsetup.cpp      Force windowed mode                                                                                                                               
+</TABLE>
+##END COMMAND-LINE-SECTION
+
+@@Working Examples
+##BEGIN SAMPLES-SECTION is automatically generated - do not edit this section!
+@@Brickout Sample
+<GROUP Working Examples>
+
+This sample is just for fun. Is a little brickout game.
+
+
+@@Console Sample
+<GROUP Working Examples>
+
+This sample shows how to interact with the console.
+The sample is broken into several steps:
+1. Bind a functor with a console command.
+2. Declare and define the function that processes the console command.
+
+* Bind a functor with a console command. *
+Create a functor and set that functor the our function that
+will process the command.
+<CODE>
+
+bkConsole::CommandFunctor functor;
+functor.Reset<grcSampleConsole,&grcSampleConsole::GetString>(this);
+
+</CODE>
+Bind the functor to the command string.  In this example, "GetString"
+is the name of the console command.  "GetString" accepts and prints to the
+screen the first argument passed in.
+<CODE>
+
+bkConsole::AddCommand("GetString",functor);
+</CODE>
+
+* Declare and define the function that processes the console command. *
+Here's where we declare the function.  We use the convenience macro CONSOLE_ARG_LIST
+to declare our function's arguments.
+<CODE>
+
+void GetString(CONSOLE_ARG_LIST)
+{
+</CODE>
+Use CONSOLE_HELP_TEXT to associate a help string with the command.  Whenever
+the console user types "help GetString", this string will be outputed to the console.
+<CODE>
+
+CONSOLE_HELP_TEXT("Gets a string from the command line and prints it to the screen.");
+
+</CODE>
+Next we parse the arguments using the numArgs and args variables declared in the
+CONSOLE_ARG_LIST macro.
+<CODE>
+
+if (numArgs)
+{
+safecpy(m_String,args[0],256);
+}
+
+</CODE>
+The last step is to send output to the console by calling the output functor (which is declared
+in the CONSOLE_ARG_LIST macro.)
+<CODE>
+
+output("got a string");
+</CODE>
+
+
+@@Immediate Mode Sample
+<GROUP Working Examples>
+
+This sample shows how to draw immediate mode primitives.
+The sample is broken into several steps:
+1. Set our transformation matrix.
+2. Setup our graphics state.
+3. Draw a set of points.
+4. Draw a triangle.
+5. Draw a set of disconnected lines.
+6. Draw a set of connected lines.
+7. Draw a tri-strip primitive.
+8. Draw a tri-fan primitive.
+
+* Set our transformation matrix. *
+Set the matrix that gets applied to all subsequent geometry.
+<CODE>
+
+grcState::SetWorld(M34_IDENTITY);
+
+</CODE>
+
+
+* Setup our graphics state. *
+We don't want texturing
+<CODE>
+
+grcBindTexture(NULL);
+
+int passCount = PARAM_perftest.Get()? 1000 : 1;
+for (int passes=0; passes<passCount; passes++) {
+</CODE>
+
+
+* Draw a set of points. *
+Here we draw 25 white colored points.
+
+To start drawing a set of primitives, you must call <c>grcBegin()</c>.  You
+must specify the primitive type (in this case, <c>drawPoints</c>), and the vertex
+count (in this case, 25 points.)  The number of vertices must be at least 1.
+<CODE>
+
+grcBegin(drawPoints,5*5);
+
+</CODE>
+Here's where we send down the verts.
+<CODE>
+
+for (int i=0;i<5;i++)
+for (int j=0;j<5;j++)
+grcVertex(-45.0f+j*2.0f,-5.0f+i*2.0f,0.0f,0,0,1,Color32(255,255,255),0.0f,0.0f);
+
+</CODE>
+Call <c>grcEnd()</c> to signify we're done drawing our primitives.  <c>grcEnd()</c>
+will assert if the number of verts in the previous call to <c>grcBegin()</c> does not
+match the number of verts sent down.
+<CODE>
+
+grcEnd();
+
+</CODE>
+
+
+* Draw a triangle. *
+Here we draw a single, multi-colored triangle.  The number of verts must be
+<c>numTris*3</c>.
+<CODE>
+
+grcBegin(drawTris,3);
+grcVertex(-30.0f,-5.0f,0.0f,0,1,0,Color32(255,0,0),0.0f,0.0f);
+grcVertex(-20.0f,-5.0f,0.0f,1,0,0,Color32(0,0,255),0.0f,0.0f);
+grcVertex(-25.0f,5.0f,0.0f,-1,0,0,Color32(0,255,0),0.0f,0.0f);
+grcEnd();
+
+</CODE>
+
+
+* Draw a set of disconnected lines. *
+Here we draw two green colored disconnected lines.  The number of verts must be
+<c>numLines*2</c>.  Notice that we set the color once using <c>grcColor()</c> and
+send down verts using <c>grcVertex3f()</c>.
+<CODE>
+
+grcBegin(drawLines,4);
+grcNormal3f(0,0,1);
+grcColor(Color32(0,255,0));
+grcVertex3f(-15.0f,-5.0f,0.0f);
+grcVertex3f(-10.0f,-5.0f,0.0f);
+grcVertex3f(-10.0f,5.0f,0.0f);
+grcVertex3f(-15.0f,5.0f,0.0f);
+grcEnd();
+
+</CODE>
+
+
+* Draw a set of connected lines. *
+Here we draw 4 red colored connected lines.  The number of verts must be
+<c>numLines+1</c>.
+<CODE>
+
+grcBegin(drawLineStrip,5);
+grcColor(Color32(255,0,0));
+grcVertex3f(-5.0f,-5.0f,0.0f);
+grcVertex3f(0.0f,-5.0f,0.0f);
+grcVertex3f(0.0f,5.0f,0.0f);
+grcVertex3f(-5.0f,5.0f,0.0f);
+grcVertex3f(-5.0f,-5.0f,0.0f);
+grcEnd();
+
+</CODE>
+
+
+* Draw a tri-strip primitive. *
+Here we draw two multi-colored triangles.  The number of verts must be
+<c>NumTriangles+1</c>.
+<CODE>
+
+grcBegin(drawTriStrip,4);
+grcVertex(10.0f,5.0f,0.0f,0,0,-1,Color32(0,255,0),0.0f,0.0f);
+grcVertex(5.0f,-5.0f,0.0f,0,0,-1,Color32(0,0,255),0.0f,0.0f);
+grcVertex(20.0f,5.0f,0.0f,0,0,-1,Color32(255,0,0),0.0f,0.0f);
+grcVertex(15.0f,-5.0f,0.0f,0,0,-1,Color32(0,255,0),0.0f,0.0f);
+grcEnd();
+
+</CODE>
+
+
+* Draw a tri-fan primitive. *
+Here we draw two multi-colored triangles.  The number of verts must be
+<c>NumTriangles+1</c>.
+<CODE>
+
+grcBegin(drawTriFan,4);
+grcVertex(35.0f,-5.0f,0.0f,0,0,-1,Color32(0,255,255),0.0f,0.0f);
+grcVertex(45.0f,5.0f,0.0f,0,0,-1,Color32(255,255,0),0.0f,0.0f);
+grcVertex(35.0f,5.0f+2.0f,0.0f,0,0,-1,Color32(0,255,0),0.0f,0.0f);
+grcVertex(25.0f,5.0f,0.0f,0,0,-1,Color32(0,255,0),0.0f,0.0f);
+grcEnd();
+}
+
+</CODE>
+
+
+@@Multiple Windows Sample
+<GROUP Working Examples>
+
+This sample shows how to draw to multiple windows.  This sample only works under Windows.
+The sample is broken into several steps:
+1. Create our own windows
+2. Create a unique view
+3. Set the window handle for each viewport so that Direct 3D will render into that viewport
+4. Draw a couple of objects
+
+* Create our own windows *
+Here we create our own windows and viewports for the # of extra windows besides the main window.  The
+main window handle is in g_hwndMain.
+<CODE>
+
+
+m_HwndMains[0] = g_hwndMain;
+m_Viewports[0] = NULL;
+
+for (int i=1;i<NUM_WINDOWS;i++)
+{
+char windowName[128];
+sprintf(windowName,"View %d",i);
+if (m_HwndMains[i]==0)
+m_HwndMains[i] = ::CreateWindow("STATIC",windowName,WS_VISIBLE,100,300*(i-1),400,300,NULL,NULL,NULL,0);
+m_Viewports[i] = new grcViewport();
+}
+</CODE>
+
+* Create a unique view *
+In each of the separate windows we create a unique view.
+This code is called for the main window and for every window that we've created.
+it is called before we draw anything into that window.
+For our test purposes, we just move each camera view based on
+the distance of the main window's camera to the origin.
+All extra windows just look at the origin.
+<CODE>
+
+int whichView=m_CurrentIteration%3;
+grcViewport* viewport=m_Viewports[m_CurrentIteration];
+switch (whichView)
+{
+case 0:
+return;
+
+case 1:
+mat.d.Set(dist,0.0f,0.0f);
+break;
+
+case 2:
+mat.d.Set(0.0f,dist,0.0f);
+break;
+}
+
+mat.LookAt(Vector3(0.0f,0.0f,0.0f), YAXIS);
+
+viewport->SetCameraMtx(mat);
+viewport->SetWorldMtx(M34_IDENTITY);
+grcViewport::SetCurrent(viewport);
+</CODE>
+
+* Set the window handle for each viewport so that Direct 3D will render into that viewport *
+Here's how we make RAGE render into the main window that it creates.  We set <c>g_hwndOverride</c> to <c>NULL</c> so that g_hwndMain
+is used as the window to render to.  This code is called right before a draw iteration.
+<CODE>
+
+g_hwndOverride = NULL;
+</CODE>
+Here's how we make RAGE render into one of the windows created by our sample application.  We set <c>g_hwndOverride</c> to the <c>HWND</c> of one of the windows created
+in STEP #1.  This code is called right before a draw iteration.
+<CODE>
+
+g_hwndOverride = m_HwndMains[drawIteration];
+</CODE>
+
+* Draw a couple of objects *
+We draw a couple of objects to see the differences in the windows.  This called is called for each window.
+Ideally your application would have separate update and draw iterations so you can call update once and draw many times for multiple windows.
+<CODE>
+
+grcDrawSolidBox(Vector3(10.0f,10.0f,10.0f),M34_IDENTITY,Color32(Vector3(1.0f,0.0f,0.0f)));
+Matrix34 mat;
+mat.Identity();
+mat.d.x-=10.0f;
+grcColor3f(0.0f,1.0f,0.0f);
+grcDrawSphere(5.0f,mat,8,false,true);
+mat.Identity();
+mat.d.x+=10.0f;
+grcColor3f(0.0f,0.0f,1.0f);
+grcDrawEllipsoid(Vector3(2.0f,10.0f,2.0f),mat,8,false,true);
+</CODE>
+
+
+@@Remote Immediate Mode Sample
+<GROUP Working Examples>
+
+This sample shows to create a server that will receive immediate mode commands over a named pipe from another application.
+
+
+##END SAMPLES-SECTION is automatically generated - do not edit this section!

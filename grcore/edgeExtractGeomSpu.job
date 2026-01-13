@@ -1,0 +1,19 @@
+//
+// grcore/edgeextractgeomspu.job
+//
+// Copyright (C) 1999-2012 Rockstar Games.  All Rights Reserved.
+//
+
+#if !__FINAL
+#undef SYS_DMA_VALIDATION
+#undef SYS_DMA_VERBOSE
+#define SYS_DMA_VALIDATION	(1) // 1 -	General checks on valid alignment, size and DMA source and  destination addresses for all DMA commands. 
+#define SYS_DMA_VERBOSE		(1)
+#define CUSTOM_EDGE_DUMP_COMPRESSED_INDEXES
+#endif
+#include "edgegeom_unity.cpp"
+
+#define ENTRYPOINT edgeExtractgeomspu
+#include "system/task_spu2.h"
+
+#include "edgeExtractGeomSpu.cpp" 

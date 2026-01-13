@@ -1,0 +1,1 @@
+set LIBS=%LIBS% -lgcm_spu

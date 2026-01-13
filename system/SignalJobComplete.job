@@ -1,0 +1,29 @@
+#include <cell/spurs/common.h>
+#include <cell/spurs/event_flag.h>
+#include <cell/spurs/job_chain.h>
+#include <cell/spurs/job_context.h>
+#include <spu_printf.h>
+
+#define TASK_SPU_DEBUG_SPEW (0)
+
+// JobComplete now takes two arguments:
+// - userData[0] : effective address of the event flag
+// - userData[1] : flag mask to set (uint16_t) 
+
+extern "C"
+void cellSpursJobMain2(CellSpursJobContext2 *jobContext, CellSpursJob256 *job)
+{
+
+	uint64_t ea = job->workArea.userData[0];	
+	uint16_t flags = job->workArea.userData[1];	
+
+#if TASK_SPU_DEBUG_SPEW	
+	spu_printf("????????%08x: JobComplete %08x@%i (flags=%04x)\n", (uint32_t)-spu_readch(SPU_RdDec), (uint32_t)jobContext->eaJobDescriptor, cellSpursGetCurrentSpuId(), (uint32_t)flags);
+#endif//TASK_SPU_DEBUG_SPEW
+
+	if (cellSpursEventFlagSet(ea, flags)!=CELL_OK) {
+		spu_printf("cellSpursEventFlagSet(%08x, %08x)@%i failed\n", (uint32_t)ea, (uint32_t)flags, cellSpursGetCurrentSpuId());
+	}
+}
+
+

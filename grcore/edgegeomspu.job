@@ -1,0 +1,16 @@
+// 
+// grcore/edgegeomspu.job
+//
+// Copyright (C) 1999-2012 Rockstar Games.  All Rights Reserved.
+//
+
+#define MINIMAL_SPU_GCM_STATE
+#if !__FINAL
+#define CUSTOM_EDGE_DUMP_COMPRESSED_INDEXES
+#endif
+
+#include "edgegeom_unity.cpp"
+#include "edgegeomspu.cpp"
+
+#include "system/FindSize.h"
+// FindSize(spuGcmState);	// 1408 bytes after cleanup

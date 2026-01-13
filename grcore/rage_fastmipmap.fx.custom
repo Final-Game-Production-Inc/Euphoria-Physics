@@ -1,0 +1,7 @@
+BEGIN
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="Building embedded shader $(InputName) . . ."
+					CommandLine="call makeembeddedshader.bat $(InputName).fx"
+					Outputs="embedded_$(InputName)_win32_30.h;embedded_$(InputName)_fxl_final.h;embedded_$(InputName)_psn.h"
+				/>

@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Sychronization">
+      <UniqueIdentifier>{1041AD88-B5EF-43B0-6B9D-B40CB1C7E8D7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Memory">
+      <UniqueIdentifier>{466A2B0C-8EB2-447B-FBBE-169D6A6C36F2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tasks">
+      <UniqueIdentifier>{B2C1611B-D9A9-639E-00F7-DEB2F5243CEC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Compression">
+      <UniqueIdentifier>{8B477FD1-ADD2-CC65-8D0C-DBD0E0813836}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependency">
+      <UniqueIdentifier>{C8897443-C70E-B837-1490-BA681AF069A4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="namedpipe.h" />
+    <ClInclude Include="pipepacket.h" />
+    <ClInclude Include="param.h" />
+    <ClInclude Include="stack.h" />
+    <ClInclude Include="stack_inline.h" />
+    <ClInclude Include="timemgr.h" />
+    <ClInclude Include="timer.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="performancetimer.h" />
+    <ClInclude Include="endian.h" />
+    <ClInclude Include="wndproc.h" />
+    <ClInclude Include="platform.h" />
+    <ClInclude Include="exec.h" />
+    <ClInclude Include="tls.h" />
+    <ClInclude Include="codecheck.h" />
+    <ClInclude Include="alloca.h" />
+    <ClInclude Include="xcompress_settings.h" />
+    <ClInclude Include="xtl.h" />
+    <ClInclude Include="bit.h" />
+    <ClInclude Include="codefrag_spu.h" />
+    <ClInclude Include="coderivets.h" />
+    <ClInclude Include="distributor.h" />
+    <ClInclude Include="dma.h" />
+    <ClInclude Include="dmaplan.h" />
+    <ClInclude Include="bootmgr.h" />
+    <ClInclude Include="cache.h" />
+    <ClInclude Include="new.h" />
+    <ClInclude Include="new_config.h" />
+    <ClInclude Include="typeinfo.h" />
+    <ClInclude Include="magicnumber.h" />
+    <ClInclude Include="nelem.h" />
+    <ClInclude Include="messagequeue.h" />
+    <ClInclude Include="noncopyable.h" />
+    <ClInclude Include="replay.h" />
+    <ClInclude Include="pix.h" />
+    <ClInclude Include="d3d9.h" />
+    <ClInclude Include="main_spu.h" />
+    <ClInclude Include="rageroot.h" />
+    <ClInclude Include="xgraphics.h" />
+    <ClInclude Include="spuintrinsics.h" />
+    <ClInclude Include="findsize.h" />
+    <ClInclude Include="findalign.h" />
+    <ClInclude Include="findoffset.h" />
+    <ClInclude Include="floattoint.h" />
+    <ClInclude Include="stack_collector.h" />
+    <ClInclude Include="threadregistry.h" />
+    <ClInclude Include="eaptr.h" />
+    <ClInclude Include="spinlockedobject.h" />
+    <ClInclude Include="spurs_gcm_config.h" />
+    <ClInclude Include="userparams.h" />
+    <ClInclude Include="membarrier.h" />
+    <ClInclude Include="llsc.h" />
+    <ClInclude Include="barrier.h">
+      <Filter>Sychronization</Filter>
+    </ClInclude>
+    <ClInclude Include="ipc.h">
+      <Filter>Sychronization</Filter>
+    </ClInclude>
+    <ClInclude Include="spinlock.h">
+      <Filter>Sychronization</Filter>
+    </ClInclude>
+    <ClInclude Include="criticalsection.h">
+      <Filter>Sychronization</Filter>
+    </ClInclude>
+    <ClInclude Include="criticalsection_spu.h">
+      <Filter>Sychronization</Filter>
+    </ClInclude>
+    <ClInclude Include="interlocked.h">
+      <Filter>Sychronization</Filter>
+    </ClInclude>
+    <ClInclude Include="debugmemoryfill.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="memory.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="memops.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="miniheap.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="simpleallocator.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="stockallocator.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="sharedheap.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="smallocator.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="externalheap.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="externalallocator.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="multiallocator.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="fixedallocator.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="buddyheap.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="buddyallocator.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="buddyallocator_config.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="sysmemcontainer_psn.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="container.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="virtualmemory_psn.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="tinyheap.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="sparseallocator.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="spu_printf_helper.h">
+      <Filter>Tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="spuget.h">
+      <Filter>Tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="spuscratch.h">
+      <Filter>Tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="task.h">
+      <Filter>Tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="task_spu.h">
+      <Filter>Tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="task_spu_config.h">
+      <Filter>Tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="task_spu2.h">
+      <Filter>Tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="taskheader.h">
+      <Filter>Tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="taskheaderspu.h">
+      <Filter>Tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="taskwaitthread.h">
+      <Filter>Tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="tasklog.h">
+      <Filter>Tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="ppu_symbol.h">
+      <Filter>Tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="compressionfactory.h">
+      <Filter>Compression</Filter>
+    </ClInclude>
+    <ClInclude Include="compressiondata.h">
+      <Filter>Compression</Filter>
+    </ClInclude>
+    <ClInclude Include="nocompressiondata.h">
+      <Filter>Compression</Filter>
+    </ClInclude>
+    <ClInclude Include="spu_compress.h">
+      <Filter>Compression</Filter>
+    </ClInclude>
+    <ClInclude Include="spu_decompress.h">
+      <Filter>Compression</Filter>
+    </ClInclude>
+    <ClInclude Include="dependency.h">
+      <Filter>Dependency</Filter>
+    </ClInclude>
+    <ClInclude Include="dependency_config.h">
+      <Filter>Dependency</Filter>
+    </ClInclude>
+    <ClInclude Include="dependency_spu.h">
+      <Filter>Dependency</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencyscheduler.h">
+      <Filter>Dependency</Filter>
+    </ClInclude>
+    <ClInclude Include="lockfreering.h">
+      <Filter>Dependency</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="namedpipe.cpp" />
+    <ClCompile Include="pipepacket.cpp" />
+    <ClCompile Include="param.cpp" />
+    <ClCompile Include="stack.cpp" />
+    <ClCompile Include="timemgr.cpp" />
+    <ClCompile Include="timer.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="performancetimer.cpp" />
+    <ClCompile Include="endian.cpp" />
+    <ClCompile Include="wndproc.cpp" />
+    <ClCompile Include="platform.cpp" />
+    <ClCompile Include="exec.cpp" />
+    <ClCompile Include="tls.cpp" />
+    <ClCompile Include="defaultresponsefile.cpp" />
+    <ClCompile Include="cache_xenon.cpp" />
+    <ClCompile Include="cache_win32.cpp" />
+    <ClCompile Include="bootmgr_win32.cpp" />
+    <ClCompile Include="bootmgr_xenon.cpp" />
+    <ClCompile Include="bootmgr_psn.cpp" />
+    <ClCompile Include="distributor.cpp" />
+    <ClCompile Include="dmaplan.cpp" />
+    <ClCompile Include="new.cpp" />
+    <ClCompile Include="pix_pc.cpp" />
+    <ClCompile Include="pix_gcm.cpp" />
+    <ClCompile Include="stack_collector.cpp" />
+    <ClCompile Include="threadregistry.cpp" />
+    <ClCompile Include="llsc_xbox360.cpp" />
+    <ClCompile Include="barrier.cpp">
+      <Filter>Sychronization</Filter>
+    </ClCompile>
+    <ClCompile Include="ipc.cpp">
+      <Filter>Sychronization</Filter>
+    </ClCompile>
+    <ClCompile Include="spinlock.cpp">
+      <Filter>Sychronization</Filter>
+    </ClCompile>
+    <ClCompile Include="criticalsection.cpp">
+      <Filter>Sychronization</Filter>
+    </ClCompile>
+    <ClCompile Include="memory.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="memops.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="miniheap.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="simpleallocator.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="stockallocator.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="stockallocator_delete.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="sharedheap.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="smallocator.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="externalheap.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="externalallocator.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="multiallocator.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="fixedallocator.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="mallocstub.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="buddyheap.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="buddyallocator.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="sysmemcontainer_psn.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="container.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="virtualmemory_psn.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyheap.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="sparseallocator.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="task_win32.cpp">
+      <Filter>Tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="task_psn.cpp">
+      <Filter>Tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="spu_library.cpp">
+      <Filter>Tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="taskwaitthread.cpp">
+      <Filter>Tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="tasklog.cpp">
+      <Filter>Tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="compressionfactory.cpp">
+      <Filter>Compression</Filter>
+    </ClCompile>
+    <ClCompile Include="compressiondata.cpp">
+      <Filter>Compression</Filter>
+    </ClCompile>
+    <ClCompile Include="nocompressiondata.cpp">
+      <Filter>Compression</Filter>
+    </ClCompile>
+    <ClCompile Include="dependency_spu.cpp">
+      <Filter>Dependency</Filter>
+    </ClCompile>
+    <ClCompile Include="dependencyscheduler.cpp">
+      <Filter>Dependency</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="dependency_spu.task" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="interlocked.inl">
+      <Filter>Sychronization</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="system.dtx" />
+  </ItemGroup>
+</Project>

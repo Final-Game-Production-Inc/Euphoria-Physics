@@ -1,0 +1,5 @@
+#define ENTRYPOINT patcherspu
+#define JOB_USES_EVENT_FLAGS 1
+#include "../system/task_spu.h"
+
+#include "patcherspu.cpp"

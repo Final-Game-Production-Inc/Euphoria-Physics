@@ -1,0 +1,371 @@
+/* SCE CONFIDENTIAL
+ * $EdgeLibId$
+ * Copyright (C) 2007 Sony Computer Entertainment Inc.
+ * All Rights Reserved.
+ */
+
+	.func warpPointTransformLoop
+
+	//----------------------------------------------------------------------------------------------
+	// Register I/Os
+	//----------------------------------------------------------------------------------------------
+
+	// Inputs
+	.input  $3-$15
+	
+	// ABI  
+	.input  $1, $80-$127
+	.output $1, $80-$127
+	
+	// save registers
+	// no need to create a stack frame since we're in a leaf function
+	stqd	$80,	-0x10($sp)
+	stqd	$81,	-0x20($sp)
+	stqd	$82,	-0x30($sp)
+	stqd	$83,	-0x40($sp)
+	stqd	$84,	-0x50($sp)
+	stqd	$85,	-0x60($sp)
+	stqd	$86,	-0x70($sp)
+	stqd	$87,	-0x80($sp)
+	stqd	$88,	-0x90($sp)
+	stqd	$89,	-0xa0($sp)
+	stqd	$90,	-0xb0($sp)
+		
+	.reg	vertsIn, transOut, count4, localToProj0, localToProj1, localToProj2, localToProj3
+	.reg	viewportScale, viewportOffset, frustumMin, frustumMax, sampleMask
+	.reg	pointWarpParams
+
+	// Parameters
+	mov 	vertsIn,		$3			
+	mov 	transOut,		$4
+	mov 	count4,			$5
+	mov 	localToProj0,	$6
+	mov 	localToProj1,	$7
+	mov 	localToProj2,	$8
+	mov 	localToProj3,	$9
+	mov 	viewportScale,	$10
+	mov 	viewportOffset,	$11
+	mov 	frustumMin,		$12
+	mov 	frustumMax,		$13
+	mov 	sampleMask,		$14
+	mov 	pointWarpParams,$15
+
+	brz		count4, NoLoop
+
+	//----------------------------------------------------------------------------------------------
+	// Constants
+	//----------------------------------------------------------------------------------------------    
+
+	.reg	s_0A0B0c0d, s_AAAA, s_AaBb, s_AaCc, s_ABCD, s_ABcd, s_BbAa, s_BBBB, s_BbDd, s_BCDD, s_CcAa, s_CCCC
+	.reg	s_CcCc, s_cdAB, s_DDDD, s_DdBb, s_ABCDEFGHd000MNOP, s_ABa0, s_CDa0, s_CDab, s_CcDd, s_DdCc, s_FBDbdf00, s_AbCdEfGh
+	
+	il128	s_0A0B0c0d, "0A0B0c0d"
+	il128	s_AAAA, "AAAA"
+	il128	s_AaBb, "AaBb"
+	il128	s_AaCc, "AaCc"
+	il128	s_ABCD, "ABCD"
+	il128	s_ABcd, "ABcd"
+	il128	s_BbAa, "BbAa"
+	il128	s_BBBB, "BBBB"
+	il128	s_BbDd, "BbDd"
+	il128	s_BCDD, "BCDD"
+	il128	s_CcAa, "CcAa"
+	il128	s_CCCC, "CCCC"
+	il128	s_CcCc, "CcCc"
+	il128	s_cdAB, "cdAB"
+	il128	s_DDDD, "DDDD"
+	il128	s_DdBb, "DdBb"
+	il128	s_ABCDEFGHd000MNOP, "ABCDEFGHd000MNOP"
+	il128	s_ABa0, "ABa0"
+	il128	s_CDa0, "CDa0"
+	il128	s_CDab, "CDab"
+	il128	s_CcDd, "CcDd"
+	il128	s_DdCc, "DdCc"
+	il128	s_FBDbdf00, "FBDbdf00"
+	il128	s_AbCdEfGh, "AbCdEfGh"
+	
+	.reg	fOne, fHalf, floatZero, signMask, divMask
+	ilf32	fOne,		1.0f				//	ilhu    fOne,	0x3f800000@h	//  1.0
+	ilf32	fHalf,		0.5f				//	ilhu	fHalf,	0x3f000000@h	//	0.5
+	ila		floatZero,	0
+	il128   signMask,	0x80000000_80000000_80000000_80000000
+	il128   divMask, 0x7fffffff_7fffffff_7fffffff_7fffffff	
+	
+//   	stopd	floatZero, floatZero, floatZero
+
+	//----------------------------------------------------------------------------------------------
+	// Init code
+	//----------------------------------------------------------------------------------------------        
+			
+	 .reg	localToProj00, localToProj01, localToProj02, localToProj03 
+	 .reg	localToProj10, localToProj11, localToProj12, localToProj13 
+	 .reg	localToProj20, localToProj21, localToProj22, localToProj23 
+	 .reg	localToProj30, localToProj31, localToProj32, localToProj33 
+	 .reg	viewportScaleX, viewportScaleY, viewportScaleZ
+	 .reg	viewportOffsetX, viewportOffsetY, viewportOffsetZ
+	.reg	warpShadParam11, warpShadParamZnegZ, warpShadParam03neg
+  
+	shufb	localToProj00, localToProj0, localToProj0, s_AAAA
+	shufb	localToProj10, localToProj1, localToProj1, s_AAAA
+	shufb	localToProj20, localToProj2, localToProj2, s_AAAA
+	shufb	localToProj30, localToProj3, localToProj3, s_AAAA
+	
+	shufb	localToProj01, localToProj0, localToProj0, s_BBBB
+	shufb	localToProj11, localToProj1, localToProj1, s_BBBB
+	shufb	localToProj21, localToProj2, localToProj2, s_BBBB
+	shufb	localToProj31, localToProj3, localToProj3, s_BBBB
+	
+	shufb	localToProj02, localToProj0, localToProj0, s_CCCC
+	shufb	localToProj12, localToProj1, localToProj1, s_CCCC
+	shufb	localToProj22, localToProj2, localToProj2, s_CCCC
+	shufb	localToProj32, localToProj3, localToProj3, s_CCCC
+	
+	shufb	localToProj03, localToProj0, localToProj0, s_DDDD
+	shufb	localToProj13, localToProj1, localToProj1, s_DDDD
+	shufb	localToProj23, localToProj2, localToProj2, s_DDDD
+	shufb	localToProj33, localToProj3, localToProj3, s_DDDD
+	
+	shufb	viewportScaleX, viewportScale, viewportScale, s_AAAA
+	shufb	viewportScaleY, viewportScale, viewportScale, s_BBBB
+	shufb	viewportScaleZ, viewportScale, viewportScale, s_CCCC
+
+	shufb	viewportOffsetX, viewportOffset, viewportOffset, s_AAAA
+	shufb	viewportOffsetY, viewportOffset, viewportOffset, s_BBBB
+	shufb	viewportOffsetZ, viewportOffset, viewportOffset, s_CCCC
+	
+	shufb	warpShadParam11,	pointWarpParams, pointWarpParams, s_AAAA
+	shufb	warpShadParamZnegZ,	pointWarpParams, pointWarpParams, s_BBBB
+	shufb	warpShadParam03neg,	pointWarpParams, pointWarpParams, s_CCCC
+
+
+	//----------------------------------------------------------------------------------------------
+	// Loop
+	//----------------------------------------------------------------------------------------------        
+
+Loop:
+	ai      count4, count4, -1
+	ai		vertsIn, vertsIn, 0x40
+	ai		transOut, transOut, 0x40
+
+	// 1) Load 4 vertices 
+	.reg	xyz0, xyz1, xyz2, xyz3
+	lqd		xyz0, -0x40(vertsIn)
+	lqd		xyz1, -0x30(vertsIn)
+	lqd		xyz2, -0x20(vertsIn)
+	lqd		xyz3, -0x10(vertsIn)
+
+	// 2) Transpose vertices
+	.reg	xxyy01, yyxx23, zzzz01, zzzz23, xxxx, yyyy, zzzz
+	shufb	xxyy01, xyz0, xyz1, s_AaBb
+	shufb	yyxx23, xyz2, xyz3, s_BbAa
+	shufb	zzzz01, xyz0, xyz1, s_CcCc
+	shufb	zzzz23, xyz2, xyz3, s_CcCc
+	shufb	xxxx, xxyy01, yyxx23, s_ABcd
+	shufb	yyyy, yyxx23, xxyy01, s_cdAB
+	shufb	zzzz, zzzz01, zzzz23, s_ABcd
+	
+//	fa		xxxx, xxxx, fOne
+
+	// 3) Multiple by local to projection matrix
+	.reg	mMultXw, mMultXz, mMultXx, mMultXy, mMultYw, mMultYx, mMultYy, mMultYz, resX, resY, resZ, resW
+	fma		mMultXw, xxxx, localToProj30, localToProj33	
+	fma		mMultXz, xxxx, localToProj20, localToProj23
+	fma		mMultXx, xxxx, localToProj00, localToProj03
+	fma		mMultXy, xxxx, localToProj10, localToProj13
+	fma		mMultYw, yyyy, localToProj31, mMultXw	
+	fma		mMultYx, yyyy, localToProj01, mMultXx
+	fma		mMultYy, yyyy, localToProj11, mMultXy
+	fma		mMultYz, yyyy, localToProj21, mMultXz
+	fma		resX, zzzz, localToProj02, mMultYx
+	fma		resY, zzzz, localToProj12, mMultYy
+	fma		resZ, zzzz, localToProj22, mMultYz
+	fma		resW, zzzz, localToProj32, mMultYw			        
+
+// --------------------------------------------------------------------------------------------
+
+	.reg	tmp0, tmp1, tmp2, tmp3, dist0123
+
+	// 3a) Apply shadow warp
+
+	fa		resZ, resZ, warpShadParam11
+	fm		resZ, resZ, warpShadParamZnegZ
+
+	fm		tmp0, resX, resX
+	fm		tmp1, resY, resY
+	fm		tmp2, resZ, resZ
+
+	fa		tmp3, tmp0, tmp1
+	fa		tmp3, tmp3, tmp2	// tmp3 = [X0*X0+Y0*Y0+Z0*Z0 | X1*X1+Y1*Y1+Z1*Z1 | X2*X2+Y2*Y2+Z2*Z2 | X3*X3+Y3*Y3+Z3*Z3]
+
+	.reg	dvx,dvax,dvy0,dvy1,dvy2,dvt1,dvt2
+
+	rotqbyi	dvx, tmp3, 0
+	
+	frsqest	dvy0,	dvx						// table-lookup
+	and		dvax,	dvx,	divMask			// ax=ABS(x)
+	fi		dvy1,	dvax,	dvy0			// interpolation
+	fm		dvt1,	dvax,	dvy1			// t1= ax * y1
+	fm		dvt2,	dvy1,	fHalf			// t2= y1 * 0.5
+	fnms	dvt1,	dvt1,	dvy1,	fOne	// t1= -(t1 * y1 - 1.0)
+	fma		dvy2,	dvt1,	dvt2,	dvy1	// y2= t1 * t2 + y1
+
+	fm		dist0123, dvy2, tmp3
+	
+	fs		tmp0, dist0123, resZ
+
+	rotqbyi	dvx,	tmp0, 0
+	
+	frest	dvy0,	dvx					// table-lookup
+	fi		dvy1,	dvx,	dvy0		// interpolation
+	fnms	dvt1,	dvx,	dvy1,	fOne// t1 = -(x * y1 - 1.0)
+	fms		dvy2,	dvt1,	dvy1,	dvy1// y2 = t1 * y1 + y1
+
+	fnms	resX, resX,	dvy2, floatZero
+	fnms	resY, resY, dvy2, floatZero
+
+
+	fm		resW, resZ,		warpShadParam03neg
+
+	fm		resZ, dist0123,	warpShadParam03neg
+	fcgt	tmp0, resZ,		floatZero
+	selb	resZ, floatZero,resZ,	tmp0
+//	fcgt	tmp0, fOne,		resZ
+//	selb	resZ, resZ,		fOne,	tmp0
+
+
+// --------------------------------------------------------------------------------------
+
+
+
+	// 3b) Transpose warped verts
+	.reg	tmpshuf0, tmpshuf2, tmpshuf1, tmpshuf3, xyzw0, xyzw1, xyzw2, xyzw3
+	shufb	tmpshuf0, resX, resY, s_AaBb
+	shufb	tmpshuf2, resZ, resW, s_BbAa
+	shufb	tmpshuf1, resX, resY, s_CcDd
+	shufb	tmpshuf3, resZ, resW, s_DdCc
+
+	shufb	xyzw0, tmpshuf0, tmpshuf2, s_ABcd
+	shufb	xyzw1, tmpshuf0, tmpshuf2, s_CDab
+	shufb	xyzw2, tmpshuf1, tmpshuf3, s_ABcd
+	shufb	xyzw3, tmpshuf1, tmpshuf3, s_CDab
+
+	// 3c) Store warped verts
+	stqd	xyzw0, -0x40(vertsIn)
+	stqd	xyzw1, -0x30(vertsIn)
+	stqd	xyzw2, -0x20(vertsIn)
+	stqd	xyzw3, -0x10(vertsIn)
+
+	// 4) Compute 1/W
+	.reg	/*recipEstW,*/ recipW
+//	frest	tmp0, resW
+//	fi		recipEstW, resW, tmp0
+//	fnms	tmp1, recipEstW, resW, fOne
+//	fma		recipW, tmp1, recipEstW, recipEstW
+	rotqbyi	recipW, fOne, 0
+
+	// 5) Homogenize X, Y, Z
+	.reg	xxxxUnit, yyyyUnit, zzzzUnit
+	fm		xxxxUnit, resX, recipW
+	fm		yyyyUnit, resY, recipW
+	fm		zzzzUnit, resZ, recipW
+
+	// 6) Flip sign of X, Y if W is negative
+	.reg	signW, xxxxUnitSigned, yyyyUnitSigned
+	and		signW, resW, signMask
+	xor		xxxxUnitSigned, xxxxUnit, signW
+	xor		yyyyUnitSigned, yyyyUnit, signW
+
+	// 7) Compare w against zero (which invalidates some tests)
+	.reg	wSafe
+	fcgt	wSafe, resW, floatZero
+
+	// 8) Scale and offset X, Y, Z into viewport
+	.reg	xxxxScaled, yyyyScaled, zzzzScaled
+	fma		xxxxScaled, xxxxUnitSigned, viewportScaleX, viewportOffsetX
+	fma		yyyyScaled, yyyyUnitSigned, viewportScaleY, viewportOffsetY
+	fma		zzzzScaled, zzzzUnit, viewportScaleZ, viewportOffsetZ
+
+	// 9) Convert X, Y to signed ints
+	.reg	xxxxAsSigned, yyyyAsSigned
+	cflts	xxxxAsSigned, xxxxScaled, 3
+	cflts	yyyyAsSigned, yyyyScaled, 3
+
+	// 10)Mask of any necessary bits to quantize according to sample type
+	.reg	xxxxQuantized, yyyyQuantized
+	and		xxxxQuantized, xxxxAsSigned, sampleMask
+	and		yyyyQuantized, yyyyAsSigned, sampleMask
+
+	// 11)Combine quantized X and Y into a word.
+	.reg	xxxxShifted, xyxyxyxy, resWcopy
+	shlqbyi	xxxxShifted, xxxxQuantized, 2
+	shufb	xyxyxyxy, xxxxShifted, yyyyQuantized, s_AbCdEfGh
+	selb	resWcopy, xyxyxyxy, wSafe, signMask
+
+	// 12)Untranspose transformed X, Y, Z
+	.reg	x0y0x2y2, x1y1x3y3, z2w2z0w0, z3w3z1w1, xyz2Trans, xyz3Trans, xyz0Trans, xyz1Trans
+	shufb	x0y0x2y2, xxxxScaled, yyyyScaled, s_AaCc
+	shufb	x1y1x3y3, xxxxScaled, yyyyScaled, s_BbDd
+	shufb	z2w2z0w0, zzzzScaled, resWcopy, s_CcAa
+	shufb	z3w3z1w1, zzzzScaled, resWcopy, s_DdBb
+	shufb	xyz2Trans, z2w2z0w0, x0y0x2y2, s_cdAB
+	shufb	xyz3Trans, z3w3z1w1, x1y1x3y3, s_cdAB
+	shufb	xyz0Trans, x0y0x2y2, z2w2z0w0, s_ABcd
+	shufb	xyz1Trans, x1y1x3y3, z3w3z1w1, s_ABcd
+
+	// 13)Compare against frustum
+	.reg	over0, over1, over2, over3, under0, under1, under2, under3
+	fcgt	over0, xyz0Trans, frustumMax
+	fcgt	over1, xyz1Trans, frustumMax
+	fcgt	over2, xyz2Trans, frustumMax
+	fcgt	over3, xyz3Trans, frustumMax
+	fcgt	under0, frustumMin, xyz0Trans
+	fcgt	under1, frustumMin, xyz1Trans
+	fcgt	under2, frustumMin, xyz2Trans
+	fcgt	under3, frustumMin, xyz3Trans
+
+	// 14)Collect frustum test results into bit pattern
+	.reg	frustumTest0Tmp0, frustumTest1Tmp0, frustumTest2Tmp0, frustumTest3Tmp0
+	shufb	frustumTest0Tmp0, under0, over0, s_FBDbdf00
+	shufb	frustumTest1Tmp0, under1, over1, s_FBDbdf00
+	shufb	frustumTest2Tmp0, under2, over2, s_FBDbdf00
+	shufb	frustumTest3Tmp0, under3, over3, s_FBDbdf00
+
+	// 15)Move frustum test bits into Z component
+	.reg	frustumTest0, frustumTest1, frustumTest2, frustumTest3
+	gbh		frustumTest0, frustumTest0Tmp0
+	gbh		frustumTest1, frustumTest1Tmp0
+	gbh		frustumTest2, frustumTest2Tmp0
+	gbh		frustumTest3, frustumTest3Tmp0
+
+	// 16)Move quantized X and Y with W==0 as high bit into W
+	.reg	xyz0Out, xyz1Out, xyz2Out, xyz3Out
+	shufb	xyz0Out, xyz0Trans, frustumTest0, s_ABCDEFGHd000MNOP
+	shufb	xyz1Out, xyz1Trans, frustumTest1, s_ABCDEFGHd000MNOP
+	shufb	xyz2Out, xyz2Trans, frustumTest2, s_ABCDEFGHd000MNOP
+	shufb	xyz3Out, xyz3Trans, frustumTest3, s_ABCDEFGHd000MNOP
+
+	// 17)Store results
+	stqd	xyz0Out, -0x40(transOut)
+	stqd	xyz1Out, -0x30(transOut)
+	stqd	xyz2Out, -0x20(transOut)
+	stqd	xyz3Out, -0x10(transOut)
+
+	brnz    count4, Loop
+	
+
+NoLoop:
+	// restore registers:
+	lqd		$80,	-0x10($sp)
+	lqd		$81,	-0x20($sp)
+	lqd		$82,	-0x30($sp)
+	lqd		$83,	-0x40($sp)
+	lqd		$84,	-0x50($sp)
+	lqd		$85,	-0x60($sp)    
+	lqd		$86,	-0x70($sp)
+	lqd		$87,	-0x80($sp)
+	lqd		$88,	-0x90($sp)
+	lqd		$89,	-0xa0($sp)
+	lqd		$90,	-0xb0($sp)
+
+	.endfunc
+			

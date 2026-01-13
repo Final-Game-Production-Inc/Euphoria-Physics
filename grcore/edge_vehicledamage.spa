@@ -1,0 +1,853 @@
+//
+// grcore/edge_vehicledamage.spa
+//
+// Copyright (C) 2012-2013 Rockstar Games.  All Rights Reserved.
+//
+
+////////////////////////////////////////////////////////////////////////////////
+//  This file is not automatically built by our build system.                 //
+//  After modifying this file, you need to run grcore/edge_vehicledamage.bat, //
+//  and check in grcore/edge_vehicledamage.o                                  //
+////////////////////////////////////////////////////////////////////////////////
+
+
+.set GTA_VEHICLE_DAMAGE_TEXTURE_SIZE, 128
+.set GTA_VEHICLE_DAMAGE_DELTA_SCALE,  0.5f
+
+
+.data
+_FakeDiffuseDest:
+.word			0, 0, 0, 0
+.word			0, 0, 0, 0
+.word			0, 0, 0, 0
+.word			0, 0, 0, 0
+
+
+.rodata
+
+// Look up table for SelWords_Pipe1 and AndWords_Pipe1
+_SelWordsLut:
+.word           0x00010203, 0x04050607, 0x08090a0b, 0x0c0d0e0f
+.word           0x00010203, 0x04050607, 0x08090a0b, 0x1c1d1e1f
+.word           0x00010203, 0x04050607, 0x18191a1b, 0x0c0d0e0f
+.word           0x00010203, 0x04050607, 0x18191a1b, 0x1c1d1e1f
+.word           0x00010203, 0x14151617, 0x08090a0b, 0x0c0d0e0f
+.word           0x00010203, 0x14151617, 0x08090a0b, 0x1c1d1e1f
+.word           0x00010203, 0x14151617, 0x18191a1b, 0x0c0d0e0f
+.word           0x00010203, 0x14151617, 0x18191a1b, 0x1c1d1e1f
+.word           0x10111213, 0x04050607, 0x08090a0b, 0x0c0d0e0f
+.word           0x10111213, 0x04050607, 0x08090a0b, 0x1c1d1e1f
+.word           0x10111213, 0x04050607, 0x18191a1b, 0x0c0d0e0f
+.word           0x10111213, 0x04050607, 0x18191a1b, 0x1c1d1e1f
+.word           0x10111213, 0x14151617, 0x08090a0b, 0x0c0d0e0f
+.word           0x10111213, 0x14151617, 0x08090a0b, 0x1c1d1e1f
+.word           0x10111213, 0x14151617, 0x18191a1b, 0x0c0d0e0f
+.word           0x10111213, 0x14151617, 0x18191a1b, 0x1c1d1e1f
+
+
+.macro Recip(out, in)
+
+	// Copied from SPU_ISA_v12_e.pdf FREST documentation
+	.localreg   y0, y1, t1
+	frest       y0, in
+	fi          y1, in, y0
+	fnms        t1, in, y1, g_Onef
+	fma         out, t1, y1, y1
+
+.endmacro
+
+
+// Equivalent to
+//      selb    out, in0, in1, mask
+// when for each word in mask, all bits are the same.
+// All instructions are pipe 1.
+.macro SelWords_Pipe1(out, in0, in1, mask)
+
+	.localreg   idx, ctrl
+	gb          idx, mask
+	shlqbii     idx, idx, 4
+	lqx         ctrl, g_SelWordsLut, idx
+	shufb       out, in0, in1, ctrl
+
+.endmacro
+
+
+// Equivalent to
+//      and     out, in, mask
+// when for each word in mask, all bits are the same.
+// All instructions are pipe 1.
+.macro AndWords_Pipe1(out, in, mask)
+
+	.localreg   idx, ctrl
+	gb          idx, mask
+	shlqbii     idx, idx, 4
+	lqx         ctrl, g_SelWordsLut, idx
+	shufb       out, mask, in, ctrl
+
+.endmacro
+
+
+// Load four float4's and transpose
+.macro LoadAndTranspose_Pipe0(outX, outY, outZ, ptr)
+
+	// load x 4
+	.localreg   v0, v1, v2, v3
+	lqd         v0,  0(ptr)
+	lqd         v1, 16(ptr)
+	lqd         v2, 32(ptr)
+	lqd         v3, 48(ptr)
+
+	// swizzle positions xyzw xyzw xyzw xyzw -> xxxx yyyy zzzz
+	.localreg   vs0, vs1, vs2, vs3
+	shufb       vs0, v0, v1, g_ShufAaBb
+	shufb       vs1, v0, v1, g_ShufCcDd
+	shufb       vs2, v2, v3, g_ShufBbAa
+	shufb       vs3, v2, v3, g_ShufDdCc
+//	selb        outX, vs0, vs2, g_SelABcd
+	shufb       outY, vs0, vs2, g_ShufCDab
+//	selb        outZ, vs1, vs3, g_SelABcd
+
+.endmacro
+
+
+// Same as LoadAndTranspose_Pipe1, but prefer pipe1 instructions
+.macro LoadAndTranspose_Pipe1(outX, outY, outZ, ptr)
+
+	// load x 4
+	.localreg   v0, v1, v2, v3
+	lqd         v0,  0(ptr)
+	lqd         v1, 16(ptr)
+	lqd         v2, 32(ptr)
+	lqd         v3, 48(ptr)
+
+	// swizzle positions xyzw xyzw xyzw xyzw -> xxxx yyyy zzzz
+	.localreg   vs0, vs1, vs2, vs3
+	shufb       vs0, v0, v1, g_ShufAaBb
+	shufb       vs1, v0, v1, g_ShufCcDd
+	shufb       vs2, v2, v3, g_ShufBbAa
+	shufb       vs3, v2, v3, g_ShufDdCc
+	shufb       outX, vs0, vs2, g_ShufABcd
+	shufb       outY, vs0, vs2, g_ShufCDab
+	shufb       outZ, vs1, vs3, g_ShufABcd
+
+.endmacro
+
+//
+//
+//
+//
+.macro LoadDamageScale(outDmgScale, outDiffuse0, outDiffuse1, outDiffuse2, outDiffuse3, pDiffuse, DiffuseSel)
+
+	// load diffuse color x4
+	lqd         outDiffuse0,  0(pDiffuse)
+	lqd         outDiffuse1, 16(pDiffuse)
+	lqd         outDiffuse2, 32(pDiffuse)
+	lqd         outDiffuse3, 48(pDiffuse)
+	// damage scale: swizzle diffuse.G into GGGG:
+	.localreg   ds0
+	shufb       ds0, outDiffuse0, outDiffuse1, g_ShufAaBb
+	//.localreg   ds1
+	//shufb       ds1, outDiffuse0, outDiffuse1, g_ShufCcDd
+	.localreg   ds2
+	shufb       ds2, outDiffuse2, outDiffuse3, g_ShufBbAa
+	//.localreg   ds3
+	//shufb       ds3, outDiffuse2, outDiffuse3, g_ShufDdCc
+	//.localreg   rrrr
+	//selb        rrrr, ds0, ds2, g_SelABcd
+	.localreg   gggg
+	shufb       gggg, ds0, ds2, g_ShufCDab
+	//.localreg   bbbb
+	//selb        bbbb, ds1, ds3, g_SelABcd
+	selb        outDmgScale, g_Onef, gggg, DiffuseSel       // gDmgScale = pDiffuse ? gggg : 1.f
+
+.endmacro
+
+
+.macro CalcTexcoords(outUInt, outVInt, outUFloor, outVFloor, outUFrac, outVFrac, outMagR, Rx, Ry, Rz)
+
+	// get pos magnitudes
+	.localreg   x2, x2y2, x2y2z2
+	fm          x2, Rx, Rx
+	fma         x2y2, Ry, Ry, x2
+	fma         x2y2z2, Rz, Rz, x2y2
+	.localreg   invLen
+	frsqest     invLen, x2y2z2
+	fi          invLen, x2y2z2, invLen
+	fm          outMagR, x2y2z2, invLen
+
+	// float2 texSampleCoords = GetTexCoordFromRadialPos(R);
+	// get uv from pos
+	//	float zOffset = 0.5f * (1.0f - R.z);
+	.localreg   zOffset
+	fnms        zOffset, Rz, invLen, g_Onef
+	//	and re-normalise just this (will get scaled by previously normalised z)
+	//	texSampleCoords = normalize(texSampleCoords);
+	.localreg   invLenxy
+	frsqest     invLenxy, x2y2
+	fi          invLenxy, x2y2, invLenxy
+	.localreg   u, v
+	fm          u, Rx, invLenxy
+	fm          v, Ry, invLenxy
+	//	texSampleCoords *= zOffset;
+	fm          u, u, zOffset
+	fm          v, v, zOffset
+	//	texSampleCoords *= 0.5f;
+	//	texSampleCoords += 0.5f;
+	fma         u, u, dimo4, dimo2
+	fma         v, v, dimo4, dimo2
+
+	// 'over clamp' uv to prevent bilinear fetches going out of bounds
+	.localreg   uClamp, vClamp
+	fcgt        uClamp, u, dimClamp
+	fcgt        vClamp, v, dimClamp
+	selb        u, u, dimClamp, uClamp              // u=<0; 128)
+	selb        v, v, dimClamp, vClamp              // v=<0; 128)
+
+	// get integer and fractional parts of uv
+	cfltu       outUInt, u, 0
+	cfltu       outVInt, v, 0
+	cuflt       outUFloor, outUInt, 0
+	cuflt       outVFloor, outVInt, 0
+	fs          outUFrac, u, outUFloor
+	fs          outVFrac, v, outVFloor
+
+.endmacro
+
+
+.macro LoadTexels(outT, outB, offset, mask)
+
+	// Get 4 QWs for the vert
+	.localreg   tl, tr, bl, br
+	lqd         tl,  0(offset)
+	lqd         tr, 16(offset)
+	lqd         bl,  0 + GTA_VEHICLE_DAMAGE_TEXTURE_SIZE*3(offset)
+	lqd         br, 16 + GTA_VEHICLE_DAMAGE_TEXTURE_SIZE*3(offset)
+
+	// Aligned pixel pairs
+	shufb       outT, tl, tr, mask
+	shufb       outB, bl, br, mask
+
+.endmacro
+
+
+.macro LoadAllTexels(outT01, outT23, outB01, outB23, texelsize, dmgTexp, texturepitch, ui, vi, leftmask, rightmask)
+
+	//float s = 1.01f/128.0f;
+	//float2 texSampleOffset = fmod(texSampleCoords, s.xx);
+	//float4 sample   = tex2Dlod(DamageSampler, float4(texSampleCoords                   + float2(0, 0),0,0));
+	//float4 sampleR  = tex2Dlod(DamageSampler, float4(texSampleCoords - texSampleOffset + float2(s, 0),0,0));
+	//float4 sampleU  = tex2Dlod(DamageSampler, float4(texSampleCoords - texSampleOffset + float2(0, s),0,0));
+	//float4 sampleRU = tex2Dlod(DamageSampler, float4(texSampleCoords - texSampleOffset + float2(s, s),0,0));
+
+	// Integer number of QW's per line required - This is true for 128*3 width
+	.localreg   off, byteOff
+	mpya        off, ui, texelsize, dmgTexp
+	andi        byteOff, off, 15
+
+	// As V pitch is multiple of 16, just take byte offset directly from U
+	mpya        off, vi, texturepitch, off
+	.localreg   off1, off2, off3
+	shlqbyi     off1, off, 4
+	shlqbyi     off2, off, 8
+	shlqbyi     off3, off, 12
+
+	// Build 4 extraction masks
+	.localreg   mask0, mask1, mask2, mask3
+	shufb       mask0, byteOff, byteOff, splat3
+	shufb       mask1, byteOff, byteOff, splat7
+	shufb       mask2, byteOff, byteOff, splatB
+	shufb       mask3, byteOff, byteOff, splatF
+	a           mask0, mask0, leftmask
+	a           mask1, mask1, rightmask
+	a           mask2, mask2, leftmask
+	a           mask3, mask3, rightmask
+
+	.localreg   t0, b0
+	.localreg   t1, b1
+	.localreg   t2, b2
+	.localreg   t3, b3
+	LoadTexels(t0, b0, off,  mask0)
+	LoadTexels(t1, b1, off1, mask1)
+	LoadTexels(t2, b2, off2, mask2)
+	LoadTexels(t3, b3, off3, mask3)
+
+	or          outT01, t0, t1          // outT01 = [RGBR|GB00|RGBR|GB00]
+	or          outT23, t2, t3          // outT23 = [RGBR|GB00|RGBR|GB00]
+	or          outB01, b0, b1          // ...
+	or          outB23, b2, b3
+
+.endmacro
+
+
+.macro Extract(out, outR, outU, outRU, t01, t23, b01, b23, getL, getR)
+
+	.localreg   tl, tr, bl, br
+	shufb       tl, t01, t23, getL      // tl = [ x0<<24 | x1<<24 | x2<<24 | x3<<24 ]; - x shifted left by 24 bits, but keeps correct sign
+	shufb       tr, t01, t23, getR
+	shufb       bl, b01, b23, getL
+	shufb       br, b01, b23, getR
+
+	csflt       out,   tl, (7+24)       // Signed between -1 <= x < 1
+	csflt       outR,  tr, (7+24)
+	csflt       outU,  bl, (7+24)
+	csflt       outRU, br, (7+24)
+
+.endmacro
+
+
+.macro BilinearInterp(out, sample, sampleU, sampleR, sampleRU, uf, vf)
+
+	//float2 normalisedSampleOffset = texSampleOffset / s;
+	//float4 smoothedSample = sample*(1.0f - normalisedSampleOffset.x)*(1.0f - normalisedSampleOffset.y);
+	//smoothedSample += sampleR*(normalisedSampleOffset.x)*(1.0f - normalisedSampleOffset.y);
+	//smoothedSample += sampleU*(1.0f - normalisedSampleOffset.x)*(normalisedSampleOffset.y);
+	//smoothedSample += sampleRU*(normalisedSampleOffset.x)*(normalisedSampleOffset.y);
+	.localreg   tmp0, tmp1, tmp2, tmp3, tmp4
+	fnms        tmp0, sample,   uf, sample
+	fnms        tmp1, sampleU,  uf, sampleU
+	fma         tmp2, sampleR,  uf, tmp0
+	fma         tmp3, sampleRU, uf, tmp1
+	fnms        tmp4, tmp2, vf, tmp2
+	fma         out, tmp3, vf, tmp4
+
+.endmacro
+
+
+//
+//
+//
+//
+.macro ApplyDamage_Pipe0(inOutX, inOutY, inOutZ, outSmoothSampleScale, smoothedSampleX, smoothedSampleY, smoothedSampleZ, gDmgScale, magR, deltaScale, deltaScaleOverBoundRadius)
+
+	// scale samples
+	//smoothedSample *= min(1.0f, magR / BoundRadius);
+	//smoothedSample *= GTA_VEHICLE_DAMAGE_DELTA_SCALE;
+	.localreg   lenscale, clampLenscale
+	fm          lenscale, magR, deltaScaleOverBoundRadius
+	fcgt        clampLenscale, lenscale, deltaScale
+	selb        outSmoothSampleScale, lenscale, deltaScale, clampLenscale
+
+	// update positions
+	// outPos = _inPos + smoothedSample.xyz*gDmgScale;
+	fm          outSmoothSampleScale, outSmoothSampleScale, gDmgScale
+	fma         inOutX, smoothedSampleX, outSmoothSampleScale, inOutX
+	fma         inOutY, smoothedSampleY, outSmoothSampleScale, inOutY
+	fma         inOutZ, smoothedSampleZ, outSmoothSampleScale, inOutZ
+
+.endmacro
+
+
+.macro ApplyDamage_Pipe1(inOutX, inOutY, inOutZ, outSmoothSampleScale, smoothedSampleX, smoothedSampleY, smoothedSampleZ, gDmgScale, magR, deltaScale, deltaScaleOverBoundRadius)
+
+	// scale samples
+	//smoothedSample *= min(1.0f, magR / BoundRadius);
+	//smoothedSample *= GTA_VEHICLE_DAMAGE_DELTA_SCALE;
+	.localreg   lenscale, clampLenscale
+	fm          lenscale, magR, deltaScaleOverBoundRadius
+	fcgt        clampLenscale, lenscale, deltaScale
+	SelWords_Pipe1(outSmoothSampleScale, lenscale, deltaScale, clampLenscale)
+
+	// update positions
+	// outPos = _inPos + smoothedSample.xyz*gDmgScale;
+	fm          outSmoothSampleScale, outSmoothSampleScale, gDmgScale
+	fma         inOutX, smoothedSampleX, outSmoothSampleScale, inOutX
+	fma         inOutY, smoothedSampleY, outSmoothSampleScale, inOutY
+	fma         inOutZ, smoothedSampleZ, outSmoothSampleScale, inOutZ
+
+.endmacro
+
+
+.macro TransposeAndStore_Pipe0(ptr, x, y, z, w)
+
+	// deswizzle xxxx yyyy zzzz -> xyz1 xyz1 xyz1 xyz1
+	.localreg   vs0, vs1, vs2, vs3
+	shufb       vs0, x, y, g_ShufAaBb
+	shufb       vs1, x, y, g_ShufCcDd
+	shufb       vs2, z, w, g_ShufBbAa
+	shufb       vs3, z, w, g_ShufDdCc
+	.localreg   v0, v1, v2, v3
+//	selb        v0, vs0, vs2, g_SelABcd
+	shufb       v1, vs0, vs2, g_ShufCDab
+//	selb        v2, vs1, vs3, g_SelABcd
+	shufb       v3, vs1, vs3, g_ShufCDab
+
+	// store x 4
+	// note that ptr has already been moved forward 64-bytes to prevent a recurrence constraint that hurts the spa pipelining
+	stqd        v0,  0-64(ptr)
+	stqd        v1, 16-64(ptr)
+	stqd        v2, 32-64(ptr)
+	stqd        v3, 48-64(ptr)
+
+.endmacro
+
+
+.macro TransposeAndStore_Pipe1(ptr, x, y, z, w)
+
+	// deswizzle xxxx yyyy zzzz -> xyz1 xyz1 xyz1 xyz1
+	.localreg   vs0, vs1, vs2, vs3
+	shufb       vs0, x, y, g_ShufAaBb
+	shufb       vs1, x, y, g_ShufCcDd
+	shufb       vs2, z, w, g_ShufBbAa
+	shufb       vs3, z, w, g_ShufDdCc
+	.localreg   v0, v1, v2, v3
+	shufb       v0, vs0, vs2, g_ShufABcd
+	shufb       v1, vs0, vs2, g_ShufCDab
+	shufb       v2, vs1, vs3, g_ShufABcd
+	shufb       v3, vs1, vs3, g_ShufCDab
+
+	// store x 4
+	// note that ptr has already been moved forward 64-bytes to prevent a recurrence constraint that hurts the spa pipelining
+	stqd        v0,  0-64(ptr)
+	stqd        v1, 16-64(ptr)
+	stqd        v2, 32-64(ptr)
+	stqd        v3, 48-64(ptr)
+
+.endmacro
+
+
+//
+//
+//
+//
+.macro StoreDiffuse_Pipe0(pDiffuse, SmoothSampleScale, smoothedSampleX, smoothedSampleY, smoothedSampleZ, Diffuse0, Diffuse1, Diffuse2, Diffuse3)
+
+	//float retVal = saturate(1.0f-saturate(length(smoothedSample.xyz))*4.0f);
+	.localreg	dSmoothedSampleX, dSmoothedSampleY, dSmoothedSampleZ
+	fm			dSmoothedSampleX, smoothedSampleX, SmoothSampleScale
+	fm			dSmoothedSampleY, smoothedSampleY, SmoothSampleScale
+	fm			dSmoothedSampleZ, smoothedSampleZ, SmoothSampleScale
+
+	.localreg	dSmoothedSampleX2Y2Z2, dSmoothedSampleY2Z2, dSmoothedSampleZ2 
+	fm			dSmoothedSampleZ2,		dSmoothedSampleZ,	dSmoothedSampleZ
+	fma			dSmoothedSampleY2Z2,	dSmoothedSampleY,	dSmoothedSampleY, dSmoothedSampleZ2
+	fma			dSmoothedSampleX2Y2Z2,	dSmoothedSampleX,	dSmoothedSampleX, dSmoothedSampleY2Z2 
+	.localreg	dSmoothedSampleX2Y2Z2invLen, dSmoothedSampleLen
+	frsqest     dSmoothedSampleX2Y2Z2invLen, dSmoothedSampleX2Y2Z2
+	fi          dSmoothedSampleX2Y2Z2invLen, dSmoothedSampleX2Y2Z2, dSmoothedSampleX2Y2Z2invLen
+	fm          dSmoothedSampleLen, dSmoothedSampleX2Y2Z2, dSmoothedSampleX2Y2Z2invLen
+
+	//.localreg	clamp0
+	//fcgt		clamp0, g_Zero, dSmoothedSampleLen
+	.localreg	clamp1
+	fcgt		clamp1,	dSmoothedSampleLen, g_Onef
+	//selb		dSmoothedSampleLen, dSmoothedSampleLen, g_Zero, clamp0
+	selb		dSmoothedSampleLen, dSmoothedSampleLen, g_Onef, clamp1
+	
+	.localreg	dSpecDmgScale
+	fnms		dSpecDmgScale, dSmoothedSampleLen, g_Fourf, g_Onef
+
+	.localreg	clamp0a
+	fcgt		clamp0a, g_Zero, dSpecDmgScale
+	.localreg	clamp1a
+	fcgt		clamp1a, dSpecDmgScale, g_Onef
+	selb		dSpecDmgScale, dSpecDmgScale, g_Zero, clamp0a
+	selb		dSpecDmgScale, dSpecDmgScale, g_Onef, clamp1a
+
+	.localreg	diffuse0, diffuse1, diffuse2, diffuse3
+	shufb		diffuse0, Diffuse0, dSpecDmgScale, g_ShufAaCD
+	shufb		diffuse1, Diffuse1, dSpecDmgScale, g_ShufAbCD
+	shufb		diffuse2, Diffuse2, dSpecDmgScale, g_ShufAcCD
+	shufb		diffuse3, Diffuse3, dSpecDmgScale, g_ShufAdCD
+
+//	.localreg	pFakeDiffuseDest
+//	ila			pFakeDiffuseDest, _FakeDiffuseDest
+//	a			pFakeDiffuseDest, pFakeDiffuseDest, picoffset
+	.localreg	destDiffuse
+//	selb		destDiffuse, pFakeDiffuseDest, pDiffuse, DiffuseSel
+	selb		destDiffuse, g_FakeDiffuseDest, pDiffuse, DiffuseSel
+
+	stqd        diffuse0,  0(destDiffuse)
+	stqd        diffuse1, 16(destDiffuse)
+	stqd        diffuse2, 32(destDiffuse)
+	stqd        diffuse3, 48(destDiffuse)
+.endmacro
+
+//
+//
+//
+//
+.macro StoreDiffuse_Pipe1(pDiffuse, SmoothSampleScale, smoothedSampleX, smoothedSampleY, smoothedSampleZ, Diffuse0, Diffuse1, Diffuse2, Diffuse3)
+
+	//float retVal = saturate(1.0f-saturate(length(smoothedSample.xyz))*4.0f);
+	.localreg	dSmoothedSampleX, dSmoothedSampleY, dSmoothedSampleZ
+	fm			dSmoothedSampleX, smoothedSampleX, SmoothSampleScale
+	fm			dSmoothedSampleY, smoothedSampleY, SmoothSampleScale
+	fm			dSmoothedSampleZ, smoothedSampleZ, SmoothSampleScale
+
+	.localreg	dSmoothedSampleX2Y2Z2, dSmoothedSampleY2Z2, dSmoothedSampleZ2 
+	fm			dSmoothedSampleZ2,		dSmoothedSampleZ,	dSmoothedSampleZ
+	fma			dSmoothedSampleY2Z2,	dSmoothedSampleY,	dSmoothedSampleY, dSmoothedSampleZ2
+	fma			dSmoothedSampleX2Y2Z2,	dSmoothedSampleX,	dSmoothedSampleX, dSmoothedSampleY2Z2 
+	.localreg	dSmoothedSampleX2Y2Z2invLen, dSmoothedSampleLen
+	frsqest     dSmoothedSampleX2Y2Z2invLen, dSmoothedSampleX2Y2Z2
+	fi          dSmoothedSampleX2Y2Z2invLen, dSmoothedSampleX2Y2Z2, dSmoothedSampleX2Y2Z2invLen
+	fm          dSmoothedSampleLen, dSmoothedSampleX2Y2Z2, dSmoothedSampleX2Y2Z2invLen
+
+	//.localreg	clamp0
+	//fcgt		clamp0, g_Zero, dSmoothedSampleLen
+	.localreg	clamp1
+	fcgt		clamp1,	dSmoothedSampleLen, g_Onef
+	//SelWords_Pipe1(dSmoothedSampleLen, dSmoothedSampleLen, g_Zero, clamp0)
+	SelWords_Pipe1(dSmoothedSampleLen, dSmoothedSampleLen, g_Onef, clamp1)
+	
+	.localreg	dSpecDmgScale
+	fnms		dSpecDmgScale, dSmoothedSampleLen, g_Fourf, g_Onef
+
+	.localreg	clamp0a
+	fcgt		clamp0a, g_Zero, dSpecDmgScale
+	.localreg	clamp1a
+	fcgt		clamp1a, dSpecDmgScale, g_Onef
+	SelWords_Pipe1(dSpecDmgScale, dSpecDmgScale, g_Zero, clamp0a)
+	SelWords_Pipe1(dSpecDmgScale, dSpecDmgScale, g_Onef, clamp1a)
+
+	.localreg	diffuse0, diffuse1, diffuse2, diffuse3
+	shufb		diffuse0, Diffuse0, dSpecDmgScale, g_ShufAaCD
+	shufb		diffuse1, Diffuse1, dSpecDmgScale, g_ShufAbCD
+	shufb		diffuse2, Diffuse2, dSpecDmgScale, g_ShufAcCD
+	shufb		diffuse3, Diffuse3, dSpecDmgScale, g_ShufAdCD
+
+	.localreg	pFakeDiffuseDest
+	ila			pFakeDiffuseDest, _FakeDiffuseDest
+	a			pFakeDiffuseDest, pFakeDiffuseDest, picoffset
+	.localreg	destDiffuse
+	SelWords_Pipe1(destDiffuse, pFakeDiffuseDest, pDiffuse, DiffuseSel)
+
+	stqd        diffuse0,  0(destDiffuse)
+	stqd        diffuse1, 16(destDiffuse)
+	stqd        diffuse2, 32(destDiffuse)
+	stqd        diffuse3, 48(destDiffuse)
+.endmacro
+
+//
+//
+//
+//
+.macro PositionLoopIteration(pPos, pDiffuse, LoadAndTranspose, ApplyDamage, StoreDiffuse, TransposeAndStore)
+
+	// Load the initial positions
+	.localreg        x, y, z
+	LoadAndTranspose(x, y, z, pPos)
+
+	.localreg		Rx, Ry, Rz
+	fa				Rx, x, dmgTexOffX
+	fa				Ry, y, dmgTexOffY
+	fa				Rz, z, dmgTexOffZ
+
+	// Move pointer forward early, as it helps spa's pipelining by removing a
+	// recurrence constraint on the stores at the end of the loop.  TransposeAndStore
+	// takes this into account.
+	ai          pPos, pPos, 64
+
+	// Load the damage scale from the vertex array
+	.localreg	Diffuse0, Diffuse1, Diffuse2, Diffuse3
+	LoadDamageScale(gDmgScale, Diffuse0, Diffuse1, Diffuse2, Diffuse3, pDiffuse, DiffuseSel)
+
+	// Calculate the texcoords for reading from the damage texture
+	.localreg   ui, vi, uf, vf, magR
+	CalcTexcoords(ui, vi, u0, v0, uf, vf, magR, Rx, Ry, Rz)
+
+	// Load the four qwords that contain all the damage texels
+	.localreg   t01, t23, b01, b23
+	LoadAllTexels(t01, t23, b01, b23, texelsize, dmgTexp, texturepitch, ui, vi, leftmask, rightmask)
+
+	// Now extract vector of TL,TR,BL, and BR for X,Y and Z from the loaded damage texels
+	Extract(Samplex, SampleRx, SampleUx, SampleRUx, t01, t23, b01, b23, getlX, getrX)
+	Extract(Sampley, SampleRy, SampleUy, SampleRUy, t01, t23, b01, b23, getlY, getrY)
+	Extract(Samplez, SampleRz, SampleUz, SampleRUz, t01, t23, b01, b23, getlZ, getrZ)
+
+	// Bilinear interpolation x 4
+	.localreg   smoothedSampleX, smoothedSampleY, smoothedSampleZ
+	BilinearInterp(smoothedSampleX, Samplex, SampleUx, SampleRx, SampleRUx, uf, vf)
+	BilinearInterp(smoothedSampleY, Sampley, SampleUy, SampleRy, SampleRUy, uf, vf)
+	BilinearInterp(smoothedSampleZ, Samplez, SampleUz, SampleRz, SampleRUz, uf, vf)
+
+	// Modify the positions
+	ApplyDamage(x, y, z, SmoothSampleScale, smoothedSampleX, smoothedSampleY, smoothedSampleZ, gDmgScale, magR, deltaScale, deltaScaleOverBoundRadius)
+	
+	StoreDiffuse(pDiffuse, SmoothSampleScale, smoothedSampleX, smoothedSampleY, smoothedSampleZ, Diffuse0, Diffuse1, Diffuse2, Diffuse3)
+	ai          pDiffuse, pDiffuse, 64
+
+	// Write output
+	TransposeAndStore(pPos, x, y, z, g_Onef)
+
+.endmacro
+
+
+.macro GetRadialPos(outX, outY, outZ, u, v, invHalfDim)
+
+	//texSampleCoords -= 0.5f;
+	//texSampleCoords *= 2.0f;
+	.localreg   un, vn, u2, u2v2
+	fms         un, u, invHalfDim, g_Onef
+	fms         vn, v, invHalfDim, g_Onef
+	fm          u2, un, un
+	fma         u2v2, vn, vn, u2
+
+	//float fLength = 0.0f;
+	//if(dot(texSampleCoords, texSampleCoords) > 0.0f)
+	//	fLength = length(texSampleCoords);
+	.localreg   fLength
+	frsqest     fLength, u2v2
+	fi          fLength, u2v2, fLength
+	fm          fLength, fLength, u2v2
+
+	//R.z = 1.0f - 2.0f*fLength;
+	fnms        outZ, g_Twof, fLength, g_Onef
+	//if(R.z > 1.0f) R.z = 1.0f;
+	.localreg   clampZpos, clampZneg
+	fcgt        clampZpos, outZ, g_Onef
+	fcgt        clampZneg, g_NegOnef, outZ
+	SelWords_Pipe1(outZ, outZ, g_Onef, clampZpos)
+	//else if(R.z < -1.0f) R.z = -1.0f;
+	SelWords_Pipe1(outZ, outZ, g_NegOnef, clampZneg)
+
+	//	float fXYMult = 0.0f;
+	//	if(R.z < 1.0f && R.z > -1.0f && fLength > 0.0f)
+	//		fXYMult = sqrt(1.0f - R.z*R.z) / fLength;
+	.localreg   tmp0, tmp1, tmp2
+	fnms        tmp0, outZ, outZ, g_Onef
+	frsqest     tmp1, tmp0
+	fi          tmp1, tmp0, tmp1
+	fm          tmp2, tmp0, tmp1
+	.localreg   fXYMult
+	fm          fXYMult, tmp2, fLength
+
+	//R.x = texSampleCoords.x * fXYMult;
+	//R.y = texSampleCoords.y * fXYMult;
+	fm          outX, un, fXYMult
+	fm          outY, vn, fXYMult
+
+.endmacro
+
+
+.macro UpdateNormal(outNx, outNy, outNz, inNx, inNy, inNz, origNx, origNy, origNz, u, v, invHalfDim, rsampleX, rsampleY, rsampleZ, sampleX, sampleY, sampleZ, sampleX2, sampleY2, sampleZ2, SmoothSampleScale)
+
+	//float2 TsampleR = texSampleCoords - texSampleOffset + float2(s, 0);
+	//float3 RsampleR = GetRadialPosFromTexCoord(TsampleR) + float3(0.00000001f, 0.00000001f, 0.00000001f);
+	//sampleR *= min(1.0f, magR / BoundRadius);
+	//sampleR *= GTA_VEHICLE_DAMAGE_DELTA_SCALE;
+	.localreg   rsampleX2, rsampleY2, rsampleZ2
+	GetRadialPos(rsampleX2, rsampleY2, rsampleZ2, u, v, invHalfDim)
+
+	//float3 rdiff = rsample2 - rsample;
+	.localreg   rdiffX, rdiffY, rdiffZ
+	fs          rdiffX, rsampleX2, rsampleX
+	fs          rdiffY, rsampleY2, rsampleY
+	fs          rdiffZ, rsampleZ2, rsampleZ
+
+	//float3 sdiff = (float3)(sample2 - sample);
+	.localreg   sdiffX, sdiffY, sdiffZ
+	fms         sdiffX, sampleX2, SmoothSampleScale, sampleX
+	fms         sdiffY, sampleY2, SmoothSampleScale, sampleY
+	fms         sdiffZ, sampleZ2, SmoothSampleScale, sampleZ
+
+	//float fMult = dot(sdiff, _inNormal);
+	.localreg   fMult
+	fm          fMult, sdiffX, origNx
+	fma         fMult, sdiffY, origNy, fMult
+	fma         fMult, sdiffZ, origNz, fMult
+
+	//if(dot(Rdiff, Rdiff) > 0.0f)
+	//{
+	//	fMult /= dot(Rdiff, Rdiff);
+	//	outNormal += normalDmgMask*Rdiff*fMult*gDmgScale;
+	//}
+	.localreg   dotRdiff, invDotRdiff
+	fm          dotRdiff, rdiffX, rdiffX
+	fma         dotRdiff, rdiffY, rdiffY, dotRdiff
+	fma         dotRdiff, rdiffZ, rdiffZ, dotRdiff
+	frest       invDotRdiff, dotRdiff
+	fi          invDotRdiff, dotRdiff, invDotRdiff
+
+	.localreg   dotRdiffSelect
+	fcgt        dotRdiffSelect, dotRdiff, g_Zero
+	fm          fMult, fMult, invDotRdiff
+	AndWords_Pipe1(fMult, fMult, dotRdiffSelect)
+	fm          fMult, fMult, gDmgScale
+	.localreg   fMult0_1, fMult0_3333
+	fm          fMult0_1,    fMult, g_ZeroOne
+	fm          fMult0_3333, fMult, g_Zero3333
+	fma         outNx, fMult0_1,    rdiffX, inNx
+	fma         outNy, fMult,       rdiffY, inNy
+	fma         outNz, fMult0_3333, rdiffZ, inNz
+
+.endmacro
+
+
+//
+//
+//
+//
+.cfunc void ApplyVehicleDamage(vec_float4 *__restrict__ pPos, vec_float4 *__restrict__ pNorm, vec_float4 *__restrict__ pDiffuse, u32 numVertices,
+							   const void *damageTex, float damageTexOffsetX, float damageTexOffsetY, float damageTexOffsetZ, float boundRadius)
+
+	.reg        picoffset
+	gpo         picoffset
+
+	.reg        texturepitch, texelsize
+	il          texturepitch, GTA_VEHICLE_DAMAGE_TEXTURE_SIZE*3
+	il          texelsize, 3
+
+	.reg        splat3, splat7, splatB, splatF
+	ilh         splat3, 0x0303
+	ilh         splat7, 0x0707
+	ilh         splatB, 0x0b0b
+	ilh         splatF, 0x0f0f
+
+	.reg        leftmask, rightmask
+	il128       leftmask, 0x00010203_04058080_80808080_80808080
+	rotqbyi     rightmask, leftmask, 8
+
+	.reg        getlX, getlY, getlZ, getrX, getrY, getrZ
+	il128       getlX, 0x00808080_08808080_10808080_18808080
+	il128       getlY, 0x01808080_09808080_11808080_19808080
+	il128       getlZ, 0x02808080_0a808080_12808080_1a808080
+	il128       getrX, 0x03808080_0b808080_13808080_1b808080
+	il128       getrY, 0x04808080_0c808080_14808080_1c808080
+	il128       getrZ, 0x05808080_0d808080_15808080_1d808080
+
+	.reg        shufAAAA
+	ila         shufAAAA, 0x00010203
+
+	.reg        g_ShufAaBb, g_ShufCcDd, g_ShufBbAa, g_ShufDdCc, g_ShufCDab, g_ShufABcd
+	il128       g_ShufAaBb, "AaBb"
+	il128       g_ShufCcDd, "CcDd"
+	il128       g_ShufBbAa, "BbAa"
+	il128       g_ShufDdCc, "DdCc"
+	il128       g_ShufCDab, "CDab"
+	il128       g_ShufABcd, "ABcd"
+
+	.reg		g_ShufAaCD, g_ShufAbCD, g_ShufAcCD, g_ShufAdCD
+	il128		g_ShufAaCD, "AaCD"
+	il128		g_ShufAbCD, "AbCD"
+	il128		g_ShufAcCD, "AcCD"
+	il128		g_ShufAdCD, "AdCD"
+
+//	.reg        g_SelABcd
+//	fsmbi       g_SelABcd, 0x00ff
+
+	.reg        g_Zero, g_ZeroOne, g_Zero3333, g_Onef, g_NegOnef, g_Twof, g_Fourf
+	il          g_Zero, 0
+	ilf32       g_ZeroOne, 0.1f
+	ilf32       g_Zero3333, 0.3333f
+	ilf32       g_Onef, 1.f
+	ilf32       g_NegOnef, -1.f
+	ilf32       g_Twof, 2.f
+	ilf32       g_Fourf, 4.0f
+
+	.reg        g_SelWordsLut
+	ila         g_SelWordsLut, _SelWordsLut
+	a           g_SelWordsLut, g_SelWordsLut, picoffset
+
+	.reg		g_FakeDiffuseDest
+	ila			g_FakeDiffuseDest, _FakeDiffuseDest
+	a			g_FakeDiffuseDest, g_FakeDiffuseDest, picoffset
+
+	.reg        invHalfDim, dimo2, dimo4, dimClamp, deltaScale, deltaScaleOverBoundRadius
+	ilf32       invHalfDim, 2.f / GTA_VEHICLE_DAMAGE_TEXTURE_SIZE
+	ilf32       dimo2, GTA_VEHICLE_DAMAGE_TEXTURE_SIZE / 2.f
+	ilf32       dimo4, GTA_VEHICLE_DAMAGE_TEXTURE_SIZE / 4.f
+	ilf32       dimClamp, GTA_VEHICLE_DAMAGE_TEXTURE_SIZE - 1.0001f
+	ilf32       deltaScale, GTA_VEHICLE_DAMAGE_DELTA_SCALE
+	ilf32       deltaScaleOverBoundRadius, GTA_VEHICLE_DAMAGE_DELTA_SCALE
+
+	.reg        invBoundRadius
+	shufb       invBoundRadius, boundRadius, boundRadius, shufAAAA
+	Recip(invBoundRadius, invBoundRadius)
+	fm          deltaScaleOverBoundRadius, deltaScaleOverBoundRadius, invBoundRadius
+
+	.reg		dmgTexOffX, dmgTexOffY, dmgTexOffZ
+	shufb		dmgTexOffX, damageTexOffsetX, damageTexOffsetX, shufAAAA
+	shufb		dmgTexOffY, damageTexOffsetY, damageTexOffsetY, shufAAAA
+	shufb		dmgTexOffZ, damageTexOffsetZ, damageTexOffsetZ, shufAAAA
+
+	.reg        dmgTexp
+	shufb       dmgTexp, damageTex, damageTex, shufAAAA
+
+	.reg        DiffuseSel
+	shufb       pDiffuse, pDiffuse, pDiffuse, shufAAAA
+	clgti       DiffuseSel, pDiffuse, 0
+
+	.reg        loopCount
+	ai          numVertices, numVertices, 3
+	rotmi       loopCount, numVertices, -2
+
+	// Unfortunately spa can't pipeline the position only loop if we use the
+	// same pointers for the position and normals loop (it gets confused and think
+	// the register life is too long), so create new virtual registers
+	.reg        pPos2, pDiffuse2
+	ai          pPos2, pPos, 0
+	ai          pDiffuse2, pDiffuse, 0
+
+	brnz        pNorm, position_and_normal_loop
+
+	// Virtual registers shared between both loops
+	.reg        u0, v0
+	.reg        gDmgScale
+	.reg        Samplex, SampleRx, SampleUx, SampleRUx
+	.reg        Sampley, SampleRy, SampleUy, SampleRUy
+	.reg        Samplez, SampleRz, SampleUz, SampleRUz
+	.reg        SmoothSampleScale
+
+position_only_loop:
+
+	PositionLoopIteration(pPos, pDiffuse, LoadAndTranspose_Pipe1, ApplyDamage_Pipe0, StoreDiffuse_Pipe0, TransposeAndStore_Pipe1)
+
+	ai          loopCount, loopCount, -1
+	brnz        loopCount, position_only_loop
+
+	br          end
+
+
+position_and_normal_loop:
+
+	PositionLoopIteration(pPos2, pDiffuse2, LoadAndTranspose_Pipe1, ApplyDamage_Pipe1, StoreDiffuse_Pipe1, TransposeAndStore_Pipe1)
+
+	// load normals x 4
+	.reg        nx, ny, nz
+	LoadAndTranspose_Pipe1(nx, ny, nz, pNorm)
+	ai          pNorm, pNorm, 64
+
+	// work out the radial position of the base sample
+	//float2 Tsample = texSampleCoords - texSampleOffset;
+	//float3 Rsample = GetRadialPosFromTexCoord(Tsample);
+	//sample *= min(1.0f, magR / BoundRadius);
+	//sample *= GTA_VEHICLE_DAMAGE_DELTA_SCALE;
+	.reg        RSamplex, RSampley, RSamplez
+	GetRadialPos(RSamplex, RSampley, RSamplez, u0, v0, invHalfDim)
+	fm          Samplex, Samplex, SmoothSampleScale
+	fm          Sampley, Sampley, SmoothSampleScale
+	fm          Samplez, Samplez, SmoothSampleScale
+
+	.reg        outNx, outNy, outNz
+
+	// work out the radial position of the right sample
+	.reg        u1
+	fa          u1, u0, g_Onef
+	UpdateNormal(outNx, outNy, outNz, nx, ny, nz, nx, ny, nz, u1, v0, invHalfDim, RSamplex, RSampley, RSamplez, Samplex, Sampley, Samplez, SampleRx, SampleRy, SampleRz, SmoothSampleScale)
+
+	// work out the radial position of the upper sample
+	.reg        v1
+	fa          v1, v0, g_Onef
+	UpdateNormal(outNx, outNy, outNz, outNx, outNy, outNz, nx, ny, nz, u0, v1, invHalfDim, RSamplex, RSampley, RSamplez, Samplex, Sampley, Samplez, SampleUx, SampleUy, SampleUz, SmoothSampleScale)
+
+	// normalise normals
+	//outNormal = normalize(outNormal);
+	.reg        tmp0, tmp1
+	fm          tmp0, outNx, outNx
+	fma         tmp0, outNy, outNy, tmp0
+	fma         tmp0, outNz, outNz, tmp0
+	frsqest     tmp1, tmp0
+	fi          tmp1, tmp0, tmp1
+	fm          outNx, outNx, tmp1
+	fm          outNy, outNy, tmp1
+	fm          outNz, outNz, tmp1
+
+	TransposeAndStore_Pipe1(pNorm, outNx, outNy, outNz, g_Zero)
+
+	ai          loopCount, loopCount, -1
+	brnz        loopCount, position_and_normal_loop
+
+end:
+
+.endfunc

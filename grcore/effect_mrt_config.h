@@ -1,0 +1,91 @@
+
+#if RSG_DURANGO || RSG_ORBIS
+	#define MULTIPLE_RENDER_THREADS		(4)
+#else
+	// This is either zero to disable the feature, or the number of sub-render-threads we support.
+	#define MULTIPLE_RENDER_THREADS			(0)
+#if RSG_RSC
+	#define MULTIPLE_RENDER_THREADS_ORBIS	(4)
+	#define MULTIPLE_RENDER_THREADS_DURANGO	(4)
+#endif // RSG_RSC
+#endif // RSG_DURANGO || RSG_ORBIS
+
+#if MULTIPLE_RENDER_THREADS
+	#define MULTIPLE_RENDER_THREADS_ONLY(x) x
+#else
+	#define MULTIPLE_RENDER_THREADS_ONLY(x)
+#endif // RSG_PC
+
+// For debugging.
+#define MULTIPLE_RENDER_THREADS_PRINT_DL_NAMES	(0 && MULTIPLE_RENDER_THREADS && !__FINAL)
+#define MULTIPLE_RENDER_THREAD_MARK_DL_EXECUTION (1 && MULTIPLE_RENDER_THREADS && !__FINAL)
+#define MULTIPLE_RENDER_THREADS_PRESERVE_DL_NAMES  (MULTIPLE_RENDER_THREADS_PRINT_DL_NAMES || MULTIPLE_RENDER_THREAD_MARK_DL_EXECUTION)
+
+
+// To allow render thread to execute drawlists (needed for scaleform and debug drawlist on PC & Durango).
+#define MULTIPLE_RENDER_THREADS_ALLOW_DRAW_LISTS_ON_RENDER_THREAD ((1 && RSG_PC) || (1 && RSG_DURANGO) || (0 && RSG_ORBIS))
+
+#define NUMBER_OF_RENDER_THREADS (MULTIPLE_RENDER_THREADS ? (MULTIPLE_RENDER_THREADS+MULTIPLE_RENDER_THREADS_ALLOW_DRAW_LISTS_ON_RENDER_THREAD) : 1)
+
+
+// TODO: Find a better way than checking __SHADERMODEL to ensure that the
+// following code is only compiled for C++, not shaders, or better still, change
+// the fx2cg preprocessor to support these macros.
+#ifndef __SHADERMODEL
+
+#	define MACRO_REPEAT_0(...)
+#	define MACRO_REPEAT_1(...)         MACRO_REPEAT_0(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT_2(...)         MACRO_REPEAT_1(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT_3(...)         MACRO_REPEAT_2(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT_4(...)         MACRO_REPEAT_3(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT_5(...)         MACRO_REPEAT_4(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT_6(...)         MACRO_REPEAT_5(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT_7(...)         MACRO_REPEAT_6(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT_8(...)         MACRO_REPEAT_7(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT_9(...)         MACRO_REPEAT_8(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT_10(...)        MACRO_REPEAT_9(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT_11(...)        MACRO_REPEAT_10(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT_12(...)        MACRO_REPEAT_11(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT_13(...)        MACRO_REPEAT_12(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT_14(...)        MACRO_REPEAT_13(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT_15(...)        MACRO_REPEAT_14(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT_16(...)        MACRO_REPEAT_15(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT_17(...)        MACRO_REPEAT_16(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT_18(...)        MACRO_REPEAT_17(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT_19(...)        MACRO_REPEAT_18(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT_20(...)        MACRO_REPEAT_19(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT_21(...)        MACRO_REPEAT_20(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT_22(...)        MACRO_REPEAT_21(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT_23(...)        MACRO_REPEAT_22(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT_24(...)        MACRO_REPEAT_23(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT_25(...)        MACRO_REPEAT_24(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT_26(...)        MACRO_REPEAT_25(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT_27(...)        MACRO_REPEAT_26(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT_28(...)        MACRO_REPEAT_27(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT_29(...)        MACRO_REPEAT_28(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT_30(...)        MACRO_REPEAT_29(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT_31(...)        MACRO_REPEAT_30(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT_32(...)        MACRO_REPEAT_31(__VA_ARGS__)__VA_ARGS__
+#	define MACRO_REPEAT(COUNT, ...)    MACRO_REPEAT_##COUNT(__VA_ARGS__)
+
+#	if   NUMBER_OF_RENDER_THREADS == 1
+#		define NUMBER_OF_RENDER_THREADS_INITIALIZER_LIST(...)    __VA_ARGS__
+#	elif NUMBER_OF_RENDER_THREADS == 2
+#		define NUMBER_OF_RENDER_THREADS_INITIALIZER_LIST(...)    MACRO_REPEAT_1(__VA_ARGS__,)__VA_ARGS__
+#	elif NUMBER_OF_RENDER_THREADS == 3
+#		define NUMBER_OF_RENDER_THREADS_INITIALIZER_LIST(...)    MACRO_REPEAT_2(__VA_ARGS__,)__VA_ARGS__
+#	elif NUMBER_OF_RENDER_THREADS == 4
+#		define NUMBER_OF_RENDER_THREADS_INITIALIZER_LIST(...)    MACRO_REPEAT_3(__VA_ARGS__,)__VA_ARGS__
+#	elif NUMBER_OF_RENDER_THREADS == 5
+#		define NUMBER_OF_RENDER_THREADS_INITIALIZER_LIST(...)    MACRO_REPEAT_4(__VA_ARGS__,)__VA_ARGS__
+#	elif NUMBER_OF_RENDER_THREADS == 6
+#		define NUMBER_OF_RENDER_THREADS_INITIALIZER_LIST(...)    MACRO_REPEAT_5(__VA_ARGS__,)__VA_ARGS__
+#	elif NUMBER_OF_RENDER_THREADS == 7
+#		define NUMBER_OF_RENDER_THREADS_INITIALIZER_LIST(...)    MACRO_REPEAT_6(__VA_ARGS__,)__VA_ARGS__
+#	elif NUMBER_OF_RENDER_THREADS == 8
+#		define NUMBER_OF_RENDER_THREADS_INITIALIZER_LIST(...)    MACRO_REPEAT_7(__VA_ARGS__,)__VA_ARGS__
+#	else
+#		error "NUMBER_OF_RENDER_THREADS not currently supported"
+#	endif
+
+#endif // __SHADERMODEL

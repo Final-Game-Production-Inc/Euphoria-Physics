@@ -1,0 +1,103 @@
+/* This file comes from the GameShield DRM manager.
+   This allows sensitive areas of code to be encrypted.
+   Example:
+
+   RIVETBEGIN_1
+   // code to protect
+   RIVETEND_1
+
+   The actual encryption happens when wrapping the exe/dll with their DRM software.
+*/
+
+#if __WIN32PC
+
+#ifndef _CODE_RIVETS_A3AE210B_A712_4B1D_A308_B0ADE14B98A5
+#define _CODE_RIVETS_A3AE210B_A712_4B1D_A308_B0ADE14B98A5
+
+#ifdef __BORLANDC__
+	//"Rivet_1", "EB 07 D4 4D 09 FF 5A 0A B7", "EB 07 B7 0A 5A FF 09 4D D4"
+	#define RIVETBEGIN_1   __emit__ (0xEB,0x07,0xD4,0x4D,0x09,0xFF,0x5A,0x0A,0xB7)
+	#define RIVETEND_1     __emit__ (0xEB,0x07,0xB7,0x0A,0x5A,0xFF,0x09,0x4D,0xD4)
+
+	//"Rivet_2", "EB 07 C7 0C 64 67 6A BB 8B", "EB 07 8B BB 6A 67 64 0C C7"}
+	#define RIVETBEGIN_2 __emit__ (0xEB,0x07,0xC7,0x0C,0x64,0x67,0x6A,0xBB,0x8B)
+	#define RIVETEND_2   __emit__ (0xEB,0x07,0x8B,0xBB,0x6A,0x67,0x64,0x0C,0xC7)
+	
+	//"Rivet_3", "EB 07 D0 41 71 85 04 5E 63", "EB 07 63 5E 04 85 71 41 D0"}
+	#define RIVETBEGIN_3 __emit__ (0xEB,0x07,0xD0,0x41,0x71,0x85,0x04,0x5E,0x63)
+	#define RIVETEND_3   __emit__ (0xEB,0x07,0x63,0x5E,0x04,0x85,0x71,0x41,0xD0)
+	
+	//"Rivet_4", "EB 07 84 0E 1B 9A B4 9E 75", "EB 07 75 9E B4 9A 1B 0E 84"}
+	#define RIVETBEGIN_4 __emit__ (0xEB,0x07,0x84,0x0E,0x1B,0x9A,0xB4,0x9E,0x75)
+	#define RIVETEND_4   __emit__ (0xEB,0x07,0x75,0x9E,0xB4,0x9A,0x1B,0x0E,0x84)
+
+	//"Rivet_5", "EB 07 B3 A6 C0 8A 01 B2 BF", "EB 07 BF B2 01 8A C0 A6 B3"}
+	#define RIVETBEGIN_5 __emit__ (0xEB,0x07,0xB3,0xA6,0xC0,0x8A,0x01,0xB2,0xBF)
+	#define RIVETEND_5   __emit__ (0xEB,0x07,0xBF,0xB2,0x01,0x8A,0xC0,0xA6,0xB3)
+
+	//"Rivet_6", "EB 07 1A 33 7B 0F CB F9 42", "EB 07 42 F9 CB 0F 7B 33 1A"}
+	#define RIVETBEGIN_6 __emit__ (0xEB,0x07,0x1A,0x33,0x7B,0x0F,0xCB,0xF9,0x42)
+	#define RIVETEND_6   __emit__ (0xEB,0x07,0x42,0xF9,0xCB,0x0F,0x7B,0x33,0x1A)
+
+	//"Rivet_7", "EB 07 0C B7 35 69 96 53 41", "EB 07 41 53 96 69 35 B7 0C"}
+	#define RIVETBEGIN_7 __emit__ (0xEB,0x07,0x0C,0xB7,0x35,0x69,0x96,0x53,0x41)
+	#define RIVETEND_7   __emit__ (0xEB,0x07,0x41,0x53,0x96,0x69,0x35,0xB7,0x0C)
+
+	//"Rivet_8", "EB 07 25 34 AF DA 96 D3 B9", "EB 07 B9 D3 96 DA AF 34 25"
+	#define RIVETBEGIN_8 __emit__ (0xEB,0x07,0x25,0x34,0xAF,0xDA,0x96,0xD3,0xB9)
+	#define RIVETEND_8   __emit__ (0xEB,0x07,0xB9,0xD3,0x96,0xDA,0xAF,0x34,0x25)
+
+	//"Rivet_9", "EB 07 1B 89 2D 1B 72 47 1E", "EB 07 1E 47 72 1B 2D 89 1B"}
+	#define RIVETBEGIN_9 __emit__ (0xEB,0x07,0x1B,0x89,0x2D,0x1B,0x72,0x47,0x1E)
+	#define RIVETEND_9   __emit__ (0xEB,0x07,0x1E,0x47,0x72,0x1B,0x2D,0x89,0x1B)
+
+	//"Rivet_10", "EB 07 3B A8 9B BE E9 F8 06", "EB 07 06 F8 E9 BE 9B A8 3B"}
+	#define RIVETBEGIN_10 __emit__ (0xEB,0x07,0x3B,0xA8,0x9B,0xBE,0xE9,0xF8,0x06)
+	#define RIVETEND_10   __emit__ (0xEB,0x07,0x06,0xF8,0xE9,0xBE,0x9B,0xA8,0x3B)
+
+	
+#else
+	//"Rivet_1", "EB 07 D4 4D 09 FF 5A 0A B7", "EB 07 B7 0A 5A FF 09 4D D4"
+	#define RIVETBEGIN_1  __asm _emit 0xEB __asm _emit 0x07 __asm _emit 0xD4 __asm _emit 0x4D __asm _emit 0x09 __asm _emit 0xFF __asm _emit 0x5A __asm _emit 0x0A __asm _emit 0xB7
+	#define RIVETEND_1    __asm _emit 0xEB __asm _emit 0x07 __asm _emit 0xB7 __asm _emit 0x0A __asm _emit 0x5A __asm _emit 0xFF __asm _emit 0x09 __asm _emit 0x4D __asm _emit 0xD4
+	
+	//"Rivet_2", "EB 07 C7 0C 64 67 6A BB 8B", "EB 07 8B BB 6A 67 64 0C C7"
+	#define RIVETBEGIN_2 __asm _emit 0xEB __asm _emit 0x07 __asm _emit 0xC7 __asm _emit 0x0C __asm _emit 0x64 __asm _emit 0x67 __asm _emit 0x6A __asm _emit 0xBB __asm _emit 0x8B
+	#define RIVETEND_2   __asm _emit 0xEB __asm _emit 0x07 __asm _emit 0x8B __asm _emit 0xBB __asm _emit 0x6A __asm _emit 0x67 __asm _emit 0x64 __asm _emit 0x0C __asm _emit 0xC7
+	
+	//"Rivet_3", "EB 07 D0 41 71 85 04 5E 63", "EB 07 63 5E 04 85 71 41 D0"
+	#define RIVETBEGIN_3 __asm _emit 0xEB __asm _emit 0x07 __asm _emit 0xD0 __asm _emit 0x41 __asm _emit 0x71 __asm _emit 0x85 __asm _emit 0x04 __asm _emit 0x5E __asm _emit 0x63
+	#define RIVETEND_3   __asm _emit 0xEB __asm _emit 0x07 __asm _emit 0x63 __asm _emit 0x5E __asm _emit 0x04 __asm _emit 0x85 __asm _emit 0x71 __asm _emit 0x41 __asm _emit 0xD0
+	
+	//"Rivet_4", "EB 07 84 0E 1B 9A B4 9E 75", "EB 07 75 9E B4 9A 1B 0E 84"
+	#define RIVETBEGIN_4 __asm _emit 0xEB __asm _emit 0x07 __asm _emit 0x84 __asm _emit 0x0E __asm _emit 0x1B __asm _emit 0x9A __asm _emit 0xB4 __asm _emit 0x9E __asm _emit 0x75
+	#define RIVETEND_4   __asm _emit 0xEB __asm _emit 0x07 __asm _emit 0x75 __asm _emit 0x9E __asm _emit 0xB4 __asm _emit 0x9A __asm _emit 0x1B __asm _emit 0x0E __asm _emit 0x84
+
+	//"Rivet_5", "EB 07 B3 A6 C0 8A 01 B2 BF", "EB 07 BF B2 01 8A C0 A6 B3"
+	#define RIVETBEGIN_5 __asm _emit 0xEB __asm _emit 0x07 __asm _emit 0xB3 __asm _emit 0xA6 __asm _emit 0xC0 __asm _emit 0x8A __asm _emit 0x01 __asm _emit 0xB2 __asm _emit 0xBF
+	#define RIVETEND_5   __asm _emit 0xEB __asm _emit 0x07 __asm _emit 0xBF __asm _emit 0xB2 __asm _emit 0x01 __asm _emit 0x8A __asm _emit 0xC0 __asm _emit 0xA6 __asm _emit 0xB3
+
+	//"Rivet_6", "EB 07 1A 33 7B 0F CB F9 42", "EB 07 42 F9 CB 0F 7B 33 1A"
+	#define RIVETBEGIN_6 __asm _emit 0xEB __asm _emit 0x07 __asm _emit 0x1A __asm _emit 0x33 __asm _emit 0x7B __asm _emit 0x0F __asm _emit 0xCB __asm _emit 0xF9 __asm _emit 0x42
+	#define RIVETEND_6   __asm _emit 0xEB __asm _emit 0x07 __asm _emit 0x42 __asm _emit 0xF9 __asm _emit 0xCB __asm _emit 0x0F __asm _emit 0x7B __asm _emit 0x33 __asm _emit 0x1A
+
+	//"Rivet_7", "EB 07 0C B7 35 69 96 53 41", "EB 07 41 53 96 69 35 B7 0C"
+	#define RIVETBEGIN_7 __asm _emit 0xEB __asm _emit 0x07 __asm _emit 0x0C __asm _emit 0xB7 __asm _emit 0x35 __asm _emit 0x69 __asm _emit 0x96 __asm _emit 0x53 __asm _emit 0x41
+	#define RIVETEND_7   __asm _emit 0xEB __asm _emit 0x07 __asm _emit 0x41 __asm _emit 0x53 __asm _emit 0x96 __asm _emit 0x69 __asm _emit 0x35 __asm _emit 0xB7 __asm _emit 0x0C
+
+	//"Rivet_8", "EB 07 25 34 AF DA 96 D3 B9", "EB 07 B9 D3 96 DA AF 34 25"
+	#define RIVETBEGIN_8 __asm _emit 0xEB __asm _emit 0x07 __asm _emit 0x25 __asm _emit 0x34 __asm _emit 0xAF __asm _emit 0xDA __asm _emit 0x96 __asm _emit 0xD3 __asm _emit 0xB9
+	#define RIVETEND_8   __asm _emit 0xEB __asm _emit 0x07 __asm _emit 0xB9 __asm _emit 0xD3 __asm _emit 0x96 __asm _emit 0xDA __asm _emit 0xAF __asm _emit 0x34 __asm _emit 0x25
+
+	//"Rivet_9", "EB 07 1B 89 2D 1B 72 47 1E", "EB 07 1E 47 72 1B 2D 89 1B"
+	#define RIVETBEGIN_9 __asm _emit 0xEB __asm _emit 0x07 __asm _emit 0x1B __asm _emit 0x89 __asm _emit 0x2D __asm _emit 0x1B __asm _emit 0x72 __asm _emit 0x47 __asm _emit 0x1E
+	#define RIVETEND_9   __asm _emit 0xEB __asm _emit 0x07 __asm _emit 0x1E __asm _emit 0x47 __asm _emit 0x72 __asm _emit 0x1B __asm _emit 0x2D __asm _emit 0x89 __asm _emit 0x1B
+
+	//"Rivet_10", "EB 07 3B A8 9B BE E9 F8 06", "EB 07 06 F8 E9 BE 9B A8 3B"
+	#define RIVETBEGIN_10 __asm _emit 0xEB __asm _emit 0x07 __asm _emit 0x3B __asm _emit 0xA8 __asm _emit 0x9B __asm _emit 0xBE __asm _emit 0xE9 __asm _emit 0xF8 __asm _emit 0x06
+	#define RIVETEND_10   __asm _emit 0xEB __asm _emit 0x07 __asm _emit 0x06 __asm _emit 0xF8 __asm _emit 0xE9 __asm _emit 0xBE __asm _emit 0x9B __asm _emit 0xA8 __asm _emit 0x3B
+#endif
+
+#endif // #ifndef _CODE_RIVETS_A3AE210B_A712_4B1D_A308_B0ADE14B98A5
+
+#endif // __WIN32PC

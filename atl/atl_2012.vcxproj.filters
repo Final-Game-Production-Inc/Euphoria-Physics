@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="tools_ng\etc\projgen">
+      <UniqueIdentifier>{C3FD447F-C90D-6CF0-75B0-C1EC4BCE7A67}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="align.h" />
+    <ClInclude Include="atfixedstring.h" />
+    <ClInclude Include="bintree.h" />
+    <ClInclude Include="map.h" />
+    <ClInclude Include="referencecounter.h" />
+    <ClInclude Include="string.h" />
+    <ClInclude Include="wstring.h" />
+    <ClInclude Include="functor.h" />
+    <ClInclude Include="atinbintree.h" />
+    <ClInclude Include="atsafecontainer.h" />
+    <ClInclude Include="fastfactory.h" />
+    <ClInclude Include="freelist.h" />
+    <ClInclude Include="inunionfind.h" />
+    <ClInclude Include="inlist.h" />
+    <ClInclude Include="inmap.h" />
+    <ClInclude Include="delegate.h" />
+    <ClInclude Include="dlistsimple.h" />
+    <ClInclude Include="hashsimple.h" />
+    <ClInclude Include="hashstring.h" />
+    <ClInclude Include="array.h" />
+    <ClInclude Include="binheap.h" />
+    <ClInclude Include="bintree_rsc.h" />
+    <ClInclude Include="bitset.h" />
+    <ClInclude Include="bucket.h" />
+    <ClInclude Include="dlist.h" />
+    <ClInclude Include="dynapool.h" />
+    <ClInclude Include="ilist.h" />
+    <ClInclude Include="ptr.h" />
+    <ClInclude Include="queue.h" />
+    <ClInclude Include="slist.h" />
+    <ClInclude Include="slistsimple.h" />
+    <ClInclude Include="slistsorted.h" />
+    <ClInclude Include="fibheap.h" />
+    <ClInclude Include="pagedpool.h" />
+    <ClInclude Include="pool.h" />
+    <ClInclude Include="creator.h" />
+    <ClInclude Include="array_struct.h" />
+    <ClInclude Include="bucket_struct.h" />
+    <ClInclude Include="map_struct.h" />
+    <ClInclude Include="binmap_struct.h" />
+    <ClInclude Include="singleton.h" />
+    <ClInclude Include="staticpool.h" />
+    <ClInclude Include="ownedptr.h" />
+    <ClInclude Include="binmap.h" />
+    <ClInclude Include="functor_temp.h" />
+    <ClInclude Include="atfunctor.h" />
+    <ClInclude Include="atfunctortemplate.h" />
+    <ClInclude Include="atpreprocessor.h" />
+    <ClInclude Include="any.h" />
+    <ClInclude Include="cache.h" />
+    <ClInclude Include="atstreamarray.h" />
+    <ClInclude Include="delegatetemplate.h" />
+    <ClInclude Include="IterativeCombSorter.h" />
+    <ClInclude Include="simplecache.h" />
+    <ClInclude Include="vector.h" />
+    <ClInclude Include="vector_struct.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="bintree.cpp" />
+    <ClCompile Include="map.cpp" />
+    <ClCompile Include="referencecounter.cpp" />
+    <ClCompile Include="atstring.cpp" />
+    <ClCompile Include="wstring.cpp" />
+    <ClCompile Include="functor.cpp" />
+    <ClCompile Include="atinbintree.cpp" />
+    <ClCompile Include="atsafecontainer.cpp" />
+    <ClCompile Include="inunionfind.cpp" />
+    <ClCompile Include="inlist.cpp" />
+    <ClCompile Include="inmap.cpp" />
+    <ClCompile Include="delegate.cpp" />
+    <ClCompile Include="hashstring.cpp" />
+    <ClCompile Include="bitset.cpp" />
+    <ClCompile Include="dynapool.cpp" />
+    <ClCompile Include="pagedpool.cpp" />
+    <ClCompile Include="pool.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="atl.dtx" />
+  </ItemGroup>
+</Project>

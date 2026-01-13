@@ -1,0 +1,143 @@
+
+@@Overview
+* Origin Of Module Name *
+System stands for "SYSTEM management".
+
+* Overview *
+The system module is a catch-all area for low-level functionality such as command line parsing, inter-process communication, cache management, time management (both at the simulation level and the profiling level), and program startup.
+
+* Command Line Support *
+
+All command line access should go through the sysParam class and the PARAM macros.
+
+There are plenty of examples of proper usage throughout the rage code.
+
+One unusual feature of our command line parsing is that options are compared such that a trailing 's' is ignored, no -nocpv and -nocpvs are considered equivalent.
+
+On Xenon, the startup code always saves the last command line out to D:\commandline.txt.  If a xenon application is ever launched with
+no command line, the code will look for a D:\commandline.txt file and use that for the next run.  This allows you to launch any application
+from the xenon launcher however it was most recently launched from the debugger or xbreboot tool.  This feature is now disabled because
+people never bothered to read this documentation and were confused by this behavior.
+
+@@codecheck
+<TITLE Code Correctness>
+codecheck.h contains useful functions for enforcing code correctness and dealing with ignorable asserts at runtime. It is built on the
+idea of three main points in error handling.
+* Game error handling is achieved through error codes and return values
+* Game Asserts are ignoreable
+* Release build does not required Error handling, so remove it all.
+
+* Helping with Error Codes and Return Values *
+AssertRetVal and RETURNCHECK are useful for checking the return values. AssertRetVal will check that
+a value returned is a success and pass it on to a function. RETURNCHECK forces a return value to be checked
+by the user. Both work well together.
+
+* Helping with ignoreable asserts *
+If_Assert, If_NotAssert and AssertReturn deal with the case of ignoreable assert. They basically allow error handling code to be simply added
+after an assert has occurred. If asserts are directly followed by a script block.
+
+EXAMPLE
+<B>Before</B>
+<CODE>
+	bool Func( Object* obj )
+	{
+		Object* obj2 = GetClosestObj( obj );
+		
+		obj += obj2->Smelliness()->Amount
+		return true;
+	}
+</CODE>
+<B>After</B>
+<CODE>
+	RETURNCHECK( bool ) Func( Object* obj )		// Force user to check return value
+	{
+		AssertReturn( obj );					// Check if null and return if so
+		Object* obj2 = AssertRetVal( GetClosestObj( obj ) );		// Check return value of object
+		
+		IF_Assert( obj2 && obj2->Smelliness() )			// only do instruction if assert passed
+		{
+			obj += obj2->Smelliness()->Amount
+		}
+		return true;
+	}
+</CODE>
+
+
+@@Components
+Here's a table listing the primary components of this module.
+
+@@Relationships
+Insert text with inheritance and dependency info for the
+classes in this library.  Ideally, include UML diagrams
+(as a GIF) followed by any additional explanations.
+
+##BEGIN COMMAND-LINE-SECTION is automatically generated - do not edit this section!
+@@Command Line Options
+<TABLE>
+Parameter Name      In File            Description                                                                                                               
+------------------  -----------------  ------------------------------------------------------------------------------------------------------------------------  
+breakonaddr         main.cpp           Break on alloc address (in hex; stop when operator new would have returned this address)                                  
+breakonalloc        main.cpp           Break on alloc ordinal value - value in {braces} in debug output (use =0 first to stabilize allocations)                  
+forcebootcd         bootmgr_xenon.cpp  Force booting from cd                                                                                                     
+forcebootcd         bootmgr_psn.cpp    Force booting from cd                                                                                                     
+forcebootcd         bootmgr_win32.cpp  Force booting from cd                                                                                                     
+forceexceptions     main.cpp           Force exceptions even when we think a debugger is present                                                                 
+jobtimings          task_psn.cpp       Spew job timings                                                                                                          
+localhost           main.cpp           Specify local host of PC for rag connection (automatically set by psnrun.exe)                                             
+logallocstack       main.cpp           Log all memory allocation stack tracebacks (requires -logmemory)                                                          
+logmemory           main.cpp           Log all memory allocation and deallocations to file (default is c:\\logmemory.csv)                                        
+pedantic            main.cpp           Set the global pedantic level; zero to press onward, larger numbers (better!) let fewer questionable things slip through  
+qadraw              qaitems.cpp        Draw drawable qa items                                                                                                    
+rageversion         main.cpp           Display rage version this was compiled against, and then exit.                                                            
+runname             qaitems.cpp        The name to apply to the current run in the log file (defaults to the RAGE release number).                               
+testname            qaitems.cpp        Only run the test specified in this parameter.                                                                            
+trackerfile         main.cpp           Log all tracking activity to named file                                                                                   
+trackerfileverbose  main.cpp           Save allocation info with each tally                                                                                      
+usethreadnames      ipc.cpp            Set thread names (causes problems with xbWatson)                                                                          
+</TABLE>
+##END COMMAND-LINE-SECTION is automatically generated - do not edit this section!
+
+@@Working Examples
+##BEGIN SAMPLES-SECTION is automatically generated - do not edit this section!
+@@Semaphores Sample
+<GROUP Working Examples>
+
+This sample shows how to create semaphores and use them to communicate between threads
+The sample is broken into several steps:
+1. Declare our thread function
+2. Create our thread
+
+* Declare our thread function *
+We declare the function that will be run in our separate thread.
+<CODE>
+
+DECLARE_THREAD_FUNC(foobar) {
+ptr = 0;
+Displayf("foobar: Polling on s_Sema...");
+if (sysIpcPollSema(s_Sema)) {
+Displayf("foobar: got it!");
+}
+else {
+Displayf("foobar: Poll failed, blocking now");
+sysIpcWaitSema(s_Sema);
+}
+
+Displayf("foobar: have the sema now, sleeping for a bit");
+sysIpcSleep(5000);
+
+Displayf("foobar: releasing sema");
+sysIpcSignalSema(s_Sema);
+
+Displayf("foobar: done");
+}
+</CODE>
+
+* Create our thread *
+We create the thread.  This thread runs the function <c>foobar(void* ptr)</c>, with a stack size of 4 KB, and the thread is suspended (not started.)
+<CODE>
+
+sysIpcCreateThread(foobar,NULL,4096,PRIO_NORMAL,"foobar",true);
+</CODE>
+
+
+##END SAMPLES-SECTION is automatically generated - do not edit this section!

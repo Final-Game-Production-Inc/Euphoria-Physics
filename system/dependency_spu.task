@@ -1,0 +1,37 @@
+#include "dependency_spu.cpp" 
+
+extern "C" char _end[];
+
+extern "C" int cellSpursTaskMain(qword argTask, uint64_t)
+{
+	static const u32 chainIdx = sysDependency::kChainSpu;
+	vec_uint4 args = (vec_uint4)argTask;
+	u64** counters = reinterpret_cast<u64**>(args[0]);
+	u64 eventTag = args[1];
+	u32 threadIdx = args[2];
+	u16 flag = 1<<(threadIdx+chainIdx);
+
+	// memory allocated between the code and the stack
+	SoftwarePipeline* pipe = reinterpret_cast<SoftwarePipeline*>(_end);
+	u8* scratchBuffer = reinterpret_cast<u8*>(pipe+1);
+	u32 scratchSize = SYS_DEPENDENCY_SPULOCALSTORESIZE - SYS_DEPENDENCY_SPUSTACKSIZE - u32(scratchBuffer);
+
+	while(1)
+	{
+		// register worker
+		sysDependencyScheduler::RegisterWorker(chainIdx, true, flag);
+
+		// execute software pipeline until there's no more work
+		pipe->Init(counters, scratchBuffer, scratchSize);
+		pipe->Execute();
+
+		// try to unregister it
+		if(sysDependencyScheduler::RegisterWorker(chainIdx, false, flag))
+		{
+			u16 ret = flag;
+			AssertVerify(!cellSpursEventFlagWait(eventTag, &ret, CELL_SPURS_EVENT_FLAG_OR));
+		}
+	}
+
+	return 0;
+}

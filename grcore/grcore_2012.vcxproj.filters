@@ -1,0 +1,880 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="tools_ng\etc\projgen">
+      <UniqueIdentifier>{C3FD447F-C90D-6CF0-75B0-C1EC4BCE7A67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{FACFB722-E50B-CC51-1A12-FAD056156A36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="D3D">
+      <UniqueIdentifier>{84218487-5F77-0F9B-B389-836EC3CAD5D7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Durango">
+      <UniqueIdentifier>{0FF74812-01A3-8655-A8CC-EC8EF71D88F9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Xenon">
+      <UniqueIdentifier>{98CB973E-40E4-3343-0C81-2FC24911EE85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenGL">
+      <UniqueIdentifier>{9DCEA995-9053-EB77-E69C-AA948063BAE8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PSP2">
+      <UniqueIdentifier>{FE19703A-698F-9DE3-EA7B-005C9D93CC46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GNM\GNMX">
+      <UniqueIdentifier>{EA488E5B-AF4A-E386-D921-836184B3523F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GNM">
+      <UniqueIdentifier>{67797E40-6530-DEDE-4D0B-0F952AE2DF15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GCM\SPU">
+      <UniqueIdentifier>{D1B7A52C-4DF6-BC57-020B-0443293A16C5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GCM">
+      <UniqueIdentifier>{DE1ECE0D-02D0-F25F-9881-936EA6829C89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Debug">
+      <UniqueIdentifier>{A045ADE5-9362-DCB2-43DA-0BAD50BBD5ED}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AA_shared.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="allocscope.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="channel.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="fvf.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="gfxcontext.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="gfxcontextcontrol.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="gfxcontextprofile.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="rendertarget_common.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="texture.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="texturereference.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="texturecontrol.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="texturedebugflags.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="light.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="image.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="image_dxt.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="viewport.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="fencepool.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="font.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="bankio.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="setup.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="shmoo.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="texturestring.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="effect_values.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="effect_config.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="effect_internal.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="effect_mrt_config.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="fastquad.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="fastquad_switch.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="quads.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="config.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="config_switches.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="drawmode.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="locktypes.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="vertexbuffer.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="vertexbuffereditor.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="indexbuffer.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="fvfchannels.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="texturedefault.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="device.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="im.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="dds.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="effect_typedefs.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="translate_state.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="vertexdecl.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="viewport_inline.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="effect.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="resourceversions.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="matrix43.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="array.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="gputimer.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="stateblock.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="stateblock_internal.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="cbset.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="monitor.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="instancebuffer.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="orbisdurangoresourcebase.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="adapter.h">
+      <Filter>D3D</Filter>
+    </ClInclude>
+    <ClInclude Include="adapter_d3d11.h">
+      <Filter>D3D</Filter>
+    </ClInclude>
+    <ClInclude Include="computeshader.h">
+      <Filter>D3D</Filter>
+    </ClInclude>
+    <ClInclude Include="dxerr.h">
+      <Filter>D3D</Filter>
+    </ClInclude>
+    <ClInclude Include="wrapper_d3d.h">
+      <Filter>D3D</Filter>
+    </ClInclude>
+    <ClInclude Include="resourcecache.h">
+      <Filter>D3D</Filter>
+    </ClInclude>
+    <ClInclude Include="texturepc.h">
+      <Filter>D3D</Filter>
+    </ClInclude>
+    <ClInclude Include="texture_d3d9.h">
+      <Filter>D3D</Filter>
+    </ClInclude>
+    <ClInclude Include="texture_d3d11.h">
+      <Filter>D3D</Filter>
+    </ClInclude>
+    <ClInclude Include="texturefactory_d3d11.h">
+      <Filter>D3D</Filter>
+    </ClInclude>
+    <ClInclude Include="rendertarget_d3d11.h">
+      <Filter>D3D</Filter>
+    </ClInclude>
+    <ClInclude Include="d3dwrapper.h">
+      <Filter>D3D</Filter>
+    </ClInclude>
+    <ClInclude Include="buffer_d3d11.h">
+      <Filter>D3D</Filter>
+    </ClInclude>
+    <ClInclude Include="diag_d3d.h">
+      <Filter>D3D</Filter>
+    </ClInclude>
+    <ClInclude Include="buffer_durango.h">
+      <Filter>Durango</Filter>
+    </ClInclude>
+    <ClInclude Include="durango_window.h">
+      <Filter>Durango</Filter>
+    </ClInclude>
+    <ClInclude Include="gfxcontext_durango.h">
+      <Filter>Durango</Filter>
+    </ClInclude>
+    <ClInclude Include="rendertarget_durango.h">
+      <Filter>Durango</Filter>
+    </ClInclude>
+    <ClInclude Include="texture_durango.h">
+      <Filter>Durango</Filter>
+    </ClInclude>
+    <ClInclude Include="texturexenon.h">
+      <Filter>Xenon</Filter>
+    </ClInclude>
+    <ClInclude Include="texturexenonproxy.h">
+      <Filter>Xenon</Filter>
+    </ClInclude>
+    <ClInclude Include="gprallocation.h">
+      <Filter>Xenon</Filter>
+    </ClInclude>
+    <ClInclude Include="xenon_resource.h">
+      <Filter>Xenon</Filter>
+    </ClInclude>
+    <ClInclude Include="xenon_sdk.h">
+      <Filter>Xenon</Filter>
+    </ClInclude>
+    <ClInclude Include="textureogl.h">
+      <Filter>OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="opengl.h">
+      <Filter>OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="texturepsp2.h">
+      <Filter>PSP2</Filter>
+    </ClInclude>
+    <ClInclude Include="wrapper_gxm.h">
+      <Filter>PSP2</Filter>
+    </ClInclude>
+    <ClInclude Include="amdsouthernislands.h">
+      <Filter>GNM</Filter>
+    </ClInclude>
+    <ClInclude Include="gfxcontext_gnm.h">
+      <Filter>GNM</Filter>
+    </ClInclude>
+    <ClInclude Include="texture_gnm.h">
+      <Filter>GNM</Filter>
+    </ClInclude>
+    <ClInclude Include="rendertarget_gnm.h">
+      <Filter>GNM</Filter>
+    </ClInclude>
+    <ClInclude Include="texturefactory_gnm.h">
+      <Filter>GNM</Filter>
+    </ClInclude>
+    <ClInclude Include="wrapper_gnm.h">
+      <Filter>GNM</Filter>
+    </ClInclude>
+    <ClInclude Include="gputrace_gnm.h">
+      <Filter>GNM</Filter>
+    </ClInclude>
+    <ClInclude Include="gnmx\common.h">
+      <Filter>GNM\GNMX</Filter>
+    </ClInclude>
+    <ClInclude Include="gnmx\computecontext.h">
+      <Filter>GNM\GNMX</Filter>
+    </ClInclude>
+    <ClInclude Include="gnmx\computecontext_methods.h">
+      <Filter>GNM\GNMX</Filter>
+    </ClInclude>
+    <ClInclude Include="gnmx\computequeue.h">
+      <Filter>GNM\GNMX</Filter>
+    </ClInclude>
+    <ClInclude Include="gnmx\constantupdateengine.h">
+      <Filter>GNM\GNMX</Filter>
+    </ClInclude>
+    <ClInclude Include="gnmx\cue.h">
+      <Filter>GNM\GNMX</Filter>
+    </ClInclude>
+    <ClInclude Include="gnmx\cue-helper.h">
+      <Filter>GNM\GNMX</Filter>
+    </ClInclude>
+    <ClInclude Include="gnmx\dispatchdraw.h">
+      <Filter>GNM\GNMX</Filter>
+    </ClInclude>
+    <ClInclude Include="gnmx\error_gen.h">
+      <Filter>GNM\GNMX</Filter>
+    </ClInclude>
+    <ClInclude Include="gnmx\fetchshaderhelper.h">
+      <Filter>GNM\GNMX</Filter>
+    </ClInclude>
+    <ClInclude Include="gnmx\gfxcontext.h">
+      <Filter>GNM\GNMX</Filter>
+    </ClInclude>
+    <ClInclude Include="gnmx\gfxcontext_methods.h">
+      <Filter>GNM\GNMX</Filter>
+    </ClInclude>
+    <ClInclude Include="gnmx\gnmx.h">
+      <Filter>GNM\GNMX</Filter>
+    </ClInclude>
+    <ClInclude Include="gnmx\helpers.h">
+      <Filter>GNM\GNMX</Filter>
+    </ClInclude>
+    <ClInclude Include="gnmx\lwbaseconstantupdateengine.h">
+      <Filter>GNM\GNMX</Filter>
+    </ClInclude>
+    <ClInclude Include="gnmx\lwcomputeconstantupdateengine.h">
+      <Filter>GNM\GNMX</Filter>
+    </ClInclude>
+    <ClInclude Include="gnmx\lwcomputecontext_methods.h">
+      <Filter>GNM\GNMX</Filter>
+    </ClInclude>
+    <ClInclude Include="gnmx\lwconstantupdateengine_cuetolcue.h">
+      <Filter>GNM\GNMX</Filter>
+    </ClInclude>
+    <ClInclude Include="gnmx\lwconstantupdateengine_validation.h">
+      <Filter>GNM\GNMX</Filter>
+    </ClInclude>
+    <ClInclude Include="gnmx\lwgfxconstantupdateengine.h">
+      <Filter>GNM\GNMX</Filter>
+    </ClInclude>
+    <ClInclude Include="gnmx\lwgfxcontext_methods.h">
+      <Filter>GNM\GNMX</Filter>
+    </ClInclude>
+    <ClInclude Include="gnmx\shader_parser.h">
+      <Filter>GNM\GNMX</Filter>
+    </ClInclude>
+    <ClInclude Include="gnmx\shaderbinary.h">
+      <Filter>GNM\GNMX</Filter>
+    </ClInclude>
+    <ClInclude Include="texturegcm.h">
+      <Filter>GCM</Filter>
+    </ClInclude>
+    <ClInclude Include="wrapper_gcm.h">
+      <Filter>GCM</Filter>
+    </ClInclude>
+    <ClInclude Include="gcmdebug.h">
+      <Filter>GCM</Filter>
+    </ClInclude>
+    <ClInclude Include="rsx_registers.h">
+      <Filter>GCM</Filter>
+    </ClInclude>
+    <ClInclude Include="edge_jobs.h">
+      <Filter>GCM</Filter>
+    </ClInclude>
+    <ClInclude Include="effectcache.h">
+      <Filter>GCM\SPU</Filter>
+    </ClInclude>
+    <ClInclude Include="edgegeomspu.h">
+      <Filter>GCM\SPU</Filter>
+    </ClInclude>
+    <ClInclude Include="edgegeomvtx.h">
+      <Filter>GCM\SPU</Filter>
+    </ClInclude>
+    <ClInclude Include="edgeextractgeomspu.h">
+      <Filter>GCM\SPU</Filter>
+    </ClInclude>
+    <ClInclude Include="edgegeomspu_gta4.h">
+      <Filter>GCM\SPU</Filter>
+    </ClInclude>
+    <ClInclude Include="edgegeomspu_mc4.h">
+      <Filter>GCM\SPU</Filter>
+    </ClInclude>
+    <ClInclude Include="edgeringbuffer.h">
+      <Filter>GCM\SPU</Filter>
+    </ClInclude>
+    <ClInclude Include="edge_vehicledamage.h">
+      <Filter>GCM\SPU</Filter>
+    </ClInclude>
+    <ClInclude Include="patcherspu.h">
+      <Filter>GCM\SPU</Filter>
+    </ClInclude>
+    <ClInclude Include="patcherspu_case.h">
+      <Filter>GCM\SPU</Filter>
+    </ClInclude>
+    <ClInclude Include="grcorespu.h">
+      <Filter>GCM\SPU</Filter>
+    </ClInclude>
+    <ClInclude Include="grcorespu_gcmcallback.h">
+      <Filter>GCM\SPU</Filter>
+    </ClInclude>
+    <ClInclude Include="grcorespu_header.h">
+      <Filter>GCM\SPU</Filter>
+    </ClInclude>
+    <ClInclude Include="grcorespu_footer.h">
+      <Filter>GCM\SPU</Filter>
+    </ClInclude>
+    <ClInclude Include="grcorespu_gamestate.h">
+      <Filter>GCM\SPU</Filter>
+    </ClInclude>
+    <ClInclude Include="grcorespu_gamestate_case.h">
+      <Filter>GCM\SPU</Filter>
+    </ClInclude>
+    <ClInclude Include="grcorespu_case.h">
+      <Filter>GCM\SPU</Filter>
+    </ClInclude>
+    <ClInclude Include="gcmringbuffer.h">
+      <Filter>GCM\SPU</Filter>
+    </ClInclude>
+    <ClInclude Include="instancerendererspu.h">
+      <Filter>GCM\SPU</Filter>
+    </ClInclude>
+    <ClInclude Include="debugdraw.h">
+      <Filter>Debug</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="allocscope.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="fvf.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="gfxcontextcontrol.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="gfxcontextprofile.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="texturereference.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="texturecontrol.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="texturedebugflags.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="light.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="image.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="viewport.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="font.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="bankio.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="grcsetup.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="shmoo.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="texturestring.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="effect_values.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="fastquad.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="quads.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="im_common.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="vertexbuffer_common.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="vertexbuffereditor.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="indexbuffer_common.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="image_jpeg.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="image_png.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="effect_edit.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="effect_load.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="effect_update.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="effect_render.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="effect_resource.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="gputimer.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="stateblock.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="cbset.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="monitor.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="instancebuffer.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="orbisdurangoresourcebase.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="adapter_common.cpp">
+      <Filter>D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="adapter_d3d11.cpp">
+      <Filter>D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="computeshader.cpp">
+      <Filter>D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="dxerr.cpp">
+      <Filter>D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="wrapper_d3d.cpp">
+      <Filter>D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="device_d3d.cpp">
+      <Filter>D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="im_d3d.cpp">
+      <Filter>D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="vertexbuffer_d3d.cpp">
+      <Filter>D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="vertexbuffer_d3d11.cpp">
+      <Filter>D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="vertexbuffereditor_d3d.cpp">
+      <Filter>D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="indexbuffer_d3d.cpp">
+      <Filter>D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="indexbuffer_d3d11.cpp">
+      <Filter>D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="device_win32.cpp">
+      <Filter>D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="effect_d3d.cpp">
+      <Filter>D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="effect_d3d11.cpp">
+      <Filter>D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="effect_pcd3d11.cpp">
+      <Filter>D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="resourcecache.cpp">
+      <Filter>D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="device_d3d11.cpp">
+      <Filter>D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="texturepc.cpp">
+      <Filter>D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="texture_d3d9.cpp">
+      <Filter>D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="texture_d3d11.cpp">
+      <Filter>D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="texturefactory_d3d11.cpp">
+      <Filter>D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="rendertarget_d3d11.cpp">
+      <Filter>D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="d3dwrapper.cpp">
+      <Filter>D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="buffer_d3d11.cpp">
+      <Filter>D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="diag_d3d.cpp">
+      <Filter>D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="buffer_durango.cpp">
+      <Filter>Durango</Filter>
+    </ClCompile>
+    <ClCompile Include="device_d3d11.winrt.cpp">
+      <Filter>Durango</Filter>
+    </ClCompile>
+    <ClCompile Include="durango_window.winrt.cpp">
+      <Filter>Durango</Filter>
+    </ClCompile>
+    <ClCompile Include="effect_durango.cpp">
+      <Filter>Durango</Filter>
+    </ClCompile>
+    <ClCompile Include="gfxcontext_durango.cpp">
+      <Filter>Durango</Filter>
+    </ClCompile>
+    <ClCompile Include="indexbuffer_durango.cpp">
+      <Filter>Durango</Filter>
+    </ClCompile>
+    <ClCompile Include="rendertarget_durango.cpp">
+      <Filter>Durango</Filter>
+    </ClCompile>
+    <ClCompile Include="texture_durango.cpp">
+      <Filter>Durango</Filter>
+    </ClCompile>
+    <ClCompile Include="vertexbuffer_durango.cpp">
+      <Filter>Durango</Filter>
+    </ClCompile>
+    <ClCompile Include="texturexenon.cpp">
+      <Filter>Xenon</Filter>
+    </ClCompile>
+    <ClCompile Include="texturexenonproxy.cpp">
+      <Filter>Xenon</Filter>
+    </ClCompile>
+    <ClCompile Include="gprallocation.cpp">
+      <Filter>Xenon</Filter>
+    </ClCompile>
+    <ClCompile Include="textureogl.cpp">
+      <Filter>OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="state_ogl.cpp">
+      <Filter>OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="device_ogl.cpp">
+      <Filter>OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="im_ogl.cpp">
+      <Filter>OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="vertexbuffer_ogl.cpp">
+      <Filter>OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="indexbuffer_ogl.cpp">
+      <Filter>OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="texturepsp2.cpp">
+      <Filter>PSP2</Filter>
+    </ClCompile>
+    <ClCompile Include="effect_psp2.cpp">
+      <Filter>PSP2</Filter>
+    </ClCompile>
+    <ClCompile Include="device_psp2.cpp">
+      <Filter>PSP2</Filter>
+    </ClCompile>
+    <ClCompile Include="im_psp2.cpp">
+      <Filter>PSP2</Filter>
+    </ClCompile>
+    <ClCompile Include="vertexbuffer_psp2.cpp">
+      <Filter>PSP2</Filter>
+    </ClCompile>
+    <ClCompile Include="indexbuffer_psp2.cpp">
+      <Filter>PSP2</Filter>
+    </ClCompile>
+    <ClCompile Include="wrapper_gxm.cpp">
+      <Filter>PSP2</Filter>
+    </ClCompile>
+    <ClCompile Include="buffer_gnm.cpp">
+      <Filter>GNM</Filter>
+    </ClCompile>
+    <ClCompile Include="gfxcontext_gnm.cpp">
+      <Filter>GNM</Filter>
+    </ClCompile>
+    <ClCompile Include="texture_gnm.cpp">
+      <Filter>GNM</Filter>
+    </ClCompile>
+    <ClCompile Include="texturefactory_gnm.cpp">
+      <Filter>GNM</Filter>
+    </ClCompile>
+    <ClCompile Include="rendertarget_gnm.cpp">
+      <Filter>GNM</Filter>
+    </ClCompile>
+    <ClCompile Include="effect_gnm.cpp">
+      <Filter>GNM</Filter>
+    </ClCompile>
+    <ClCompile Include="device_gnm.cpp">
+      <Filter>GNM</Filter>
+    </ClCompile>
+    <ClCompile Include="im_gnm.cpp">
+      <Filter>GNM</Filter>
+    </ClCompile>
+    <ClCompile Include="vertexbuffer_gnm.cpp">
+      <Filter>GNM</Filter>
+    </ClCompile>
+    <ClCompile Include="indexbuffer_gnm.cpp">
+      <Filter>GNM</Filter>
+    </ClCompile>
+    <ClCompile Include="wrapper_gnm.cpp">
+      <Filter>GNM</Filter>
+    </ClCompile>
+    <ClCompile Include="gputrace_gnm.cpp">
+      <Filter>GNM</Filter>
+    </ClCompile>
+    <ClCompile Include="gnmx\computecontext.cpp">
+      <Filter>GNM\GNMX</Filter>
+    </ClCompile>
+    <ClCompile Include="gnmx\computequeue.cpp">
+      <Filter>GNM\GNMX</Filter>
+    </ClCompile>
+    <ClCompile Include="gnmx\constantupdateengine.cpp">
+      <Filter>GNM\GNMX</Filter>
+    </ClCompile>
+    <ClCompile Include="gnmx\cue.cpp">
+      <Filter>GNM\GNMX</Filter>
+    </ClCompile>
+    <ClCompile Include="gnmx\cue-cueringbuffer.cpp">
+      <Filter>GNM\GNMX</Filter>
+    </ClCompile>
+    <ClCompile Include="gnmx\cue-deprecated.cpp">
+      <Filter>GNM\GNMX</Filter>
+    </ClCompile>
+    <ClCompile Include="gnmx\cue-dispatchdraw.cpp">
+      <Filter>GNM\GNMX</Filter>
+    </ClCompile>
+    <ClCompile Include="gnmx\cue-resource.cpp">
+      <Filter>GNM\GNMX</Filter>
+    </ClCompile>
+    <ClCompile Include="gnmx\cue-shader.cpp">
+      <Filter>GNM\GNMX</Filter>
+    </ClCompile>
+    <ClCompile Include="gnmx\cue-static.cpp">
+      <Filter>GNM\GNMX</Filter>
+    </ClCompile>
+    <ClCompile Include="gnmx\fetchshaderhelper.cpp">
+      <Filter>GNM\GNMX</Filter>
+    </ClCompile>
+    <ClCompile Include="gnmx\gfxcontext.cpp">
+      <Filter>GNM\GNMX</Filter>
+    </ClCompile>
+    <ClCompile Include="gnmx\helpers.cpp">
+      <Filter>GNM\GNMX</Filter>
+    </ClCompile>
+    <ClCompile Include="gnmx\lwconstantupdateengine.cpp">
+      <Filter>GNM\GNMX</Filter>
+    </ClCompile>
+    <ClCompile Include="gnmx\lwconstantupdateengine_validation.cpp">
+      <Filter>GNM\GNMX</Filter>
+    </ClCompile>
+    <ClCompile Include="gnmx\shader_parser.cpp">
+      <Filter>GNM\GNMX</Filter>
+    </ClCompile>
+    <ClCompile Include="texturegcm.cpp">
+      <Filter>GCM</Filter>
+    </ClCompile>
+    <ClCompile Include="wrapper_gcm.cpp">
+      <Filter>GCM</Filter>
+    </ClCompile>
+    <ClCompile Include="gcmdebug.cpp">
+      <Filter>GCM</Filter>
+    </ClCompile>
+    <ClCompile Include="device_gcm.cpp">
+      <Filter>GCM</Filter>
+    </ClCompile>
+    <ClCompile Include="im_gcm.cpp">
+      <Filter>GCM</Filter>
+    </ClCompile>
+    <ClCompile Include="vertexbuffer_gcm.cpp">
+      <Filter>GCM</Filter>
+    </ClCompile>
+    <ClCompile Include="indexbuffer_gcm.cpp">
+      <Filter>GCM</Filter>
+    </ClCompile>
+    <ClCompile Include="effect_gcm.cpp">
+      <Filter>GCM</Filter>
+    </ClCompile>
+    <ClCompile Include="edge_jobs.cpp">
+      <Filter>GCM</Filter>
+    </ClCompile>
+    <ClCompile Include="effectcache.cpp">
+      <Filter>GCM\SPU</Filter>
+    </ClCompile>
+    <ClCompile Include="edgegeomspu.cpp">
+      <Filter>GCM\SPU</Filter>
+    </ClCompile>
+    <ClCompile Include="edgegeom_unity.cpp">
+      <Filter>GCM\SPU</Filter>
+    </ClCompile>
+    <ClCompile Include="edgeextractgeomspu.cpp">
+      <Filter>GCM\SPU</Filter>
+    </ClCompile>
+    <ClCompile Include="edge_callbacks.cpp">
+      <Filter>GCM\SPU</Filter>
+    </ClCompile>
+    <ClCompile Include="edge_callbacks_gta4.cpp">
+      <Filter>GCM\SPU</Filter>
+    </ClCompile>
+    <ClCompile Include="edge_callbacks_mc4.cpp">
+      <Filter>GCM\SPU</Filter>
+    </ClCompile>
+    <ClCompile Include="patcherspu.cpp">
+      <Filter>GCM\SPU</Filter>
+    </ClCompile>
+    <ClCompile Include="grcorespu.cpp">
+      <Filter>GCM\SPU</Filter>
+    </ClCompile>
+    <ClCompile Include="instancerendererspu.cpp">
+      <Filter>GCM\SPU</Filter>
+    </ClCompile>
+    <ClCompile Include="debugdraw.cpp">
+      <Filter>Debug</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="edgegeomspu.job" />
+    <CustomBuild Include="edgeExtractGeomSpu_.job" />
+    <CustomBuild Include="instancerendererspu.job" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="effect.inl">
+      <Filter>Common</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="grcore.dtx" />
+  </ItemGroup>
+</Project>

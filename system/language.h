@@ -1,0 +1,36 @@
+//
+// system/language.h
+//
+// Copyright (C) 1999-2013 Rockstar Games.  All Rights Reserved.
+//
+
+#ifndef SYSTEM_LANGUAGE_H
+#define SYSTEM_LANGUAGE_H
+
+namespace rage
+{
+// PURPOSE: Represents a language.
+// Add new languages at the end.
+enum sysLanguage
+{
+	LANGUAGE_UNDEFINED=-1,
+	LANGUAGE_ENGLISH=0,
+	LANGUAGE_FRENCH,
+	LANGUAGE_GERMAN,
+	LANGUAGE_ITALIAN,
+	LANGUAGE_SPANISH,
+	LANGUAGE_PORTUGUESE,
+	LANGUAGE_POLISH,
+	LANGUAGE_RUSSIAN,
+	LANGUAGE_KOREAN,
+	LANGUAGE_CHINESE_TRADITIONAL,
+	LANGUAGE_JAPANESE,
+	LANGUAGE_MEXICAN,
+	LANGUAGE_CHINESE_SIMPLIFIED,
+
+	MAX_LANGUAGES
+};
+
+}
+
+#endif // SYSTEM_LANGUAGE_H

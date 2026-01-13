@@ -1,0 +1,74 @@
+@@Overview
+Welcome to the RAGE ATL module.
+
+* Origin Of Module Name *
+ATL stands for "Another Template Library". 
+
+* Overview *
+
+ATL contains a
+collection of templates that implement common containers and
+some other useful data structures. Its original intent was to
+replicate many of the functions of the C++ Standard Template
+Library (STL), while avoiding some of the pitfalls of early
+STL implementations.
+
+
+
+There are advantages and disadvantages of using ATL versus
+STL versus other approaches, so please choose carefully.
+
+
+
+ATL containers generally store template nodes in them, rather
+than storing the objects directly. Actually, STL works the
+same way but hides this "feature" from the user, while ATL
+exposes it. This means that instead of pushing and popping
+instances of Object into your atSList\<Object\>, you'll be
+pushing and popping instances of atSNode\<Object\>. With STL
+you can push and pop Object instances directly, but you need
+to use an iterator to get at items. ATL generally does not
+require the use of iterators, so accessing items is a little
+simpler.
+
+@@Components
+Here's a table listing the primary components of this module.
+
+@@Relationships
+The ATL module mostly only depends on the core library for
+things like Asserts, Debug messages, and data types.
+
+
+
+A couple header files in ATL depend on files in vector and
+data. However, for the most part these are in template
+declarations that have no corresponding .cpp files, so
+linking with ATL will not automatically require linking with
+these modules. Now, if an instance of these templated classes
+gets made you'll have to link with vector and data.
+
+
+
+ATL is used by many modules, so you'll generally have to link
+with it whether you want to or not.
+
+##BEGIN COMMAND-LINE-SECTION is automatically generated - do not edit this section!
+@@Command Line Options
+<TABLE>
+Parameter Name  In File      Description                                                                                  
+--------------  -----------  -------------------------------------------------------------------------------------------  
+fastonly        qaitems.cpp  will only run fast tests allowing for fast tests locally and more stringent tests offline    
+filename        testmap.cpp  name of file to do word counts on                                                            
+qadraw          qaitems.cpp  Draw drawable qa items                                                                       
+resultsfile     qaitems.cpp  The location of the file to put the results in (defaulting to qaresults).                    
+runname         qaitems.cpp  The name to apply to the current run in the log file (defaults to the RAGE release number).  
+showerrors      qaitems.cpp  outputs fails as errors                                                                      
+testname        qaitems.cpp  Only run the test specified in this parameter.                                               
+xmlformat       qaitems.cpp  saves results in xml format                                                                  
+xmllog          qaitems.cpp  outputs in xml log                                                                           
+</TABLE>
+##END COMMAND-LINE-SECTION is automatically generated - do not edit this section!
+
+@@Working Examples
+##BEGIN SAMPLES-SECTION is automatically generated - do not edit this section!
+##END SAMPLES-SECTION is automatically generated - do not edit this section!
